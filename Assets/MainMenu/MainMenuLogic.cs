@@ -1,21 +1,28 @@
- using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class MainMenuLogic : MonoBehaviour
 {
     public GameObject OptionsScreen;
-    void Start(){}
     void Update()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            this.ExitGame();
+            // FIXME: Pressing Esc when binding key will cause this to also close options menu
+            if (OptionsScreen.activeSelf)
+            {
+                this.CloseOptions();
+            }
+            else
+            {
+                this.ExitGame();
+            }
         }
     }
     public void ExitGame()
     {
-        Debug.Log("goodbye");
         #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
         #else
