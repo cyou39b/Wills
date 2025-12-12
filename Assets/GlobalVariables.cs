@@ -21,7 +21,11 @@ public class GlobalVariables : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        QualitySettings.vSyncCount = 0; // Disable VSync to use targetFrameRate
+        Application.targetFrameRate = GlobalVariables.Instance.FrameRate;
     }
+    public int FrameRate = 60;
     public Key JumpKey = Key.Space;
     public Key MoveLeftKey = Key.A;
     public Key MoveRightKey = Key.D;
