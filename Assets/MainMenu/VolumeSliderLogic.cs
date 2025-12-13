@@ -8,8 +8,6 @@ public class VolumeSliderLogic : MonoBehaviour, IPointerUpHandler
     public AudioSource ReleaseSFX;
     public Slider VolumeSlider;
     public Text VolumeText;
-    public void Start(){}
-    public void Update(){}
 
     public void OnValueChange()
     {

@@ -9,9 +9,32 @@ public class OptionMenu : MonoBehaviour
 {
     public GameObject BindingBlur;
     public Text JumpKeyText;
+    public Text LeftKeyText;
+    public Text RightKeyText;
     void Start()
     {
         JumpKeyText.text = GlobalVariables.Instance.JumpKey.ToString();
+        LeftKeyText.text = GlobalVariables.Instance.MoveLeftKey.ToString();
+        RightKeyText.text = GlobalVariables.Instance.MoveRightKey.ToString();
+    }
+
+    public void BindRightKey()
+    {
+        BindingBlur.SetActive(true);
+        StartCoroutine(BindKey((k)=>{
+            GlobalVariables.Instance.MoveRightKey = k;
+            RightKeyText.text = k.ToString();
+            BindingBlur.SetActive(false);
+        }));
+    }
+    public void BindLeftKey()
+    {
+        BindingBlur.SetActive(true);
+        StartCoroutine(BindKey((k)=>{
+            GlobalVariables.Instance.MoveLeftKey = k;
+            LeftKeyText.text = k.ToString();
+            BindingBlur.SetActive(false);
+        }));
     }
     public void BindJumpKey()
     {
@@ -24,7 +47,8 @@ public class OptionMenu : MonoBehaviour
     }
     public IEnumerator BindKey(Action<Key> callback)
     {
-        while (true)
+        bool done = false;
+        while (!done)
         {
             if (!Keyboard.current.anyKey.wasPressedThisFrame)
             {
@@ -32,13 +56,17 @@ public class OptionMenu : MonoBehaviour
                 continue;
             }
             
-            if (Keyboard.current.escapeKey.wasPressedThisFrame) {break;}
+            if (Keyboard.current.escapeKey.wasPressedThisFrame) {
+                BindingBlur.SetActive(false);
+                break;
+            }
 
-            foreach(var kc in Keyboard.current.allKeys)
+            foreach(KeyControl kc in Keyboard.current.allKeys)
             {
                 if (kc.wasPressedThisFrame)
                 {
                     callback(kc.keyCode);
+                    done = true;
                     break;
                 }
             }
