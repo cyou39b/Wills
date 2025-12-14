@@ -29,5 +29,5 @@ public class GlobalVariables : MonoBehaviour
     public Key JumpKey = Key.Space;
     public Key MoveLeftKey = Key.A;
     public Key MoveRightKey = Key.D;
-    public Key InteractKey = Key.S;
+    public Key InteractKey = Key.F;
 }

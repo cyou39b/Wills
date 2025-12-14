@@ -4,9 +4,6 @@ using UnityEngine.InputSystem;
 public class Jack : MonoBehaviour{
     public Rigidbody2D rb;
     bool isGrounded = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start(){
-    }
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Ground")){
             isGrounded = true;
@@ -17,7 +14,7 @@ public class Jack : MonoBehaviour{
             isGrounded = false;
         }
     }
-    // Update is called once per frame
+
     void Update(){
         if (Keyboard.current[GlobalVariables.Instance.MoveLeftKey].isPressed){
             rb.linearVelocityX = -5f;
@@ -28,7 +25,7 @@ public class Jack : MonoBehaviour{
         else{
             rb.linearVelocityX = 0f;
         }
-        if(Keyboard.current[GlobalVariables.Instance.JumpKey].wasPressedThisFrame && isGrounded == true){
+        if(Keyboard.current[GlobalVariables.Instance.JumpKey].wasPressedThisFrame && isGrounded){
             rb.linearVelocityY = 5f;
         }
     }

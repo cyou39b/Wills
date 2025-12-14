@@ -169,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2429670849555049026, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_Name
-      value: Wills
+      value: Wills1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -323,7 +323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633545276}
   m_Layer: 0
-  m_Name: Jack_Weapon
+  m_Name: Jack Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -758,7 +758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7327592780018563279, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
       propertyPath: m_Name
-      value: Wills1_Flying
+      value: Wills1 Flying
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 1725348432}
   - component: {fileID: 1725348431}
   m_Layer: 0
-  m_Name: Gobalvariable
+  m_Name: GobalLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -794,6 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3454c65181a301d4180ed196afc52c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlobalVariables
+  FrameRate: 60
   JumpKey: 1
   MoveLeftKey: 15
   MoveRightKey: 18

@@ -11,13 +11,24 @@ public class OptionMenu : MonoBehaviour
     public Text JumpKeyText;
     public Text LeftKeyText;
     public Text RightKeyText;
+    public Text InteractKeyText;
     void Start()
     {
         JumpKeyText.text = GlobalVariables.Instance.JumpKey.ToString();
         LeftKeyText.text = GlobalVariables.Instance.MoveLeftKey.ToString();
         RightKeyText.text = GlobalVariables.Instance.MoveRightKey.ToString();
+        InteractKeyText.text = GlobalVariables.Instance.InteractKey.ToString();
     }
 
+    public void BindInteractKey()
+    {
+        BindingBlur.SetActive(true);
+        StartCoroutine(BindKey((k)=>{
+            GlobalVariables.Instance.InteractKey = k;
+            InteractKeyText.text = k.ToString();
+            BindingBlur.SetActive(false);
+        }));
+    }
     public void BindRightKey()
     {
         BindingBlur.SetActive(true);
