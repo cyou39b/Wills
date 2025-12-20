@@ -19,7 +19,7 @@ public class Explode : MonoBehaviour
         if (Keyboard.current.spaceKey.wasReleasedThisFrame)
         {
             int i=0,halfSpawnNum=SpawnNum/2;
-            float dir = Random.Range(-180.0f, 180.0f), rot = 360.0f / halfSpawnNum;
+            float dir = Random.Range(-Mathf.PI, Mathf.PI), rot = Mathf.PI*2.0f / halfSpawnNum;
             Vector3 moveVec = new Vector3(0.0f, 0.0f, 0.0f);
             for (; i < halfSpawnNum; i++)
             {
@@ -30,7 +30,7 @@ public class Explode : MonoBehaviour
             }
             for(; i < SpawnNum; i++)
             {
-                dir = Random.Range(-180.0f, 180.0f);
+                dir = Random.Range(-Mathf.PI, Mathf.PI);
                 moveVec.x = Mathf.Cos(dir);
                 moveVec.y = Mathf.Sin(dir);
                 StartCoroutine(SpawnExplosions(transform.position, moveVec, SpawnIts));
