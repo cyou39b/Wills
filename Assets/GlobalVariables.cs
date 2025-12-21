@@ -29,5 +29,10 @@ public class GlobalVariables : MonoBehaviour
     public Key JumpKey = Key.Space;
     public Key MoveLeftKey = Key.A;
     public Key MoveRightKey = Key.D;
-    public Key InteractKey = Key.S;
+    public Key InteractKey = Key.F;
+    public Key AttackKey = Key.L;
+    // using in mining 
+    public Key UpKey = Key.W;
+    public Key DownKey = Key.S;
+    public Key FindMine = Key.N;
 }

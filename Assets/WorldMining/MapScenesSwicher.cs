@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class MapScenesSwicher : MonoBehaviour{
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject Map;
     void Start(){
     }
     // Update is called once per frame
@@ -11,8 +12,14 @@ public class MapScenesSwicher : MonoBehaviour{
         if (Keyboard.current.mKey.wasPressedThisFrame){
             LoadMap();
         }
+        if(Map.activeSelf && Keyboard.current.escapeKey.wasPressedThisFrame){
+            CloseMap();
+        }
     }
     public void LoadMap(){
-        SceneManager.LoadScene("MiningMap");
+        Map.SetActive(true);
+    }
+    public void CloseMap(){
+        Map.SetActive(false);
     }
 }
