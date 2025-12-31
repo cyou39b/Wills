@@ -34,5 +34,6 @@ public class GlobalVariables : MonoBehaviour
     // using in mining 
     public Key UpKey = Key.W;
     public Key DownKey = Key.S;
+    public Key PickUpMine = Key.P;
     public Key FindMine = Key.N;
 }

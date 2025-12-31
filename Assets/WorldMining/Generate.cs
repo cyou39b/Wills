@@ -1,24 +1,28 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Generate : MonoBehaviour{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform JackObj;
     public GameObject Model;
     public List<GameObject> CreateModel;
-    public double minDis = 0; 
-    double oldDis =  0 ; //record the old value to compare 
+    public static int Score1 = 0; // I hope it won't explode
+    public Text scoreText;
+    int resetTimes = 3;
+    public Text resetMsg;
     void Start(){
         RandomObj();
+        SetScore();
+        SetResmsg();
     }
-    // Update is called once per frame
     void Update(){
-        if (Keyboard.current.shiftKey.wasPressedThisFrame){
+        if (Keyboard.current.shiftKey.wasPressedThisFrame && resetTimes > 0){
             ResetObj();
             RandomObj();
         }
-        CalculateDistance();        
+        SetScore();  
+        SetResmsg();
     }
     void RandomObj(){
         for(int i=0;i<10;i++){
@@ -35,23 +39,13 @@ public class Generate : MonoBehaviour{
             Destroy(CreateModel[i]);
         }
         CreateModel.Clear();
+        Score1 = 0;
+        resetTimes -= 1;
     }
-    void CalculateDistance(){
-        foreach(GameObject items in CreateModel){
-            if(items == null){
-                continue;
-            }
-            double xdis = (items.transform.position.x - JackObj.position.x) * (items.transform.position.x - JackObj.position.x);
-            double ydis = (items.transform.position.y - JackObj.position.y) * (items.transform.position.y - JackObj.position.y);
-            double dis = xdis + ydis; 
-            //TODO
-            if (dis < oldDis){ 
-                minDis = dis;
-            }
-            if ((float)dis < 1f && items != null && Keyboard.current[GlobalVariables.Instance.FindMine].wasPressedThisFrame){
-                Destroy(items);
-            }
-            oldDis = dis;
-        }
+    void SetScore(){
+        scoreText.text = $"Score : {Score1}";
+    }
+    void SetResmsg(){
+        resetMsg.text = $"Reset : {resetTimes}";
     }
 }
