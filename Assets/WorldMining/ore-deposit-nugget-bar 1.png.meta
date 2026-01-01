@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: bb53c629d8a40e94fb038c104de3c397
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8893881346283592872
+    second: ore-deposit-nugget-bar 1_0
+  - first:
+      213: -5934915413052167756
+    second: ore-deposit-nugget-bar 1_1
+  - first:
+      213: -3846673040526740580
+    second: ore-deposit-nugget-bar 1_2
+  - first:
+      213: -6663760574016690895
+    second: ore-deposit-nugget-bar 1_3
+  - first:
+      213: 8929943933646251842
+    second: ore-deposit-nugget-bar 1_4
+  - first:
+      213: 1075967860594894034
+    second: ore-deposit-nugget-bar 1_5
+  - first:
+      213: 5895820320565260913
+    second: ore-deposit-nugget-bar 1_6
+  - first:
+      213: 8061519270084368972
+    second: ore-deposit-nugget-bar 1_7
+  - first:
+      213: -1561439001434353201
+    second: ore-deposit-nugget-bar 1_8
+  - first:
+      213: -4968657684927471771
+    second: ore-deposit-nugget-bar 1_9
+  - first:
+      213: 6512933122275760396
+    second: ore-deposit-nugget-bar 1_10
+  - first:
+      213: -8469613492571934997
+    second: ore-deposit-nugget-bar 1_11
+  - first:
+      213: 4674277610065205230
+    second: ore-deposit-nugget-bar 1_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: green_bar
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 201
+        width: 77
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8acd4bf66f96d6b70800000000000000
+      internalID: 8893881346283592872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold_bar
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 199
+        width: 78
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9e80950e1f2ada0800000000000000
+      internalID: -5934915413052167756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_bar
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 193
+        width: 78
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c93f45c004fdd9ac0800000000000000
+      internalID: -3846673040526740580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_nugget
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 122
+        width: 63
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1356b7560119583a0800000000000000
+      internalID: -6663760574016690895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold_nugget
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 115
+        width: 68
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4ee78811b9eee00800000000000000
+      internalID: 1075967860594894034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_nugget
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 109
+        width: 68
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a585b701540ef60800000000000000
+      internalID: 8061519270084368972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_ore
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 34
+        width: 72
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c095f1fea26926a50800000000000000
+      internalID: 6512933122275760396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gold_ore
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 39
+        width: 82
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beee4660763e57a80800000000000000
+      internalID: -8469613492571934997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_ore
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 29
+        width: 78
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee79f7198be5ed040800000000000000
+      internalID: 4674277610065205230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bc26a807df3773946b91794388b171b9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      blue_bar: -3846673040526740580
+      blue_nugget: 8061519270084368972
+      blue_ore: 4674277610065205230
+      gold_bar: -5934915413052167756
+      gold_nugget: 1075967860594894034
+      gold_ore: -8469613492571934997
+      green_bar: 8893881346283592872
+      green_nugget: -6663760574016690895
+      green_ore: 6512933122275760396
+      ore-deposit-nugget-bar 1_4: 8929943933646251842
+      ore-deposit-nugget-bar 1_6: 5895820320565260913
+      ore-deposit-nugget-bar 1_8: -1561439001434353201
+      ore-deposit-nugget-bar 1_9: -4968657684927471771
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,8 +3,8 @@ using UnityEngine.InputSystem;
 
 public class MapScenesSwicher : MonoBehaviour{
     public GameObject Map;
-    void Start(){
-    }
+    void Start(){}
+
     void Update(){
         if (Keyboard.current.mKey.wasPressedThisFrame){
             LoadMap();
@@ -13,10 +13,13 @@ public class MapScenesSwicher : MonoBehaviour{
             CloseMap();
         }
     }
+
     public void LoadMap(){
         Map.SetActive(true);
     }
+
     public void CloseMap(){
         Map.SetActive(false);
     }
+
 }

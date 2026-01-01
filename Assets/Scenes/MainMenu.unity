@@ -934,10 +934,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlobalVariables
   FrameRate: 60
+  NumMines: 0
   JumpKey: 1
   MoveLeftKey: 15
   MoveRightKey: 18
   InteractKey: 33
+  AttackKey: 26
+  UpKey: 37
+  DownKey: 33
+  PickUpMine: 30
+  FindMine: 28
 --- !u!4 &920476018
 Transform:
   m_ObjectHideFlags: 0

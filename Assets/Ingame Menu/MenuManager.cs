@@ -13,13 +13,16 @@ public class MenuManager : MonoBehaviour
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (isMenuOpen)
+            if (!OptionMenu.IsBinding)
             {
-                CloseMenu();
-            }
-            else
-            {
-                OpenMenu();
+                if (isMenuOpen)
+                {
+                    CloseMenu();
+                }
+                else
+                {
+                    OpenMenu();
+                }
             }
         }
     }

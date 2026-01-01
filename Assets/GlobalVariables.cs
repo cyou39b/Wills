@@ -26,6 +26,7 @@ public class GlobalVariables : MonoBehaviour
         Application.targetFrameRate = GlobalVariables.Instance.FrameRate;
     }
     public int FrameRate = 60;
+    public int NumMines = 0;
     public Key JumpKey = Key.Space;
     public Key MoveLeftKey = Key.A;
     public Key MoveRightKey = Key.D;
@@ -36,4 +37,10 @@ public class GlobalVariables : MonoBehaviour
     public Key DownKey = Key.S;
     public Key PickUpMine = Key.P;
     public Key FindMine = Key.N;
+
+    // Some useful numbers
+    public const float PI = Mathf.PI;
+    public const float NPI = - Mathf.PI;
+    public const float HalfPI = PI / 2;
+    public const float HalfNPI = NPI / 2;
 }

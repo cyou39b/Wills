@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3151527485709832683}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,8 @@ MonoBehaviour:
   - {fileID: -3543048863620948104, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
   BulletSpriteRenderer: {fileID: 2468768707808355602}
   Rgd: {fileID: 3151527485709832683}
-  MoveSpeed: 1
+  MoveSpeed: 10
+  InitialDistance: 0.1
 --- !u!61 &7188205616813677146
 BoxCollider2D:
   m_ObjectHideFlags: 0

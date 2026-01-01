@@ -7,14 +7,19 @@ public class Wills : MonoBehaviour
     // private bool walking = false;
     // private static readonly string anmorIsWalkingTag="isWalking";
     public Rigidbody2D Rgd;
-    public float MoveSpeeed;
+    public Vector2 PushForce;
+
     public SpriteRenderer SpRerr;
+    public int HP;
     void Update()
     {
-        Rgd.linearVelocityX = MoveSpeeed;
-        if(transform.position.x >= 12.0f)
+        if(transform.position.x >= 0)
         {
-            transform.position = transform.position + Vector3.left * 24;
+            Rgd.linearVelocityX -= 10 * Time.deltaTime;
+        }
+        else
+        {
+            Rgd.linearVelocityX += 10* Time.deltaTime;
         }
         // if (Keyboard.current.aKey.isPressed)
         // {
@@ -45,5 +50,20 @@ public class Wills : MonoBehaviour
         //         Anmor.SetBool(anmorIsWalkingTag, false);
         //     }
         // }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Bullet"))
+        {
+            HP -= 10;
+            if(HP <= 0)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Rgd.AddForce(PushForce);
+        }
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class OptionMenu : MonoBehaviour
 {
+    public static bool IsBinding = false;
     public GameObject BindingBlur;
     public Text JumpKeyText;
     public Text LeftKeyText;
@@ -23,6 +24,7 @@ public class OptionMenu : MonoBehaviour
     public void BindInteractKey()
     {
         BindingBlur.SetActive(true);
+        IsBinding = true;
         StartCoroutine(BindKey((k)=>{
             GlobalVariables.Instance.InteractKey = k;
             InteractKeyText.text = k.ToString();
@@ -32,6 +34,7 @@ public class OptionMenu : MonoBehaviour
     public void BindRightKey()
     {
         BindingBlur.SetActive(true);
+        IsBinding = true;
         StartCoroutine(BindKey((k)=>{
             GlobalVariables.Instance.MoveRightKey = k;
             RightKeyText.text = k.ToString();
@@ -41,6 +44,7 @@ public class OptionMenu : MonoBehaviour
     public void BindLeftKey()
     {
         BindingBlur.SetActive(true);
+        IsBinding = true;
         StartCoroutine(BindKey((k)=>{
             GlobalVariables.Instance.MoveLeftKey = k;
             LeftKeyText.text = k.ToString();
@@ -50,6 +54,7 @@ public class OptionMenu : MonoBehaviour
     public void BindJumpKey()
     {
         BindingBlur.SetActive(true);
+        IsBinding = true;
         StartCoroutine(BindKey((k)=>{
             GlobalVariables.Instance.JumpKey = k;
             JumpKeyText.text = k.ToString();
@@ -83,5 +88,6 @@ public class OptionMenu : MonoBehaviour
             }
             yield return null;
         }
+        IsBinding = false;
     }
 }
