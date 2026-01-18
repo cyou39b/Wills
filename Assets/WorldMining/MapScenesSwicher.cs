@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class MapScenesSwicher : MonoBehaviour{
     public GameObject Map;
+    public Text numMine;
+    public static bool isMapOpening = false;
     void Start(){}
 
     void Update(){
@@ -16,10 +19,13 @@ public class MapScenesSwicher : MonoBehaviour{
 
     public void LoadMap(){
         Map.SetActive(true);
+        numMine.enabled = false;
+        isMapOpening = true;
     }
 
     public void CloseMap(){
+        isMapOpening = false;
         Map.SetActive(false);
+        numMine.enabled = true;
     }
-
 }

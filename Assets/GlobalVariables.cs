@@ -14,10 +14,12 @@ public class GlobalVariables : MonoBehaviour
     {
         if(Instance != null && Instance != this)
         {
+            Debug.Log("Global Variables Instance already exist.");
             Destroy(gameObject);
         }
         else
         {
+            Debug.Log("Global Instance created");
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }

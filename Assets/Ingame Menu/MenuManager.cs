@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour
         {
             if (!OptionMenu.IsBinding)
             {
-                if (isMenuOpen)
+                if (isMenuOpen || MapScenesSwicher.isMapOpening)
                 {
                     CloseMenu();
                 }

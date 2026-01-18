@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class MachineLogic : MonoBehaviour{
     public GameObject MinePrefab;
     public Sprite[] MineSprites;
-    public float MineMinDistance, MineMaxDistance;
     public int TotalMinePerSpawn;
     public List<Vector2> UndetectedMines = new List<Vector2>();
     public List<GameObject> DetectedMines = new List<GameObject>();
     public Text NumMineText;
+    public Vector2 ButtomRight;
+    public Vector2 TopLeft;
 
     public AudioSource MineNearbySFX;
     public float PlayMineNearbySFXRangeRadius;
@@ -137,15 +138,9 @@ public class MachineLogic : MonoBehaviour{
     void SpawnMines()
     {
         for(int i=0;i<10;i++){
-            float rot = Random.Range(-Mathf.PI,Mathf.PI);
-            float distance = Random.Range(5f,20f);
-            float offsetx = Mathf.Cos(rot) * distance;
-            float offsety = Mathf.Sin(rot) * distance;
-            Vector2 newPos = new Vector2(
-                gameObject.transform.position.x + offsetx,
-                gameObject.transform.position.y + offsety
-            );
-
+            float newposx = Random.Range(TopLeft.x,ButtomRight.x);
+            float newposy = Random.Range(ButtomRight.y,TopLeft.y);
+            Vector2 newPos = new Vector2(newposx,newposy);
             UndetectedMines.Add(newPos);
         }
     }
