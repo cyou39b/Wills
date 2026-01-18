@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+// 附加在menu中調整聲音的slider上的class
+// 我覺得這個class也算是self-explaining吧
+
 public class VolumeSliderLogic : MonoBehaviour, IPointerUpHandler
 {
     public AudioSource ReleaseSFX;

@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 381401395}
   - component: {fileID: 381401394}
   - component: {fileID: 381401397}
+  - component: {fileID: 381401398}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -256,6 +257,23 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &381401398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381401393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1305a432cc1ada944bec09135ccfcdc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraMove
+  Target: {fileID: 1024952365}
+  Offset: {x: 0, y: 2.5, z: -10}
+  SmoothTime: 0.3
+  IgnoreRangeRadius: 0.5
+  SlowDownRatio: 0.9
 --- !u!1001 &490140166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -364,7 +382,7 @@ GameObject:
   - component: {fileID: 633545276}
   - component: {fileID: 633545277}
   - component: {fileID: 633545278}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jack Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +496,7 @@ GameObject:
   - component: {fileID: 940908361}
   - component: {fileID: 940908360}
   - component: {fileID: 940908359}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -617,7 +635,7 @@ GameObject:
   - component: {fileID: 1024952363}
   - component: {fileID: 1024952362}
   - component: {fileID: 1024952361}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,8 +657,8 @@ MonoBehaviour:
   rb: {fileID: 1024952363}
   MoveSpeed: 6
   SlowerMoveSpeed: 5
-  JumpPower: 5
-  JumpBufferMaxTime: 0.075
+  JumpForce: 500
+  JumpBufferMaxTime: 0.0125
   Sprerr: {fileID: 1024952364}
 --- !u!61 &1024952362
 BoxCollider2D:
@@ -676,7 +694,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.34}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -686,7 +704,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.53, y: 0.052773178}
+  m_Size: {x: 0.45, y: 0.7}
   m_EdgeRadius: 0
 --- !u!50 &1024952363
 Rigidbody2D:
@@ -703,14 +721,14 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0.38
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -782,8 +800,8 @@ Transform:
   m_GameObject: {fileID: 1024952360}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.48, y: -0.14, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: -0.11, y: -1.83, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 633545276}
@@ -799,7 +817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1144482190}
   - component: {fileID: 1144482191}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun Fire Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,7 +1045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 691926346712285647, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.61
+      value: 1.76
       objectReference: {fileID: 0}
     - target: {fileID: 691926346712285647, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1066,8 +1084,28 @@ PrefabInstance:
       value: Wills1
       objectReference: {fileID: 0}
     - target: {fileID: 5981363390417570603, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
+      propertyPath: MoveForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981363390417570603, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
+      propertyPath: HpBarPrefab
+      value: 
+      objectReference: {fileID: 7012469317006889741, guid: aeaa31a668b0bb540a33b5b1508e6bbf, type: 3}
+    - target: {fileID: 5981363390417570603, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: PushForce.y
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981363390417570603, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
+      propertyPath: forceModify
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981363390417570603, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
+      propertyPath: xForceModify
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981363390417570603, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
+      propertyPath: yForceModify
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8509144427956929406, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_Mass
@@ -1082,10 +1120,10 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 381401396}
   - {fileID: 1574482231}
   - {fileID: 1725348432}
   - {fileID: 940908361}
   - {fileID: 1024952365}
+  - {fileID: 381401396}
   - {fileID: 490140166}
   - {fileID: 2068909620}

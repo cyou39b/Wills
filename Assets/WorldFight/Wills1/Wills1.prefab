@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8509144427956929406}
   - component: {fileID: 9181721162363800019}
   - component: {fileID: 5981363390417570603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wills1
   m_TagString: Wills
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0.5
+  m_LinearDamping: 0.1
   m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -121,8 +121,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Wills
   Anmor: {fileID: 447263467092522632}
+  xForceModify: 0
+  yForceModify: 0
+  MoveForce: 0
   Rgd: {fileID: 8509144427956929406}
   SpRerr: {fileID: 2292231052398863805}
+  Green: {fileID: 0}
+  GreenTransform: {fileID: 0}
   HP: 100
 --- !u!1 &5263319498312172273
 GameObject:
@@ -135,7 +140,7 @@ GameObject:
   - component: {fileID: 6237685298920989079}
   - component: {fileID: 2292231052398863805}
   - component: {fileID: 447263467092522632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wills1 render
   m_TagString: Untagged
   m_Icon: {fileID: 0}

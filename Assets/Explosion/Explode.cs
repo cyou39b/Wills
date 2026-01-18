@@ -2,42 +2,42 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// 在wills1死亡時的爆炸
+
 public class Explode : MonoBehaviour
 {
-    public GameObject[] Explosions;
+    public GameObject[] Explosions; // 所有可用的explosion prefab
     public int SpawnIts;
     public int SpawnNum;
     public float SpawnCoolDown;
     private WaitForSeconds wCoolDown;
 
-    void Start()
+    public void Start()
     {
         wCoolDown = new WaitForSeconds(SpawnCoolDown);
-    }
-    void Update()
-    {
-        if (Keyboard.current.spaceKey.wasReleasedThisFrame)
+        
+        // 向隨機方向生成SpawnNum個explosion
+        int i=0,halfSpawnNum=SpawnNum/2;
+        float dir = Random.Range(-Mathf.PI, Mathf.PI), rot = Mathf.PI*2.0f / halfSpawnNum;
+        Vector3 moveVec = new Vector3(0.0f, 0.0f, 0.0f);
+        for (; i < halfSpawnNum; i++)
         {
-            int i=0,halfSpawnNum=SpawnNum/2;
-            float dir = Random.Range(-Mathf.PI, Mathf.PI), rot = Mathf.PI*2.0f / halfSpawnNum;
-            Vector3 moveVec = new Vector3(0.0f, 0.0f, 0.0f);
-            for (; i < halfSpawnNum; i++)
-            {
-                dir += rot;
-                moveVec.x = Mathf.Cos(dir);
-                moveVec.y = Mathf.Sin(dir);
-                StartCoroutine(SpawnExplosions(transform.position, moveVec, SpawnIts));
-            }
-            for(; i < SpawnNum; i++)
-            {
-                dir = Random.Range(-Mathf.PI, Mathf.PI);
-                moveVec.x = Mathf.Cos(dir);
-                moveVec.y = Mathf.Sin(dir);
-                StartCoroutine(SpawnExplosions(transform.position, moveVec, SpawnIts));
-            }
+            dir += rot;
+            moveVec.x = Mathf.Cos(dir);
+            moveVec.y = Mathf.Sin(dir);
+            StartCoroutine(SpawnExplosions(transform.position, moveVec, SpawnIts));
         }
+        for(; i < SpawnNum; i++)
+        {
+            dir = Random.Range(-Mathf.PI, Mathf.PI);
+            moveVec.x = Mathf.Cos(dir);
+            moveVec.y = Mathf.Sin(dir);
+            StartCoroutine(SpawnExplosions(transform.position, moveVec, SpawnIts));
+        }
+        
     }
 
+    // 一個由內往外生成explosion的IEnumerator，這個function會被掛在Coroutine上
     public IEnumerator SpawnExplosions(Vector3 position, Vector3 moveVec, int its)
     {
         StartCoroutine(SpawnAndCleanupExplosion(position));
@@ -51,6 +51,8 @@ public class Explode : MonoBehaviour
 
     private static readonly WaitForSeconds waitOneSecond = new WaitForSeconds(1.0f);
     private static readonly WaitForEndOfFrame waitFrame = new WaitForEndOfFrame();
+
+    // 生成、調整動畫和移除explosion的IEnumrator，這個function會被掛在Coroutine上
     public IEnumerator SpawnAndCleanupExplosion(Vector3 position)
     {
         GameObject newObj = Instantiate(
@@ -68,6 +70,7 @@ public class Explode : MonoBehaviour
             yield break; // yield break end this coroutine
         }
 
+        // 讓explosion的gameObject在動畫結束後fade out
         Color spriteColor = sprr.color;
         for(int i = 0; i < 20; i++)
         {

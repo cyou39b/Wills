@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEditor;
 
+// 在遊戲進行中的menu
+
 public class MenuManager : MonoBehaviour
 {
     public GameObject Blur;
@@ -13,9 +15,10 @@ public class MenuManager : MonoBehaviour
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (!OptionMenu.IsBinding)
+            // 不打開menu的條件
+            if (!OptionMenu.IsBinding || MapScenesSwicher.isMapOpening)
             {
-                if (isMenuOpen || MapScenesSwicher.isMapOpening)
+                if (isMenuOpen)
                 {
                     CloseMenu();
                 }

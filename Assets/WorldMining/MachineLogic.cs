@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+// 
+
 public class MachineLogic : MonoBehaviour{
     public GameObject MinePrefab;
     public Sprite[] MineSprites;
     public int TotalMinePerSpawn;
     public List<Vector2> UndetectedMines = new List<Vector2>();
+    // 儲存還沒被detect的ore
     public List<GameObject> DetectedMines = new List<GameObject>();
+    // 儲存已經被detect的ore
     public Text NumMineText;
+
+    // ore可以生成的長方形範圍，用兩個Vector2去標記(不知道為啥是左上右下而不是左下右上)
     public Vector2 ButtomRight;
     public Vector2 TopLeft;
 
@@ -20,7 +26,7 @@ public class MachineLogic : MonoBehaviour{
     public float DetectRangeRadius;
     public float MinableRangeRadius;
 
-    public float NEAREST = 1000000;
+    public float NEAREST = float.PositiveInfinity;
 
     void Start()
     {
@@ -85,6 +91,7 @@ public class MachineLogic : MonoBehaviour{
                 {
                     Destroy(mineObj);
                     GlobalVariables.Instance.NumMines++;
+                    UpdateNumMinesText();
                 }
                 else
                 {
@@ -111,7 +118,6 @@ public class MachineLogic : MonoBehaviour{
             MineNearbySFX.Play();           
         }
         NEAREST = minDistanceToAllMines;
-        UpdateNumMinesText();
     }
 
     public GameObject InstantiateMine(Vector2 minePos)
@@ -137,7 +143,7 @@ public class MachineLogic : MonoBehaviour{
     [ContextMenu("Spawn Mines")]
     void SpawnMines()
     {
-        for(int i=0;i<10;i++){
+        for(int i=0;i<TotalMinePerSpawn;i++){
             float newposx = Random.Range(TopLeft.x,ButtomRight.x);
             float newposy = Random.Range(ButtomRight.y,TopLeft.y);
             Vector2 newPos = new Vector2(newposx,newposy);
