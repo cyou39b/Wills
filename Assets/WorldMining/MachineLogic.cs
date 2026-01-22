@@ -157,8 +157,13 @@ public class MachineLogic : MonoBehaviour{
         DetectedMines.Clear();
     }
 
-    void UpdateNumMinesText()
-    {
+    void UpdateNumMinesText(){
+        if (MenuManager.IsMenuOpen || MapScenesSwicher.isMapOpening){
+            NumMineText.enabled = false;
+        }
+        else{
+            NumMineText.enabled = true;
+        }
         NumMineText.text = $"Mine: {GlobalVariables.Instance.NumMines}";
     }
 }

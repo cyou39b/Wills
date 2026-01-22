@@ -8,14 +8,14 @@ public class MenuManager : MonoBehaviour
     public GameObject MenuScreen;
     public GameObject PauseButton;
     public GameObject CloseMenuButton;
-    private bool isMenuOpen = false;
+    public static bool IsMenuOpen = false;
     void Update()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             if (!OptionMenu.IsBinding)
             {
-                if (isMenuOpen || MapScenesSwicher.isMapOpening)
+                if (IsMenuOpen || MapScenesSwicher.isMapOpening)
                 {
                     CloseMenu();
                 }
@@ -29,7 +29,7 @@ public class MenuManager : MonoBehaviour
 
     public void OpenMenu()
     {
-        isMenuOpen = true;
+        IsMenuOpen = true;
         Time.timeScale = 0.0f;
         Blur.SetActive(true);
         MenuScreen.SetActive(true);
@@ -39,7 +39,7 @@ public class MenuManager : MonoBehaviour
     
     public void CloseMenu()
     {
-        isMenuOpen = false;
+        IsMenuOpen = false;
         Time.timeScale = 1.0f;
         Blur.SetActive(false);
         MenuScreen.SetActive(false);
