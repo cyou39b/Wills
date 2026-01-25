@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class JackMainScene : MonoBehaviour{
-    public float moveSpeed = 5f;
+    public float moveSpeed = 3f;
     public Rigidbody2D rb;
     void Start(){}
 

@@ -16,16 +16,7 @@ public class Gun : MonoBehaviour
         // Do nothing if the game is paused
         if(Time.timeScale == 0.0f){return;}
         
-        fireCoolDownTimer -= Time.deltaTime;
-        if (fireCoolDownTimer <= 0.0f && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            fireCoolDownTimer = FireCoolDown;
-            GunFireAnimation.SetActive(true);
-            GunFireAnimationSpriteRenderer.sprite = GunFireSprites[Random.Range(0, GunFireSprites.Length)];
-            Instantiate(BulletPrefab, transform.position, transform.rotation);
-            StartCoroutine(this.EndGunFireAnimation());
-        }
-
+        // 計算mouse的角度
         Vector2 mousePixelPosition = Mouse.current.position.ReadValue();
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(mousePixelPosition);
         float mouseRot = Mathf.Atan2(
@@ -47,6 +38,21 @@ public class Gun : MonoBehaviour
             0.0f, 
             mouseRot * Mathf.Rad2Deg
         );
+
+        fireCoolDownTimer -= Time.deltaTime; // 如果已經cooldown了
+        if (fireCoolDownTimer <= 0.0f && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            fireCoolDownTimer = FireCoolDown;
+
+            // 發射的小動畫
+            GunFireAnimation.SetActive(true);
+            GunFireAnimationSpriteRenderer.sprite = GunFireSprites[Random.Range(0, GunFireSprites.Length)];
+            StartCoroutine(this.EndGunFireAnimation()); // 把動畫關掉的function
+
+            // 生成一個子彈
+            Instantiate(BulletPrefab, transform.position, transform.rotation);
+        }
+
     }
 
     private static readonly WaitForSeconds EndGunFireAnimationWS = new WaitForSeconds(0.09f);

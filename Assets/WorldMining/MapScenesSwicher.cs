@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+// 控制map的script
+
 public class MapScenesSwicher : MonoBehaviour{
     public GameObject Map;
     public GameObject MapButtom;

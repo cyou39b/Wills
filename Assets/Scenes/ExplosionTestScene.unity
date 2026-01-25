@@ -171,8 +171,8 @@ MonoBehaviour:
   - {fileID: 6874850712683192069, guid: c46d6a7f4315e1245b6975be113d205a, type: 3}
   - {fileID: 6874850712683192069, guid: c46d6a7f4315e1245b6975be113d205a, type: 3}
   - {fileID: 8467481519077465594, guid: 4e51a9f18e9f025448af59b2997a013e, type: 3}
-  SpawnIts: 10
-  SpawnNum: 60
+  SpawnIts: 9
+  SpawnNum: 30
   SpawnCoolDown: 0.11
 --- !u!1 &519420028
 GameObject:
