@@ -13,7 +13,7 @@ public class Wills : MonoBehaviour
     public SpriteRenderer SpRerr;
 
     public GameObject HpBarPrefab;
-    public HPBar HpBar;
+    private HPBar HpBar;
     void Start()
     {
         // initialize wills 的HP Bar
@@ -22,10 +22,16 @@ public class Wills : MonoBehaviour
         {
             Debug.LogErrorFormat("Failed to get HPBar component from gameObject created for GameObject named {}.", this.name);
         }
-        HpBar.Followee = gameObject;
-        HpBar.Offset = new Vector3(0f, 1.2f, 0f);
-        HpBar.SetMaxHP(100.0f);
-        HpBar.SetHP(100.0f);
+        else
+        {
+            HpBar.Followee = gameObject;
+            HpBar.Offset = new Vector3(0f, 1.2f, 0f);
+            HpBar.SetMaxHP(40.0f);
+            HpBar.SetHP(40.0f);
+            #if UNITY_EDITOR
+            HpBar.name = string.Format("{0} - HPBar", this.name);
+            #endif
+        }
     }
 
     void FixedUpdate()
@@ -85,8 +91,7 @@ public class Wills : MonoBehaviour
             HpBar.SetHP(HpBar.HP - 10);
             if(HpBar.HP <= 0)
             {
-                Destroy(HpBar.gameObject);
-                Destroy(gameObject);
+                WhenHPLEZero();
                 return;
             }
 
@@ -96,5 +101,36 @@ public class Wills : MonoBehaviour
             pushForce.y *= yForceModify;
             Rgd.AddForce(pushForce);
         }
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.CompareTag("Field"))
+        {
+            WhenOutOfField();
+            return;
+        }
+    }
+
+    public void WhenHPLEZero()
+    {
+        Explode.ExplodePosition = transform.position;
+        Destroy(HpBar.gameObject);
+        Destroy(gameObject);
+    }
+
+    public void WhenOutOfField()
+    {
+        // if(transform.position.y >= 0.0f)
+        // {
+        //     Debug.Log("Wills1 go out of field");
+        // }
+        // else
+        // {
+        //     Debug.LogFormat("Wills1 go out of field but it's y is somehow {0}", transform.position.y);
+        // }
+
+        Destroy(HpBar.gameObject);
+        Destroy(gameObject);
     }
 }

@@ -10,29 +10,32 @@ public class MenuManager : MonoBehaviour
     public GameObject MenuScreen;
     public GameObject PauseButton;
     public GameObject CloseMenuButton;
+    private float timeScaleBefaorePause;
     public static bool IsMenuOpen = false;
     void Update()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             // 不打開menu的條件
-            if (!OptionMenu.IsBinding || MapScenesSwicher.isMapOpening)
+            if (IsMenuOpen)
             {
-                if (IsMenuOpen || MapScenesSwicher.isMapOpening)
-                {
-                    CloseMenu();
-                }
-                else
-                {
-                    OpenMenu();
-                }
+                CloseMenu();
+            }
+            else
+            {
+                OpenMenu();
             }
         }
     }
 
     public void OpenMenu()
     {
+        if( OptionMenu.IsBinding || 
+            MapScenesSwicher.isMapOpening || 
+            DeathManager.Activated)
+            {return;}
         IsMenuOpen = true;
+        timeScaleBefaorePause = Time.timeScale;
         Time.timeScale = 0.0f;
         Blur.SetActive(true);
         MenuScreen.SetActive(true);
@@ -42,8 +45,12 @@ public class MenuManager : MonoBehaviour
     
     public void CloseMenu()
     {
+        if( OptionMenu.IsBinding || 
+            MapScenesSwicher.isMapOpening || 
+            DeathManager.Activated)
+            {return;}
         IsMenuOpen = false;
-        Time.timeScale = 1.0f;
+        Time.timeScale = timeScaleBefaorePause ;
         Blur.SetActive(false);
         MenuScreen.SetActive(false);
         PauseButton.SetActive(true);

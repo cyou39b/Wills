@@ -1,7 +1,9 @@
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 // 
 
@@ -18,6 +20,8 @@ public class MachineLogic : MonoBehaviour{
     // ore可以生成的長方形範圍，用兩個Vector2去標記(不知道為啥是左上右下而不是左下右上)
     public Vector2 ButtomRight;
     public Vector2 TopLeft;
+    public Rect[] Rects;
+    public RectRandom RectRandomMachine;
 
     public AudioSource MineNearbySFX;
     public float PlayMineNearbySFXRangeRadius;
@@ -30,6 +34,7 @@ public class MachineLogic : MonoBehaviour{
 
     void Start()
     {
+        RectRandomMachine = new RectRandom(Rects);
         SpawnMines();
         UpdateNumMinesText();
     }
@@ -45,7 +50,7 @@ public class MachineLogic : MonoBehaviour{
 
         float minDistanceToAllMines = float.PositiveInfinity;
 
-        if (Keyboard.current[GlobalVariables.Instance.FindMine].wasPressedThisFrame)
+        if (Keyboard.current[GlobalVariables.Instance.FindMineKey].wasPressedThisFrame)
         {
             List<Vector2> undetectedMinesAfterDetection = new List<Vector2>();
             foreach (Vector2 minePos in UndetectedMines)
@@ -78,7 +83,7 @@ public class MachineLogic : MonoBehaviour{
 
         }
 
-        if (Keyboard.current[GlobalVariables.Instance.PickUpMine].wasPressedThisFrame)
+        if (Keyboard.current[GlobalVariables.Instance.PickUpMineKey].wasPressedThisFrame)
         {
             List<GameObject> detectedMinesAfterPickup = new List<GameObject>();
             foreach (GameObject mineObj in DetectedMines)
@@ -118,7 +123,6 @@ public class MachineLogic : MonoBehaviour{
             MineNearbySFX.Play();           
         }
         NEAREST = minDistanceToAllMines;
-        UpdateNumMinesText();
     }
 
     public GameObject InstantiateMine(Vector2 minePos)
@@ -144,11 +148,9 @@ public class MachineLogic : MonoBehaviour{
     [ContextMenu("Spawn Mines")]
     void SpawnMines()
     {
-        for(int i=0;i<TotalMinePerSpawn;i++){
-            float newposx = Random.Range(TopLeft.x,ButtomRight.x);
-            float newposy = Random.Range(ButtomRight.y,TopLeft.y);
-            Vector2 newPos = new Vector2(newposx,newposy);
-            UndetectedMines.Add(newPos);
+        for(int i = 0; i < TotalMinePerSpawn; i++)
+        {
+            UndetectedMines.Add(RectRandomMachine.GetPoint());
         }
     }
 
@@ -164,7 +166,8 @@ public class MachineLogic : MonoBehaviour{
         DetectedMines.Clear();
     }
 
-    void UpdateNumMinesText(){
+    void UpdateNumMinesText()
+    {
         if (MenuManager.IsMenuOpen || MapScenesSwicher.isMapOpening){
             NumMineText.enabled = false;
         }
@@ -172,5 +175,53 @@ public class MachineLogic : MonoBehaviour{
             NumMineText.enabled = true;
         }
         NumMineText.text = $"Mine: {GlobalVariables.Instance.NumMines}";
+    }
+}
+
+public class RectRandom
+{
+    private Rect[] rects;
+    private float[] areas;
+    private float totalArea;
+
+    public RectRandom(Rect[] _rects) 
+    {
+        if(_rects.Length == 0)
+        {
+            throw new ArgumentException("argument shouldn't be empty", "_rects");
+        }
+
+        totalArea = 0.0f;
+        rects = _rects;
+        
+        areas = new float[_rects.Length];
+        for(int i=0;i<_rects.Length;i++)
+        {
+            float area = Mathf.Abs(_rects[i].size.x * _rects[i].size.y);
+            totalArea += area;
+            areas[i] = area;
+        }
+    }
+
+    public Vector2 GetPoint()
+    {
+        float w = Random.Range(0.0f, totalArea);
+        for(int i=0;i<areas.Length;i++)
+        {
+            if(w<=areas[i])
+            {
+                return new Vector2(
+                    Random.Range(rects[i].xMin, rects[i].xMax),
+                    Random.Range(rects[i].yMin, rects[i].yMax)
+                );
+            }
+            w -= areas[i];
+        }
+
+        Debug.Log("Something went wrong with floating point arithmetic but this should be fine...?");
+        return new Vector2(
+            Random.Range(rects[0].xMin, rects[0].xMax),
+            Random.Range(rects[0].yMin, rects[0].yMax)
+        );
     }
 }

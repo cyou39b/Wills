@@ -7,8 +7,9 @@ public class HPBar : MonoBehaviour
     public RectTransform GreenTrans; // Transform of the green part of the HP bar
     public GameObject Followee; // GameObject to follow
     public Vector3 Offset; // Offset from the followee's transform.positoin
-    public Rigidbody2D Rgd;
-    public float ForceModify;
+    // public Rigidbody2D Rgd;
+    public Vector3 Velocity;
+    public float SmoothTime;
 
     public float HP;
     public float MaxHP;
@@ -38,6 +39,11 @@ public class HPBar : MonoBehaviour
     public void FixedUpdate()
     {
         // Add a force toward followee
-        Rgd.AddForce(ForceModify * (Followee.transform.position + Offset - transform.position));
+        transform.position = Vector3.SmoothDamp(
+            transform.position,
+            Followee.transform.position + Offset,
+            ref Velocity,
+            SmoothTime
+        );
     }
 }

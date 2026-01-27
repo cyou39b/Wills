@@ -194,7 +194,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4926918629123787233}
   - component: {fileID: 5605392053762897168}
-  - component: {fileID: 8413417276189612951}
   m_Layer: 0
   m_Name: HP Bar
   m_TagString: Untagged
@@ -234,34 +233,7 @@ MonoBehaviour:
   GreenTrans: {fileID: 2087345185495307125}
   Followee: {fileID: 0}
   Offset: {x: 0, y: 0, z: 0}
-  Rgd: {fileID: 8413417276189612951}
-  ForceModify: 100
+  Velocity: {x: 0, y: 0, z: 0}
+  SmoothTime: 0.1
   HP: 0
   MaxHP: 0
---- !u!50 &8413417276189612951
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7012469317006889741}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.5
-  m_LinearDamping: 3.4
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 0

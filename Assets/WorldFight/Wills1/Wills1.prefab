@@ -72,7 +72,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96ea4fd108d36d44aaba6bad132c14f7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -121,14 +121,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Wills
   Anmor: {fileID: 447263467092522632}
-  xForceModify: 0
-  yForceModify: 0
-  MoveForce: 0
+  xForceModify: 100
+  yForceModify: 1250
+  MoveForce: 30
   Rgd: {fileID: 8509144427956929406}
   SpRerr: {fileID: 2292231052398863805}
-  Green: {fileID: 0}
-  GreenTransform: {fileID: 0}
-  HP: 100
+  HpBarPrefab: {fileID: 7012469317006889741, guid: aeaa31a668b0bb540a33b5b1508e6bbf, type: 3}
+  HpBar: {fileID: 0}
 --- !u!1 &5263319498312172273
 GameObject:
   m_ObjectHideFlags: 0

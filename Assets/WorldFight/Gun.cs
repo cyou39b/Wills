@@ -15,7 +15,8 @@ public class Gun : MonoBehaviour
     {
         // Do nothing if the game is paused
         if(Time.timeScale == 0.0f){return;}
-        
+        if(Explode.Activated){return;}
+
         // 計算mouse的角度
         Vector2 mousePixelPosition = Mouse.current.position.ReadValue();
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(mousePixelPosition);
@@ -24,7 +25,7 @@ public class Gun : MonoBehaviour
             mousePosition.x-transform.position.x
         );
 
-        if(mouseRot <= GlobalVariables.HalfPI && mouseRot >= GlobalVariables.HalfNPI)
+        if(mouseRot <= MathUtil.HalfPI && mouseRot >= MathUtil.HalfNPI)
         {
             Sprerr.flipY = false;
         }
@@ -50,7 +51,19 @@ public class Gun : MonoBehaviour
             StartCoroutine(this.EndGunFireAnimation()); // 把動畫關掉的function
 
             // 生成一個子彈
-            Instantiate(BulletPrefab, transform.position, transform.rotation);
+            GameObject newObj = Instantiate(BulletPrefab, transform.position, transform.rotation);
+            SpriteRenderer newObjSR;
+            if(!newObj.TryGetComponent<SpriteRenderer>(out newObjSR))
+            {
+                Debug.LogWarning("Bullet doesn't have a Sprite Renderer");
+            }
+            else
+            {
+                if(colliderCount != 0)
+                {
+                    newObjSR.color = Color.clear;
+                }
+            }
         }
 
     }
@@ -60,5 +73,23 @@ public class Gun : MonoBehaviour
     {
         yield return EndGunFireAnimationWS;
         GunFireAnimation.SetActive(false);
+    }
+
+    private int colliderCount = 0;
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.isTrigger)
+        {
+            colliderCount++;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!collision.isTrigger)
+        {
+            colliderCount--;
+        }
+        
     }
 }
