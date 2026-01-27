@@ -11,12 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WorldMining.unity
     guid: b6eda1807a7548d4c8bac0bf5b7cfecd
-  - enabled: 0
-    path: Assets/Scenes/MiningMap.unity
-    guid: e9910365fa3c69a4ba4ff4e3998a88da
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 7539c4c857e2d704ea04a32a12770c33
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 3ce4a13f3f6672340a1ed7c00f12a2d5
+  - enabled: 1
+    path: Assets/Scenes/WorldFight.unity
+    guid: 952806412ae43de43859224234fe738c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

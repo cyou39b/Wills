@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class JackMainScene : MonoBehaviour{
-    public float moveSpeed = 3f;
+    public float moveSpeed = 5.0f;
     public Rigidbody2D rb;
     void Start(){}
 
@@ -22,8 +22,7 @@ public class JackMainScene : MonoBehaviour{
         else if (Keyboard.current[GlobalVariables.Instance.MoveLeftKey].isPressed){
             rb.linearVelocityX = -moveSpeed;
         }
-        else{
+        else
             rb.linearVelocityX = 0f;
         }
-    }
 }
