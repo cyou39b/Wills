@@ -23,10 +23,10 @@ public class FindMine : MonoBehaviour{
         {
             IsDetect = false;
         }
-        if (Keyboard.current[GlobalVariables.Instance.FindMine].wasPressedThisFrame && Dis < 2f){
+        if (Keyboard.current[GlobalVariables.Instance.FindMineKey].wasPressedThisFrame && Dis < 2f){
             sr.enabled = true;
         }
-        if (Dis < MinableRange && Keyboard.current[GlobalVariables.Instance.PickUpMine].wasPressedThisFrame && sr.enabled == true){
+        if (Dis < MinableRange && Keyboard.current[GlobalVariables.Instance.PickUpMineKey].wasPressedThisFrame && sr.enabled == true){
             GlobalVariables.Instance.NumMines++;
             Destroy(gameObject);
         }

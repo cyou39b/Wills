@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1432707537822900503}
   - component: {fileID: 1767670548164451393}
   - component: {fileID: 7188205616813677146}
-  - component: {fileID: 2468768707808355602}
   - component: {fileID: 3151527485709832683}
+  - component: {fileID: 2468768707808355602}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Bullet
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.9449, y: -2.6059, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,10 +52,9 @@ MonoBehaviour:
   - {fileID: 1757937406519661826, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
   - {fileID: 7431529995326980795, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
   - {fileID: -3543048863620948104, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
-  BulletSpriteRenderer: {fileID: 2468768707808355602}
-  Rgd: {fileID: 3151527485709832683}
-  MoveSpeed: 10
-  InitialDistance: 0.1
+  BulletEffectPrefab: {fileID: 4135009946272690, guid: 7c1ed949817aa3840adf916682eac02b, type: 3}
+  MoveSpeed: 20
+  InitialDistance: 0.095
 --- !u!61 &7188205616813677146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -102,6 +101,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.65, y: 0.94}
   m_EdgeRadius: 0
+--- !u!50 &3151527485709832683
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738892040180884762}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!212 &2468768707808355602
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -160,30 +186,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &3151527485709832683
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738892040180884762}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 1
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0

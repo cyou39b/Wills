@@ -1,38 +1,54 @@
+using System.Collections;
 using UnityEngine;
 // Bullet上的Script
 
 public class Bullet : MonoBehaviour
 {    
+    private SpriteRenderer spRerr;
     public Sprite[] BulletSprites; // Bullet所有可能的Sprite，在Inspector中調整
-    public SpriteRenderer BulletSpriteRenderer;
-    
-    public Rigidbody2D Rgd;
+
+    public GameObject BulletEffectPrefab;
+
+    private Rigidbody2D rb;
+
     public float MoveSpeed;
     public float InitialDistance; // 在Bullet被創造時調整position的距離值
-    private float dx, dy;
-    private Vector2 dPos;
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+
         // 隨機選擇一個Sprite
-        BulletSpriteRenderer.sprite = BulletSprites[Random.Range(0, BulletSprites.Length)];
+        spRerr = GetComponent<SpriteRenderer>();
+        spRerr.sprite = BulletSprites[Random.Range(0, BulletSprites.Length)];
 
         // 計算Bullet的移動方向
         float rot = transform.rotation.eulerAngles.z;
-        dx = Mathf.Cos(rot * Mathf.Deg2Rad) * MoveSpeed;
-        dy = Mathf.Sin(rot * Mathf.Deg2Rad) * MoveSpeed;
-        dPos = new Vector2(dx, dy);
+        float dx = Mathf.Cos(rot * Mathf.Deg2Rad) * MoveSpeed;
+        float dy = Mathf.Sin(rot * Mathf.Deg2Rad) * MoveSpeed;
+        Vector2 dPos = new Vector2(dx, dy);
         transform.position += new Vector3(dx * InitialDistance, dy*InitialDistance, 0.0f);
         
         // 設定這個Bullet的速度
-        Rgd.linearVelocity = dPos;
+        rb.linearVelocity = dPos;
     }
-    void FixedUpdate()
+
+    private bool spawnEffectActivated = false;
+    public void SpawnEffects(int num)
     {
-        // 如果這個Bullet跑到畫面外就把這個Bullet destroy
-        if(transform.position.x < -15.0f || transform.position.x > 15.0f || transform.position.y > 6.0f)
+        if(spawnEffectActivated){return;}
+        spawnEffectActivated = true;
+        for(int i = 0; i < num; i++)
         {
-            Destroy(gameObject);
-            return;
+            Vector2 randPoint = MathUtil.RandomPointInCircle(
+                transform.position,
+                0.4f
+            );
+
+            Instantiate(
+                BulletEffectPrefab,
+                MathUtil.Vector2ToVecotr3(randPoint, transform.position.z),
+                transform.rotation
+            );
         }
     }
 
@@ -41,15 +57,28 @@ public class Bullet : MonoBehaviour
     {
         GameObject colliderGameObject = collision.collider.gameObject;
 
-        if (colliderGameObject.layer == GlobalVariables.GroundLayer)
+        if (colliderGameObject.layer == GlobalVariables.GroundLayer || colliderGameObject.layer == GlobalVariables.WallLayer)
         {
+            SpawnEffects(3);
             Destroy(gameObject);
+            return;
         }
 
         if(colliderGameObject.layer == GlobalVariables.EnemyLayer)
         {
+            SpawnEffects(3);
             Destroy(gameObject);
+            return;
         }
     }
 
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Field"))
+        {
+            SpawnEffects(3);
+            Destroy(gameObject);
+            return;
+        }
+    }
 }
