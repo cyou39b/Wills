@@ -9,8 +9,14 @@ public class MouseInteract : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     public AudioSource WhooshSFX;
     public Text txt;
-    private static readonly Color hoveredColor = new Color(200.0f/255.5f, 200.0f/255.5f, 200.0f/255.5f);
-    private static readonly Color normalColor = new Color(26/255.5f, 26/255.5f, 26/255.5f);
+    private static readonly Color hoveredColor = new Color(0.0207f, 0.6969f, 1.0f);
+    private static readonly Color normalColor = new Color(0.6622f, 0.8959f, 1.0f);
+
+    public void Start()
+    {
+        txt.color = normalColor;
+    }
+ 
     public void OnPointerEnter(PointerEventData ed)
     {
         WhooshSFX.Play();

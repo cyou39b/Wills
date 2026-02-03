@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 // This class stores global variables, uses Singleton design pattern.
 // To get/set a variable: use "GlobalVariables.Instace.<FieldName>".
@@ -26,8 +27,30 @@ public class GlobalVariables : MonoBehaviour
             Debug.Log("Global Instance created");
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
+            SceneManager.activeSceneChanged += OnSceneChange;
+            QualitySettings.antiAliasing = 0;
             QualitySettings.vSyncCount = 0; // Disable VSync to use targetFrameRate
             Application.targetFrameRate = GlobalVariables.Instance.FrameRate;
+        }
+
+    }
+
+    public void OnSceneChange(Scene prev, Scene curr)
+    {
+        string currSceneName = curr.name;
+        switch(currSceneName)
+        {
+            case "MainMenu":
+            case "MainScene":
+            case "WorldMining":
+                QualitySettings.antiAliasing = 0;
+                break;
+            case "WorldFight":
+                QualitySettings.antiAliasing = 1;
+                break;
+            default:
+                Debug.LogWarning("OnSceneChange: unknown scene loaded.");
+                break;
         }
     }
 
@@ -42,7 +65,7 @@ public class GlobalVariables : MonoBehaviour
     public Key AttackKey = Key.L;
     public Key UpKey = Key.W;
     public Key DownKey = Key.S;
-    public Key PickUpMineKey = Key.P;
+    public Key PickUpMineKey => InteractKey;
     public Key FindMineKey = Key.N;
 
 

@@ -11,13 +11,13 @@ public class MapScenesSwicher : MonoBehaviour{
     void Start(){}
 
     void Update(){
-        if (Keyboard.current.mKey.wasPressedThisFrame &&  MenuManager.IsMenuOpen == false){
+        if (Keyboard.current.mKey.wasPressedThisFrame && MenuManager.IsMenuOpen == false){
             LoadMap();
         }
         if(Map.activeSelf && Keyboard.current.escapeKey.wasPressedThisFrame){
             CloseMap();
         }
-        if (MenuManager.IsMenuOpen){
+        if (MenuManager.IsMenuOpen || isMapOpening){
             MapButtom.SetActive(false);
         }
         else{

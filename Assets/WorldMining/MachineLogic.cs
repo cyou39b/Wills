@@ -169,7 +169,7 @@ public class MachineLogic : MonoBehaviour{
 
     void UpdateNumMinesText()
     {
-        if (MenuManager.IsMenuOpen || MapScenesSwicher.isMapOpening){
+        if (MenuManager.IsMenuOpen){
             NumMineText.enabled = false;
         }
         else{

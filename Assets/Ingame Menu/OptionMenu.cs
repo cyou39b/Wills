@@ -14,6 +14,7 @@ public class OptionMenu : MonoBehaviour
     public Text LeftKeyText;
     public Text RightKeyText;
     public Text InteractKeyText;
+    public Text FindMineText;
     void Start()
     {
         // 寫好按鈕上預設的字
@@ -21,6 +22,7 @@ public class OptionMenu : MonoBehaviour
         LeftKeyText.text = GlobalVariables.Instance.MoveLeftKey.ToString();
         RightKeyText.text = GlobalVariables.Instance.MoveRightKey.ToString();
         InteractKeyText.text = GlobalVariables.Instance.InteractKey.ToString();
+        FindMineText.text = GlobalVariables.Instance.FindMineKey.ToString();
     }
 
 // ---- 下面是給不同按鈕的callback function -------
@@ -55,6 +57,14 @@ public class OptionMenu : MonoBehaviour
         StartCoroutine(BindKey((k)=>{
             GlobalVariables.Instance.JumpKey = k;
             JumpKeyText.text = k.ToString();
+            BindingBlur.SetActive(false);
+        }));
+    }
+    public void BindFindMineKey()
+    {
+        StartCoroutine(BindKey((k)=>{
+            GlobalVariables.Instance.FindMineKey = k;
+            FindMineText.text = k.ToString();
             BindingBlur.SetActive(false);
         }));
     }
