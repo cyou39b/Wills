@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour{
     DialogueData current = null;
     public GameObject Menu;
     int index = 0;
+    public Button Option1;
+    public Button Option2;
     void Awake(){
         if(Instance == null){
             Instance = this;
@@ -34,6 +36,11 @@ public class DialogueManager : MonoBehaviour{
         DialoguePanel.SetActive(true);
     }
     public void NextLine(){
+        Option1.gameObject.SetActive(false);
+        Option2.gameObject.SetActive(false);
+        GoNextLine.gameObject.SetActive(true);
+        Option1.onClick.RemoveAllListeners();
+        Option2.onClick.RemoveAllListeners();
         index++;
         if(index >= current.lines.Count){
             EndDialogue();
@@ -42,6 +49,20 @@ public class DialogueManager : MonoBehaviour{
         else{
             Dialogue.text = current.lines[index].content;
             Speaker.text = current.lines[index].speaker;
+        }
+        if(!string.IsNullOrEmpty(current.lines[index].optionText1)){
+            if(Option1.transform.Find("Text1").TryGetComponent<Text>(out Text txt1)){
+                txt1.text = current.lines[index].optionText1;
+                Option1.gameObject.SetActive(true);
+                
+            }
+            if(!string.IsNullOrEmpty(current.lines[index].optionText2)){
+                if(Option2.transform.Find("Text2").TryGetComponent<Text>(out Text txt2)){
+                    txt2.text = current.lines[index].optionText2;
+                    Option2.gameObject.SetActive(true);
+                }
+            }
+            GoNextLine.gameObject.SetActive(false);
         }
     }
     public void EndDialogue(){

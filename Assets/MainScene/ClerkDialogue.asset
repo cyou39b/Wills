@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896d201a7d3a38441965e02d40e00b97, type: 3}
   m_Name: ClerkDialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
-  text:
-  - 'test
-
-    text'
-  - ???
+  lines:
+  - speaker: Clerk
+    content: ??
+    optionText1: 
+    optionText2: 
+  - speaker: Clerk
+    content: 123456
+    optionText1: Leave
+    optionText2: Open the shop

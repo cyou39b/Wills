@@ -41,21 +41,37 @@ public class JackMainScene : MonoBehaviour{
     }
         
     void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.TryGetComponent<IInteract>(out IInteract interact)){
-            inRange.Add(interact);
+        if(other.gameObject.CompareTag("Interact")){
+            if(other.gameObject.TryGetComponent<IInteract>(out IInteract interact)){
+                inRange.Add(interact);
+            }
+            Button1.gameObject.SetActive(true);
+            if(inRange.Count > 1){
+                Button2.gameObject.SetActive(true);
+            }
+            FindClosestAndCloser();
         }
-        Button1.gameObject.SetActive(true);
-        if(inRange.Count > 1){
-            Button2.gameObject.SetActive(true);
-        }
-        FindClosestAndCloser();
     }
     void OnTriggerExit2D(Collider2D other){
-        if(other.gameObject.TryGetComponent<IInteract>(out IInteract interact)){
-            inRange.Remove(interact);
+        if(other.gameObject.CompareTag("Interact")){
+            if(other.gameObject.TryGetComponent<IInteract>(out IInteract interact)){
+                inRange.Remove(interact);
+            }
+            if(inRange.Count >=1){
+                FindClosestAndCloser();
+            }
+            switch(inRange.Count){
+                case 1 :
+                    Button2.gameObject.SetActive(false);
+                    break;
+                case 0 :
+                    Button1.gameObject.SetActive(false); // (sometimes)MissingReference will be thrown but don't affect during game
+                    Button2.gameObject.SetActive(false);
+                    break;
+                default:
+                    break;
+            }
         }
-        Button2.gameObject.SetActive(false); // (sometimes)MissingReference will be thrown but didn't affect during game
-        Button1.gameObject.SetActive(false); // Fix
     }
     void FindClosestAndCloser(){
         Button1.onClick.RemoveAllListeners();

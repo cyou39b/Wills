@@ -5,7 +5,9 @@ public class JackMining : MonoBehaviour{
     public float moveSpeed = 5f;
     public GameObject Map;
     public Rigidbody2D rb;
-    void Start(){}
+    void Start(){
+        gameObject.transform.position = new Vector3(-6.5f,-18f,0f);
+    }
     void Update(){
         if(!Map.activeSelf){
             if (Keyboard.current[GlobalVariables.Instance.UpKey].isPressed){

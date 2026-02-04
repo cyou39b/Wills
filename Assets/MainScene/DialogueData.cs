@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,4 +12,12 @@ public class DialogueLine{
     public string speaker;
     [TextArea(1,5)]
     public string content;
+    public string optionText1;
+    public string optionText2;
+    /*public Action GetOption1OnClick(Action method){
+        return method;
+    }
+    public Action GetOption2OnClick(Action method){
+        return method;
+    }*/
 }

@@ -8,6 +8,9 @@ TagManager:
   - Wills
   - Bullet
   - Field
+  - Interact
+  - WorldMining
+  - MainScene
   layers:
   - Default
   - TransparentFX
