@@ -1,7 +1,6 @@
 using UnityEditor;
-using UnityEditor.IMGUI.Controls;
+using UnityEditor.Build.Player;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [CustomEditor(typeof(MachineLogic))]
 public class MachineLogic_Inspector : Editor

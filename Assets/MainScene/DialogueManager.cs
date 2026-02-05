@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour{
     int index = 0;
     public Button Option1;
     public Button Option2;
+    public GameObject Shop;
     void Awake(){
         if(Instance == null){
             Instance = this;
@@ -38,9 +39,12 @@ public class DialogueManager : MonoBehaviour{
     public void NextLine(){
         Option1.gameObject.SetActive(false);
         Option2.gameObject.SetActive(false);
+
         GoNextLine.gameObject.SetActive(true);
+        
         Option1.onClick.RemoveAllListeners();
         Option2.onClick.RemoveAllListeners();
+
         index++;
         if(index >= current.lines.Count){
             EndDialogue();
@@ -54,12 +58,15 @@ public class DialogueManager : MonoBehaviour{
             if(Option1.transform.Find("Text1").TryGetComponent<Text>(out Text txt1)){
                 txt1.text = current.lines[index].optionText1;
                 Option1.gameObject.SetActive(true);
-                
+                Option1.onClick.AddListener(() =>
+                ExecuteCommand(current.lines[index].option1Command));
             }
             if(!string.IsNullOrEmpty(current.lines[index].optionText2)){
                 if(Option2.transform.Find("Text2").TryGetComponent<Text>(out Text txt2)){
                     txt2.text = current.lines[index].optionText2;
                     Option2.gameObject.SetActive(true);
+                    Option2.onClick.AddListener(() =>
+                    ExecuteCommand(current.lines[index].option2Command));
                 }
             }
             GoNextLine.gameObject.SetActive(false);
@@ -71,5 +78,19 @@ public class DialogueManager : MonoBehaviour{
         Menu.SetActive(true);
         Time.timeScale = timeScaleBeforeDialogeStart;
         current = null;
+    }
+    void ExecuteCommand(DialogueCommand cmd){
+        switch (cmd){
+            case DialogueCommand.none:
+                NextLine();
+                break;
+            case DialogueCommand.End:
+                EndDialogue();
+                break;
+            case DialogueCommand.OpenShop:
+                Shop.SetActive(true);
+                EndDialogue();
+                break;
+        }
     }
 }

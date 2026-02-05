@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,16 +7,17 @@ public class DialogueData : ScriptableObject{
 }
 
 [System.Serializable]
-public class DialogueLine{
+public class DialogueLine{ 
     public string speaker;
     [TextArea(1,5)]
     public string content;
     public string optionText1;
+    public DialogueCommand option1Command;
     public string optionText2;
-    /*public Action GetOption1OnClick(Action method){
-        return method;
-    }
-    public Action GetOption2OnClick(Action method){
-        return method;
-    }*/
+    public DialogueCommand option2Command;
+}
+public enum DialogueCommand{
+    none,
+    OpenShop,
+    End
 }

@@ -15,5 +15,13 @@ MonoBehaviour:
   lines:
   - speaker: NPC
     content: 12345
+    optionText1: 
+    option1Command: 0
+    optionText2: 
+    option2Command: 0
   - speaker: Player
     content: 456
+    optionText1: 
+    option1Command: 0
+    optionText2: 
+    option2Command: 0

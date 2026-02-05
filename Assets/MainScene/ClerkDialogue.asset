@@ -16,8 +16,12 @@ MonoBehaviour:
   - speaker: Clerk
     content: ??
     optionText1: 
+    option1Command: 0
     optionText2: 
+    option2Command: 0
   - speaker: Clerk
     content: 123456
     optionText1: Leave
+    option1Command: 2
     optionText2: Open the shop
+    option2Command: 1

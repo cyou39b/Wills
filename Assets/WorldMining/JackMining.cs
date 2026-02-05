@@ -6,7 +6,7 @@ public class JackMining : MonoBehaviour{
     public GameObject Map;
     public Rigidbody2D rb;
     void Start(){
-        gameObject.transform.position = new Vector3(-6.5f,-18f,0f);
+        gameObject.transform.position = new Vector3(85.0f,25.0f,0f);
     }
     void Update(){
         if(!Map.activeSelf){

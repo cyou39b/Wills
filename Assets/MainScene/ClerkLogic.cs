@@ -5,9 +5,7 @@ using UnityEngine;
 public class ClerkLogic : MonoBehaviour,IInteract{
     [SerializeField]DialogueData talkToClerk;
     public GameObject Shop;
-    void Start(){
-        ClerkOption1.Add(1,Line1OnOption1Click);
-    }
+    void Start(){}
     void Update(){}
     public string WriteInteractText() => "Clerk";
     public void OnButtonClick(){
@@ -20,6 +18,4 @@ public class ClerkLogic : MonoBehaviour,IInteract{
         Shop.SetActive(true);
         DialogueManager.Instance.EndDialogue();
     }
-    public static Dictionary<int,Action> ClerkOption1 = new Dictionary<int, Action>{};
-    public static Dictionary<int,Action> ClerkOption2 = new Dictionary<int, Action>{};
 }
