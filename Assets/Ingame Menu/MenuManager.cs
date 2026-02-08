@@ -10,8 +10,20 @@ public class MenuManager : MonoBehaviour
     public GameObject MenuScreen;
     public GameObject PauseButton;
     public GameObject CloseMenuButton;
+
     private float timeScaleBefaorePause;
     public static bool IsMenuOpen = false;
+
+    public void Awake()
+    {
+        // By making these GameObjects actived and then deactive them on awake
+        // can bring the initialize work forward to load scene, and reduce lag
+        // when opening menu the first time.
+        Blur.SetActive(false);
+        MenuScreen.SetActive(false);
+        CloseMenuButton.SetActive(false);
+    }
+
     void Update()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)

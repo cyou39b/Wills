@@ -1,0 +1,548 @@
+fileFormatVersion: 2
+guid: c0643a9fde0fe3a4998e754abc72d617
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8203989370790601636
+    second: flyerwing-b_0
+  - first:
+      213: -552182176808139742
+    second: flyerwing-b_1
+  - first:
+      213: 7802756201905728841
+    second: flyerwing-b_2
+  - first:
+      213: -393651065948259900
+    second: flyerwing-b_3
+  - first:
+      213: 1957011049713730151
+    second: flyerwing-b_4
+  - first:
+      213: 7043344186726259589
+    second: flyerwing-b_5
+  - first:
+      213: -8352651448950963829
+    second: flyerwing-b_6
+  - first:
+      213: -149547087094080601
+    second: flyerwing-b_7
+  - first:
+      213: -8244707279103872272
+    second: flyerwing-b_8
+  - first:
+      213: -3690920426936726789
+    second: flyerwing-b_9
+  - first:
+      213: 4754269355802264045
+    second: flyerwing-b_10
+  - first:
+      213: -4520948744242955109
+    second: flyerwing-b_11
+  - first:
+      213: -8879573566121496611
+    second: flyerwing-b_12
+  - first:
+      213: 3698815934672967257
+    second: flyerwing-b_13
+  - first:
+      213: 3242384945308139288
+    second: flyerwing-b_14
+  - first:
+      213: -8792665992484679288
+    second: flyerwing-b_15
+  - first:
+      213: 7017259411967992463
+    second: flyerwing-b_16
+  - first:
+      213: -3669064235133637308
+    second: flyerwing-b_17
+  - first:
+      213: -2033384677220271119
+    second: flyerwing-b_18
+  - first:
+      213: 7380031391570460145
+    second: flyerwing-b_19
+  - first:
+      213: 5618762689970656608
+    second: flyerwing-b_20
+  - first:
+      213: -6798764610442373009
+    second: flyerwing-b_21
+  - first:
+      213: 4950466984135352745
+    second: flyerwing-b_22
+  - first:
+      213: 191660026796127430
+    second: flyerwing-b_23
+  - first:
+      213: 3903542924781989065
+    second: flyerwing-b_24
+  - first:
+      213: 8584621088798577330
+    second: flyerwing-b_25
+  - first:
+      213: -4676836431294995007
+    second: flyerwing-b_26
+  - first:
+      213: -2821893245823165067
+    second: flyerwing-b_27
+  - first:
+      213: -668009798338503750
+    second: flyerwing-b_28
+  - first:
+      213: 7816064728111133490
+    second: flyerwing-b_29
+  - first:
+      213: 400648106541974705
+    second: flyerwing-b_30
+  - first:
+      213: 2004154751230780281
+    second: flyerwing-b_31
+  - first:
+      213: -4400948523734567279
+    second: flyerwing-b_32
+  - first:
+      213: 13993996666233583
+    second: flyerwing-b_33
+  - first:
+      213: -105689600390808158
+    second: flyerwing-b_34
+  - first:
+      213: 2033232251516519435
+    second: flyerwing-b_35
+  - first:
+      213: -5489972228035128358
+    second: flyerwing-b_36
+  - first:
+      213: 637999824196288761
+    second: flyerwing-b_37
+  - first:
+      213: -2650136809738137335
+    second: flyerwing-b_38
+  - first:
+      213: 346286567917988497
+    second: flyerwing-b_39
+  - first:
+      213: 4921344529758511002
+    second: flyerwing-b_40
+  - first:
+      213: -5949384082028639180
+    second: flyerwing-b_41
+  - first:
+      213: -1647016438455751603
+    second: flyerwing-b_42
+  - first:
+      213: 3643556787287128131
+    second: flyerwing-b_43
+  - first:
+      213: -6626150315063341617
+    second: flyerwing-b_44
+  - first:
+      213: 5610059226643827822
+    second: flyerwing-b_45
+  - first:
+      213: -3199106946400354794
+    second: flyerwing-b_46
+  - first:
+      213: 7840747695611474427
+    second: flyerwing-b_47
+  - first:
+      213: -5987166221683991416
+    second: flyerwing-b_48
+  - first:
+      213: -991821020412435834
+    second: flyerwing-b_49
+  - first:
+      213: 5144915970094890853
+    second: flyerwing-b_50
+  - first:
+      213: 166651223906569687
+    second: flyerwing-b_51
+  - first:
+      213: 1241564563552572049
+    second: flyerwing-b_52
+  - first:
+      213: 4196330458679894802
+    second: flyerwing-b_53
+  - first:
+      213: -6902481597012586310
+    second: flyerwing-b_54
+  - first:
+      213: 3269640230092188643
+    second: flyerwing-b_55
+  - first:
+      213: 4122082068477519214
+    second: flyerwing-b_56
+  - first:
+      213: -4800055001768881339
+    second: flyerwing-b_57
+  - first:
+      213: 703925900865499202
+    second: flyerwing-b_58
+  - first:
+      213: -8492013266926436403
+    second: flyerwing-b_59
+  - first:
+      213: -7714547949841848475
+    second: flyerwing-b_60
+  - first:
+      213: 6056456971111713649
+    second: flyerwing-b_61
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flyerwing-b_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3ed0bbddc6ad170800000000000000
+      internalID: 8203989370790601636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flyerwing-b_1
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2248c0c5c314658f0800000000000000
+      internalID: -552182176808139742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flyerwing-b_2
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d2193cc65f84c60800000000000000
+      internalID: 7802756201905728841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flyerwing-b_3
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1600
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c933b0f078798af0800000000000000
+      internalID: -393651065948259900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flyerwing-b_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76283b75e23b82b10800000000000000
+      internalID: 1957011049713730151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flyerwing-b_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b91a8783cfeb160800000000000000
+      internalID: 7043344186726259589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flyerwing-b_6
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8140ace2cb651c80800000000000000
+      internalID: -8352651448950963829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flyerwing-b_7
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 800
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab109477b3bcedf0800000000000000
+      internalID: -149547087094080601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flyerwing-b_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f2bfe7796ae49d80800000000000000
+      internalID: -8244707279103872272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flyerwing-b_9
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa04325d6737ccc0800000000000000
+      internalID: -3690920426936726789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 56bef0a53e3d42b4fac971e22bf47ba6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":3.0},"gridSpriteSize":{"x":800.0,"y":800.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      flyerwing-b_0: 8203989370790601636
+      flyerwing-b_1: -552182176808139742
+      flyerwing-b_2: 7802756201905728841
+      flyerwing-b_3: -393651065948259900
+      flyerwing-b_4: 1957011049713730151
+      flyerwing-b_5: 7043344186726259589
+      flyerwing-b_6: -8352651448950963829
+      flyerwing-b_7: -149547087094080601
+      flyerwing-b_8: -8244707279103872272
+      flyerwing-b_9: -3690920426936726789
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

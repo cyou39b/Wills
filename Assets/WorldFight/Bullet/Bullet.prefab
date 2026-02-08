@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432707537822900503}
-  - component: {fileID: 1767670548164451393}
   - component: {fileID: 7188205616813677146}
   - component: {fileID: 3151527485709832683}
   - component: {fileID: 2468768707808355602}
+  - component: {fileID: -5963789708713677817}
+  - component: {fileID: 1767670548164451393}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Bullet
@@ -35,26 +36,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1767670548164451393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738892040180884762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c63edf3f87b8f46a8be5b1cea39af3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  BulletSprites:
-  - {fileID: 1017609225550985244, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
-  - {fileID: 1757937406519661826, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
-  - {fileID: 7431529995326980795, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
-  - {fileID: -3543048863620948104, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
-  BulletEffectPrefab: {fileID: 4135009946272690, guid: 7c1ed949817aa3840adf916682eac02b, type: 3}
-  MoveSpeed: 20
-  InitialDistance: 0.095
 --- !u!61 &7188205616813677146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,3 +167,125 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &-5963789708713677817
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738892040180884762}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1767670548164451393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738892040180884762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c63edf3f87b8f46a8be5b1cea39af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  BulletSprites:
+  - {fileID: 1017609225550985244, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
+  - {fileID: 1757937406519661826, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
+  - {fileID: 7431529995326980795, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
+  - {fileID: -3543048863620948104, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
+  BulletEffectPrefab: {fileID: 4135009946272690, guid: 7c1ed949817aa3840adf916682eac02b, type: 3}
+  MoveSpeed: 20
+  InitialDistance: 0.095
+  LaserSFX:
+  - {fileID: 8300000, guid: a3cf4f0411cbea048b2a8deb7e609ee5, type: 3}
+  - {fileID: 8300000, guid: cafb7a3add743754db0bb0b1bfbd2e1e, type: 3}
+  - {fileID: 8300000, guid: 40a6a65ccf512984a98a75713edffeaa, type: 3}
+  - {fileID: 8300000, guid: 51bf7cb96fe51614a83a4bf16a74bb29, type: 3}

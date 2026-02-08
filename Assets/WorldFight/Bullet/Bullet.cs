@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 // Bullet上的Script
 
+[RequireComponent(typeof(AudioSource))]
 public class Bullet : MonoBehaviour
 {    
     private SpriteRenderer spRerr;
@@ -10,16 +11,24 @@ public class Bullet : MonoBehaviour
     public GameObject BulletEffectPrefab;
 
     private Rigidbody2D rb;
-
     public float MoveSpeed;
     public float InitialDistance; // 在Bullet被創造時調整position的距離值
+
+    public AudioClip[] LaserSFX;
+    private AudioSource audioSource;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-
         // 隨機選擇一個Sprite
         spRerr = GetComponent<SpriteRenderer>();
         spRerr.sprite = BulletSprites[Random.Range(0, BulletSprites.Length)];
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = LaserSFX[Random.Range(0, LaserSFX.Length)];
+        audioSource.pitch = Random.Range(0.95f, 1.05f);
+        audioSource.Play();
+
+        rb = GetComponent<Rigidbody2D>();
 
         // 計算Bullet的移動方向
         float rot = transform.rotation.eulerAngles.z;
@@ -60,14 +69,14 @@ public class Bullet : MonoBehaviour
         if (colliderGameObject.layer == GlobalVariables.GroundLayer || colliderGameObject.layer == GlobalVariables.WallLayer)
         {
             SpawnEffects(3);
-            Destroy(gameObject);
+            ProperDestroy(); // Destroy(gameObject);
             return;
         }
 
         if(colliderGameObject.layer == GlobalVariables.EnemyLayer)
         {
             SpawnEffects(3);
-            Destroy(gameObject);
+            ProperDestroy(); // Destroy(gameObject);
             return;
         }
     }
@@ -77,8 +86,27 @@ public class Bullet : MonoBehaviour
         if(collision.CompareTag("Field"))
         {
             SpawnEffects(3);
-            Destroy(gameObject);
+            ProperDestroy(); // Destroy(gameObject);
             return;
         }
+    }
+
+    private bool _properDestroyCalled = false;
+    private void ProperDestroy()
+    {
+        if(_properDestroyCalled){return;}
+        transform.position = new Vector3(999f, 999f, 0f);
+        _properDestroyCalled = true;
+        StartCoroutine(waitForAudioSourceBeforeDestroy());
+    }
+
+    private static readonly WaitForSeconds _waitQuarterSecond = new WaitForSeconds(0.25f);
+    private IEnumerator waitForAudioSourceBeforeDestroy()
+    {
+        while(audioSource.isPlaying)
+        {
+            yield return _waitQuarterSecond;
+        }
+        Destroy(gameObject);
     }
 }
