@@ -89,6 +89,7 @@ public class DialogueManager : MonoBehaviour{
                 break;
             case DialogueCommand.OpenShop:
                 Shop.SetActive(true);
+                ShopInterfaceLogic.isBuying = true;
                 EndDialogue();
                 break;
         }

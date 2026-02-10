@@ -19,13 +19,15 @@ public class LoadSceneManager : MonoBehaviour{
         }
     }
     IEnumerator LoadScene(){
-        async = SceneManager.LoadSceneAsync(NextScene);
-        async.allowSceneActivation = false; // To disable automatic loading
-        while(!async.isDone){
-            if(async.progress >= 0.9f){ // if allowSceneActivation == false , the max value of progress == 0.9
-                async.allowSceneActivation = true;
+        if(!string.IsNullOrEmpty(NextScene)){
+            async = SceneManager.LoadSceneAsync(NextScene);
+            async.allowSceneActivation = false; // To disable automatic loading
+            while(!async.isDone){
+                if(async.progress >= 0.9f){ // if allowSceneActivation == false , the max value of progress == 0.9
+                    async.allowSceneActivation = true;
+                }
+                yield return null;
             }
-            yield return null;
         }
         yield return new WaitForSeconds(1.0f);
     }

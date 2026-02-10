@@ -33,7 +33,8 @@ public class MenuManager : MonoBehaviour
         if( OptionMenu.IsBinding || 
             MapScenesSwicher.isMapOpening || 
             DeathManager.Activated ||
-            DialogueManager.IsTalking)
+            DialogueManager.IsTalking||
+            ShopInterfaceLogic.isBuying)
             {return;}
         IsMenuOpen = true;
         timeScaleBefaorePause = Time.timeScale;
