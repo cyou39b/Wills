@@ -2,15 +2,20 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(AudioSource))]
 public class Gun : MonoBehaviour
 {
     public GameObject BulletPrefab;
-    public Sprite[] GunFireSprites;
-    public SpriteRenderer GunFireAnimationSpriteRenderer;
-    public GameObject GunFireAnimation;
+
     public SpriteRenderer Sprerr;
+    public Sprite[] GunFireSprites;
+    public GameObject GunFireAnimation;
+    public SpriteRenderer GunFireAnimationSpriteRenderer;
+    
+
     public float FireCoolDown;
     private float fireCoolDownTimer=0.0f;
+
     void Update()
     {
         // Do nothing if the game is paused

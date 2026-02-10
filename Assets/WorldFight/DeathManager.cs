@@ -44,7 +44,7 @@ public class DeathManager : MonoBehaviour
 
         int totalFrames = (int)(slowDownTime / (1.0f / 20.0f)) + 1;
         float dAlpha = 0.5f / totalFrames;
-        float dTimeScale = (Time.timeScale - targetTimeScale) / totalFrames;
+        float dTimeScale = (Time.timeScale - targetTimeScale) / (totalFrames + 1);
 
         for(int _=0;_<totalFrames;_++)
         {
@@ -63,6 +63,7 @@ public class DeathManager : MonoBehaviour
             }
             yield return w20thRealSecond;
         }
+        Time.timeScale = 0.0f; // Just to be sure that there's no fp arithmetic bs
 
         totalFrames = 12;
         dAlpha = 1.0f/totalFrames;

@@ -1,15 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 //  Jack的Script
+[RequireComponent(typeof(Rigidbody2D))]
 public class Jack : MonoBehaviour{
     public SpriteRenderer Sprerr;
-    private float facingDirection = -1.0f;
+    private FacingDirection dir = FacingDirection.None;
     
     public GameObject HPBarPrefab;
     private HPBar HpBar;
 
     private Rigidbody2D rb;
-    private BoxCollider2D boxColl;
     public float MoveSpeed, SlowerMoveSpeed;
 
     public float JumpSpeed;
@@ -19,8 +19,9 @@ public class Jack : MonoBehaviour{
     public float JumpHoldMaxTime;
     private float jumpHoldTimer = 0.0f;
 
-    private bool isJumpReduced = false;  
-    private bool isGrounded = false; 
+    private bool isJumpReduced = false;
+    private int groundTouchedCount = 0;
+    private bool isGrounded => groundTouchedCount != 0;
     // FIXME?: This method could cause some problem if Jack \
     // can touch multiple grounds at once. 
     
@@ -41,16 +42,15 @@ public class Jack : MonoBehaviour{
             HpBar.Followee = gameObject;
             HpBar.Offset = new Vector3(0f, 1.5f, 0f);
             HpBar.SmoothTime = 0.05f;
-            HpBar.SetMaxHP(100.0f);
-            HpBar.SetHP(100.0f);
+            HpBar.MaxHP = 100.0f;
+            HpBar.HP = 100.0f;
+            HpBar.OnHpLE0 = () => {DeathManager.StartDeath(0.0f, 1.0f);};
             #if UNITY_EDITOR
             HpBar.name = string.Format("{0} - HPBar", this.name);
             #endif
         }
 
         rb = gameObject.GetComponent<Rigidbody2D>();
-        boxColl = rb.GetComponent<BoxCollider2D>();
-
     }
 
     private Vector3 mousePos;
@@ -84,34 +84,24 @@ public class Jack : MonoBehaviour{
         // 根據mouse的position調整Jack的面向
         if(mousePos.x > transform.position.x)
         {
-            facingDirection = 1.0f;
+            dir = FacingDirection.Right;
             Sprerr.flipX = false;
         }
         else
         {
-            facingDirection = -1.0f;
+            dir = FacingDirection.Left;
             Sprerr.flipX = true;
         }
 
         if (leftPressed){
-            if(facingDirection > 0.0f)
-            {
-                rb.linearVelocityX = -MoveSpeed;
-            }
-            else
-            {
-                rb.linearVelocityX = -SlowerMoveSpeed;
-            }
+            rb.linearVelocityX = (dir == FacingDirection.Left)
+                ?-MoveSpeed
+                :-SlowerMoveSpeed;
         }  
         else if (rightPressed) {
-            if(facingDirection > 0.0f)
-            {
-                rb.linearVelocityX = MoveSpeed;
-            }
-            else
-            {
-                rb.linearVelocityX = SlowerMoveSpeed;
-            }
+            rb.linearVelocityX = (dir == FacingDirection.Right)
+                ?MoveSpeed
+                :SlowerMoveSpeed;
         }
         else{
             rb.linearVelocityX = 0f;
@@ -131,7 +121,7 @@ public class Jack : MonoBehaviour{
         }
         else
         {
-            rb.gravityScale = 1.5f;
+            rb.gravityScale = 1.7f;
         }
 
         if(isGrounded && rb.linearVelocityY == 0.0f && jumpBufferTimer >= 0.0f){
@@ -145,18 +135,13 @@ public class Jack : MonoBehaviour{
 
     void OnCollisionEnter2D(Collision2D other){
         // 在Jack碰到其他實體時...
-
         GameObject colliderGameObject = other.collider.gameObject;
 
         if (colliderGameObject.layer == GlobalVariables.GroundLayer)
         {
-            // 如果是ground就把isGrounded 設成 true
-            isGrounded = true;
             isJumpReduced = true;
+            groundTouchedCount++;
         }
-        // else if (other.collider.CompareTag("Wills"))
-        // {
-        // }
     }
     void OnCollisionExit2D(Collision2D other){
         // 在Jack離開其他實體時...
@@ -164,12 +149,16 @@ public class Jack : MonoBehaviour{
         GameObject colliderGameObject = other.collider.gameObject;
 
         if (colliderGameObject.layer == GlobalVariables.GroundLayer){
-            // 如果是ground就把isGrounded 設成 false
-            isGrounded = false;
+            groundTouchedCount--;
         }
     }
 
-    // void OnTriggerStay2D(Collider2D collision)
-    // {
-    // }
+    void OnCollisionStay2D(Collision2D other)
+    {
+        GameObject otherGameObject = other.gameObject;
+        if(otherGameObject.layer == GlobalVariables.EnemyLayer)
+        {
+            HpBar.HP -= 0.1f;
+        }
+    }
 }

@@ -3,33 +3,44 @@ using UnityEngine;
 
 // 在wills1死亡時的爆炸
 
+[RequireComponent(typeof(AudioSource))]
 public class Explode : MonoBehaviour
 {
-    public static Vector2? ExplodePosition = null;
+    public static Vector3? ExplodePosition = null;
     public static bool Activated = false;
 
     public GameObject[] Explosions; // 所有可用的explosion prefab
+    
+    private AudioSource audioSrc;
+    public AudioClip[] Clips;
 
     public int SpawnItsAddConstant;
     public int SpawnNumAtConstantDistance;
     public float SpawnCoolDown;
     
-    public GameObject YouDiedGameObject;
-
     private WaitForSeconds wCoolDown;
 
     public void Start()
     {
         wCoolDown = new WaitForSeconds(SpawnCoolDown);
+        audioSrc = GetComponent<AudioSource>();
     }
 
     public void Update() {
-        if(ExplodePosition == null){return;}
-
-        Vector2 pos = (Vector2)ExplodePosition;
+        if(ExplodePosition == null || Activated){return;}
+        Vector3 pos = (Vector3)ExplodePosition;
         ExplodePosition = null;
         Activated = true;
+
+        Camera cam = Camera.main;
+        Vector3 viewPortPoint = cam.WorldToViewportPoint(pos) - new Vector3(0.5f, 0.5f, 0.0f);
+        Vector3.ClampMagnitude(viewPortPoint, 1.0f);
+        viewPortPoint += new Vector3(0.5f, 0.5f, 0.0f);
+        pos = cam.ViewportToWorldPoint(viewPortPoint);
+
         StartExplosionAt(pos);
+        audioSrc.clip = Clips[Random.Range(0, Clips.Length)];
+        audioSrc.Play();
     }
 
     private static readonly WaitForSeconds waitOneSecond = new WaitForSeconds(1.0f);
@@ -53,7 +64,7 @@ public class Explode : MonoBehaviour
         Debug.LogFormat(@"
 Distance between Player and exploding Wills is {0}
 Spawn Its is {1}
-Spawn {0} Small Explosions.", 
+Spawn {2} Small Explosions.", 
             distance, 
             spawnIts, 
             spawnNum
@@ -78,7 +89,7 @@ Spawn {0} Small Explosions.",
             StartCoroutine(SpawnExplosionLine(pos, moveVec, spawnIts));
         }
 
-        DeathManager.StartDeath(0.0f, 2.0f);   
+        DeathManager.StartDeath(0.0f, 1.75f);   
     }
 
     // 一個由內往外生成explosion的IEnumerator，這個function會被掛在Coroutine上
