@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -69,7 +70,8 @@ public class GlobalVariables : MonoBehaviour
     public Key PickUpMineKey => InteractKey;
     public Key FindMineKey = Key.N;
 
-
+    public List<PossessionItems> possession;
+    
     // Defined layers
     public const int PlayerLayer = 7;
     public const int PlayerLayerMask = 1 << PlayerLayer;

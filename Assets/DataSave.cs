@@ -12,8 +12,8 @@ public class PlayerData{
     public float xPos;
     public float yPos;
     public float zPos;
-    public List<int> BackpackIndex; //save the thing in backpack
-    public List<int> shop;
+    public List<int> BackpackIndex; //TODO
+    public ShopItemsContent[] items;
     //record Player setting
     public int FrameRate;
     public string Jump;
@@ -25,7 +25,11 @@ public class PlayerData{
     public string Attack;
     public string FindMine;
 }
-//I haven't do the shop part ......
+//I haven't finish the shop part yet ......
+public struct ShopItemsContent{
+    public int index;
+    public int Num;
+}
 public class DataSave : MonoBehaviour{
     readonly string path = Application.persistentDataPath + "/save.json";
     public static DataSave Instance{get;private set;} = null;

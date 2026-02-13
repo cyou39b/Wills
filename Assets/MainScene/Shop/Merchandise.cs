@@ -5,6 +5,7 @@ public class Merchandise : ScriptableObject{
     public int index;
     public string Name;
     public Sprite pic;
+    [TextArea(1,5)]
     public string Information;
     public int Price;
     public int indexInPosssession;

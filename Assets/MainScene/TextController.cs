@@ -12,7 +12,7 @@ public class TextController : MonoBehaviour{
         UpdateNumMinesText();
     }
     void UpdateNumMinesText(){
-        if (MenuManager.IsMenuOpen || DialogueManager.IsTalking){
+        if (MenuManager.IsMenuOpen || DialogueManager.IsTalking || ShopInterfaceLogic.isBuying){
             MineText.enabled = false;
         }
         else{

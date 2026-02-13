@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabe989527578ea45ae7fc4b88e939f5, type: 3}
+  m_Name: TestMerchandise
+  m_EditorClassIdentifier: Assembly-CSharp::Merchandise
+  index: 0
+  Name: Test
+  pic: {fileID: -2449117553472781384, guid: 78a17d2402290e640b4109e53f8536fe, type: 3}
+  Information: '123456
+
+    789456'
+  Price: 10000
+  indexInPosssession: 0
+  num: 2

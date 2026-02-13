@@ -14,7 +14,6 @@ public class DialogueManager : MonoBehaviour{
     int index = 0;
     public Button Option1;
     public Button Option2;
-    public GameObject Shop;
     void Awake(){
         if(Instance == null){
             Instance = this;
@@ -26,6 +25,9 @@ public class DialogueManager : MonoBehaviour{
     }
     void Update(){}
     public void StartDialogue(IInteract interact){
+        Option1.gameObject.SetActive(false);
+        Option2.gameObject.SetActive(false);
+        GoNextLine.gameObject.SetActive(true);
         IsTalking = true;
         Menu.SetActive(false);
         timeScaleBeforeDialogeStart = Time.timeScale;
@@ -39,7 +41,6 @@ public class DialogueManager : MonoBehaviour{
     public void NextLine(){
         Option1.gameObject.SetActive(false);
         Option2.gameObject.SetActive(false);
-
         GoNextLine.gameObject.SetActive(true);
         
         Option1.onClick.RemoveAllListeners();
@@ -86,11 +87,16 @@ public class DialogueManager : MonoBehaviour{
                 break;
             case DialogueCommand.End:
                 EndDialogue();
+                index = 0;
                 break;
             case DialogueCommand.OpenShop:
-                Shop.SetActive(true);
-                ShopInterfaceLogic.isBuying = true;
+                ShopInterfaceLogic.Instance.Shop.SetActive(true);
                 EndDialogue();
+                Menu.SetActive(false);
+                ShopInterfaceLogic.isBuying = true;
+                ShopInterfaceLogic.timeScaleBeforeShoppingStart = Time.timeScale;
+                Time.timeScale = 0.0f;
+                index = 0;
                 break;
         }
     }
