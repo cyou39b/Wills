@@ -116,6 +116,7 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: -1
     - _BUILTIN_QueueOffset: 0
+    - _Blink: 0
     - _EnableExternalAlpha: 0
     - _ZWrite: 0
     m_Colors:
@@ -124,7 +125,7 @@ Material:
     - _Eyes_Color: {r: 0.75294125, g: 0.4901961, b: 0.5764706, a: 1}
     - _Face_Color: {r: 0.95294124, g: 0.6862745, b: 0.7725491, a: 1}
     - _Face_Outline_Color: {r: 0.72156864, g: 0.47450984, b: 0.5568628, a: 1}
-    - _MainTex: {r: 0, g: 0, b: 0, a: 1}
+    - _MainTex: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _TargetColor: {r: 0.9529411, g: 0.68627447, b: 0.7725491, a: 1}
     - _WinG_Color: {r: 0.95294124, g: 0.6862745, b: 0.7725491, a: 1}

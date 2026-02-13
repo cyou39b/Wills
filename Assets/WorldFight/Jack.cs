@@ -3,14 +3,19 @@ using UnityEngine.InputSystem;
 //  Jack的Script
 [RequireComponent(typeof(Rigidbody2D))]
 public class Jack : MonoBehaviour{
-    public SpriteRenderer Sprerr;
-    private FacingDirection dir = FacingDirection.None;
+    private Camera cam;
+
+    private Transform rendererTrans;
+    private Vector3 rendererTransScale;
+    private Animator animator;
+    private AnimationState animationState = AnimationState.LeftFront;
+    public FacingDirection dir = FacingDirection.None;
     
     public GameObject HPBarPrefab;
     private HPBar HpBar;
 
     private Rigidbody2D rb;
-    public float MoveSpeed, SlowerMoveSpeed;
+    public float MoveSpeed;
 
     public float JumpSpeed;
     public float JumpBufferMaxTime;
@@ -51,18 +56,35 @@ public class Jack : MonoBehaviour{
         }
 
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        foreach(Transform childTrans in transform)
+        {
+            GameObject child = childTrans.gameObject;
+            if(child.name.Equals("Renderer"))
+            {
+                rendererTrans = childTrans;
+                rendererTransScale = rendererTrans.localScale;
+
+                if(!child.TryGetComponent<Animator>(out animator))
+                {
+                    Debug.LogError("Renderer child GameObject is expected to have a animator.");
+                }
+                animator.speed = 1.25f;
+                animator.Play("Stand Left Front", 0, 0.0f);
+
+                break;
+            }
+        }
+
+        cam = Camera.main;
     }
 
-    private Vector3 mousePos;
     private bool leftPressed;
     private bool rightPressed;
     private bool jumpReleased;
     void Update(){
         // Do nothing if the game is stopped
         if(Time.timeScale == 0.0f){return;}
-        
-        Vector2 mousePixelPosition = Mouse.current.position.ReadValue();
-        mousePos = Camera.main.ScreenToWorldPoint(mousePixelPosition);
         
         leftPressed = Keyboard.current[GlobalVariables.Instance.MoveLeftKey].isPressed;
         rightPressed = Keyboard.current[GlobalVariables.Instance.MoveRightKey].isPressed;
@@ -78,34 +100,73 @@ public class Jack : MonoBehaviour{
         jumpReleased = Keyboard.current[GlobalVariables.Instance.JumpKey].wasReleasedThisFrame;
     }
 
+    float prevRunCycle = 0.0f;
+    float prevFromtLeg = 1.0f;
     public void FixedUpdate()
     {
         if(Explode.Activated) {return;}
-        // 根據mouse的position調整Jack的面向
-        if(mousePos.x > transform.position.x)
-        {
-            dir = FacingDirection.Right;
-            Sprerr.flipX = false;
-        }
-        else
-        {
-            dir = FacingDirection.Left;
-            Sprerr.flipX = true;
-        }
 
+        float runCycle = Mathf.Repeat(animator.GetCurrentAnimatorStateInfo(0).normalizedTime, 1.0f);
+        float frontLeg = 
+            (143.0f/166.0f <= runCycle || runCycle <= 15.0f/166.0f) || 
+            (98.0f/166.0f <= runCycle && runCycle <= 140.0f/166.0f)
+                ?1.0f
+                :-1.0f; // 1 for left and -1 for right
         if (leftPressed){
-            rb.linearVelocityX = (dir == FacingDirection.Left)
-                ?-MoveSpeed
-                :-SlowerMoveSpeed;
+            rb.linearVelocityX = -MoveSpeed;
+            rendererTransScale.z = -Mathf.Abs(rendererTransScale.z);
+            rendererTrans.localScale = rendererTransScale;
+            dir = FacingDirection.Left;
+            if(animationState != AnimationState.Walking)
+            {
+                animator.SetBool("walking", true);
+                animator.SetBool("leftFront", false);
+                animator.SetBool("rightFront", false);
+                float normalizedFrameCount = 1.0f/166.0f * ((animationState == AnimationState.LeftFront)
+                    ?101.0f
+                    :57.0f
+                    );
+                animator.Play("Walking", 0, normalizedFrameCount);
+
+                animationState = AnimationState.Walking;
+            }
         }  
         else if (rightPressed) {
-            rb.linearVelocityX = (dir == FacingDirection.Right)
-                ?MoveSpeed
-                :SlowerMoveSpeed;
+            rb.linearVelocityX = MoveSpeed;
+            rendererTransScale.z = Mathf.Abs(rendererTransScale.z);
+            rendererTrans.localScale = rendererTransScale;
+            dir = FacingDirection.Right;
+            if(animationState != AnimationState.Walking)
+            {
+                animator.SetBool("walking", true);
+                animator.SetBool("leftFront", false);
+                animator.SetBool("rightFront", false);
+                float normalizedFrameCount = 1.0f/166.0f * ((animationState == AnimationState.LeftFront)
+                    ?101.0f
+                    :57.0f
+                    );
+                animator.Play("Walking", 0, normalizedFrameCount);
+
+                animationState = AnimationState.Walking;
+            }
         }
         else{
             rb.linearVelocityX = 0f;
+            if(animationState == AnimationState.Walking)
+            {
+                if(prevFromtLeg != runCycle)
+                {
+                    animationState = (frontLeg==1.0f)
+                        ?AnimationState.LeftFront
+                        :AnimationState.RightFront;
+                    animator.SetBool("walking", false);
+                    animator.SetBool("leftFront", frontLeg==1.0f);
+                    animator.SetBool("rightFront", frontLeg!=1.0f);
+                }
+            }
         }
+        prevFromtLeg = frontLeg;
+        prevRunCycle = runCycle;
 
         if(jumpReleased)
         {
@@ -116,7 +177,7 @@ public class Jack : MonoBehaviour{
         }
         else if(!isJumpReduced && jumpHoldTimer <= JumpHoldMaxTime)
         {
-            jumpHoldTimer += Time.deltaTime;
+            jumpHoldTimer += 0.02f; // FixedUpdate dt;
             rb.gravityScale = 0.0f;
         }
         else
@@ -130,7 +191,6 @@ public class Jack : MonoBehaviour{
             isJumpReduced = false;
             jumpBufferTimer = -0.1f; // 把Timer設成負值，避免出現什麼奇怪的bug
         }
-
     }
 
     void OnCollisionEnter2D(Collision2D other){
@@ -161,4 +221,11 @@ public class Jack : MonoBehaviour{
             HpBar.HP -= 0.1f;
         }
     }
+}
+
+enum AnimationState
+{
+    LeftFront,
+    RightFront,
+    Walking
 }

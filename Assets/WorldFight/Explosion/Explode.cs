@@ -38,7 +38,7 @@ public class Explode : MonoBehaviour
         viewPortPoint += new Vector3(0.5f, 0.5f, 0.0f);
         pos = cam.ViewportToWorldPoint(viewPortPoint);
 
-        StartExplosionAt(pos);
+        StartCoroutine(StartExplosionAt(pos));
         audioSrc.clip = Clips[Random.Range(0, Clips.Length)];
         audioSrc.Play();
     }
@@ -46,8 +46,7 @@ public class Explode : MonoBehaviour
     private static readonly WaitForSeconds waitOneSecond = new WaitForSeconds(1.0f);
     private static readonly WaitForFixedUpdate waitFixedUpdate = new WaitForFixedUpdate();
     // a fixed update is about 0.02s(50Hz);
-    private static readonly WaitForSeconds waitThreeFixedUpdate = new WaitForSeconds(0.02f * 3);
-    public void StartExplosionAt(Vector3 pos){
+    public IEnumerator StartExplosionAt(Vector3 pos){
         pos.z = -1.0f; // make the layer of explosions to be closer
 
         Vector2 playerPos = transform.position;
@@ -73,7 +72,7 @@ Spawn {2} Small Explosions.",
         // 向隨機方向生成spawnNum個explosion
         int halfSpawnNum=spawnNum/2;
         float dir = Random.Range(-Mathf.PI, Mathf.PI), rot = Mathf.PI*2.0f / halfSpawnNum;
-        Vector3 moveVec = new Vector3(0.0f, 0.0f, 0.0f);
+        Vector3 moveVec = Vector3.zero;
         for (int i=0; i < halfSpawnNum; i++)
         {
             dir += rot;
@@ -89,7 +88,8 @@ Spawn {2} Small Explosions.",
             StartCoroutine(SpawnExplosionLine(pos, moveVec, spawnIts));
         }
 
-        DeathManager.StartDeath(0.0f, 1.75f);   
+        yield return new WaitForSeconds(0.04f * spawnIts);
+        DeathManager.StartDeath(0.0f, 1.0f);   
     }
 
     // 一個由內往外生成explosion的IEnumerator，這個function會被掛在Coroutine上

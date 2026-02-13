@@ -12,9 +12,19 @@ public class Gun : MonoBehaviour
     public GameObject GunFireAnimation;
     public SpriteRenderer GunFireAnimationSpriteRenderer;
     
+    private Jack jack;
 
     public float FireCoolDown;
     private float fireCoolDownTimer=0.0f;
+
+    void Start()
+    {
+        GameObject parent = transform.parent.gameObject;
+        if(!parent.TryGetComponent<Jack>(out jack))
+        {
+            Debug.LogError("Parent is Jack?");
+        }
+    }
 
     void Update()
     {
@@ -29,6 +39,16 @@ public class Gun : MonoBehaviour
             mousePosition.y-transform.position.y,
             mousePosition.x-transform.position.x
         );
+
+        if(jack.dir == FacingDirection.Left)
+        {
+            if(mouseRot < 0.0f) {mouseRot += Mathf.PI + Mathf.PI;}
+            mouseRot = Mathf.Clamp(mouseRot, MathUtil.HalfPI + 0.001f, Mathf.PI + MathUtil.HalfPI - 0.001f);
+        }
+        else
+        {
+            mouseRot = Mathf.Clamp(mouseRot, MathUtil.HalfNPI, MathUtil.HalfPI);
+        }
 
         if(mouseRot <= MathUtil.HalfPI && mouseRot >= MathUtil.HalfNPI)
         {

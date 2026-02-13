@@ -2,20 +2,26 @@ using System.Collections;
 using UnityEngine;
 // Bullet上的Script
 
-[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(AudioSource), typeof(Rigidbody2D), typeof(SpriteRenderer))]
 public class Bullet : MonoBehaviour
-{    
+{
     private SpriteRenderer spRerr;
     public Sprite[] BulletSprites; // Bullet所有可能的Sprite，在Inspector中調整
 
     public GameObject BulletEffectPrefab;
 
+    public AudioClip[] LaserSFX;
+    private AudioSource audioSource;
+
     private Rigidbody2D rb;
     public float MoveSpeed;
     public float InitialDistance; // 在Bullet被創造時調整position的距離值
 
-    public AudioClip[] LaserSFX;
-    private AudioSource audioSource;
+    public float Power;
+    public ParticleSystem.MinMaxCurve DistacneToPowerCurve;
+    private Vector2 initialPosition;
+
+    public float Damage;
 
     void Start()
     {
@@ -35,8 +41,10 @@ public class Bullet : MonoBehaviour
         float dx = Mathf.Cos(rot * Mathf.Deg2Rad) * MoveSpeed;
         float dy = Mathf.Sin(rot * Mathf.Deg2Rad) * MoveSpeed;
         Vector2 dPos = new Vector2(dx, dy);
-        transform.position += new Vector3(dx * InitialDistance, dy*InitialDistance, 0.0f);
-        
+        transform.position += (Vector3)dPos * InitialDistance;
+        initialPosition = transform.position;
+        // Debug.Break();
+
         // 設定這個Bullet的速度
         rb.linearVelocity = dPos;
     }
@@ -65,7 +73,7 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject colliderGameObject = collision.collider.gameObject;
-
+        
         if (colliderGameObject.layer == GlobalVariables.GroundLayer || colliderGameObject.layer == GlobalVariables.WallLayer)
         {
             SpawnEffects(3);
@@ -75,7 +83,23 @@ public class Bullet : MonoBehaviour
 
         if(colliderGameObject.layer == GlobalVariables.EnemyLayer)
         {
-            SpawnEffects(3);
+            IKnockbackable knockbackable;
+            if(colliderGameObject.TryGetComponent<IKnockbackable>(out knockbackable))
+            {
+                knockbackable.GetKnockbacked(transform.right, DistacneToPowerCurve.Evaluate(Vector2.Distance(transform.position, initialPosition)) * Power, false);
+            }
+
+            AbstractEnemy enemy;
+            if(!colliderGameObject.TryGetComponent<AbstractEnemy>(out enemy))
+            {
+                Debug.LogError($"GameObject {colliderGameObject.name} is having enemy layer but doesn't have AbstractEnemy Component.");
+            }
+            else
+            {
+                enemy.GetDamaged(Damage);
+            }
+
+            SpawnEffects(5);
             ProperDestroy(); // Destroy(gameObject);
             return;
         }
@@ -85,7 +109,6 @@ public class Bullet : MonoBehaviour
     {
         if(collision.CompareTag("Field"))
         {
-            SpawnEffects(3);
             ProperDestroy(); // Destroy(gameObject);
             return;
         }
@@ -95,7 +118,7 @@ public class Bullet : MonoBehaviour
     private void ProperDestroy()
     {
         if(_properDestroyCalled){return;}
-        transform.position = new Vector3(999f, 999f, 0f);
+        transform.position = new Vector3(999f, 999f, 0f); // I fell bad about this.
         _properDestroyCalled = true;
         StartCoroutine(waitForAudioSourceBeforeDestroy());
     }

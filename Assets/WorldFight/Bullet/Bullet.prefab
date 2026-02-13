@@ -282,10 +282,65 @@ MonoBehaviour:
   - {fileID: 7431529995326980795, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
   - {fileID: -3543048863620948104, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
   BulletEffectPrefab: {fileID: 4135009946272690, guid: 7c1ed949817aa3840adf916682eac02b, type: 3}
-  MoveSpeed: 20
-  InitialDistance: 0.095
   LaserSFX:
   - {fileID: 8300000, guid: a3cf4f0411cbea048b2a8deb7e609ee5, type: 3}
   - {fileID: 8300000, guid: cafb7a3add743754db0bb0b1bfbd2e1e, type: 3}
   - {fileID: 8300000, guid: 40a6a65ccf512984a98a75713edffeaa, type: 3}
   - {fileID: 8300000, guid: 51bf7cb96fe51614a83a4bf16a74bb29, type: 3}
+  MoveSpeed: 20
+  InitialDistance: 0.05
+  Power: 1000
+  DistacneToPowerCurve:
+    m_Mode: 1
+    m_CurveMultiplier: 1
+    m_CurveMin:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_CurveMax:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0.3322836
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ConstantMin: 0
+    m_ConstantMax: 0
+  Damage: 5

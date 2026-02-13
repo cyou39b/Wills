@@ -18,8 +18,12 @@ public class LoadSceneManager : MonoBehaviour{
             #endif
         }
     }
+    // No, I still don't get this.
+    // The things you're doing in Update and LoadScene can be merged into one function.
     IEnumerator LoadScene(){
+
         if(!string.IsNullOrEmpty(NextScene)){
+            // Why async when you're doing literally NOTHING here.
             async = SceneManager.LoadSceneAsync(NextScene);
             async.allowSceneActivation = false; // To disable automatic loading
             while(!async.isDone){

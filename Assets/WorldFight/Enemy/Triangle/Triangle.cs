@@ -6,35 +6,34 @@ public class Triangle : MonoBehaviour
 {
     private Camera cam;
     private SpriteRenderer spRerr = null;
-    [NonSerialized] public GameObject wills1;
-    [NonSerialized] public Color? wills1Color = null;
-    public void Initialize(GameObject targetWills1, Color color)
+    [NonSerialized] public AbstractEnemy wills1;
+
+    private Color _wills1Color = Color.green;
+    public Color wills1Color
+    {
+        get => _wills1Color;
+        set
+        {
+            _wills1Color = value;
+            if(spRerr != null)
+            {
+                spRerr.color = value;
+            }
+        }
+    }
+    public void Initialize(AbstractEnemy targetWills1, Color color)
     {
         wills1 = targetWills1;
         wills1Color = color;
 
-        AfterStartAndInit();
     }
 
     void Start()
     {
         cam = Camera.main;
-        transform.position = new Vector3(0.0f, 0.0f, -0.2f);
 
         spRerr = GetComponent<SpriteRenderer>();
-    
-        AfterStartAndInit();
-    }
-
-    bool startOrInit = false;
-    void AfterStartAndInit()
-    {
-        if (!startOrInit)
-        {
-            startOrInit = true;
-            return;
-        }
-        spRerr.color = wills1Color.Value;
+        spRerr.color = _wills1Color;
     }
 
     void Update()
@@ -43,14 +42,14 @@ public class Triangle : MonoBehaviour
         onScreenPos -= new Vector3(0.5f, 0.5f, onScreenPos.z);
         float viewPortDistance = onScreenPos.magnitude;
         
-        Color sprColor = spRerr.color;
-        if(viewPortDistance <= 0.5f)
+        Color sprColor = wills1.mainColor;
+        if(viewPortDistance <= 0.6f)
         {
             sprColor.a = 0.0f;
         }
         else if(viewPortDistance <= 0.8f)
         {
-            sprColor.a = (viewPortDistance - 0.5f) / 0.3f;
+            sprColor.a = (viewPortDistance - 0.6f) / 0.2f;
         }
         else
         {

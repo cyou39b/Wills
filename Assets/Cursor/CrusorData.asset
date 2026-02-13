@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1052f578c32e4e4d8a36653007d86a0, type: 3}
+  m_Name: CrusorData
+  m_EditorClassIdentifier: Assembly-CSharp::CrusorData
+  Names:
+  - Normal
+  - Grab
+  - Can Grab
+  Textures:
+  - {fileID: 2800000, guid: bce1b45639e3c1e44ad94227590fc16e, type: 3}
+  - {fileID: 2800000, guid: 91194b0c2dc2e2144a572ebd79fa3764, type: 3}
+  - {fileID: 2800000, guid: 3d9237fb0f7442647a5fcbcd8e7f11dd, type: 3}

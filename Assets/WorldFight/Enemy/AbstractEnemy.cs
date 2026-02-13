@@ -1,13 +1,17 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public abstract class AbstractEnemy : MonoBehaviour
+public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
 {
     protected Rigidbody2D rb;
 
     protected GameObject renderingChildObject;
     protected SpriteRenderer SpRr;
-    protected Color mainColor = Color.green;
+    protected Material Mat;
+    [NonSerialized] public Color mainColor = Color.green;
+    protected Animator Anmor;
 
     public GameObject HPBarPrefab;
     protected HPBar HpBar;
@@ -17,6 +21,16 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     protected GameObject player;
     protected Transform playerTrans;
+
+    protected bool isIntentPassive{get; private set;} = false;
+    protected Coroutine intent{get;private set;} // Used for enemy AI
+    protected void SetIntent(Coroutine newIntent, bool passive)
+    {
+        if(intent != null) {StopCoroutine(intent);}
+        intent = newIntent;
+        isIntentPassive = passive;
+    }
+
 
     protected virtual void Start()
     {
@@ -39,8 +53,18 @@ public abstract class AbstractEnemy : MonoBehaviour
                 {
                     Debug.LogError("AbstractEnemy doesn't have a Renderer child gameObject.");
                 }
+                if(!renderingChildObject.TryGetComponent<Animator>(out Anmor))
+                {
+                    Debug.LogError("AbstractEnemy doesn't have a Renderer child gameObject.");
+                }
                 break;
             }
+        }
+
+        Mat = SpRr.material;
+        if(Mat == null)
+        {
+            Debug.LogError("SpriteRenderer.material is null");
         }
     }
 
@@ -51,7 +75,11 @@ public abstract class AbstractEnemy : MonoBehaviour
         {
             Debug.LogError("Triangle doesn't have triangle component.");
         }
-        triangle.Initialize(gameObject, mainColor);
+        triangle.Initialize(this, mainColor);
+        
+        #if UNITY_EDITOR
+        triangle.name = string.Format("{0} - Triangle", gameObject.name);
+        #endif
     }
 
     protected virtual void InitialPlayerInfoReference()
@@ -88,6 +116,45 @@ public abstract class AbstractEnemy : MonoBehaviour
         }
     }
 
+    public virtual void GetDamaged(float amount)
+    {
+        if(amount <= 0.0f)
+        {
+            Debug.LogError("Invalid Argument");
+        }
+
+        HpBar.HP -= amount;
+        StartCoroutine(OnDamagedBlink());
+    }
+
+    private static readonly WaitForSeconds blinkTimeSpan = new WaitForSeconds(1.0f / 60.0f * 3.0f);
+    public virtual IEnumerator OnDamagedBlink()
+    {
+        // Unlike animator, material doesn't have SetBool
+        // use SetInt or SetFloat instead
+        Mat.SetInt("_Blink", 1);
+        Color originalColor = triangle.wills1Color;
+        triangle.wills1Color = new Color(1.0f, 1.0f, 1.0f, originalColor.a);
+
+        yield return blinkTimeSpan;
+
+        Mat.SetInt("_Blink", 0);
+        triangle.wills1Color = new Color(
+            originalColor.r,
+            originalColor.g,
+            originalColor.b,
+            triangle.wills1Color.a
+        );
+    }
+
+    protected virtual void OnHPLE0()
+    {
+        Explode.ExplodePosition = transform.position;
+        Destroy(triangle.gameObject);
+        Destroy(HpBar.gameObject);
+        Destroy(gameObject);
+    }
+
     protected virtual void OnOutOfField()
     {
         Debug.Log("Enemy out of field");
@@ -100,15 +167,10 @@ public abstract class AbstractEnemy : MonoBehaviour
         if(gameObject != null) {Destroy(gameObject);}
     }
 
-    protected virtual void OnHPLE0()
-    {
-        Explode.ExplodePosition = transform.position;
-        Destroy(triangle.gameObject);
-        Destroy(HpBar.gameObject);
-        Destroy(gameObject);
-    }
 
-    protected abstract void OnCollisionEnter2D(Collision2D collision);
+    public ParticleSystem.MinMaxCurve DistanceToKnockbackPowerCurve{get;set;}
+    public abstract void GetKnockbacked(Vector2 direction, float power, bool stun);
+
     protected virtual void OnTriggerExit2D(Collider2D other)
     {
         if(other.CompareTag("Field"))
