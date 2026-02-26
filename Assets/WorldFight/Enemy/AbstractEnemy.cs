@@ -22,16 +22,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
     protected GameObject player;
     protected Transform playerTrans;
 
-    protected bool isIntentPassive{get; private set;} = false;
-    protected Coroutine intent{get;private set;} // Used for enemy AI
-    protected void SetIntent(Coroutine newIntent, bool passive)
-    {
-        if(intent != null) {StopCoroutine(intent);}
-        intent = newIntent;
-        isIntentPassive = passive;
-    }
-
-
     protected virtual void Start()
     {
         InitialPlayerInfoReference();
@@ -40,7 +30,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
         InitializeTriangle();
         rb = GetComponent<Rigidbody2D>();
     }
-
     protected virtual void InitializeRenderingGameObject()
     {
         foreach(Transform childTransform in transform)
@@ -67,7 +56,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
             Debug.LogError("SpriteRenderer.material is null");
         }
     }
-
     protected virtual void InitializeTriangle()
     {
         GameObject triangleGameObject = Instantiate(TrianglePrefab, transform.position, transform.rotation);
@@ -81,7 +69,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
         triangle.name = string.Format("{0} - Triangle", gameObject.name);
         #endif
     }
-
     protected virtual void InitialPlayerInfoReference()
     {
         player = GameObject.FindWithTag("Player");
@@ -91,7 +78,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
         }
         playerTrans = player.transform;
     }
-
     protected abstract (float ,float , Vector3?)HpBarData();
     protected virtual void InitializeHpBar()
     {
@@ -115,7 +101,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
             #endif
         }
     }
-
     public virtual void GetDamaged(float amount)
     {
         if(amount <= 0.0f)
@@ -126,7 +111,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
         HpBar.HP -= amount;
         StartCoroutine(OnDamagedBlink());
     }
-
     private static readonly WaitForSeconds blinkTimeSpan = new WaitForSeconds(1.0f / 60.0f * 3.0f);
     public virtual IEnumerator OnDamagedBlink()
     {
@@ -146,7 +130,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
             triangle.wills1Color.a
         );
     }
-
     protected virtual void OnHPLE0()
     {
         Explode.ExplodePosition = transform.position;
@@ -154,7 +137,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
         Destroy(HpBar.gameObject);
         Destroy(gameObject);
     }
-
     protected virtual void OnOutOfField()
     {
         Debug.Log("Enemy out of field");
@@ -167,9 +149,68 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
         if(gameObject != null) {Destroy(gameObject);}
     }
 
+    // I hate this implementation. Previous one with coroutine is prettier.
+    // But the problem is... you know coroutine ¯\_(ツ)_/¯ 
+    // Hope I find a better one soon.
+    protected enum Intent
+    {
+        Idle,
+        ChasePlayer,
+        Jump,
+        WalkOffEdge,
+        WaitUntilStill,
+        WaitUntilGround,
+        GetKnockbacked,
+        EnumCount
+    }
+    protected virtual Intent intent{get; set;}
+    protected void SetIntent(Intent to, bool forceOverwrite = false, Intent expectFrom = Intent.EnumCount)
+    {
+        // if force overwrite or the caller knows what it's doing
+        if(forceOverwrite || expectFrom == intent)
+        {
+            // change intent
+            intent = to;
+        }
+        else
+        {
+            // change intent to the one with higher priority
+            intent = (Intent)Math.Max((int)to, (int)intent);
+        }
+        // yeah, at this point I'm pretty sure that I hate this implementaion.
+    }
+    protected abstract void MainProcessIntent();
+    protected bool isIntentPassive;
+
+    protected virtual void FixedUpdate()
+    {
+        MainProcessIntent();
+    }
 
     public ParticleSystem.MinMaxCurve DistanceToKnockbackPowerCurve{get;set;}
     public abstract void GetKnockbacked(Vector2 direction, float power, bool stun);
+
+    protected virtual float collisionKnockbackForceEpsilon => 1.0f;
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        IKnockbackable knockbackable;
+        if(collision.collider.TryGetComponent<IKnockbackable>(out knockbackable))
+        {
+            ContactPoint2D[] contacts = new ContactPoint2D[collision.contactCount];
+            collision.GetContacts(contacts);
+
+            Vector2 impulse = Vector2.zero;
+            foreach(ContactPoint2D point in contacts)
+            {
+                impulse += point.normal;
+            }
+
+            if(impulse.magnitude >= collisionKnockbackForceEpsilon)
+            {
+                knockbackable.GetKnockbacked(-impulse/Time.fixedDeltaTime, 1.0f, false);
+            }
+        }
+    }
 
     protected virtual void OnTriggerExit2D(Collider2D other)
     {
