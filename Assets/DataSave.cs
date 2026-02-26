@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class PlayerData{
@@ -13,7 +15,7 @@ public class PlayerData{
     public float yPos;
     public float zPos;
     public List<int> BackpackIndex; //TODO
-    public ShopItemsContent[] items;
+    //public ShopItemsContent[] Items;
     //record Player setting
     public int FrameRate;
     public string Jump;
@@ -25,21 +27,30 @@ public class PlayerData{
     public string Attack;
     public string FindMine;
 }
-//I haven't finish the shop part yet ......
-public struct ShopItemsContent{
+//it will read a List called GoodRecords in GlobalVariables
+/*public struct ShopItemsContent{
     public int index;
     public int Num;
-}
+    public Sprite sprite;
+    public string information;
+    public int Price;
+    public int indexInPosssession;
+}*/
 public class DataSave : MonoBehaviour{
-    readonly string path = Application.persistentDataPath + "/save.json";
+    string path;
     public static DataSave Instance{get;private set;} = null;
+    public GameObject FailUIPrefab;
     void Awake(){
+        path = Application.persistentDataPath + "/save.json";
         if (Instance != null && Instance != this){
             Destroy(this.gameObject);
         }
         else{
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
+        }
+        if(FailUIPrefab.transform.Find("Close").TryGetComponent<Button>(out Button btn)){
+            btn.onClick.AddListener(CloseFailedUI);
         }
     }
     public void SaveData(GameObject Player){
@@ -60,10 +71,34 @@ public class DataSave : MonoBehaviour{
         data.MoveRight = GlobalVariables.Instance.MoveRightKey.ToString();
         data.Up = GlobalVariables.Instance.UpKey.ToString();
 
+        foreach(PossessionItems item in GlobalVariables.Instance.possession){
+            data.BackpackIndex.Add(item.index);
+        }
+
+        /*for(int i = 0; i < GlobalVariables.Instance.GoodsRecords.Length; i++){
+            data.Items[i].index = GlobalVariables.Instance.GoodsRecords[i].index;
+            data.Items[i].Num = GlobalVariables.Instance.GoodsRecords[i].num;
+            data.Items[i].information = GlobalVariables.Instance.GoodsRecords[i].Information;
+            data.Items[i].Price = GlobalVariables.Instance.GoodsRecords[i].Price;
+            data.Items[i].indexInPosssession = GlobalVariables.Instance.GoodsRecords[i].indexInPosssession;
+            data.Items[i].sprite = GlobalVariables.Instance.GoodsRecords[i].pic;
+        }*/
+
         string content = JsonUtility.ToJson(data);
-        File.WriteAllText(path,content);
+        try{
+            File.WriteAllText(path,content);
+        }
+        catch(Exception e){
+            Debug.LogError(e);
+            //show Failed UI
+            if(FailUIPrefab.transform.Find("Msg").TryGetComponent<Text>(out Text txt3)){
+                txt3.text = e.Message;
+            }
+            FailUIPrefab.SetActive(true);
+            return;
+        }
     }
-    public void LoadData(){ //TODO
+    public void LoadData(){
         if (!File.Exists(path)){
             Debug.LogWarning("Couldn't find the save data");
             return;
@@ -81,15 +116,25 @@ public class DataSave : MonoBehaviour{
         GlobalVariables.Instance.MoveRightKey = (Key)System.Enum.Parse(typeof(Key),deserializeData.MoveRight);
         GlobalVariables.Instance.UpKey = (Key)System.Enum.Parse(typeof(Key),deserializeData.Up);
 
+        foreach(int index in deserializeData.BackpackIndex){
+            GlobalVariables.Instance.possession.Add(GlobalVariables.Instance.AllPossession[index]);
+        }
+
         LoadSceneManager.NextScene = deserializeData.Scene;
         SceneManager.LoadScene("LoadSceneBuffer");
-        if(SceneManager.GetActiveScene().name == deserializeData.Scene){ //TODO
+        if(SceneManager.GetActiveScene().name == deserializeData.Scene){ //Fixed
             GameObject Player = GameObject.FindWithTag("Player");
             if(Player == null){ 
                 Debug.LogError("Couldn't find player");
                 SceneManager.LoadScene("MainMenu");
+                return;
             }
-            Player.transform.position = new Vector3(deserializeData.xPos,deserializeData.yPos,deserializeData.zPos);
+            else{
+                Player.transform.position = new Vector3(deserializeData.xPos,deserializeData.yPos,deserializeData.zPos);
+            }
         }
+    }
+    void CloseFailedUI(){
+        FailUIPrefab.SetActive(false);
     }
 }

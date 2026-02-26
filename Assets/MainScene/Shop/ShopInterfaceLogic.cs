@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class ShopInterfaceLogic : MonoBehaviour{
     public GameObject Panel; //buying Interface
     public GameObject Shop;
-    public List<Merchandise> Goods;
-    public List<Merchandise> SoldGoods;
+    List<Merchandise> Goods;
+    List<Merchandise> SoldGoods;
     public Merchandise[] AllGoods;
     Merchandise current = null;
     public static bool isBuying = false;
@@ -17,10 +17,10 @@ public class ShopInterfaceLogic : MonoBehaviour{
     public static float timeScaleBeforeShoppingStart;
     public Text MineNum;
     public GameObject Menu;
-    public Button ESC;
     public Button Yes;
     public Text MineNumInPanel;
     public GameObject IF;
+    public GameObject SoldMsg;
     void Awake(){
         if(Instance == null){
             Instance = this;
@@ -31,7 +31,7 @@ public class ShopInterfaceLogic : MonoBehaviour{
         }
     }
     void Start(){
-        Goods = AllGoods.ToList(); // 還沒做商店系統SaveManager導致的
+        AllGoods = GlobalVariables.Instance.GoodsRecords;
         UpdateButton();
     }
     void Update(){
@@ -63,25 +63,28 @@ public class ShopInterfaceLogic : MonoBehaviour{
         if(Panel.transform.Find("Price").TryGetComponent<Text>(out Text txt3)){
             txt3.text = $"Price : {current.Price.ToString()}";
         }
-        if(current.num > 0 && GlobalVariables.Instance.NumMines > current.Price){
+        if(current.num > 0 && GlobalVariables.Instance.NumMines >= current.Price){
             Yes.onClick.AddListener(BuySomething);
         }
         else if(current.Price > GlobalVariables.Instance.NumMines){
             Yes.onClick.AddListener(OpenIFMsg);
         }
+        else if(current.num <= 0){
+            Yes.onClick.AddListener(OpenSoldMsg);
+        }
     }
     void BuySomething(){
-        if(current.num > 0){
-            current.num -=1;
-        }
-        if(GlobalVariables.Instance.NumMines >= current.Price){
+        if(current.Price<= GlobalVariables.Instance.NumMines){
+            current.num -= 1;
             GlobalVariables.Instance.NumMines -= current.Price;
+            GlobalVariables.Instance.possession.Add(GlobalVariables.Instance.AllPossession[current.indexInPosssession]);
         }
     }
     public void CloseShop(){
         Shop.SetActive(false);
         isBuying = false;
         Menu.SetActive(true);
+        RecordMerchandise();
         Time.timeScale = timeScaleBeforeShoppingStart;
     }
     void UpdateButton(){
@@ -110,5 +113,14 @@ public class ShopInterfaceLogic : MonoBehaviour{
     }
     void OpenIFMsg(){
         IF.SetActive(true);
+    }
+    void OpenSoldMsg(){
+        SoldMsg.SetActive(true);
+    }
+    public void CloseSoldMsg(){
+        SoldMsg.SetActive(false);
+    }
+    void RecordMerchandise(){
+        GlobalVariables.Instance.GoodsRecords = AllGoods;
     }
 }

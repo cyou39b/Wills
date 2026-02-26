@@ -71,6 +71,8 @@ public class GlobalVariables : MonoBehaviour
     public Key FindMineKey = Key.N;
 
     public List<PossessionItems> possession;
+    public Merchandise[] GoodsRecords;
+    public PossessionItems[] AllPossession;
     
     // Defined layers
     public const int PlayerLayer = 7;

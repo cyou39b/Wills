@@ -35,7 +35,7 @@ public class JackMainScene : MonoBehaviour{
         else{
             rb.linearVelocityX = 0f;
         }
-        if (Keyboard.current[GlobalVariables.Instance.InteractKey].wasPressedThisFrame && Button1.gameObject.activeSelf){
+        if (Keyboard.current[GlobalVariables.Instance.InteractKey].wasPressedThisFrame && Button1.gameObject.activeSelf && !MenuManager.IsMenuOpen){
             DialogueManager.Instance.StartDialogue(closestObj);
         }
     }

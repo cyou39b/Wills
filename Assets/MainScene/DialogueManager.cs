@@ -25,6 +25,9 @@ public class DialogueManager : MonoBehaviour{
     }
     void Update(){}
     public void StartDialogue(IInteract interact){
+        if (MenuManager.IsMenuOpen || ShopInterfaceLogic.isBuying){
+            return;
+        }
         Option1.gameObject.SetActive(false);
         Option2.gameObject.SetActive(false);
         GoNextLine.gameObject.SetActive(true);
@@ -42,7 +45,7 @@ public class DialogueManager : MonoBehaviour{
         Option1.gameObject.SetActive(false);
         Option2.gameObject.SetActive(false);
         GoNextLine.gameObject.SetActive(true);
-        
+
         Option1.onClick.RemoveAllListeners();
         Option2.onClick.RemoveAllListeners();
 

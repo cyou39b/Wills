@@ -7,7 +7,6 @@ public class NpcLogic : MonoBehaviour,IInteract{
 
     public string WriteInteractText() => "NPC";
     public void OnButtonClick(){
-        Debug.Log("talk to NPC");
         DialogueManager.Instance.StartDialogue(this);
     }
     public Vector2 GetPosition() => transform.position;
