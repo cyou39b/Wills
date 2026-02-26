@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO.Compression;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -38,8 +39,6 @@ public class Flyer : AbstractEnemy
         mat.SetColor("_WingB_Color", WingBColors[idx]);
         mat.SetColor("_WingG_Color", WingGColors[idx]);
         mat.SetColor("_WingY_Color", WingYColors[idx]);
-
-        SetIntent(StartCoroutine(ChasePlayer()), false);
     }
 
     void Update()
@@ -60,15 +59,40 @@ public class Flyer : AbstractEnemy
         }
     }
 
-    private static readonly WaitForSeconds agentUpdateTimeSpan = new WaitForSeconds(0.125f);
-    IEnumerator ChasePlayer()
+    protected override void MainProcessIntent()
     {
-        while(true)
+        switch(intent)
         {
-            agent.SetDestination(playerTrans.position);
-            Anmor.speed = Mathf.Max(0.0f, agent.velocity.y / 9.81f + 1.0f);
-            yield return agentUpdateTimeSpan;
+            case Intent.Idle:
+                SetIntent(Intent.ChasePlayer, false);
+                break;
+            case Intent.ChasePlayer:
+                ProcessChasePlayerIntent();
+                break;
+            case Intent.WaitUntilStill:
+                ProcessWaitUntilStillIntent();
+                break;
+            case Intent.GetKnockbacked:
+                ProcessGetKnockbackedIntent();
+                break;
+            case Intent.EnumCount:
+                Debug.LogError("Don't use EnumCount!!");
+                break;
+            default:
+                Debug.LogError($"{nameof(Flyer)} doesn't implement case {intent} for MainProccesIntent");
+                break;
         }
+    }
+
+    private int destinationUpdateCounter = 0;
+    private const int destinationUpdateCount = 7;
+    void ProcessChasePlayerIntent()
+    {
+        if(++destinationUpdateCounter != destinationUpdateCount){return;}
+        else{destinationUpdateCounter = 0;}
+
+        agent.SetDestination(playerTrans.position);
+        Anmor.speed = Mathf.Max(0.0f, agent.velocity.y / 9.81f + 1.0f);
     }
 
     protected override (float, float, Vector3?) HpBarData() 
@@ -76,31 +100,43 @@ public class Flyer : AbstractEnemy
 
     public override void GetKnockbacked(Vector2 direction, float power, bool stun)
     {
-        SetIntent(StartCoroutine(GetKnockbackedIntent(direction, power, stun)), true);
+        if(intent == Intent.GetKnockbacked)
+        {
+            getKnockbackedIntent_force += direction * power;
+            getKnockbackedIntent_stun |= stun;
+        }
+        else
+        {
+            getKnockbackedIntent_force = direction * power;
+            getKnockbackedIntent_stun = stun;
+        }
+        SetIntent(Intent.GetKnockbacked, true);
     }
 
-    private IEnumerator GetKnockbackedIntent(Vector2 direction, float power, bool stun)
+    private Vector2 getKnockbackedIntent_force;
+    private bool getKnockbackedIntent_stun;
+    private void ProcessGetKnockbackedIntent()
     {
-        yield return null;
         // Disable Nav Mesh agent and enable rigidbody.
         agent.enabled = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.gravityScale = (stun)?1.0f:0.0f;
-        rb.AddForce(direction * power);
+        rb.gravityScale = getKnockbackedIntent_stun?1.0f:0.0f;
+        rb.AddForce(getKnockbackedIntent_force);
+        SetIntent(Intent.WaitUntilStill, false, Intent.GetKnockbacked);
 
-        // make sure the force got applied
-        yield return new WaitForFixedUpdate();
-        // float startTime = Time.time;
-        yield return new WaitUntil(() => rb.linearVelocity.magnitude <= StillEpsilon /*|| Time.time - startTime >= 0.5f*/);
+        getKnockbackedIntent_force = Vector2.zero;
+        getKnockbackedIntent_stun = false;
+    }
 
-        // Enable agent
-        rb.linearVelocity = Vector2.zero;
-        rb.bodyType = RigidbodyType2D.Kinematic;
-        agent.Warp(transform.position);
-        agent.enabled = true;
-
-        // make sure that agent got re-enabled
-        yield return null;
-        SetIntent(StartCoroutine(ChasePlayer()), false);
+    private void ProcessWaitUntilStillIntent()
+    {
+        if(rb.linearVelocity.magnitude <= StillEpsilon)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            agent.Warp(transform.position);
+            agent.enabled = true;
+            SetIntent(Intent.Idle, false, Intent.WaitUntilStill);
+        }
     }
 }
