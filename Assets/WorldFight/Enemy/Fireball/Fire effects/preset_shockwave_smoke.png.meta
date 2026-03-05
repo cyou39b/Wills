@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 404be5c45305bfa428f78923f270f6b2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4673610858288237850
+    second: preset_shockwave_smoke_0
+  - first:
+      213: -2154407295901214294
+    second: preset_shockwave_smoke_1
+  - first:
+      213: 6083682511170314472
+    second: preset_shockwave_smoke_2
+  - first:
+      213: -7866380757036377824
+    second: preset_shockwave_smoke_3
+  - first:
+      213: 4779875940222669369
+    second: preset_shockwave_smoke_4
+  - first:
+      213: 8217168311727769259
+    second: preset_shockwave_smoke_5
+  - first:
+      213: -4999650089999027525
+    second: preset_shockwave_smoke_6
+  - first:
+      213: 6946472529500544349
+    second: preset_shockwave_smoke_7
+  - first:
+      213: 8325757886544623746
+    second: preset_shockwave_smoke_8
+  - first:
+      213: 236617701591040271
+    second: preset_shockwave_smoke_9
+  - first:
+      213: -3959036567809506328
+    second: preset_shockwave_smoke_10
+  - first:
+      213: 5006122421449320728
+    second: preset_shockwave_smoke_11
+  - first:
+      213: -531787861616318130
+    second: preset_shockwave_smoke_12
+  - first:
+      213: 933772524093115818
+    second: preset_shockwave_smoke_13
+  - first:
+      213: -6165996390903929384
+    second: preset_shockwave_smoke_14
+  - first:
+      213: 8103153073023836173
+    second: preset_shockwave_smoke_15
+  - first:
+      213: 3373900243439887542
+    second: preset_shockwave_smoke_16
+  - first:
+      213: -9083010625021050564
+    second: preset_shockwave_smoke_17
+  - first:
+      213: 6003398327851963600
+    second: preset_shockwave_smoke_18
+  - first:
+      213: -6452614194229822316
+    second: preset_shockwave_smoke_19
+  - first:
+      213: -6008064018735707607
+    second: preset_shockwave_smoke_20
+  - first:
+      213: -845597555156891138
+    second: preset_shockwave_smoke_21
+  - first:
+      213: 3794398571194013566
+    second: preset_shockwave_smoke_22
+  - first:
+      213: -4059276950787270708
+    second: preset_shockwave_smoke_23
+  - first:
+      213: -1593964181156975625
+    second: preset_shockwave_smoke_24
+  - first:
+      213: 7573936904601511133
+    second: preset_shockwave_smoke_25
+  - first:
+      213: 373041775684062124
+    second: preset_shockwave_smoke_26
+  - first:
+      213: 8991340777420804017
+    second: preset_shockwave_smoke_27
+  - first:
+      213: -1523694443609386177
+    second: preset_shockwave_smoke_28
+  - first:
+      213: -7482506979671770933
+    second: preset_shockwave_smoke_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 554
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e2325dafaff32fb0800000000000000
+      internalID: -4673610858288237850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 553
+        width: 33
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa95c4a9af10a12e0800000000000000
+      internalID: -2154407295901214294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_2
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 549
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e0209cd2059d6450800000000000000
+      internalID: 6083682511170314472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_3
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 419
+        width: 49
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 029d0ec116005d290800000000000000
+      internalID: -7866380757036377824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_4
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 419
+        width: 56
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932986fb7d7855240800000000000000
+      internalID: 4779875940222669369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_5
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 420
+        width: 64
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba641280b0f390270800000000000000
+      internalID: 8217168311727769259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 419
+        width: 72
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb2bb508bbcad9ab0800000000000000
+      internalID: -4999650089999027525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_7
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 293
+        width: 79
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d93ea26f3d66060800000000000000
+      internalID: 6946472529500544349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_8
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 291
+        width: 86
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2883661afa80b8370800000000000000
+      internalID: 8325757886544623746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_9
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 288
+        width: 91
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0147e2cb82a84300800000000000000
+      internalID: 236617701591040271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_10
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 286
+        width: 95
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e3ceeaa73dae09c0800000000000000
+      internalID: -3959036567809506328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_11
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 159
+        width: 98
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819ea9891d1597540800000000000000
+      internalID: 5006122421449320728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_12
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 159
+        width: 94
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49ae74e1c5be98f0800000000000000
+      internalID: -531787861616318130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_13
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 195
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad079fc92d65fc00800000000000000
+      internalID: 933772524093115818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_14
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 158
+        width: 96
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d5a4d983fafd6aa0800000000000000
+      internalID: -6165996390903929384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_15
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 186
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d00633e99ce247070800000000000000
+      internalID: 8103153073023836173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_16
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 42
+        width: 55
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b4a6dd456082de20800000000000000
+      internalID: 3373900243439887542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_17
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 174
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31858cd5f9a2f180800000000000000
+      internalID: -9083010625021050564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_18
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 60
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d45ac8c8fa505350800000000000000
+      internalID: 6003398327851963600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_19
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 33
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49cb948e395b376a0800000000000000
+      internalID: -6452614194229822316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_20
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 61
+        width: 42
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ac3776b911f9ca0800000000000000
+      internalID: -6008064018735707607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_21
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 66
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef94fe5f085d344f0800000000000000
+      internalID: -845597555156891138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_22
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 61
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77d44c956968a430800000000000000
+      internalID: 3794398571194013566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_23
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 61
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc7d467ce1d8aa7c0800000000000000
+      internalID: -4059276950787270708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_24
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 47
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb217db50a11e9e0800000000000000
+      internalID: -1593964181156975625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 47
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd4aefd7c770c1960800000000000000
+      internalID: 7573936904601511133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_26
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 34
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab870eb48f4d2500800000000000000
+      internalID: 373041775684062124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_27
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 39
+        width: 40
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bfc6a48cc8a7cc70800000000000000
+      internalID: 8991340777420804017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_28
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 53
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f331d66f9ffbadae0800000000000000
+      internalID: -1523694443609386177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_smoke_29
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 45
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc87847cb8bc82890800000000000000
+      internalID: -7482506979671770933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      preset_shockwave_smoke_0: -4673610858288237850
+      preset_shockwave_smoke_1: -2154407295901214294
+      preset_shockwave_smoke_10: -3959036567809506328
+      preset_shockwave_smoke_11: 5006122421449320728
+      preset_shockwave_smoke_12: -531787861616318130
+      preset_shockwave_smoke_13: 933772524093115818
+      preset_shockwave_smoke_14: -6165996390903929384
+      preset_shockwave_smoke_15: 8103153073023836173
+      preset_shockwave_smoke_16: 3373900243439887542
+      preset_shockwave_smoke_17: -9083010625021050564
+      preset_shockwave_smoke_18: 6003398327851963600
+      preset_shockwave_smoke_19: -6452614194229822316
+      preset_shockwave_smoke_2: 6083682511170314472
+      preset_shockwave_smoke_20: -6008064018735707607
+      preset_shockwave_smoke_21: -845597555156891138
+      preset_shockwave_smoke_22: 3794398571194013566
+      preset_shockwave_smoke_23: -4059276950787270708
+      preset_shockwave_smoke_24: -1593964181156975625
+      preset_shockwave_smoke_25: 7573936904601511133
+      preset_shockwave_smoke_26: 373041775684062124
+      preset_shockwave_smoke_27: 8991340777420804017
+      preset_shockwave_smoke_28: -1523694443609386177
+      preset_shockwave_smoke_29: -7482506979671770933
+      preset_shockwave_smoke_3: -7866380757036377824
+      preset_shockwave_smoke_4: 4779875940222669369
+      preset_shockwave_smoke_5: 8217168311727769259
+      preset_shockwave_smoke_6: -4999650089999027525
+      preset_shockwave_smoke_7: 6946472529500544349
+      preset_shockwave_smoke_8: 8325757886544623746
+      preset_shockwave_smoke_9: 236617701591040271
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

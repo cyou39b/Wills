@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 2390b92f121ad424092e2f55fa6bcaae
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1162851816808946920
+    second: preset_shockwave_fire_0
+  - first:
+      213: 2935156163805155805
+    second: preset_shockwave_fire_1
+  - first:
+      213: -7257158818566473116
+    second: preset_shockwave_fire_2
+  - first:
+      213: -1181319229917542878
+    second: preset_shockwave_fire_3
+  - first:
+      213: -1111173089188346675
+    second: preset_shockwave_fire_4
+  - first:
+      213: -5171279623327458327
+    second: preset_shockwave_fire_5
+  - first:
+      213: -777189115941144107
+    second: preset_shockwave_fire_6
+  - first:
+      213: -2543995086597776829
+    second: preset_shockwave_fire_7
+  - first:
+      213: -409271074598218646
+    second: preset_shockwave_fire_8
+  - first:
+      213: 7382434431725657899
+    second: preset_shockwave_fire_9
+  - first:
+      213: 8513124193528340378
+    second: preset_shockwave_fire_10
+  - first:
+      213: 9174443284297510955
+    second: preset_shockwave_fire_11
+  - first:
+      213: 844432303594905292
+    second: preset_shockwave_fire_12
+  - first:
+      213: 4896638634064566019
+    second: preset_shockwave_fire_13
+  - first:
+      213: 787142538145186223
+    second: preset_shockwave_fire_14
+  - first:
+      213: -8515122857873243587
+    second: preset_shockwave_fire_15
+  - first:
+      213: -3001969588117949711
+    second: preset_shockwave_fire_16
+  - first:
+      213: -4792965958366800502
+    second: preset_shockwave_fire_17
+  - first:
+      213: -7107559808152400749
+    second: preset_shockwave_fire_18
+  - first:
+      213: 8878844125381808183
+    second: preset_shockwave_fire_19
+  - first:
+      213: 4913506391158397626
+    second: preset_shockwave_fire_20
+  - first:
+      213: -1858397434126442156
+    second: preset_shockwave_fire_21
+  - first:
+      213: 3272947687671496602
+    second: preset_shockwave_fire_22
+  - first:
+      213: -8105012981015812807
+    second: preset_shockwave_fire_23
+  - first:
+      213: -7017504238692007688
+    second: preset_shockwave_fire_24
+  - first:
+      213: -5895424876715863481
+    second: preset_shockwave_fire_25
+  - first:
+      213: 405542198922122864
+    second: preset_shockwave_fire_26
+  - first:
+      213: -1028176162109938542
+    second: preset_shockwave_fire_27
+  - first:
+      213: -1791105273501448661
+    second: preset_shockwave_fire_28
+  - first:
+      213: 7807087639613216213
+    second: preset_shockwave_fire_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: preset_shockwave_fire_0
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 554
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8136fa40f68bcdfe0800000000000000
+      internalID: -1162851816808946920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 551
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd197e7daf4cbb820800000000000000
+      internalID: 2935156163805155805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_2
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 548
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46a70cc2184694b90800000000000000
+      internalID: -7257158818566473116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_3
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 419
+        width: 51
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2264d665b6c1b9fe0800000000000000
+      internalID: -1181319229917542878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_4
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 418
+        width: 57
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc484fe66f15490f0800000000000000
+      internalID: -1111173089188346675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_5
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 418
+        width: 65
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ebd959c49ceb38b0800000000000000
+      internalID: -5171279623327458327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 418
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d93705ed9ed635f0800000000000000
+      internalID: -777189115941144107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_7
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 292
+        width: 79
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a100982f9e1bcd0800000000000000
+      internalID: -2543995086597776829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_8
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 290
+        width: 87
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a641bb5402af15af0800000000000000
+      internalID: -409271074598218646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_9
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 287
+        width: 92
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2fde98700da37660800000000000000
+      internalID: 7382434431725657899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_10
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 285
+        width: 97
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f5a0c7951b42670800000000000000
+      internalID: 8513124193528340378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_11
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 158
+        width: 99
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b20758c0f8b225f70800000000000000
+      internalID: 9174443284297510955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_12
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 158
+        width: 103
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cce93a4c4b608bb00800000000000000
+      internalID: 844432303594905292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_13
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 157
+        width: 72
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3075fd8e4ea54f340800000000000000
+      internalID: 4896638634064566019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_14
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 216
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa14ebdc7fd7cea00800000000000000
+      internalID: 787142538145186223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_15
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 157
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3208a530e434d980800000000000000
+      internalID: -8515122857873243587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_16
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 32
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f234b1909cd656d0800000000000000
+      internalID: -3001969588117949711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_17
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 60
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a85d107ead6fb7db0800000000000000
+      internalID: -4792965958366800502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_18
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 33
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c8b3f0300ec5d90800000000000000
+      internalID: -7107559808152400749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_19
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 61
+        width: 39
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 730527d90bdf73b70800000000000000
+      internalID: 8878844125381808183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_20
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 67
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba9b96a708403440800000000000000
+      internalID: 4913506391158397626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_21
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 60
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 451656f3165a536e0800000000000000
+      internalID: -1858397434126442156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_22
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 46
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f7814c498db6d20800000000000000
+      internalID: 3272947687671496602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_23
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 45
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9356f9ec2a5358f80800000000000000
+      internalID: -8105012981015812807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_24
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 46
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f007f24311dc9e90800000000000000
+      internalID: -7017504238692007688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_25
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 37
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74299575f4e3f2ea0800000000000000
+      internalID: -5895424876715863481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_26
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 47
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0761f243b76c0a500800000000000000
+      internalID: 405542198922122864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_27
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 40
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294a9e26a3f2bb1f0800000000000000
+      internalID: -1028176162109938542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_28
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 39
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b260e915e37b427e0800000000000000
+      internalID: -1791105273501448661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_fire_29
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 46
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d51d7138d8585c60800000000000000
+      internalID: 7807087639613216213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      preset_shockwave_fire_0: -1162851816808946920
+      preset_shockwave_fire_1: 2935156163805155805
+      preset_shockwave_fire_10: 8513124193528340378
+      preset_shockwave_fire_11: 9174443284297510955
+      preset_shockwave_fire_12: 844432303594905292
+      preset_shockwave_fire_13: 4896638634064566019
+      preset_shockwave_fire_14: 787142538145186223
+      preset_shockwave_fire_15: -8515122857873243587
+      preset_shockwave_fire_16: -3001969588117949711
+      preset_shockwave_fire_17: -4792965958366800502
+      preset_shockwave_fire_18: -7107559808152400749
+      preset_shockwave_fire_19: 8878844125381808183
+      preset_shockwave_fire_2: -7257158818566473116
+      preset_shockwave_fire_20: 4913506391158397626
+      preset_shockwave_fire_21: -1858397434126442156
+      preset_shockwave_fire_22: 3272947687671496602
+      preset_shockwave_fire_23: -8105012981015812807
+      preset_shockwave_fire_24: -7017504238692007688
+      preset_shockwave_fire_25: -5895424876715863481
+      preset_shockwave_fire_26: 405542198922122864
+      preset_shockwave_fire_27: -1028176162109938542
+      preset_shockwave_fire_28: -1791105273501448661
+      preset_shockwave_fire_29: 7807087639613216213
+      preset_shockwave_fire_3: -1181319229917542878
+      preset_shockwave_fire_4: -1111173089188346675
+      preset_shockwave_fire_5: -5171279623327458327
+      preset_shockwave_fire_6: -777189115941144107
+      preset_shockwave_fire_7: -2543995086597776829
+      preset_shockwave_fire_8: -409271074598218646
+      preset_shockwave_fire_9: 7382434431725657899
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,3 +4,10 @@ public enum FacingDirection
     Right,
     None
 }
+
+public enum AIFacingDirection
+{
+    SameAsMoving,
+    NegFromMoving,
+    None
+}

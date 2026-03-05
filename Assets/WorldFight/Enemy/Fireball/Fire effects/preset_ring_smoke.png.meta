@@ -1,0 +1,1196 @@
+fileFormatVersion: 2
+guid: b8f0ad7e8f9d2334ead9a2758e91a34a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7112010874605936020
+    second: preset_ring_smoke_0
+  - first:
+      213: -7874709016588970216
+    second: preset_ring_smoke_1
+  - first:
+      213: 6875774307959007777
+    second: preset_ring_smoke_2
+  - first:
+      213: 180979247350666078
+    second: preset_ring_smoke_3
+  - first:
+      213: -8254072230920042052
+    second: preset_ring_smoke_4
+  - first:
+      213: -831631632679594902
+    second: preset_ring_smoke_5
+  - first:
+      213: -3247485474886867102
+    second: preset_ring_smoke_6
+  - first:
+      213: -1522941937109889945
+    second: preset_ring_smoke_7
+  - first:
+      213: -1970744224616947708
+    second: preset_ring_smoke_8
+  - first:
+      213: 2281375715591406941
+    second: preset_ring_smoke_9
+  - first:
+      213: -8977992280152970854
+    second: preset_ring_smoke_10
+  - first:
+      213: 4649783232151473075
+    second: preset_ring_smoke_11
+  - first:
+      213: -2507431437763103298
+    second: preset_ring_smoke_12
+  - first:
+      213: -7190087657637074678
+    second: preset_ring_smoke_13
+  - first:
+      213: -3127100051663689876
+    second: preset_ring_smoke_14
+  - first:
+      213: 8605201681595412453
+    second: preset_ring_smoke_15
+  - first:
+      213: 5691499159841791684
+    second: preset_ring_smoke_16
+  - first:
+      213: 6081342278609303382
+    second: preset_ring_smoke_17
+  - first:
+      213: -2563007438073642681
+    second: preset_ring_smoke_18
+  - first:
+      213: -3857960837847108676
+    second: preset_ring_smoke_19
+  - first:
+      213: 1292845350939971252
+    second: preset_ring_smoke_20
+  - first:
+      213: 1589095597835131537
+    second: preset_ring_smoke_21
+  - first:
+      213: -5993493740609514826
+    second: preset_ring_smoke_22
+  - first:
+      213: -3909315380550729504
+    second: preset_ring_smoke_23
+  - first:
+      213: -7292850267496289080
+    second: preset_ring_smoke_24
+  - first:
+      213: -7718876107016163651
+    second: preset_ring_smoke_25
+  - first:
+      213: -961579848981288377
+    second: preset_ring_smoke_26
+  - first:
+      213: 2243986517425546725
+    second: preset_ring_smoke_27
+  - first:
+      213: -5686874113607037929
+    second: preset_ring_smoke_28
+  - first:
+      213: -6313052670768924496
+    second: preset_ring_smoke_29
+  - first:
+      213: -3421259830620212506
+    second: preset_ring_smoke_30
+  - first:
+      213: -38237098351768568
+    second: preset_ring_smoke_31
+  - first:
+      213: 6170082911842995493
+    second: preset_ring_smoke_32
+  - first:
+      213: 188853949211398722
+    second: preset_ring_smoke_33
+  - first:
+      213: -8844679144603175309
+    second: preset_ring_smoke_34
+  - first:
+      213: 5349757660052483121
+    second: preset_ring_smoke_35
+  - first:
+      213: 7421186752033474185
+    second: preset_ring_smoke_36
+  - first:
+      213: 1006592819927274551
+    second: preset_ring_smoke_37
+  - first:
+      213: 1918528324913055958
+    second: preset_ring_smoke_38
+  - first:
+      213: -4231119705701487318
+    second: preset_ring_smoke_39
+  - first:
+      213: -812247340470399476
+    second: preset_ring_smoke_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: preset_ring_smoke_0
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 537
+        width: 53
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62e5646acf0d4d90800000000000000
+      internalID: -7112010874605936020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_1
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 534
+        width: 63
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81716a41fd967b290800000000000000
+      internalID: -7874709016588970216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 532
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a67adbd48ab6f50800000000000000
+      internalID: 6875774307959007777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_3
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 530
+        width: 77
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53dd06aaa7f28200800000000000000
+      internalID: 180979247350666078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_4
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 403
+        width: 83
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb94895b905a37d80800000000000000
+      internalID: -8254072230920042052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_5
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 402
+        width: 83
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a64972eaf637574f0800000000000000
+      internalID: -831631632679594902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_6
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 400
+        width: 86
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267a020aa2d9ee2d0800000000000000
+      internalID: -3247485474886867102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_7
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 399
+        width: 87
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c0509806c6ddae0800000000000000
+      internalID: -1522941937109889945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_8
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 400
+        width: 90
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 400ed84b19286a4e0800000000000000
+      internalID: -1970744224616947708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_9
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 399
+        width: 93
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d554707402319af10800000000000000
+      internalID: 2281375715591406941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_10
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 399
+        width: 95
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a996841b693c76380800000000000000
+      internalID: -8977992280152970854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_11
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 399
+        width: 97
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bbc4fac639578040800000000000000
+      internalID: 4649783232151473075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 273
+        width: 96
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb5bb7d6460d33dd0800000000000000
+      internalID: -2507431437763103298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_13
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 274
+        width: 99
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a092f9ebe5da73c90800000000000000
+      internalID: -7190087657637074678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_14
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 273
+        width: 102
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67ea73321f4a94d0800000000000000
+      internalID: -3127100051663689876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_15
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 273
+        width: 106
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5efa61c4651db6770800000000000000
+      internalID: 8605201681595412453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_16
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 273
+        width: 108
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ceddcdb4544cfe40800000000000000
+      internalID: 5691499159841791684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_17
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 277
+        width: 104
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65772120594456450800000000000000
+      internalID: 6081342278609303382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_18
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 275
+        width: 91
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 741cfe0805e5e6cd0800000000000000
+      internalID: -2563007438073642681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_19
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 331
+        width: 40
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb331ceee05c57ac0800000000000000
+      internalID: -3857960837847108676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_20
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 317
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4beca443ffb11f110800000000000000
+      internalID: 1292845350939971252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_21
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 275
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a991fd60a9d0610800000000000000
+      internalID: 1589095597835131537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_22
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 277
+        width: 87
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b25173a235d2dca0800000000000000
+      internalID: -5993493740609514826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_23
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 147
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e08d43bf525fb9c0800000000000000
+      internalID: -3909315380550729504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_24
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 148
+        width: 91
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cc65c522579aca90800000000000000
+      internalID: -7292850267496289080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_25
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 149
+        width: 100
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe2d08b31b01e490800000000000000
+      internalID: -7718876107016163651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_26
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 188
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74aeb46d838c7a2f0800000000000000
+      internalID: -961579848981288377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_27
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 150
+        width: 91
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e56ae339dd342f10800000000000000
+      internalID: 2243986517425546725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_28
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 149
+        width: 86
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71c8610cf1a2411b0800000000000000
+      internalID: -5686874113607037929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_29
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 150
+        width: 87
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8bc7e3b088368a0800000000000000
+      internalID: -6313052670768924496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_30
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 150
+        width: 87
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e2b1978f4e3580d0800000000000000
+      internalID: -3421259830620212506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_31
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 152
+        width: 86
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80c4087cf87287ff0800000000000000
+      internalID: -38237098351768568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_32
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 27
+        width: 79
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d0c13c7b980a550800000000000000
+      internalID: 6170082911842995493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_33
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 30
+        width: 73
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242dc2d8aa1fe9200800000000000000
+      internalID: 188853949211398722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_34
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 53
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3763f99dd23614580800000000000000
+      internalID: -8844679144603175309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_35
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 60
+        width: 36
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c6ad16f382e3a40800000000000000
+      internalID: 5349757660052483121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_36
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 43
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9864ac6280a5df660800000000000000
+      internalID: 7421186752033474185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_37
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 37
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 734593926d228fd00800000000000000
+      internalID: 1006592819927274551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_38
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 35
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d8c7f1c85bff9a10800000000000000
+      internalID: 1918528324913055958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_39
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 33
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2de18b8b0b0845c0800000000000000
+      internalID: -4231119705701487318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_smoke_40
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 36
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e8189e8515ab4f0800000000000000
+      internalID: -812247340470399476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      preset_ring_smoke_0: -7112010874605936020
+      preset_ring_smoke_1: -7874709016588970216
+      preset_ring_smoke_10: -8977992280152970854
+      preset_ring_smoke_11: 4649783232151473075
+      preset_ring_smoke_12: -2507431437763103298
+      preset_ring_smoke_13: -7190087657637074678
+      preset_ring_smoke_14: -3127100051663689876
+      preset_ring_smoke_15: 8605201681595412453
+      preset_ring_smoke_16: 5691499159841791684
+      preset_ring_smoke_17: 6081342278609303382
+      preset_ring_smoke_18: -2563007438073642681
+      preset_ring_smoke_19: -3857960837847108676
+      preset_ring_smoke_2: 6875774307959007777
+      preset_ring_smoke_20: 1292845350939971252
+      preset_ring_smoke_21: 1589095597835131537
+      preset_ring_smoke_22: -5993493740609514826
+      preset_ring_smoke_23: -3909315380550729504
+      preset_ring_smoke_24: -7292850267496289080
+      preset_ring_smoke_25: -7718876107016163651
+      preset_ring_smoke_26: -961579848981288377
+      preset_ring_smoke_27: 2243986517425546725
+      preset_ring_smoke_28: -5686874113607037929
+      preset_ring_smoke_29: -6313052670768924496
+      preset_ring_smoke_3: 180979247350666078
+      preset_ring_smoke_30: -3421259830620212506
+      preset_ring_smoke_31: -38237098351768568
+      preset_ring_smoke_32: 6170082911842995493
+      preset_ring_smoke_33: 188853949211398722
+      preset_ring_smoke_34: -8844679144603175309
+      preset_ring_smoke_35: 5349757660052483121
+      preset_ring_smoke_36: 7421186752033474185
+      preset_ring_smoke_37: 1006592819927274551
+      preset_ring_smoke_38: 1918528324913055958
+      preset_ring_smoke_39: -4231119705701487318
+      preset_ring_smoke_4: -8254072230920042052
+      preset_ring_smoke_40: -812247340470399476
+      preset_ring_smoke_5: -831631632679594902
+      preset_ring_smoke_6: -3247485474886867102
+      preset_ring_smoke_7: -1522941937109889945
+      preset_ring_smoke_8: -1970744224616947708
+      preset_ring_smoke_9: 2281375715591406941
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

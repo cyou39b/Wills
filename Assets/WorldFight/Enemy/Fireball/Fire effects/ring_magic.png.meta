@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: 7e76b614744eaa442b74f95f7efa80bc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6802709531599787499
+    second: ring_magic_0
+  - first:
+      213: 2001633889876359845
+    second: ring_magic_1
+  - first:
+      213: -3026177535085474033
+    second: ring_magic_2
+  - first:
+      213: 1908048769309563359
+    second: ring_magic_3
+  - first:
+      213: 3202061880558206774
+    second: ring_magic_4
+  - first:
+      213: -6804296376480844892
+    second: ring_magic_5
+  - first:
+      213: 3654229889885892425
+    second: ring_magic_6
+  - first:
+      213: -8271297218186639644
+    second: ring_magic_7
+  - first:
+      213: 8692615971741872779
+    second: ring_magic_8
+  - first:
+      213: -7772934354900833646
+    second: ring_magic_9
+  - first:
+      213: -1935520650785633017
+    second: ring_magic_10
+  - first:
+      213: 7319669205548378530
+    second: ring_magic_11
+  - first:
+      213: -3972420656693433597
+    second: ring_magic_12
+  - first:
+      213: -8648245213047511658
+    second: ring_magic_13
+  - first:
+      213: -6322813702410051586
+    second: ring_magic_14
+  - first:
+      213: -7231457190611958495
+    second: ring_magic_15
+  - first:
+      213: 4370526231266302502
+    second: ring_magic_16
+  - first:
+      213: 7903094556626578069
+    second: ring_magic_17
+  - first:
+      213: -7125131617076103679
+    second: ring_magic_18
+  - first:
+      213: 8146614680567841835
+    second: ring_magic_19
+  - first:
+      213: 322047549213490712
+    second: ring_magic_20
+  - first:
+      213: 906846150844403700
+    second: ring_magic_21
+  - first:
+      213: -1180425228524371946
+    second: ring_magic_22
+  - first:
+      213: 5090667542574642268
+    second: ring_magic_23
+  - first:
+      213: 5511119722289865453
+    second: ring_magic_24
+  - first:
+      213: 2943962728588820950
+    second: ring_magic_25
+  - first:
+      213: -5823802094386951238
+    second: ring_magic_26
+  - first:
+      213: -2325188792702051715
+    second: ring_magic_27
+  - first:
+      213: 4135587695493440726
+    second: ring_magic_28
+  - first:
+      213: 6807246906113308726
+    second: ring_magic_29
+  - first:
+      213: -8946305392183584520
+    second: ring_magic_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ring_magic_0
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 535
+        width: 58
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51aa4da29bbe791a0800000000000000
+      internalID: -6802709531599787499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_1
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 531
+        width: 69
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aab670fa6b37cb10800000000000000
+      internalID: 2001633889876359845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_2
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 529
+        width: 74
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f86f1b09bd006d0800000000000000
+      internalID: -3026177535085474033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_3
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 528
+        width: 83
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd951d41f30ca7a10800000000000000
+      internalID: 1908048769309563359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_4
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 400
+        width: 87
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63fbd7ba052007c20800000000000000
+      internalID: 3202061880558206774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_5
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 399
+        width: 90
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3b16d0f784291a0800000000000000
+      internalID: -6804296376480844892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_6
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 397
+        width: 93
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f634259be66b230800000000000000
+      internalID: 3654229889885892425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_7
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 396
+        width: 93
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e60f46d003763d80800000000000000
+      internalID: -8271297218186639644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_8
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 397
+        width: 95
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b82bf8cbb2062a870800000000000000
+      internalID: 8692615971741872779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_9
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 396
+        width: 98
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29aa4b1136df02490800000000000000
+      internalID: -7772934354900833646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_10
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 395
+        width: 100
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d4d721936a325e0800000000000000
+      internalID: -1935520650785633017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_11
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 396
+        width: 102
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9a3167c50b49560800000000000000
+      internalID: 7319669205548378530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 270
+        width: 102
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30b2d53a5702fd8c0800000000000000
+      internalID: -3972420656693433597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_13
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 270
+        width: 104
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695a4d19cc24bf780800000000000000
+      internalID: -8648245213047511658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_14
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 270
+        width: 107
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eff50e6ff6ad048a0800000000000000
+      internalID: -6322813702410051586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_15
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 269
+        width: 114
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1254121cff3b4ab90800000000000000
+      internalID: -7231457190611958495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_16
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 270
+        width: 109
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a9728837a37ac30800000000000000
+      internalID: 4370526231266302502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_17
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 273
+        width: 107
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59aec0a70ae6dad60800000000000000
+      internalID: 7903094556626578069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_18
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 273
+        width: 100
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 106364a7b827e1d90800000000000000
+      internalID: -7125131617076103679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_19
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 273
+        width: 93
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b248a3da3e69e0170800000000000000
+      internalID: 8146614680567841835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 145
+        width: 96
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81eb7ab2a84287400800000000000000
+      internalID: 322047549213490712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_21
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 145
+        width: 97
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ffc20ff4c3c59c00800000000000000
+      internalID: 906846150844403700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_22
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 145
+        width: 104
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61045e142894e9fe0800000000000000
+      internalID: -1180425228524371946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_23
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 147
+        width: 99
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54b5c0982fa5a640800000000000000
+      internalID: 5090667542574642268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_24
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 148
+        width: 93
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2acb1303e6b7c40800000000000000
+      internalID: 5511119722289865453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_25
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 147
+        width: 93
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d1c68df08e0bd820800000000000000
+      internalID: 2943962728588820950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_26
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 148
+        width: 93
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abbc3e9d9d2bd2fa0800000000000000
+      internalID: -5823802094386951238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_27
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 149
+        width: 92
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7a5647cc154bbfd0800000000000000
+      internalID: -2325188792702051715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_28
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 25
+        width: 85
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d4ec57091f846930800000000000000
+      internalID: 4135587695493440726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_29
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 27
+        width: 78
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638b249aef2387e50800000000000000
+      internalID: 6807246906113308726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ring_magic_30
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 31
+        width: 67
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f85cb635a658d380800000000000000
+      internalID: -8946305392183584520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ring_magic_0: -6802709531599787499
+      ring_magic_1: 2001633889876359845
+      ring_magic_10: -1935520650785633017
+      ring_magic_11: 7319669205548378530
+      ring_magic_12: -3972420656693433597
+      ring_magic_13: -8648245213047511658
+      ring_magic_14: -6322813702410051586
+      ring_magic_15: -7231457190611958495
+      ring_magic_16: 4370526231266302502
+      ring_magic_17: 7903094556626578069
+      ring_magic_18: -7125131617076103679
+      ring_magic_19: 8146614680567841835
+      ring_magic_2: -3026177535085474033
+      ring_magic_20: 322047549213490712
+      ring_magic_21: 906846150844403700
+      ring_magic_22: -1180425228524371946
+      ring_magic_23: 5090667542574642268
+      ring_magic_24: 5511119722289865453
+      ring_magic_25: 2943962728588820950
+      ring_magic_26: -5823802094386951238
+      ring_magic_27: -2325188792702051715
+      ring_magic_28: 4135587695493440726
+      ring_magic_29: 6807246906113308726
+      ring_magic_3: 1908048769309563359
+      ring_magic_30: -8946305392183584520
+      ring_magic_4: 3202061880558206774
+      ring_magic_5: -6804296376480844892
+      ring_magic_6: 3654229889885892425
+      ring_magic_7: -8271297218186639644
+      ring_magic_8: 8692615971741872779
+      ring_magic_9: -7772934354900833646
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

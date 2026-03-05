@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 82315557ca25e9049975bb5b3eba0abf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1561241576493280539
+    second: flat_effect_blueish_smoke_0
+  - first:
+      213: 2156379387609336399
+    second: flat_effect_blueish_smoke_1
+  - first:
+      213: -2593474259170275495
+    second: flat_effect_blueish_smoke_2
+  - first:
+      213: -6009752921230224839
+    second: flat_effect_blueish_smoke_3
+  - first:
+      213: -5668867943465564718
+    second: flat_effect_blueish_smoke_4
+  - first:
+      213: 3631496722434160208
+    second: flat_effect_blueish_smoke_5
+  - first:
+      213: -2497332104663114137
+    second: flat_effect_blueish_smoke_6
+  - first:
+      213: 6261676887342996953
+    second: flat_effect_blueish_smoke_7
+  - first:
+      213: -7847303994470871498
+    second: flat_effect_blueish_smoke_8
+  - first:
+      213: 5521800973480716704
+    second: flat_effect_blueish_smoke_9
+  - first:
+      213: 5073836541574540950
+    second: flat_effect_blueish_smoke_10
+  - first:
+      213: -6783605181314217996
+    second: flat_effect_blueish_smoke_11
+  - first:
+      213: 6494309905081322825
+    second: flat_effect_blueish_smoke_12
+  - first:
+      213: 934236132376764685
+    second: flat_effect_blueish_smoke_13
+  - first:
+      213: 4276083937177091123
+    second: flat_effect_blueish_smoke_14
+  - first:
+      213: -2813379973408736217
+    second: flat_effect_blueish_smoke_15
+  - first:
+      213: 564828619897700549
+    second: flat_effect_blueish_smoke_16
+  - first:
+      213: -4366801473402687551
+    second: flat_effect_blueish_smoke_17
+  - first:
+      213: 9109430023616359906
+    second: flat_effect_blueish_smoke_18
+  - first:
+      213: -1518130876034426502
+    second: flat_effect_blueish_smoke_19
+  - first:
+      213: 5615016279112817235
+    second: flat_effect_blueish_smoke_20
+  - first:
+      213: -2250743053430828105
+    second: flat_effect_blueish_smoke_21
+  - first:
+      213: -1760069919040606695
+    second: flat_effect_blueish_smoke_22
+  - first:
+      213: -4276894584766522925
+    second: flat_effect_blueish_smoke_23
+  - first:
+      213: -24886463301006930
+    second: flat_effect_blueish_smoke_24
+  - first:
+      213: -2045799661377194283
+    second: flat_effect_blueish_smoke_25
+  - first:
+      213: -5512607758015634976
+    second: flat_effect_blueish_smoke_26
+  - first:
+      213: -7177372967385608029
+    second: flat_effect_blueish_smoke_27
+  - first:
+      213: 9187731992795061434
+    second: flat_effect_blueish_smoke_28
+  - first:
+      213: -659236044355113689
+    second: flat_effect_blueish_smoke_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 543
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e21c88de0b555ae0800000000000000
+      internalID: -1561241576493280539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_1
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 542
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4acd67c0affced10800000000000000
+      internalID: 2156379387609336399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_2
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 539
+        width: 60
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f4900f6e0220cd0800000000000000
+      internalID: -2593474259170275495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_3
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 541
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932d4362f81199ca0800000000000000
+      internalID: -6009752921230224839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_4
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 539
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d5c22fe3a22451b0800000000000000
+      internalID: -5668867943465564718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_5
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 536
+        width: 60
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 056feaf470ba56230800000000000000
+      internalID: 3631496722434160208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_6
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 417
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e5067aea1b75dd0800000000000000
+      internalID: -2497332104663114137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_7
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 416
+        width: 82
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd5a5804f1f5e650800000000000000
+      internalID: 6261676887342996953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_8
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 417
+        width: 99
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e4f050896c81390800000000000000
+      internalID: -7847303994470871498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_9
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 413
+        width: 107
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a969b8cab061ac40800000000000000
+      internalID: 5521800973480716704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_10
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 410
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69e62f4c373e96640800000000000000
+      internalID: 5073836541574540950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_11
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 413
+        width: 74
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f74447570bcbd1a0800000000000000
+      internalID: -6783605181314217996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 286
+        width: 81
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d4ca9437c602a50800000000000000
+      internalID: 6494309905081322825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_13
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 287
+        width: 79
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d01e6a600d217fc00800000000000000
+      internalID: 934236132376764685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_14
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 286
+        width: 82
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33cb1396fa3b75b30800000000000000
+      internalID: 4276083937177091123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_15
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 286
+        width: 83
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c36c2f1ddd4f8d0800000000000000
+      internalID: -2813379973408736217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_16
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 283
+        width: 92
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c00aff13aca6d700800000000000000
+      internalID: 564828619897700549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_17
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 285
+        width: 76
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf2e2d32310663c0800000000000000
+      internalID: -4366801473402687551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_18
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 158
+        width: 78
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ed6ee7b7523b6e70800000000000000
+      internalID: 9109430023616359906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_19
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 158
+        width: 74
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a795a6bf2048eeae0800000000000000
+      internalID: -1518130876034426502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_20
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 198
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a1e846e8b8ced40800000000000000
+      internalID: 5615016279112817235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_21
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 161
+        width: 69
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b3d39b2e11c3c0e0800000000000000
+      internalID: -2250743053430828105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_22
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 159
+        width: 76
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91eebbfdbb9f297e0800000000000000
+      internalID: -1760069919040606695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_23
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 165
+        width: 71
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d9133df80b65a4c0800000000000000
+      internalID: -4276894584766522925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_24
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 167
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea94a3bb4e597aff0800000000000000
+      internalID: -24886463301006930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_25
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 45
+        width: 68
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d67ffd0c0cdb93e0800000000000000
+      internalID: -2045799661377194283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_26
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 45
+        width: 41
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e16a6d73784f73b0800000000000000
+      internalID: -5512607758015634976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_27
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 50
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a05d724059d46c90800000000000000
+      internalID: -7177372967385608029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_28
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 60
+        width: 25
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc9a0a9191618f70800000000000000
+      internalID: 9187731992795061434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_blueish_smoke_29
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 51
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d64197f4ce9d6f0800000000000000
+      internalID: -659236044355113689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      flat_effect_blueish_smoke_0: -1561241576493280539
+      flat_effect_blueish_smoke_1: 2156379387609336399
+      flat_effect_blueish_smoke_10: 5073836541574540950
+      flat_effect_blueish_smoke_11: -6783605181314217996
+      flat_effect_blueish_smoke_12: 6494309905081322825
+      flat_effect_blueish_smoke_13: 934236132376764685
+      flat_effect_blueish_smoke_14: 4276083937177091123
+      flat_effect_blueish_smoke_15: -2813379973408736217
+      flat_effect_blueish_smoke_16: 564828619897700549
+      flat_effect_blueish_smoke_17: -4366801473402687551
+      flat_effect_blueish_smoke_18: 9109430023616359906
+      flat_effect_blueish_smoke_19: -1518130876034426502
+      flat_effect_blueish_smoke_2: -2593474259170275495
+      flat_effect_blueish_smoke_20: 5615016279112817235
+      flat_effect_blueish_smoke_21: -2250743053430828105
+      flat_effect_blueish_smoke_22: -1760069919040606695
+      flat_effect_blueish_smoke_23: -4276894584766522925
+      flat_effect_blueish_smoke_24: -24886463301006930
+      flat_effect_blueish_smoke_25: -2045799661377194283
+      flat_effect_blueish_smoke_26: -5512607758015634976
+      flat_effect_blueish_smoke_27: -7177372967385608029
+      flat_effect_blueish_smoke_28: 9187731992795061434
+      flat_effect_blueish_smoke_29: -659236044355113689
+      flat_effect_blueish_smoke_3: -6009752921230224839
+      flat_effect_blueish_smoke_4: -5668867943465564718
+      flat_effect_blueish_smoke_5: 3631496722434160208
+      flat_effect_blueish_smoke_6: -2497332104663114137
+      flat_effect_blueish_smoke_7: 6261676887342996953
+      flat_effect_blueish_smoke_8: -7847303994470871498
+      flat_effect_blueish_smoke_9: 5521800973480716704
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

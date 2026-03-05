@@ -19,7 +19,11 @@ public class DynamicAIAction : MonoBehaviour
     public float JumpSpeed;
     [Tooltip("Make the jump speed be in range [Speed - SpeedRange, Speed + SpeedRange].\n Sometimes a little randomness just makes your game better. (I suppose)")]
     public float JumpSpeedRange;
-    [Tooltip("Wills1 will jump after [0, TimeRange] fixed updates.")]
+    [Tooltip("The range of x-value that wills1 can jump.")]
+    public float JumpRangeLeft;
+    [Tooltip("The range of x-value that wills1 can jump.")]
+    public float JumpRangeRight;
+    [Tooltip("Wills1 will jump after [0, TimeRange] fixed updates when it enters jumpRange.")]
     public int TimeRange;
 
     [Tooltip("Keep walking until the GameObject cross this line.")]

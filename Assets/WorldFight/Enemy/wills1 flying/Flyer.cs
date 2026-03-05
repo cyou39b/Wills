@@ -1,5 +1,3 @@
-using System.Collections;
-using System.IO.Compression;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,6 +14,9 @@ public class Flyer : AbstractEnemy
     [SerializeField] private float StillEpsilon;
 
     private NavMeshAgent agent;
+
+    protected override (float, float, Vector3) HpBarData 
+        => (40.0f, 40.0f, new Vector3(0.0f, 1.15f, 0.0f));
 
     protected override void Start()
     {
@@ -43,6 +44,7 @@ public class Flyer : AbstractEnemy
 
     void Update()
     {
+        Debug.DrawRay(transform.position, playerTrans.position - transform.position, Color.green);
         if(!isIntentPassive)
         {
             // not passive & agent not enabled => in attack/dodge intent and
@@ -64,10 +66,17 @@ public class Flyer : AbstractEnemy
         switch(intent)
         {
             case Intent.Idle:
-                SetIntent(Intent.ChasePlayer, false);
+                if(trySeePlayer())
+                {
+                    SetIntent(Intent.Attack, AIFacingDirection.SameAsMoving);
+                }
+                SetIntent(Intent.ChasePlayer, AIFacingDirection.SameAsMoving);
                 break;
             case Intent.ChasePlayer:
                 ProcessChasePlayerIntent();
+                break;
+            case Intent.Attack:
+                ProccesAttackIntent();
                 break;
             case Intent.WaitUntilStill:
                 ProcessWaitUntilStillIntent();
@@ -84,6 +93,17 @@ public class Flyer : AbstractEnemy
         }
     }
 
+    public float SeeDistance = 3.0f;
+    private const int seeRayCastMsk = ~0 ^GlobalVariables.EnemyLayerMask ^(1<<2); // (1<<2) is mask for ignore raycast
+    bool trySeePlayer()
+    {
+        RaycastHit2D info = Physics2D.Raycast(transform.position, playerTrans.position-transform.position, SeeDistance, seeRayCastMsk);
+
+        return  info.collider != null && 
+                info.collider.gameObject == player;
+    }   
+
+
     private int destinationUpdateCounter = 0;
     private const int destinationUpdateCount = 7;
     void ProcessChasePlayerIntent()
@@ -93,36 +113,64 @@ public class Flyer : AbstractEnemy
 
         agent.SetDestination(playerTrans.position);
         Anmor.speed = Mathf.Max(0.0f, agent.velocity.y / 9.81f + 1.0f);
+
+        if(trySeePlayer())
+        {
+            SetIntent(Intent.Attack, AIFacingDirection.SameAsMoving);
+        }
     }
 
-    protected override (float, float, Vector3?) HpBarData() 
-        => (40.0f, 40.0f, new Vector3(0.0f, 1.15f, 0.0f));
+    public GameObject FireballPrefab;
+    void ProccesAttackIntent()
+    {
+        Instantiate(FireballPrefab, transform.position, transform.rotation);
+        SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.Attack);
+    }
 
     public override void GetKnockbacked(Vector2 direction, float power, bool stun)
     {
-        if(intent == Intent.GetKnockbacked)
-        {
-            getKnockbackedIntent_force += direction * power;
-            getKnockbackedIntent_stun |= stun;
-        }
-        else
-        {
-            getKnockbackedIntent_force = direction * power;
-            getKnockbackedIntent_stun = stun;
-        }
-        SetIntent(Intent.GetKnockbacked, true);
+        getKnockbackedIntent_force += direction * power;
+        getKnockbackedIntent_stun |= stun;
+        SetIntent(Intent.GetKnockbacked, AIFacingDirection.NegFromMoving, true);
     }
 
     private Vector2 getKnockbackedIntent_force;
     private bool getKnockbackedIntent_stun;
     private void ProcessGetKnockbackedIntent()
     {
-        // Disable Nav Mesh agent and enable rigidbody.
+        if(knockbackablesInContact.Count > 0)
+        {
+            Vector2 normalizeForce = getKnockbackedIntent_force.normalized;
+            float power = getKnockbackedIntent_force.magnitude;
+
+            float totalSimilarity = 0.0f;
+            foreach(IKnockbackable knockbackable in knockbackablesInContact)
+            {
+                Vector2 dPos = knockbackable.gameObject.transform.position - transform.position;
+                float thisSimilarity  = Vector2.Dot(dPos.normalized, normalizeForce); // Since direction's magnitude SHOULD be 1
+                if(thisSimilarity > 0.0f) {totalSimilarity += thisSimilarity;}
+            }
+
+            foreach(IKnockbackable knockbackable in knockbackablesInContact)
+            {
+                Vector2 dPos = knockbackable.gameObject.transform.position - transform.position;
+                float thisSimilarity  = Vector2.Dot(dPos.normalized, normalizeForce); // Since direction's magnitude SHOULD be 1
+                if(thisSimilarity > 0.0f)
+                {
+                    knockbackable.GetKnockbacked(dPos.normalized, thisSimilarity * power * collisionForceGivePercentage, false);
+                }
+            }
+
+            getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepPercentage));
+        }
+
+        Debug.Log($"{name} got knockbacked with force: {getKnockbackedIntent_force}");
+
         agent.enabled = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = getKnockbackedIntent_stun?1.0f:0.0f;
         rb.AddForce(getKnockbackedIntent_force);
-        SetIntent(Intent.WaitUntilStill, false, Intent.GetKnockbacked);
+        SetIntent(Intent.WaitUntilStill, AIFacingDirection.NegFromMoving, false, Intent.GetKnockbacked);
 
         getKnockbackedIntent_force = Vector2.zero;
         getKnockbackedIntent_stun = false;
@@ -136,7 +184,7 @@ public class Flyer : AbstractEnemy
             rb.bodyType = RigidbodyType2D.Kinematic;
             agent.Warp(transform.position);
             agent.enabled = true;
-            SetIntent(Intent.Idle, false, Intent.WaitUntilStill);
+            SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.WaitUntilStill);
         }
     }
 }

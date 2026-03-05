@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 96763061784176d4b8f34c542fa3249e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3299289778355966793
+    second: flame_magic_0
+  - first:
+      213: -6243478398294982099
+    second: flame_magic_1
+  - first:
+      213: -4080694073883626707
+    second: flame_magic_2
+  - first:
+      213: 277655428447442720
+    second: flame_magic_3
+  - first:
+      213: 8018412198584095965
+    second: flame_magic_4
+  - first:
+      213: -4401462405428155953
+    second: flame_magic_5
+  - first:
+      213: -2188931119741906830
+    second: flame_magic_6
+  - first:
+      213: 1018130361950555527
+    second: flame_magic_7
+  - first:
+      213: -7884998598916176684
+    second: flame_magic_8
+  - first:
+      213: 58868354007149573
+    second: flame_magic_9
+  - first:
+      213: 1420883740727150927
+    second: flame_magic_10
+  - first:
+      213: -2190596288156730013
+    second: flame_magic_11
+  - first:
+      213: 971632252753747654
+    second: flame_magic_12
+  - first:
+      213: 408181744011711433
+    second: flame_magic_13
+  - first:
+      213: 1451138052428645266
+    second: flame_magic_14
+  - first:
+      213: -1148813300085126522
+    second: flame_magic_15
+  - first:
+      213: -7224085643579215749
+    second: flame_magic_16
+  - first:
+      213: -2942029370427204949
+    second: flame_magic_17
+  - first:
+      213: -8973251377654065104
+    second: flame_magic_18
+  - first:
+      213: 432528313347583734
+    second: flame_magic_19
+  - first:
+      213: 8926616693143464272
+    second: flame_magic_20
+  - first:
+      213: 57110427097272956
+    second: flame_magic_21
+  - first:
+      213: -7948299467382984943
+    second: flame_magic_22
+  - first:
+      213: -2462444613894135498
+    second: flame_magic_23
+  - first:
+      213: 1487349606309621955
+    second: flame_magic_24
+  - first:
+      213: 234019225208036652
+    second: flame_magic_25
+  - first:
+      213: -4993955291275702536
+    second: flame_magic_26
+  - first:
+      213: 9191665169335609567
+    second: flame_magic_27
+  - first:
+      213: -5501985440589186003
+    second: flame_magic_28
+  - first:
+      213: -7115055446500237507
+    second: flame_magic_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flame_magic_0
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 507
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bce30e4d619632d0800000000000000
+      internalID: -3299289778355966793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_1
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 506
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d228dc2e975ba59a0800000000000000
+      internalID: -6243478398294982099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_2
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 506
+        width: 46
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23ff193c567e57c0800000000000000
+      internalID: -4080694073883626707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_3
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 506
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027919e142e6ad300800000000000000
+      internalID: 277655428447442720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_4
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 506
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd49347496f174f60800000000000000
+      internalID: 8018412198584095965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_5
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 380
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc9e730234ddae2c0800000000000000
+      internalID: -4401462405428155953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_6
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 380
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2705cf97eba5f91e0800000000000000
+      internalID: -2188931119741906830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_7
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 380
+        width: 56
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d4a1f7b20212e00800000000000000
+      internalID: 1018130361950555527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_8
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 380
+        width: 51
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d406210d8bd29290800000000000000
+      internalID: -7884998598916176684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_9
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 381
+        width: 42
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50cab11c47421d000800000000000000
+      internalID: 58868354007149573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_10
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 380
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f498b29eb3ef7b310800000000000000
+      internalID: 1420883740727150927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_11
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 254
+        width: 44
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36df02e38407991e0800000000000000
+      internalID: -2190596288156730013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_12
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 254
+        width: 43
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce13bdc26eeb7d00800000000000000
+      internalID: 971632252753747654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_13
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 255
+        width: 46
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c31e9f22272aa500800000000000000
+      internalID: 408181744011711433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_14
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 255
+        width: 48
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 293cf07ce5a732410800000000000000
+      internalID: 1451138052428645266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_15
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 255
+        width: 50
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a8e27e3689e00f0800000000000000
+      internalID: -1148813300085126522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_16
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 256
+        width: 46
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b70367bc164eebb90800000000000000
+      internalID: -7224085643579215749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_17
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 128
+        width: 46
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa9be800efcb27d0800000000000000
+      internalID: -2942029370427204949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_18
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 229
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03815a21a6b987380800000000000000
+      internalID: -8973251377654065104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_19
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 132
+        width: 42
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fea1689536a00600800000000000000
+      internalID: 432528313347583734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_20
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 129
+        width: 50
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05963e05696b1eb70800000000000000
+      internalID: 8926616693143464272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_21
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 129
+        width: 53
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c729a1081a5eac000800000000000000
+      internalID: 57110427097272956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_22
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 129
+        width: 48
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11fe53e0fb7f1b190800000000000000
+      internalID: -7948299467382984943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_23
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 132
+        width: 41
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63124c59ba3a3ddd0800000000000000
+      internalID: -2462444613894135498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_24
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 6
+        width: 43
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0f6ec269024a410800000000000000
+      internalID: 1487349606309621955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_25
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 7
+        width: 42
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2d1325de376f3300800000000000000
+      internalID: 234019225208036652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_26
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 7
+        width: 41
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fe44572f18e1bab0800000000000000
+      internalID: -4993955291275702536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_27
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 8
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd86490a5ca5f8f70800000000000000
+      internalID: 9191665169335609567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_28
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 9
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2c7f4e746505a3b0800000000000000
+      internalID: -5501985440589186003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_magic_29
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 11
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f1522c4ce324d90800000000000000
+      internalID: -7115055446500237507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      flame_magic_0: -3299289778355966793
+      flame_magic_1: -6243478398294982099
+      flame_magic_10: 1420883740727150927
+      flame_magic_11: -2190596288156730013
+      flame_magic_12: 971632252753747654
+      flame_magic_13: 408181744011711433
+      flame_magic_14: 1451138052428645266
+      flame_magic_15: -1148813300085126522
+      flame_magic_16: -7224085643579215749
+      flame_magic_17: -2942029370427204949
+      flame_magic_18: -8973251377654065104
+      flame_magic_19: 432528313347583734
+      flame_magic_2: -4080694073883626707
+      flame_magic_20: 8926616693143464272
+      flame_magic_21: 57110427097272956
+      flame_magic_22: -7948299467382984943
+      flame_magic_23: -2462444613894135498
+      flame_magic_24: 1487349606309621955
+      flame_magic_25: 234019225208036652
+      flame_magic_26: -4993955291275702536
+      flame_magic_27: 9191665169335609567
+      flame_magic_28: -5501985440589186003
+      flame_magic_29: -7115055446500237507
+      flame_magic_3: 277655428447442720
+      flame_magic_4: 8018412198584095965
+      flame_magic_5: -4401462405428155953
+      flame_magic_6: -2188931119741906830
+      flame_magic_7: 1018130361950555527
+      flame_magic_8: -7884998598916176684
+      flame_magic_9: 58868354007149573
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

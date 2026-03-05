@@ -1,0 +1,884 @@
+fileFormatVersion: 2
+guid: ae2b14d38111ff2499e288e283aed8e7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5865302095258725565
+    second: flame_blueish_flame_0
+  - first:
+      213: 1643446479014202158
+    second: flame_blueish_flame_1
+  - first:
+      213: 1421906661533562988
+    second: flame_blueish_flame_2
+  - first:
+      213: -2378015362281936137
+    second: flame_blueish_flame_3
+  - first:
+      213: 904933759466710267
+    second: flame_blueish_flame_4
+  - first:
+      213: 5611617533562392953
+    second: flame_blueish_flame_5
+  - first:
+      213: 7380900429096155252
+    second: flame_blueish_flame_6
+  - first:
+      213: -4492048139249602780
+    second: flame_blueish_flame_7
+  - first:
+      213: -8201418841717715353
+    second: flame_blueish_flame_8
+  - first:
+      213: 2875723601112648355
+    second: flame_blueish_flame_9
+  - first:
+      213: -8522785668769421019
+    second: flame_blueish_flame_10
+  - first:
+      213: -8865356426090558041
+    second: flame_blueish_flame_11
+  - first:
+      213: 6536283012319772877
+    second: flame_blueish_flame_12
+  - first:
+      213: 2511741647799789241
+    second: flame_blueish_flame_13
+  - first:
+      213: -584882446752970588
+    second: flame_blueish_flame_14
+  - first:
+      213: -7391099966039436164
+    second: flame_blueish_flame_15
+  - first:
+      213: 8170294866662253713
+    second: flame_blueish_flame_16
+  - first:
+      213: 2388238883329598825
+    second: flame_blueish_flame_17
+  - first:
+      213: 9161064708669455857
+    second: flame_blueish_flame_18
+  - first:
+      213: -7704442751873036533
+    second: flame_blueish_flame_19
+  - first:
+      213: -7557992319790320428
+    second: flame_blueish_flame_20
+  - first:
+      213: 6165971208087155886
+    second: flame_blueish_flame_21
+  - first:
+      213: 5793425211706684577
+    second: flame_blueish_flame_22
+  - first:
+      213: 8720610748684996595
+    second: flame_blueish_flame_23
+  - first:
+      213: -8455827666343244046
+    second: flame_blueish_flame_24
+  - first:
+      213: 6923765769365297591
+    second: flame_blueish_flame_25
+  - first:
+      213: 4763978616254809142
+    second: flame_blueish_flame_26
+  - first:
+      213: 7477560396398093383
+    second: flame_blueish_flame_27
+  - first:
+      213: 7542350160033008973
+    second: flame_blueish_flame_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flame_blueish_flame_0
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 510
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc20401e2db56150800000000000000
+      internalID: 5865302095258725565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 508
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b02058dd1bec610800000000000000
+      internalID: 1643446479014202158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_2
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 508
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6838783390abb310800000000000000
+      internalID: 1421906661533562988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_3
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 506
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa63c490a79ffed0800000000000000
+      internalID: -2378015362281936137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_4
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 506
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4a54ea578fe8c00800000000000000
+      internalID: 904933759466710267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_5
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 380
+        width: 47
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97117574a6870ed40800000000000000
+      internalID: 5611617533562392953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_6
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 382
+        width: 50
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 478fdc6a5d93e6660800000000000000
+      internalID: 7380900429096155252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_7
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 381
+        width: 52
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42fa21a640a09a1c0800000000000000
+      internalID: -4492048139249602780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_8
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 382
+        width: 49
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e48353405be2e80800000000000000
+      internalID: -8201418841717715353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_9
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 384
+        width: 39
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aac684016f98e720800000000000000
+      internalID: 2875723601112648355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_10
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 382
+        width: 41
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5296534079bf8b980800000000000000
+      internalID: -8522785668769421019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_11
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 257
+        width: 40
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ad45a71d4de7f480800000000000000
+      internalID: -8865356426090558041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_12
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 256
+        width: 41
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc08dbcd4ca85ba50800000000000000
+      internalID: 6536283012319772877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_13
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 257
+        width: 42
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b629ac88bf7bd220800000000000000
+      internalID: 2511741647799789241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_14
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 258
+        width: 46
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a88de5738412e7f0800000000000000
+      internalID: -584882446752970588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_15
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 257
+        width: 46
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7451d89db98d6990800000000000000
+      internalID: -7391099966039436164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_16
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 258
+        width: 43
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 194e995a4e7b26170800000000000000
+      internalID: 8170294866662253713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_17
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 130
+        width: 44
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965e2a76c9ab42120800000000000000
+      internalID: 2388238883329598825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_18
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 131
+        width: 47
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd3c9ca0d3a22f70800000000000000
+      internalID: 9161064708669455857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_19
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 131
+        width: 49
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f46461322541590800000000000000
+      internalID: -7704442751873036533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_20
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 132
+        width: 46
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d474c3770e9c1790800000000000000
+      internalID: -7557992319790320428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_21
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 133
+        width: 40
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea43251252ee19550800000000000000
+      internalID: 6165971208087155886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_22
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 135
+        width: 38
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4b1900981666050800000000000000
+      internalID: 5793425211706684577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_23
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 9
+        width: 40
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff82dba545d50970800000000000000
+      internalID: 8720610748684996595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_24
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 9
+        width: 38
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fec0b1d98dd6aa80800000000000000
+      internalID: -8455827666343244046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_25
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 9
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b917079848261060800000000000000
+      internalID: 6923765769365297591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_26
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 10
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 634cc639f4d0d1240800000000000000
+      internalID: 4763978616254809142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_27
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 11
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74466dd0091a5c760800000000000000
+      internalID: 7477560396398093383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flame_blueish_flame_28
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 13
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4dc06c628fcba860800000000000000
+      internalID: 7542350160033008973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      flame_blueish_flame_0: 5865302095258725565
+      flame_blueish_flame_1: 1643446479014202158
+      flame_blueish_flame_10: -8522785668769421019
+      flame_blueish_flame_11: -8865356426090558041
+      flame_blueish_flame_12: 6536283012319772877
+      flame_blueish_flame_13: 2511741647799789241
+      flame_blueish_flame_14: -584882446752970588
+      flame_blueish_flame_15: -7391099966039436164
+      flame_blueish_flame_16: 8170294866662253713
+      flame_blueish_flame_17: 2388238883329598825
+      flame_blueish_flame_18: 9161064708669455857
+      flame_blueish_flame_19: -7704442751873036533
+      flame_blueish_flame_2: 1421906661533562988
+      flame_blueish_flame_20: -7557992319790320428
+      flame_blueish_flame_21: 6165971208087155886
+      flame_blueish_flame_22: 5793425211706684577
+      flame_blueish_flame_23: 8720610748684996595
+      flame_blueish_flame_24: -8455827666343244046
+      flame_blueish_flame_25: 6923765769365297591
+      flame_blueish_flame_26: 4763978616254809142
+      flame_blueish_flame_27: 7477560396398093383
+      flame_blueish_flame_28: 7542350160033008973
+      flame_blueish_flame_3: -2378015362281936137
+      flame_blueish_flame_4: 904933759466710267
+      flame_blueish_flame_5: 5611617533562392953
+      flame_blueish_flame_6: 7380900429096155252
+      flame_blueish_flame_7: -4492048139249602780
+      flame_blueish_flame_8: -8201418841717715353
+      flame_blueish_flame_9: 2875723601112648355
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

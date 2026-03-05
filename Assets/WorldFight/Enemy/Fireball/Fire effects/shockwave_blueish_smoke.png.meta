@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: 0454db4798306054ca9034c0bb55e0be
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5753494347123577234
+    second: shockwave_blueish_smoke_0
+  - first:
+      213: 635237416328623179
+    second: shockwave_blueish_smoke_1
+  - first:
+      213: 1355173298753954672
+    second: shockwave_blueish_smoke_2
+  - first:
+      213: 4662909380497718270
+    second: shockwave_blueish_smoke_3
+  - first:
+      213: -1142583881341572974
+    second: shockwave_blueish_smoke_4
+  - first:
+      213: -5039336926600990727
+    second: shockwave_blueish_smoke_5
+  - first:
+      213: 9028511081725344805
+    second: shockwave_blueish_smoke_6
+  - first:
+      213: -3956811158714040286
+    second: shockwave_blueish_smoke_7
+  - first:
+      213: -7600175156363784968
+    second: shockwave_blueish_smoke_8
+  - first:
+      213: -5598139119972426140
+    second: shockwave_blueish_smoke_9
+  - first:
+      213: -7762094822287216897
+    second: shockwave_blueish_smoke_10
+  - first:
+      213: -1127651268021474579
+    second: shockwave_blueish_smoke_11
+  - first:
+      213: -362701812093223985
+    second: shockwave_blueish_smoke_12
+  - first:
+      213: 6409386699624177090
+    second: shockwave_blueish_smoke_13
+  - first:
+      213: -2288671950531732142
+    second: shockwave_blueish_smoke_14
+  - first:
+      213: 1847187323319993289
+    second: shockwave_blueish_smoke_15
+  - first:
+      213: -518044122756821505
+    second: shockwave_blueish_smoke_16
+  - first:
+      213: -3142302127869302989
+    second: shockwave_blueish_smoke_17
+  - first:
+      213: 2528542519475434726
+    second: shockwave_blueish_smoke_18
+  - first:
+      213: 5701048235270494339
+    second: shockwave_blueish_smoke_19
+  - first:
+      213: 1605140992966601024
+    second: shockwave_blueish_smoke_20
+  - first:
+      213: 6709412195081268170
+    second: shockwave_blueish_smoke_21
+  - first:
+      213: 2966277982849829024
+    second: shockwave_blueish_smoke_22
+  - first:
+      213: 4655604476972888803
+    second: shockwave_blueish_smoke_23
+  - first:
+      213: -8453745176717313335
+    second: shockwave_blueish_smoke_24
+  - first:
+      213: 5027492503548499574
+    second: shockwave_blueish_smoke_25
+  - first:
+      213: 5908596142963889371
+    second: shockwave_blueish_smoke_26
+  - first:
+      213: 1779269214335221406
+    second: shockwave_blueish_smoke_27
+  - first:
+      213: 5300802936358352205
+    second: shockwave_blueish_smoke_28
+  - first:
+      213: 1918534563033433599
+    second: shockwave_blueish_smoke_29
+  - first:
+      213: -1434099537640356771
+    second: shockwave_blueish_smoke_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 554
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 291d48910a488df40800000000000000
+      internalID: 5753494347123577234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 552
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b44fd448011d0d800800000000000000
+      internalID: 635237416328623179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_2
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 548
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073e2596fea8ec210800000000000000
+      internalID: 1355173298753954672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_3
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 419
+        width: 50
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb376c506bf5b040800000000000000
+      internalID: 4662909380497718270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_4
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 419
+        width: 57
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2986c8a730ab420f0800000000000000
+      internalID: -1142583881341572974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_5
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 418
+        width: 65
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff607ac3cda01ab0800000000000000
+      internalID: -5039336926600990727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 419
+        width: 72
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52cbae46ef6bb4d70800000000000000
+      internalID: 9028511081725344805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_7
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 293
+        width: 79
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2204c8917359619c0800000000000000
+      internalID: -3956811158714040286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_8
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 290
+        width: 86
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc003676f0c68690800000000000000
+      internalID: -7600175156363784968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_9
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 287
+        width: 92
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46e53de612a6f42b0800000000000000
+      internalID: -5598139119972426140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_10
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 286
+        width: 96
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffeebac62ef774490800000000000000
+      internalID: -7762094822287216897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_11
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 158
+        width: 99
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deaaf037527c950f0800000000000000
+      internalID: -1127651268021474579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_12
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 158
+        width: 103
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcbfac2af9c67faf0800000000000000
+      internalID: -362701812093223985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_13
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 157
+        width: 98
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd5633be37b2f850800000000000000
+      internalID: 6409386699624177090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_14
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 210
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25dd725acf00d30e0800000000000000
+      internalID: -2288671950531732142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_15
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 157
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c3c710751782a910800000000000000
+      internalID: 1847187323319993289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 32
+        width: 56
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffdc9157d998fc8f0800000000000000
+      internalID: -518044122756821505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_17
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 60
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33765630ddc4464d0800000000000000
+      internalID: -3142302127869302989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_18
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 33
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4fdc05600371320800000000000000
+      internalID: 2528542519475434726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_19
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 61
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3885aae1a213e1f40800000000000000
+      internalID: 5701048235270494339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_20
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 61
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 049213c8a3b964610800000000000000
+      internalID: 1605140992966601024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_21
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 68
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acb2e7be7de9c1d50800000000000000
+      internalID: 6709412195081268170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_22
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 61
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a883d00c165a2920800000000000000
+      internalID: 2966277982849829024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_23
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 46
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2ffa8fa970c9040800000000000000
+      internalID: 4655604476972888803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_24
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 45
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cab7183d834eaa80800000000000000
+      internalID: -8453745176717313335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_25
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 47
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67692f09bcd35c540800000000000000
+      internalID: 5027492503548499574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_26
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 38
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd41b9e03ec8ff150800000000000000
+      internalID: 5908596142963889371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_27
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 43
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e3d386ceb31b810800000000000000
+      internalID: 1779269214335221406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_28
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 45
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45bcfd8f2c309940800000000000000
+      internalID: 5300802936358352205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_29
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 40
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5caee250100aa10800000000000000
+      internalID: 1918534563033433599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_blueish_smoke_30
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 46
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d540566911e091ce0800000000000000
+      internalID: -1434099537640356771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      shockwave_blueish_smoke_0: 5753494347123577234
+      shockwave_blueish_smoke_1: 635237416328623179
+      shockwave_blueish_smoke_10: -7762094822287216897
+      shockwave_blueish_smoke_11: -1127651268021474579
+      shockwave_blueish_smoke_12: -362701812093223985
+      shockwave_blueish_smoke_13: 6409386699624177090
+      shockwave_blueish_smoke_14: -2288671950531732142
+      shockwave_blueish_smoke_15: 1847187323319993289
+      shockwave_blueish_smoke_16: -518044122756821505
+      shockwave_blueish_smoke_17: -3142302127869302989
+      shockwave_blueish_smoke_18: 2528542519475434726
+      shockwave_blueish_smoke_19: 5701048235270494339
+      shockwave_blueish_smoke_2: 1355173298753954672
+      shockwave_blueish_smoke_20: 1605140992966601024
+      shockwave_blueish_smoke_21: 6709412195081268170
+      shockwave_blueish_smoke_22: 2966277982849829024
+      shockwave_blueish_smoke_23: 4655604476972888803
+      shockwave_blueish_smoke_24: -8453745176717313335
+      shockwave_blueish_smoke_25: 5027492503548499574
+      shockwave_blueish_smoke_26: 5908596142963889371
+      shockwave_blueish_smoke_27: 1779269214335221406
+      shockwave_blueish_smoke_28: 5300802936358352205
+      shockwave_blueish_smoke_29: 1918534563033433599
+      shockwave_blueish_smoke_3: 4662909380497718270
+      shockwave_blueish_smoke_30: -1434099537640356771
+      shockwave_blueish_smoke_4: -1142583881341572974
+      shockwave_blueish_smoke_5: -5039336926600990727
+      shockwave_blueish_smoke_6: 9028511081725344805
+      shockwave_blueish_smoke_7: -3956811158714040286
+      shockwave_blueish_smoke_8: -7600175156363784968
+      shockwave_blueish_smoke_9: -5598139119972426140
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

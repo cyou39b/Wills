@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 755c3622d23a7834c994a992c867636d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8069549967514716121
+    second: flat_effect_magic_0
+  - first:
+      213: 2945976594567457350
+    second: flat_effect_magic_1
+  - first:
+      213: -3967033796467991509
+    second: flat_effect_magic_2
+  - first:
+      213: -7260434953773940617
+    second: flat_effect_magic_3
+  - first:
+      213: -3478831480284956731
+    second: flat_effect_magic_4
+  - first:
+      213: -7437378492960685184
+    second: flat_effect_magic_5
+  - first:
+      213: 7248106807227232630
+    second: flat_effect_magic_6
+  - first:
+      213: -5755892011429313467
+    second: flat_effect_magic_7
+  - first:
+      213: 6898400626543058416
+    second: flat_effect_magic_8
+  - first:
+      213: 2488853972867530153
+    second: flat_effect_magic_9
+  - first:
+      213: 1758778570550399945
+    second: flat_effect_magic_10
+  - first:
+      213: -8420640809096610762
+    second: flat_effect_magic_11
+  - first:
+      213: 1595390671502543326
+    second: flat_effect_magic_12
+  - first:
+      213: 6300227062618373967
+    second: flat_effect_magic_13
+  - first:
+      213: 1934445066399779246
+    second: flat_effect_magic_14
+  - first:
+      213: -2984831770803027256
+    second: flat_effect_magic_15
+  - first:
+      213: -1425331784368117688
+    second: flat_effect_magic_16
+  - first:
+      213: -8956908698165431808
+    second: flat_effect_magic_17
+  - first:
+      213: 8163718478604833609
+    second: flat_effect_magic_18
+  - first:
+      213: 6729181276905568542
+    second: flat_effect_magic_19
+  - first:
+      213: -2982702685053593371
+    second: flat_effect_magic_20
+  - first:
+      213: 283139365233802198
+    second: flat_effect_magic_21
+  - first:
+      213: -6454513892518182158
+    second: flat_effect_magic_22
+  - first:
+      213: -3671562590132769822
+    second: flat_effect_magic_23
+  - first:
+      213: 7333601862296351793
+    second: flat_effect_magic_24
+  - first:
+      213: 1043336917896837289
+    second: flat_effect_magic_25
+  - first:
+      213: -9091125013005883757
+    second: flat_effect_magic_26
+  - first:
+      213: -4501022181276389901
+    second: flat_effect_magic_27
+  - first:
+      213: 6159383217512043026
+    second: flat_effect_magic_28
+  - first:
+      213: 4471386165037169659
+    second: flat_effect_magic_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flat_effect_magic_0
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 541
+        width: 46
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72835011f03330090800000000000000
+      internalID: -8069549967514716121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 540
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64aeec3ba1632e820800000000000000
+      internalID: 2945976594567457350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_2
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 536
+        width: 61
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2c5e85c7c342f8c0800000000000000
+      internalID: -3967033796467991509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_3
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 539
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770897180e0cd3b90800000000000000
+      internalID: -7260434953773940617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_4
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 536
+        width: 77
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c73b284335b8bfc0800000000000000
+      internalID: -3478831480284956731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_5
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 535
+        width: 65
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 083c2f26aaf19c890800000000000000
+      internalID: -7437378492960685184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_6
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 415
+        width: 78
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671bed23db2769460800000000000000
+      internalID: 7248106807227232630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_7
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 414
+        width: 86
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5444f3d26b6fe10b0800000000000000
+      internalID: -5755892011429313467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_8
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 414
+        width: 102
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fd5e6f02da0cbf50800000000000000
+      internalID: 6898400626543058416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_9
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 411
+        width: 108
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9adb696708f2a8220800000000000000
+      internalID: 2488853972867530153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_10
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 428
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c3d930aacf686810800000000000000
+      internalID: 1758778570550399945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_11
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 408
+        width: 83
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c73a07ccfd32b80800000000000000
+      internalID: -8420640809096610762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_12
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 411
+        width: 76
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed981ecec57f32610800000000000000
+      internalID: 1595390671502543326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 285
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4fbba72227ee6750800000000000000
+      internalID: 6300227062618373967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_14
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 285
+        width: 83
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea9044ce98788da10800000000000000
+      internalID: 1934445066399779246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_15
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 284
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c24cfa915fb396d0800000000000000
+      internalID: -2984831770803027256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_16
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 284
+        width: 87
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8482aa93b44383ce0800000000000000
+      internalID: -1425331784368117688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_17
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 282
+        width: 96
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0023e38aefaa2b380800000000000000
+      internalID: -8956908698165431808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_18
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 284
+        width: 81
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 943988bf3ba5b4170800000000000000
+      internalID: 8163718478604833609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_19
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 157
+        width: 83
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e197a27f7bad26d50800000000000000
+      internalID: 6729181276905568542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_20
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 157
+        width: 76
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8d6c206bf4b96d0800000000000000
+      internalID: -2982702685053593371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_21
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 160
+        width: 75
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dbb0b6a0c9ede300800000000000000
+      internalID: 283139365233802198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_22
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 159
+        width: 79
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f241aeefc5fc66a0800000000000000
+      internalID: -6454513892518182158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_23
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 163
+        width: 76
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ebe58ce64dfb0dc0800000000000000
+      internalID: -3671562590132769822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_24
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 166
+        width: 73
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1343156e90036c560800000000000000
+      internalID: 7333601862296351793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_25
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 43
+        width: 72
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a8ba44266daa7e00800000000000000
+      internalID: 1043336917896837289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_26
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 45
+        width: 44
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396ad1fa7f5d5d180800000000000000
+      internalID: -9091125013005883757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_27
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 57
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fdedde6c282981c0800000000000000
+      internalID: -4501022181276389901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_28
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 51
+        width: 44
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212de4b07668a7550800000000000000
+      internalID: 6159383217512043026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_magic_29
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 49
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfbf2a4d60e8d0e30800000000000000
+      internalID: 4471386165037169659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      flat_effect_magic_0: -8069549967514716121
+      flat_effect_magic_1: 2945976594567457350
+      flat_effect_magic_10: 1758778570550399945
+      flat_effect_magic_11: -8420640809096610762
+      flat_effect_magic_12: 1595390671502543326
+      flat_effect_magic_13: 6300227062618373967
+      flat_effect_magic_14: 1934445066399779246
+      flat_effect_magic_15: -2984831770803027256
+      flat_effect_magic_16: -1425331784368117688
+      flat_effect_magic_17: -8956908698165431808
+      flat_effect_magic_18: 8163718478604833609
+      flat_effect_magic_19: 6729181276905568542
+      flat_effect_magic_2: -3967033796467991509
+      flat_effect_magic_20: -2982702685053593371
+      flat_effect_magic_21: 283139365233802198
+      flat_effect_magic_22: -6454513892518182158
+      flat_effect_magic_23: -3671562590132769822
+      flat_effect_magic_24: 7333601862296351793
+      flat_effect_magic_25: 1043336917896837289
+      flat_effect_magic_26: -9091125013005883757
+      flat_effect_magic_27: -4501022181276389901
+      flat_effect_magic_28: 6159383217512043026
+      flat_effect_magic_29: 4471386165037169659
+      flat_effect_magic_3: -7260434953773940617
+      flat_effect_magic_4: -3478831480284956731
+      flat_effect_magic_5: -7437378492960685184
+      flat_effect_magic_6: 7248106807227232630
+      flat_effect_magic_7: -5755892011429313467
+      flat_effect_magic_8: 6898400626543058416
+      flat_effect_magic_9: 2488853972867530153
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

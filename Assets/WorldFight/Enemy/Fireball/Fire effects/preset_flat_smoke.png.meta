@@ -1,0 +1,1118 @@
+fileFormatVersion: 2
+guid: 190cf3b0bbcf41943bcb0a6fe4dc82dd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6449094980533714028
+    second: preset_flat_smoke_0
+  - first:
+      213: -4489033702152445273
+    second: preset_flat_smoke_1
+  - first:
+      213: 7088275453176423647
+    second: preset_flat_smoke_2
+  - first:
+      213: -2540751806146885754
+    second: preset_flat_smoke_3
+  - first:
+      213: -1274263104820671658
+    second: preset_flat_smoke_4
+  - first:
+      213: 6278757046328699267
+    second: preset_flat_smoke_5
+  - first:
+      213: -6031291648716186107
+    second: preset_flat_smoke_6
+  - first:
+      213: -1738477589732360029
+    second: preset_flat_smoke_7
+  - first:
+      213: 2573371791512482696
+    second: preset_flat_smoke_8
+  - first:
+      213: 321524051549180751
+    second: preset_flat_smoke_9
+  - first:
+      213: 2844985255597394392
+    second: preset_flat_smoke_10
+  - first:
+      213: 6439616663467415755
+    second: preset_flat_smoke_11
+  - first:
+      213: 723140662706494807
+    second: preset_flat_smoke_12
+  - first:
+      213: 5957680455595362394
+    second: preset_flat_smoke_13
+  - first:
+      213: -4467495694650684679
+    second: preset_flat_smoke_14
+  - first:
+      213: -5124377625013701492
+    second: preset_flat_smoke_15
+  - first:
+      213: 5944758676465234268
+    second: preset_flat_smoke_16
+  - first:
+      213: 2675550249843231213
+    second: preset_flat_smoke_17
+  - first:
+      213: 1713802296897988170
+    second: preset_flat_smoke_18
+  - first:
+      213: 162885579472653523
+    second: preset_flat_smoke_19
+  - first:
+      213: 6143022388574424862
+    second: preset_flat_smoke_20
+  - first:
+      213: -4595452901071035524
+    second: preset_flat_smoke_21
+  - first:
+      213: 3701328876460918483
+    second: preset_flat_smoke_22
+  - first:
+      213: -4957027573995172702
+    second: preset_flat_smoke_23
+  - first:
+      213: 2808082335811423101
+    second: preset_flat_smoke_24
+  - first:
+      213: 3208846262410895166
+    second: preset_flat_smoke_25
+  - first:
+      213: -7891849977152170225
+    second: preset_flat_smoke_26
+  - first:
+      213: 2913558972588927925
+    second: preset_flat_smoke_27
+  - first:
+      213: -5148620705165214431
+    second: preset_flat_smoke_28
+  - first:
+      213: -3834634864466906882
+    second: preset_flat_smoke_29
+  - first:
+      213: 4449953220740548507
+    second: preset_flat_smoke_30
+  - first:
+      213: -4737305187877343503
+    second: preset_flat_smoke_31
+  - first:
+      213: -5353766941074581077
+    second: preset_flat_smoke_32
+  - first:
+      213: 607408528198355052
+    second: preset_flat_smoke_33
+  - first:
+      213: 6604529609287706220
+    second: preset_flat_smoke_34
+  - first:
+      213: -6646922206831524135
+    second: preset_flat_smoke_35
+  - first:
+      213: -3128019635017608614
+    second: preset_flat_smoke_36
+  - first:
+      213: -7438110004853800155
+    second: preset_flat_smoke_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: preset_flat_smoke_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 543
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c777d47b9cf7950800000000000000
+      internalID: 6449094980533714028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_1
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 543
+        width: 43
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a2627eb1afb3b1c0800000000000000
+      internalID: -4489033702152445273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_2
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 540
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4a3b828fc9e5260800000000000000
+      internalID: 7088275453176423647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 540
+        width: 76
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 687ce2c91bf6dbcd0800000000000000
+      internalID: -2540751806146885754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_4
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 536
+        width: 60
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b07ce1578e05ee0800000000000000
+      internalID: -1274263104820671658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_5
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 418
+        width: 74
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38927617440a22750800000000000000
+      internalID: 6278757046328699267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_6
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 416
+        width: 81
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50edd7d533c8c4ca0800000000000000
+      internalID: -6031291648716186107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_7
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 417
+        width: 97
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0860ec7dfafd7e0800000000000000
+      internalID: -1738477589732360029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 414
+        width: 91
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883bc14920476b320800000000000000
+      internalID: 2573371791512482696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_9
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 440
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43555fdb68467400800000000000000
+      internalID: 321524051549180751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_10
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 411
+        width: 71
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d94b1f340b6b7720800000000000000
+      internalID: 2844985255597394392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_11
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 445
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc859a3ac3d1e5950800000000000000
+      internalID: 6439616663467415755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_12
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 413
+        width: 72
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75dd243f99c190a00800000000000000
+      internalID: 723140662706494807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_13
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 429
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a588c092fceeda250800000000000000
+      internalID: 5957680455595362394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 287
+        width: 79
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa42c4e5544002c0800000000000000
+      internalID: -4467495694650684679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_15
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 288
+        width: 76
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c84391e33bd82e8b0800000000000000
+      internalID: -5124377625013701492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_16
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 287
+        width: 78
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51b1220586008250800000000000000
+      internalID: 5944758676465234268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_17
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 288
+        width: 83
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de90d9cc6c6712520800000000000000
+      internalID: 2675550249843231213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_18
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 285
+        width: 70
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a466ad1eb16a8c710800000000000000
+      internalID: 1713802296897988170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_19
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 321
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc408f429fa24200800000000000000
+      internalID: 162885579472653523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_20
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 309
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1f0046b056604550800000000000000
+      internalID: 6143022388574424862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_21
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 286
+        width: 73
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c736f992feba930c0800000000000000
+      internalID: -4595452901071035524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_22
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 294
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d6495ea003cd5330800000000000000
+      internalID: 3701328876460918483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_23
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 161
+        width: 70
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac83365fa9153bb0800000000000000
+      internalID: -4957027573995172702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_24
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 190
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7bc61ea10058f620800000000000000
+      internalID: 2808082335811423101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_25
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 161
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f57d9acac188c20800000000000000
+      internalID: 3208846262410895166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_26
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 161
+        width: 69
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f079b2332448a7290800000000000000
+      internalID: -7891849977152170225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_27
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 159
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bba059e27a0f6820800000000000000
+      internalID: 2913558972588927925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_28
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 166
+        width: 67
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12df7694fbc6c88b0800000000000000
+      internalID: -5148620705165214431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_29
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 167
+        width: 64
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef03f1458e3a8cac0800000000000000
+      internalID: -3834634864466906882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_30
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 47
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b97885d90e861cd30800000000000000
+      internalID: 4449953220740548507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_31
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 45
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fea4fbe706b14eb0800000000000000
+      internalID: -4737305187877343503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_32
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 57
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba91503255993b5b0800000000000000
+      internalID: -5353766941074581077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_33
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 49
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c684ec496d2fd6800800000000000000
+      internalID: 607408528198355052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_34
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 56
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66a426ffa008ab50800000000000000
+      internalID: 6604529609287706220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_35
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 53
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6c624487361c3a0800000000000000
+      internalID: -6646922206831524135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_36
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 53
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a52145407ba0794d0800000000000000
+      internalID: -3128019635017608614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_smoke_37
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 50
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52309600c5686c890800000000000000
+      internalID: -7438110004853800155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      preset_flat_smoke_0: 6449094980533714028
+      preset_flat_smoke_1: -4489033702152445273
+      preset_flat_smoke_10: 2844985255597394392
+      preset_flat_smoke_11: 6439616663467415755
+      preset_flat_smoke_12: 723140662706494807
+      preset_flat_smoke_13: 5957680455595362394
+      preset_flat_smoke_14: -4467495694650684679
+      preset_flat_smoke_15: -5124377625013701492
+      preset_flat_smoke_16: 5944758676465234268
+      preset_flat_smoke_17: 2675550249843231213
+      preset_flat_smoke_18: 1713802296897988170
+      preset_flat_smoke_19: 162885579472653523
+      preset_flat_smoke_2: 7088275453176423647
+      preset_flat_smoke_20: 6143022388574424862
+      preset_flat_smoke_21: -4595452901071035524
+      preset_flat_smoke_22: 3701328876460918483
+      preset_flat_smoke_23: -4957027573995172702
+      preset_flat_smoke_24: 2808082335811423101
+      preset_flat_smoke_25: 3208846262410895166
+      preset_flat_smoke_26: -7891849977152170225
+      preset_flat_smoke_27: 2913558972588927925
+      preset_flat_smoke_28: -5148620705165214431
+      preset_flat_smoke_29: -3834634864466906882
+      preset_flat_smoke_3: -2540751806146885754
+      preset_flat_smoke_30: 4449953220740548507
+      preset_flat_smoke_31: -4737305187877343503
+      preset_flat_smoke_32: -5353766941074581077
+      preset_flat_smoke_33: 607408528198355052
+      preset_flat_smoke_34: 6604529609287706220
+      preset_flat_smoke_35: -6646922206831524135
+      preset_flat_smoke_36: -3128019635017608614
+      preset_flat_smoke_37: -7438110004853800155
+      preset_flat_smoke_4: -1274263104820671658
+      preset_flat_smoke_5: 6278757046328699267
+      preset_flat_smoke_6: -6031291648716186107
+      preset_flat_smoke_7: -1738477589732360029
+      preset_flat_smoke_8: 2573371791512482696
+      preset_flat_smoke_9: 321524051549180751
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

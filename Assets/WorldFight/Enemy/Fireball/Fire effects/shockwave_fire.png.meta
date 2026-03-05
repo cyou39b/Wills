@@ -1,0 +1,806 @@
+fileFormatVersion: 2
+guid: 88583161830dc4b4185e88438b1d7cab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2618934924739815927
+    second: shockwave_fire_0
+  - first:
+      213: -7888152494500392992
+    second: shockwave_fire_1
+  - first:
+      213: -4213105519265477370
+    second: shockwave_fire_2
+  - first:
+      213: -3943387112755830398
+    second: shockwave_fire_3
+  - first:
+      213: -6067114441339770846
+    second: shockwave_fire_4
+  - first:
+      213: 7211860801908335356
+    second: shockwave_fire_5
+  - first:
+      213: -3265424465564751522
+    second: shockwave_fire_6
+  - first:
+      213: 5785446063981091307
+    second: shockwave_fire_7
+  - first:
+      213: 3982470306746472280
+    second: shockwave_fire_8
+  - first:
+      213: -2810500981075022815
+    second: shockwave_fire_9
+  - first:
+      213: 2014127708900439246
+    second: shockwave_fire_10
+  - first:
+      213: 2341913916978559282
+    second: shockwave_fire_11
+  - first:
+      213: -7752109860018414705
+    second: shockwave_fire_12
+  - first:
+      213: 9040828046298172394
+    second: shockwave_fire_13
+  - first:
+      213: 9217344490278539135
+    second: shockwave_fire_14
+  - first:
+      213: -2089808447254455624
+    second: shockwave_fire_15
+  - first:
+      213: 6566544819719940762
+    second: shockwave_fire_16
+  - first:
+      213: 3583782977967590918
+    second: shockwave_fire_17
+  - first:
+      213: -163713159553575861
+    second: shockwave_fire_18
+  - first:
+      213: 5857529598822621284
+    second: shockwave_fire_19
+  - first:
+      213: 7993724842494819188
+    second: shockwave_fire_20
+  - first:
+      213: 3388988174453246006
+    second: shockwave_fire_21
+  - first:
+      213: -513909563160050865
+    second: shockwave_fire_22
+  - first:
+      213: 7831559516038400793
+    second: shockwave_fire_23
+  - first:
+      213: 5066628333238904372
+    second: shockwave_fire_24
+  - first:
+      213: -1659334218793444361
+    second: shockwave_fire_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shockwave_fire_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 551
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f92bf63073585420800000000000000
+      internalID: 2618934924739815927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_1
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 550
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef41377917a78290800000000000000
+      internalID: -7888152494500392992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_2
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 547
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d81fa2ada0885c0800000000000000
+      internalID: -4213105519265477370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_3
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 417
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281e55c50564649c0800000000000000
+      internalID: -3943387112755830398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_4
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 417
+        width: 61
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 228ec408f874dcba0800000000000000
+      internalID: -6067114441339770846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_5
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 417
+        width: 69
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf26f43703da51460800000000000000
+      internalID: 7211860801908335356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_6
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 417
+        width: 76
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e59a421efb1eea2d0800000000000000
+      internalID: -3265424465564751522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_7
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 291
+        width: 84
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be956c6ea880a4050800000000000000
+      internalID: 5785446063981091307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_8
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 288
+        width: 90
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8571a2ad4a3944730800000000000000
+      internalID: 3982470306746472280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_9
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 285
+        width: 96
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ce2269f381ff8d0800000000000000
+      internalID: -2810500981075022815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_10
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 283
+        width: 99
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec4384dda7e93fb10800000000000000
+      internalID: 2014127708900439246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_11
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 157
+        width: 102
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239fc0cac46208020800000000000000
+      internalID: 2341913916978559282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_12
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 157
+        width: 107
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b9ccd9729fa6490800000000000000
+      internalID: -7752109860018414705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_13
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 156
+        width: 74
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aebcdfe2539777d70800000000000000
+      internalID: 9040828046298172394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_14
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 215
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7fc4737af59aef70800000000000000
+      internalID: 9217344490278539135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_15
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 156
+        width: 75
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ba99cc1a428ff2e0800000000000000
+      internalID: -2089808447254455624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_16
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 31
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9aa615f8bd012b50800000000000000
+      internalID: 6566544819719940762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_17
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 32
+        width: 57
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e89d971a72cb130800000000000000
+      internalID: 3583782977967590918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_18
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 37
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4490cfafbf5abdf0800000000000000
+      internalID: -163713159553575861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_19
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 67
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 460a827b2202a4150800000000000000
+      internalID: 5857529598822621284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_20
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 60
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b7e15446a6fee60800000000000000
+      internalID: 7993724842494819188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_21
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 45
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638094ef9ca180f20800000000000000
+      internalID: 3388988174453246006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_22
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 44
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f434b21a9f93ed8f0800000000000000
+      internalID: -513909563160050865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_23
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 45
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b8ccee2e94fac60800000000000000
+      internalID: 7831559516038400793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_24
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 39
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43662abff97405640800000000000000
+      internalID: 5066628333238904372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shockwave_fire_25
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 45
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb9a2dc15cd8f8e0800000000000000
+      internalID: -1659334218793444361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      shockwave_fire_0: 2618934924739815927
+      shockwave_fire_1: -7888152494500392992
+      shockwave_fire_10: 2014127708900439246
+      shockwave_fire_11: 2341913916978559282
+      shockwave_fire_12: -7752109860018414705
+      shockwave_fire_13: 9040828046298172394
+      shockwave_fire_14: 9217344490278539135
+      shockwave_fire_15: -2089808447254455624
+      shockwave_fire_16: 6566544819719940762
+      shockwave_fire_17: 3583782977967590918
+      shockwave_fire_18: -163713159553575861
+      shockwave_fire_19: 5857529598822621284
+      shockwave_fire_2: -4213105519265477370
+      shockwave_fire_20: 7993724842494819188
+      shockwave_fire_21: 3388988174453246006
+      shockwave_fire_22: -513909563160050865
+      shockwave_fire_23: 7831559516038400793
+      shockwave_fire_24: 5066628333238904372
+      shockwave_fire_25: -1659334218793444361
+      shockwave_fire_3: -3943387112755830398
+      shockwave_fire_4: -6067114441339770846
+      shockwave_fire_5: 7211860801908335356
+      shockwave_fire_6: -3265424465564751522
+      shockwave_fire_7: 5785446063981091307
+      shockwave_fire_8: 3982470306746472280
+      shockwave_fire_9: -2810500981075022815
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

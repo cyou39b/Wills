@@ -1,0 +1,988 @@
+fileFormatVersion: 2
+guid: 1e8c621210b81cf4faeb7a2227170266
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 892629614132658020
+    second: flat_effect_fire_smoke_0
+  - first:
+      213: -2324363030070118208
+    second: flat_effect_fire_smoke_1
+  - first:
+      213: -4572827973805187174
+    second: flat_effect_fire_smoke_2
+  - first:
+      213: 7353413019754255223
+    second: flat_effect_fire_smoke_3
+  - first:
+      213: 1231643143743395414
+    second: flat_effect_fire_smoke_4
+  - first:
+      213: 7569414490280637180
+    second: flat_effect_fire_smoke_5
+  - first:
+      213: 2186640790302119384
+    second: flat_effect_fire_smoke_6
+  - first:
+      213: -3928068630460216620
+    second: flat_effect_fire_smoke_7
+  - first:
+      213: -6258674780188383545
+    second: flat_effect_fire_smoke_8
+  - first:
+      213: 5072509088893616095
+    second: flat_effect_fire_smoke_9
+  - first:
+      213: 3746545763443931422
+    second: flat_effect_fire_smoke_10
+  - first:
+      213: 4167040313116315065
+    second: flat_effect_fire_smoke_11
+  - first:
+      213: 4661987643499530054
+    second: flat_effect_fire_smoke_12
+  - first:
+      213: -1927873703458680930
+    second: flat_effect_fire_smoke_13
+  - first:
+      213: -2882203521001565216
+    second: flat_effect_fire_smoke_14
+  - first:
+      213: 797734098957347780
+    second: flat_effect_fire_smoke_15
+  - first:
+      213: 1569770124859911130
+    second: flat_effect_fire_smoke_16
+  - first:
+      213: 4409246223538148880
+    second: flat_effect_fire_smoke_17
+  - first:
+      213: -2352987691461633921
+    second: flat_effect_fire_smoke_18
+  - first:
+      213: -2326602048822838551
+    second: flat_effect_fire_smoke_19
+  - first:
+      213: -4623390651672211684
+    second: flat_effect_fire_smoke_20
+  - first:
+      213: 5860489240870404575
+    second: flat_effect_fire_smoke_21
+  - first:
+      213: -509398638518997120
+    second: flat_effect_fire_smoke_22
+  - first:
+      213: -8145462786273643487
+    second: flat_effect_fire_smoke_23
+  - first:
+      213: 382472609706373144
+    second: flat_effect_fire_smoke_24
+  - first:
+      213: 4962689165297750978
+    second: flat_effect_fire_smoke_25
+  - first:
+      213: 6654754039473351881
+    second: flat_effect_fire_smoke_26
+  - first:
+      213: 4654471799664442484
+    second: flat_effect_fire_smoke_27
+  - first:
+      213: -3739711796009910908
+    second: flat_effect_fire_smoke_28
+  - first:
+      213: -6165070423652190329
+    second: flat_effect_fire_smoke_29
+  - first:
+      213: -8842401546857010945
+    second: flat_effect_fire_smoke_30
+  - first:
+      213: -4548821967164755215
+    second: flat_effect_fire_smoke_31
+  - first:
+      213: -7861029154157532431
+    second: flat_effect_fire_smoke_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 544
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ffe5a97e1436c00800000000000000
+      internalID: 892629614132658020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_1
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 544
+        width: 43
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8be9f93243ebfd0800000000000000
+      internalID: -2324363030070118208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_2
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 540
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f5f5a8f2d0a80c0800000000000000
+      internalID: -4572827973805187174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 540
+        width: 75
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7735f217e229c0660800000000000000
+      internalID: 7353413019754255223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_4
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 538
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656ded8e9eca71110800000000000000
+      internalID: 1231643143743395414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_5
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 418
+        width: 74
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf23fdadf56fb0960800000000000000
+      internalID: 7569414490280637180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_6
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 418
+        width: 81
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d55655a632885e10800000000000000
+      internalID: 2186640790302119384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_7
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 418
+        width: 97
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da40147462bc79c0800000000000000
+      internalID: -3928068630460216620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 414
+        width: 89
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6ec228278b429a0800000000000000
+      internalID: -6258674780188383545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_9
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 445
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdfb17b142c256640800000000000000
+      internalID: 5072509088893616095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_10
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 412
+        width: 71
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19f1d495876ef330800000000000000
+      internalID: 3746545763443931422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_11
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 415
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bdc70c361d44d930800000000000000
+      internalID: 4167040313116315065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_12
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 433
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647cc0ebf05b2b040800000000000000
+      internalID: 4661987643499530054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 289
+        width: 79
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f478db411de35e0800000000000000
+      internalID: -1927873703458680930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_14
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 289
+        width: 76
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e352501b2b5008d0800000000000000
+      internalID: -2882203521001565216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_15
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 287
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cba199bfee121b00800000000000000
+      internalID: 797734098957347780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_16
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 288
+        width: 83
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adbab4f8c91f8c510800000000000000
+      internalID: 1569770124859911130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_17
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 286
+        width: 70
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0165931441ac03d30800000000000000
+      internalID: 4409246223538148880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_18
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 326
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7810994922885fd0800000000000000
+      internalID: -2352987691461633921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_19
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 314
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eaf73273cf36bfd0800000000000000
+      internalID: -2326602048822838551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_20
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 288
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f4735b2ba66dfb0800000000000000
+      internalID: -4623390651672211684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_21
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 162
+        width: 74
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd144141ae3a45150800000000000000
+      internalID: 5860489240870404575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_22
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 163
+        width: 74
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08fe10e13a04ee8f0800000000000000
+      internalID: -509398638518997120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_23
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 162
+        width: 69
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 124fefc90c085fe80800000000000000
+      internalID: -8145462786273643487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_24
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 164
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8107dd5efc0de4500800000000000000
+      internalID: 382472609706373144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_25
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 167
+        width: 67
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c3904c90830fd440800000000000000
+      internalID: 4962689165297750978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_26
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 168
+        width: 64
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cca76e5a8f6a5c50800000000000000
+      internalID: 6654754039473351881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_27
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 50
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c721cf071089040800000000000000
+      internalID: 4654471799664442484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_28
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 50
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48dbd747fefd91cc0800000000000000
+      internalID: -3739711796009910908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_29
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 59
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787b1f61d15417aa0800000000000000
+      internalID: -6165070423652190329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_30
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 57
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8293664aa794580800000000000000
+      internalID: -8842401546857010945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_31
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 54
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f2b6a485865fd0c0800000000000000
+      internalID: -4548821967164755215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat_effect_fire_smoke_32
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 55
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa637142a308e290800000000000000
+      internalID: -7861029154157532431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      flat_effect_fire_smoke_0: 892629614132658020
+      flat_effect_fire_smoke_1: -2324363030070118208
+      flat_effect_fire_smoke_10: 3746545763443931422
+      flat_effect_fire_smoke_11: 4167040313116315065
+      flat_effect_fire_smoke_12: 4661987643499530054
+      flat_effect_fire_smoke_13: -1927873703458680930
+      flat_effect_fire_smoke_14: -2882203521001565216
+      flat_effect_fire_smoke_15: 797734098957347780
+      flat_effect_fire_smoke_16: 1569770124859911130
+      flat_effect_fire_smoke_17: 4409246223538148880
+      flat_effect_fire_smoke_18: -2352987691461633921
+      flat_effect_fire_smoke_19: -2326602048822838551
+      flat_effect_fire_smoke_2: -4572827973805187174
+      flat_effect_fire_smoke_20: -4623390651672211684
+      flat_effect_fire_smoke_21: 5860489240870404575
+      flat_effect_fire_smoke_22: -509398638518997120
+      flat_effect_fire_smoke_23: -8145462786273643487
+      flat_effect_fire_smoke_24: 382472609706373144
+      flat_effect_fire_smoke_25: 4962689165297750978
+      flat_effect_fire_smoke_26: 6654754039473351881
+      flat_effect_fire_smoke_27: 4654471799664442484
+      flat_effect_fire_smoke_28: -3739711796009910908
+      flat_effect_fire_smoke_29: -6165070423652190329
+      flat_effect_fire_smoke_3: 7353413019754255223
+      flat_effect_fire_smoke_30: -8842401546857010945
+      flat_effect_fire_smoke_31: -4548821967164755215
+      flat_effect_fire_smoke_32: -7861029154157532431
+      flat_effect_fire_smoke_4: 1231643143743395414
+      flat_effect_fire_smoke_5: 7569414490280637180
+      flat_effect_fire_smoke_6: 2186640790302119384
+      flat_effect_fire_smoke_7: -3928068630460216620
+      flat_effect_fire_smoke_8: -6258674780188383545
+      flat_effect_fire_smoke_9: 5072509088893616095
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

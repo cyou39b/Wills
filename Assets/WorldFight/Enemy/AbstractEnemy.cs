@@ -1,11 +1,15 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockback
 {
     protected Rigidbody2D rb;
+    Rigidbody2D IKnockbackable.rb => rb; // I hate myself (and c#)
+    GameObject IKnockbackable.gameObject => gameObject;
+    protected new Collider2D collider;
 
     protected GameObject renderingChildObject;
     protected SpriteRenderer SpRr;
@@ -28,7 +32,12 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
         InitializeRenderingGameObject();
         InitializeHpBar();
         InitializeTriangle();
+        InitializePhysicComponents();
+    }
+    protected virtual void InitializePhysicComponents()
+    {
         rb = GetComponent<Rigidbody2D>();
+        collider = GetComponent<Collider2D>();
     }
     protected virtual void InitializeRenderingGameObject()
     {
@@ -78,7 +87,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
         }
         playerTrans = player.transform;
     }
-    protected abstract (float ,float , Vector3?)HpBarData();
+    protected abstract (float ,float , Vector3)HpBarData{get;}
     protected virtual void InitializeHpBar()
     {
         GameObject hpBarGameObject = Instantiate(HPBarPrefab, transform.position, transform.rotation);
@@ -88,10 +97,10 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
         }
         else
         {
-            (float maxHp, float hp, Vector3? offset) = HpBarData();
+            (float maxHp, float hp, Vector3 offset) = HpBarData;
 
             HpBar.Followee = gameObject;
-            HpBar.Offset = (offset == null)?Vector3.zero:offset.Value;
+            HpBar.Offset = offset;
             HpBar.OnHpLE0 = OnHPLE0;
             HpBar.MaxHP = maxHp;
             HpBar.HP = hp;
@@ -152,10 +161,12 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
     // I hate this implementation. Previous one with coroutine is prettier.
     // But the problem is... you know coroutine ¯\_(ツ)_/¯ 
     // Hope I find a better one soon.
-    protected enum Intent
+    public enum Intent
     {
         Idle,
         ChasePlayer,
+        Attack,
+        PrepJump,
         Jump,
         WalkOffEdge,
         WaitUntilStill,
@@ -163,55 +174,71 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable
         GetKnockbacked,
         EnumCount
     }
-    protected virtual Intent intent{get; set;}
-    protected void SetIntent(Intent to, bool forceOverwrite = false, Intent expectFrom = Intent.EnumCount)
+    public virtual Intent intent{get; set;}
+    protected void SetIntent(Intent to, AIFacingDirection direction, bool forceOverwrite = false, Intent expectFrom = Intent.EnumCount)
     {
         // if force overwrite or the caller knows what it's doing
         if(forceOverwrite || expectFrom == intent)
         {
             // change intent
+            Debug.Log($"{name} intent change: {intent} => {to}");
             intent = to;
+            FacingDirection = direction;
         }
         else
         {
-            // change intent to the one with higher priority
-            intent = (Intent)Math.Max((int)to, (int)intent);
+            // set intent to the one with higher priority
+            if((int)to > (int)intent)
+            {
+                Debug.Log($"{name} intent change: {intent} => {to}");
+                intent=to;
+                FacingDirection = direction;
+            }
         }
         // yeah, at this point I'm pretty sure that I hate this implementaion.
     }
     protected abstract void MainProcessIntent();
     protected bool isIntentPassive;
+    protected AIFacingDirection FacingDirection;
 
     protected virtual void FixedUpdate()
     {
         MainProcessIntent();
     }
 
-    public ParticleSystem.MinMaxCurve DistanceToKnockbackPowerCurve{get;set;}
     public abstract void GetKnockbacked(Vector2 direction, float power, bool stun);
 
-    protected virtual float collisionKnockbackForceEpsilon => 1.0f;
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    protected HashSet<IKnockbackable> knockbackablesInContact = new HashSet<IKnockbackable>();
+
+    public float collisionForceGivePercentage = 0.9f; // 0.9f and 0.3f is tested value.
+    public float collisionForceKeepPercentage = 0.3f;
+    public bool DoKnockback(GameObject other)
+        => intent == Intent.GetKnockbacked || intent == Intent.WaitUntilStill;
+    public Vector2 KnockbackDir => rb.linearVelocity.normalized;
+    public float KnockbackPower => rb.linearVelocity.magnitude * rb.mass / Time.fixedDeltaTime * collisionForceGivePercentage;
+    public bool KnockbackStun => false;
+
+    public virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        IKnockbackable knockbackable;
+        if(collision.gameObject.TryGetComponent<IKnockbackable>(out knockbackable))
+        {
+            knockbackablesInContact.Add(knockbackable);
+            if(DoKnockback(collision.gameObject))
+            {
+                knockbackable.GetKnockbacked(KnockbackDir, KnockbackPower, KnockbackStun);
+                rb.linearVelocity *= collisionForceKeepPercentage;
+            }
+        }
+    }
+    public void OnCollisionExit2D(Collision2D collision)
     {
         IKnockbackable knockbackable;
         if(collision.collider.TryGetComponent<IKnockbackable>(out knockbackable))
         {
-            ContactPoint2D[] contacts = new ContactPoint2D[collision.contactCount];
-            collision.GetContacts(contacts);
-
-            Vector2 impulse = Vector2.zero;
-            foreach(ContactPoint2D point in contacts)
-            {
-                impulse += point.normal;
-            }
-
-            if(impulse.magnitude >= collisionKnockbackForceEpsilon)
-            {
-                knockbackable.GetKnockbacked(-impulse/Time.fixedDeltaTime, 1.0f, false);
-            }
+            knockbackablesInContact.Remove(knockbackable);
         }
     }
-
     protected virtual void OnTriggerExit2D(Collider2D other)
     {
         if(other.CompareTag("Field"))

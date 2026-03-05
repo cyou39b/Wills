@@ -1,0 +1,1248 @@
+fileFormatVersion: 2
+guid: da2bf384f5c427546b58da827705507d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5765089970575782931
+    second: preset_ring_blueish_0
+  - first:
+      213: 3695382736757901275
+    second: preset_ring_blueish_1
+  - first:
+      213: -1480080564681410847
+    second: preset_ring_blueish_2
+  - first:
+      213: 7938521182309032364
+    second: preset_ring_blueish_3
+  - first:
+      213: 4821593422958481183
+    second: preset_ring_blueish_4
+  - first:
+      213: -5019616855345652981
+    second: preset_ring_blueish_5
+  - first:
+      213: 6150798440817564230
+    second: preset_ring_blueish_6
+  - first:
+      213: 8381683590972357248
+    second: preset_ring_blueish_7
+  - first:
+      213: 3271747151351723519
+    second: preset_ring_blueish_8
+  - first:
+      213: 7664742458664846128
+    second: preset_ring_blueish_9
+  - first:
+      213: -775894362283902653
+    second: preset_ring_blueish_10
+  - first:
+      213: 7414843377837267238
+    second: preset_ring_blueish_11
+  - first:
+      213: -3313367118711976878
+    second: preset_ring_blueish_12
+  - first:
+      213: 5598825377535083586
+    second: preset_ring_blueish_13
+  - first:
+      213: -2959853317162269693
+    second: preset_ring_blueish_14
+  - first:
+      213: -5064226545211953150
+    second: preset_ring_blueish_15
+  - first:
+      213: 5703527157239615986
+    second: preset_ring_blueish_16
+  - first:
+      213: 8858432291011546232
+    second: preset_ring_blueish_17
+  - first:
+      213: 9214848982436177182
+    second: preset_ring_blueish_18
+  - first:
+      213: -6423245986652141562
+    second: preset_ring_blueish_19
+  - first:
+      213: -7566154264451193568
+    second: preset_ring_blueish_20
+  - first:
+      213: -7763110148239006646
+    second: preset_ring_blueish_21
+  - first:
+      213: -1138477772076155011
+    second: preset_ring_blueish_22
+  - first:
+      213: 5913544232977982420
+    second: preset_ring_blueish_23
+  - first:
+      213: 6461368847856768176
+    second: preset_ring_blueish_24
+  - first:
+      213: -1342420577455953998
+    second: preset_ring_blueish_25
+  - first:
+      213: 4049848522841758088
+    second: preset_ring_blueish_26
+  - first:
+      213: 7706061134919426108
+    second: preset_ring_blueish_27
+  - first:
+      213: 8618778192073137510
+    second: preset_ring_blueish_28
+  - first:
+      213: -2919434936979272115
+    second: preset_ring_blueish_29
+  - first:
+      213: 1483123368951603330
+    second: preset_ring_blueish_30
+  - first:
+      213: -3612344568882668026
+    second: preset_ring_blueish_31
+  - first:
+      213: -8871961197410067755
+    second: preset_ring_blueish_32
+  - first:
+      213: 1628811320080696851
+    second: preset_ring_blueish_33
+  - first:
+      213: 5179916611147363588
+    second: preset_ring_blueish_34
+  - first:
+      213: -4818201084652827566
+    second: preset_ring_blueish_35
+  - first:
+      213: 7863313109003299220
+    second: preset_ring_blueish_36
+  - first:
+      213: 9142593703652839225
+    second: preset_ring_blueish_37
+  - first:
+      213: -6267014732683390993
+    second: preset_ring_blueish_38
+  - first:
+      213: -4746736012959254169
+    second: preset_ring_blueish_39
+  - first:
+      213: -8165357135904917550
+    second: preset_ring_blueish_40
+  - first:
+      213: 3403631236828376693
+    second: preset_ring_blueish_41
+  - first:
+      213: 2711953759845802768
+    second: preset_ring_blueish_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: preset_ring_blueish_0
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 536
+        width: 53
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: debc9ad67394effa0800000000000000
+      internalID: -5765089970575782931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_1
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 534
+        width: 65
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd7c0952503a84330800000000000000
+      internalID: 3695382736757901275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_2
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 530
+        width: 69
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e674377192b57be0800000000000000
+      internalID: -1480080564681410847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_3
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 530
+        width: 79
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca1a17984fa4b2e60800000000000000
+      internalID: 7938521182309032364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_4
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 402
+        width: 84
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fccca1cadb9e240800000000000000
+      internalID: 4821593422958481183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_5
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 401
+        width: 86
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0b1f8ca01db65ab0800000000000000
+      internalID: -5019616855345652981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_6
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 400
+        width: 91
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a15f5f7960c5550800000000000000
+      internalID: 6150798440817564230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_7
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 399
+        width: 89
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ab0a361d8b15470800000000000000
+      internalID: 8381683590972357248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_8
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 399
+        width: 92
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5373f13b4976d20800000000000000
+      internalID: 3271747151351723519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_9
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 399
+        width: 95
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033829718a2ae5a60800000000000000
+      internalID: 7664742458664846128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_10
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 398
+        width: 98
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349f6d830387b35f0800000000000000
+      internalID: -775894362283902653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_11
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 398
+        width: 99
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 629d52144c0d6e660800000000000000
+      internalID: 7414843377837267238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 273
+        width: 98
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c86b6192e8402d0800000000000000
+      internalID: -3313367118711976878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_13
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 273
+        width: 100
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244cb6b540603bd40800000000000000
+      internalID: 5598825377535083586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_14
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 273
+        width: 102
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304084b071d7ce6d0800000000000000
+      internalID: -2959853317162269693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_15
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 272
+        width: 112
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200b98ed9c048b9b0800000000000000
+      internalID: -5064226545211953150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_16
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 273
+        width: 105
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f19f0e1bbff62f40800000000000000
+      internalID: 5703527157239615986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_17
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 275
+        width: 106
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87cc7941c397fea70800000000000000
+      internalID: 8858432291011546232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_18
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 275
+        width: 99
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e156af0c358b1ef70800000000000000
+      internalID: 9214848982436177182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_19
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 276
+        width: 89
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60845a49ecb0cd6a0800000000000000
+      internalID: -6423245986652141562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_20
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 147
+        width: 94
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 025649f98ce9ff690800000000000000
+      internalID: -7566154264451193568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_21
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 148
+        width: 103
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a44ebfd6374e34490800000000000000
+      internalID: -7763110148239006646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_22
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 148
+        width: 95
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ff8ba8f705330f0800000000000000
+      internalID: -1138477772076155011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_23
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 206
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d3663a0621211250800000000000000
+      internalID: 5913544232977982420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_24
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 202
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b4174bbbb46ba950800000000000000
+      internalID: 6461368847856768176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_25
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 151
+        width: 89
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b72095e893ce5de0800000000000000
+      internalID: -1342420577455953998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_26
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 147
+        width: 92
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8899f1646c3f33830800000000000000
+      internalID: 4049848522841758088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 187
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30e05416cd61fa60800000000000000
+      internalID: 7706061134919426108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_28
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 149
+        width: 89
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d1768f91d0c9770800000000000000
+      internalID: 8618778192073137510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_29
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 149
+        width: 89
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e4c7484651c77d0800000000000000
+      internalID: -2919434936979272115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_30
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 150
+        width: 88
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280e07c98dc159410800000000000000
+      internalID: 1483123368951603330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_31
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 27
+        width: 79
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60edf6de0cf5eddc0800000000000000
+      internalID: -3612344568882668026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_32
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 29
+        width: 74
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dad25feb4670e480800000000000000
+      internalID: -8871961197410067755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_33
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 51
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3168b8b0443ba9610800000000000000
+      internalID: 1628811320080696851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_34
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 58
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4057595a6b2c2e740800000000000000
+      internalID: 5179916611147363588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_35
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 63
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25ccdd434af422db0800000000000000
+      internalID: -4818201084652827566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_36
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 62
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49960db6c99102d60800000000000000
+      internalID: 7863313109003299220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_37
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 56
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f43ffa88401ee70800000000000000
+      internalID: 9142593703652839225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_38
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 32
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef44400e471709a0800000000000000
+      internalID: -6267014732683390993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_39
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 44
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7697209deb4302eb0800000000000000
+      internalID: -4746736012959254169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_40
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 51
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7bf2262f2deae80800000000000000
+      internalID: -8165357135904917550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_41
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 32
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e2491a3902c3f20800000000000000
+      internalID: 3403631236828376693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_ring_blueish_42
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 43
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013e4e6739bc2a520800000000000000
+      internalID: 2711953759845802768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      preset_ring_blueish_0: -5765089970575782931
+      preset_ring_blueish_1: 3695382736757901275
+      preset_ring_blueish_10: -775894362283902653
+      preset_ring_blueish_11: 7414843377837267238
+      preset_ring_blueish_12: -3313367118711976878
+      preset_ring_blueish_13: 5598825377535083586
+      preset_ring_blueish_14: -2959853317162269693
+      preset_ring_blueish_15: -5064226545211953150
+      preset_ring_blueish_16: 5703527157239615986
+      preset_ring_blueish_17: 8858432291011546232
+      preset_ring_blueish_18: 9214848982436177182
+      preset_ring_blueish_19: -6423245986652141562
+      preset_ring_blueish_2: -1480080564681410847
+      preset_ring_blueish_20: -7566154264451193568
+      preset_ring_blueish_21: -7763110148239006646
+      preset_ring_blueish_22: -1138477772076155011
+      preset_ring_blueish_23: 5913544232977982420
+      preset_ring_blueish_24: 6461368847856768176
+      preset_ring_blueish_25: -1342420577455953998
+      preset_ring_blueish_26: 4049848522841758088
+      preset_ring_blueish_27: 7706061134919426108
+      preset_ring_blueish_28: 8618778192073137510
+      preset_ring_blueish_29: -2919434936979272115
+      preset_ring_blueish_3: 7938521182309032364
+      preset_ring_blueish_30: 1483123368951603330
+      preset_ring_blueish_31: -3612344568882668026
+      preset_ring_blueish_32: -8871961197410067755
+      preset_ring_blueish_33: 1628811320080696851
+      preset_ring_blueish_34: 5179916611147363588
+      preset_ring_blueish_35: -4818201084652827566
+      preset_ring_blueish_36: 7863313109003299220
+      preset_ring_blueish_37: 9142593703652839225
+      preset_ring_blueish_38: -6267014732683390993
+      preset_ring_blueish_39: -4746736012959254169
+      preset_ring_blueish_4: 4821593422958481183
+      preset_ring_blueish_40: -8165357135904917550
+      preset_ring_blueish_41: 3403631236828376693
+      preset_ring_blueish_42: 2711953759845802768
+      preset_ring_blueish_5: -5019616855345652981
+      preset_ring_blueish_6: 6150798440817564230
+      preset_ring_blueish_7: 8381683590972357248
+      preset_ring_blueish_8: 3271747151351723519
+      preset_ring_blueish_9: 7664742458664846128
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

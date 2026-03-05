@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 5ede76976a0b3bc44b789d7f8f71ae37
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -243225726906230770
+    second: preset_shockwave_blueish_0
+  - first:
+      213: -7047072294320559321
+    second: preset_shockwave_blueish_1
+  - first:
+      213: -5017180648346673859
+    second: preset_shockwave_blueish_2
+  - first:
+      213: 3643467539396164358
+    second: preset_shockwave_blueish_3
+  - first:
+      213: 5095559618575205540
+    second: preset_shockwave_blueish_4
+  - first:
+      213: -8795080964534103242
+    second: preset_shockwave_blueish_5
+  - first:
+      213: 7052310965479176506
+    second: preset_shockwave_blueish_6
+  - first:
+      213: -6127388938363550210
+    second: preset_shockwave_blueish_7
+  - first:
+      213: -7643795646825128149
+    second: preset_shockwave_blueish_8
+  - first:
+      213: -5838959030998490430
+    second: preset_shockwave_blueish_9
+  - first:
+      213: -2013752053010950036
+    second: preset_shockwave_blueish_10
+  - first:
+      213: -2612360814333979692
+    second: preset_shockwave_blueish_11
+  - first:
+      213: -6587747233549514524
+    second: preset_shockwave_blueish_12
+  - first:
+      213: 3342895640309205207
+    second: preset_shockwave_blueish_13
+  - first:
+      213: 1882525723058121602
+    second: preset_shockwave_blueish_14
+  - first:
+      213: -5646749534676076556
+    second: preset_shockwave_blueish_15
+  - first:
+      213: -4247466423981334339
+    second: preset_shockwave_blueish_16
+  - first:
+      213: -1827726060383872653
+    second: preset_shockwave_blueish_17
+  - first:
+      213: 6056144113831059360
+    second: preset_shockwave_blueish_18
+  - first:
+      213: -883040362099006728
+    second: preset_shockwave_blueish_19
+  - first:
+      213: -3350414550509279703
+    second: preset_shockwave_blueish_20
+  - first:
+      213: -2843302081270816646
+    second: preset_shockwave_blueish_21
+  - first:
+      213: -1783535802521221247
+    second: preset_shockwave_blueish_22
+  - first:
+      213: -2695879875390922061
+    second: preset_shockwave_blueish_23
+  - first:
+      213: 7660493699910759588
+    second: preset_shockwave_blueish_24
+  - first:
+      213: 6342175406625885305
+    second: preset_shockwave_blueish_25
+  - first:
+      213: -1685157516622819522
+    second: preset_shockwave_blueish_26
+  - first:
+      213: -4602021962442462693
+    second: preset_shockwave_blueish_27
+  - first:
+      213: 620748689298272304
+    second: preset_shockwave_blueish_28
+  - first:
+      213: 6177645795282398792
+    second: preset_shockwave_blueish_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_0
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 554
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0894837d73ef9cf0800000000000000
+      internalID: -243225726906230770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 551
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ba686d515c33e90800000000000000
+      internalID: -7047072294320559321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_2
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 548
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d155158c46f5ab0800000000000000
+      internalID: -5017180648346673859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_3
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 419
+        width: 50
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60bff545c62309230800000000000000
+      internalID: 3643467539396164358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_4
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 418
+        width: 57
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a40005c97017b640800000000000000
+      internalID: 5095559618575205540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_5
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 418
+        width: 65
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 633152a067891f580800000000000000
+      internalID: -8795080964534103242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_6
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 418
+        width: 73
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a397af65577ded160800000000000000
+      internalID: 7052310965479176506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_7
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 292
+        width: 79
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5ce20993427faa0800000000000000
+      internalID: -6127388938363550210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_8
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 290
+        width: 87
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2f9f479b58cbe590800000000000000
+      internalID: -7643795646825128149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_9
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 287
+        width: 92
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c2a64b82b9d7fea0800000000000000
+      internalID: -5838959030998490430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_10
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 285
+        width: 97
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6891965d27bd04e0800000000000000
+      internalID: -2013752053010950036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_11
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 158
+        width: 100
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d319742ea70fbbd0800000000000000
+      internalID: -2612360814333979692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_12
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 157
+        width: 103
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e808326bce9394a0800000000000000
+      internalID: -6587747233549514524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_13
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 157
+        width: 72
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d805d99fd9546e20800000000000000
+      internalID: 3342895640309205207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_14
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 216
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b2a6bcb23102a10800000000000000
+      internalID: 1882525723058121602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_15
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 157
+        width: 74
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7b70a4737b2a1b0800000000000000
+      internalID: -5646749534676076556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_16
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 32
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db0a13b9ac7fd05c0800000000000000
+      internalID: -4247466423981334339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_17
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 60
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3795810f4dc92a6e0800000000000000
+      internalID: -1827726060383872653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_18
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 33
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af19751cfebb0450800000000000000
+      internalID: 6056144113831059360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_19
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 61
+        width: 38
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2a1ce187fceb3f0800000000000000
+      internalID: -883040362099006728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_20
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 68
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9262892b7bfe081d0800000000000000
+      internalID: -3350414550509279703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_21
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 60
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7069b052df8a88d0800000000000000
+      internalID: -2843302081270816646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_22
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 46
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187088e13ab9f37e0800000000000000
+      internalID: -1783535802521221247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_23
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 45
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b22336698f469ad0800000000000000
+      internalID: -2695879875390922061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_24
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 46
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a47c4bde6a8f4a60800000000000000
+      internalID: 7660493699910759588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_25
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 37
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97c87271eeee30850800000000000000
+      internalID: 6342175406625885305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_26
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 40
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f0e1fba2e1d98e0800000000000000
+      internalID: -1685157516622819522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_27
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 47
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a221068655220c0800000000000000
+      internalID: -4602021962442462693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_28
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 39
+        width: 29
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 030b960e4a75d9800800000000000000
+      internalID: 620748689298272304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_shockwave_blueish_29
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 46
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e2ef7ce186bb550800000000000000
+      internalID: 6177645795282398792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      preset_shockwave_blueish_0: -243225726906230770
+      preset_shockwave_blueish_1: -7047072294320559321
+      preset_shockwave_blueish_10: -2013752053010950036
+      preset_shockwave_blueish_11: -2612360814333979692
+      preset_shockwave_blueish_12: -6587747233549514524
+      preset_shockwave_blueish_13: 3342895640309205207
+      preset_shockwave_blueish_14: 1882525723058121602
+      preset_shockwave_blueish_15: -5646749534676076556
+      preset_shockwave_blueish_16: -4247466423981334339
+      preset_shockwave_blueish_17: -1827726060383872653
+      preset_shockwave_blueish_18: 6056144113831059360
+      preset_shockwave_blueish_19: -883040362099006728
+      preset_shockwave_blueish_2: -5017180648346673859
+      preset_shockwave_blueish_20: -3350414550509279703
+      preset_shockwave_blueish_21: -2843302081270816646
+      preset_shockwave_blueish_22: -1783535802521221247
+      preset_shockwave_blueish_23: -2695879875390922061
+      preset_shockwave_blueish_24: 7660493699910759588
+      preset_shockwave_blueish_25: 6342175406625885305
+      preset_shockwave_blueish_26: -1685157516622819522
+      preset_shockwave_blueish_27: -4602021962442462693
+      preset_shockwave_blueish_28: 620748689298272304
+      preset_shockwave_blueish_29: 6177645795282398792
+      preset_shockwave_blueish_3: 3643467539396164358
+      preset_shockwave_blueish_4: 5095559618575205540
+      preset_shockwave_blueish_5: -8795080964534103242
+      preset_shockwave_blueish_6: 7052310965479176506
+      preset_shockwave_blueish_7: -6127388938363550210
+      preset_shockwave_blueish_8: -7643795646825128149
+      preset_shockwave_blueish_9: -5838959030998490430
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

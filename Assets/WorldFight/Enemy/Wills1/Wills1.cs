@@ -3,6 +3,7 @@ using Random = UnityEngine.Random;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Wills : AbstractEnemy
@@ -26,8 +27,8 @@ public class Wills : AbstractEnemy
             }
         }
     } 
-    
-    private Dictionary<string, DynamicAIAction> listeningJumpBlock = new Dictionary<string, DynamicAIAction>();
+
+    private Dictionary<string, DynamicAIAction> listeningDynamicAction = new Dictionary<string, DynamicAIAction>();
 
     private NavMeshAgent agent;
 
@@ -76,30 +77,49 @@ public class Wills : AbstractEnemy
         Mat.SetColor("_EyeColor", EyeColors[idx]);
     }
 
-    protected override (float, float, Vector3?) HpBarData() 
-        => (40.0f, 40.0f, new Vector3(0.0f, 1.4f, 0.0f));
+    protected override (float, float, Vector3) HpBarData 
+        => (40.0f, 40.0f, new Vector3(0.0f, 2.0f, 0.0f));
 
     public void Update()
     {
-        if(!isIntentPassive)
+        walking = (agent.enabled)?agent.velocity.magnitude>=0.0f:rb.linearVelocity.magnitude>=0.0f;
+
+        Vector3 dir = (agent.enabled) 
+            ?agent.steeringTarget-transform.position
+            :rb.linearVelocity;
+        // Debug.Log(dir.ToString());
+        switch(base.FacingDirection)
         {
-            // not passive & agent not enabled => in attack/dodge intent and
-            // direction is handled in intent coroutine
-            if(agent.enabled)
-            {
-                Vector3 targetDirection = agent.steeringTarget - transform.position;
-                if(targetDirection.x != 0.0f)
-                {
-                    SpRr.flipX = targetDirection.x < 0.0f;
-                }
-                walking = agent.desiredVelocity.magnitude >= 0.0f;
-            }
+            case AIFacingDirection.SameAsMoving:
+                SpRr.flipX = dir.x<=0.0f;
+                break;
+            case AIFacingDirection.NegFromMoving:
+                SpRr.flipX = dir.x>=0.0f;
+                break;
+            case AIFacingDirection.None:
+                //* Nothin
+                break;
         }
-        else
-        {
-            SpRr.flipX = rb.linearVelocity.x >= 0.0f;
-            walking = true;
-        }
+
+        // if(!isIntentPassive)
+        // {
+        //     // not passive & agent not enabled => in attack/dodge intent and
+        //     // direction is handled in intent coroutine
+        //     if(agent.enabled)
+        //     {
+        //         Vector3 targetDirection = agent.steeringTarget - transform.position;
+        //         if(targetDirection.x != 0.0f)
+        //         {
+        //             SpRr.flipX = targetDirection.x < 0.0f;
+        //         }
+        //         walking = agent.desiredVelocity.magnitude >= 0.0f;
+        //     }
+        // }
+        // else
+        // {
+        //     SpRr.flipX = rb.linearVelocity.x >= 0.0f;
+        //     walking = true;
+        // }
     }
 
     protected override void MainProcessIntent()
@@ -108,10 +128,22 @@ public class Wills : AbstractEnemy
         switch(intent)
         {
             case Intent.Idle:
-                SetIntent(Intent.ChasePlayer, false);
+                if (!agent.enabled)
+                {
+                    SafeWarp();
+                    agent.enabled = true;
+                }
+                SetIntent(Intent.ChasePlayer, AIFacingDirection.SameAsMoving, false);
                 goto case Intent.ChasePlayer;
             case Intent.ChasePlayer:
                 ProcessChasePlayerIntent();
+                break;
+            case Intent.Attack:
+                ProcessAttackIntent();
+                break;
+            case Intent.PrepJump:
+                ProcessPrepJumpIntent();
+                if(intent == Intent.Jump) {goto case Intent.Jump;}
                 break;
             case Intent.Jump:
                 ProcessJumpIntent();
@@ -142,7 +174,7 @@ public class Wills : AbstractEnemy
         }
     }
 
-    protected override Intent intent
+    public override Intent intent
     { 
         // haha fucking set function
         get => base.intent; 
@@ -152,6 +184,9 @@ public class Wills : AbstractEnemy
             {
                 case Intent.ChasePlayer:
                     chasePlayer_counter = chasePlayer_count - 1;
+                    break;
+                case Intent.PrepJump:
+                    prepJumpIntent_stage = 0;
                     break;
                 case Intent.Jump:
                     jumpIntent_stage = 0;
@@ -169,29 +204,49 @@ public class Wills : AbstractEnemy
 
     public override void GetKnockbacked(Vector2 direction, float power, bool stun)
     {
-        if(intent == Intent.GetKnockbacked)
-        {
-            getKnockbackedIntent_force += direction * power;
-            getKnockbackedIntent_stun |= stun;
-        }
-        else
-        {
-            getKnockbackedIntent_force = direction * power;
-            getKnockbackedIntent_stun = stun;
-        }
-        SetIntent(Intent.GetKnockbacked, true);
+        getKnockbackedIntent_force += direction * power;
+        getKnockbackedIntent_stun |= stun;
+        SetIntent(Intent.GetKnockbacked, AIFacingDirection.NegFromMoving, true);
     }
 
     public float xEpsilon, yEpsilon;
-    private Vector2 getKnockbackedIntent_force;
-    private bool getKnockbackedIntent_stun;
+    private Vector2 getKnockbackedIntent_force = Vector2.zero;
+    private bool getKnockbackedIntent_stun = false;
     private void ProcessGetKnockbackedIntent()
     {
+        if(knockbackablesInContact.Count > 0)
+        {
+            Vector2 normalizeForce = getKnockbackedIntent_force.normalized;
+            float power = getKnockbackedIntent_force.magnitude;
+
+            float totalSimilarity = 0.0f;
+            foreach(IKnockbackable knockbackable in knockbackablesInContact)
+            {
+                Vector2 dPos = knockbackable.gameObject.transform.position - transform.position;
+                float thisSimilarity  = Vector2.Dot(dPos.normalized, normalizeForce); // Since direction's magnitude SHOULD be 1
+                if(thisSimilarity > 0.0f) {totalSimilarity += thisSimilarity;}
+            }
+
+            foreach(IKnockbackable knockbackable in knockbackablesInContact)
+            {
+                Vector2 dPos = knockbackable.gameObject.transform.position - transform.position;
+                float thisSimilarity  = Vector2.Dot(dPos.normalized, normalizeForce); // Since direction's magnitude SHOULD be 1
+                if(thisSimilarity > 0.0f)
+                {
+                    knockbackable.GetKnockbacked(dPos.normalized, thisSimilarity * power * collisionForceGivePercentage, false);
+                }
+            }
+
+            getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepPercentage));
+        }
+
+        Debug.Log($"{name} got knockbacked with force: {getKnockbackedIntent_force}");
+
         agent.enabled = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 1.0f;
         rb.AddForce(getKnockbackedIntent_force);
-        SetIntent(Intent.WaitUntilStill, false, Intent.GetKnockbacked);
+        SetIntent(Intent.WaitUntilStill, AIFacingDirection.NegFromMoving ,  false, Intent.GetKnockbacked);
         
         getKnockbackedIntent_force = Vector2.zero;
         getKnockbackedIntent_stun = false;
@@ -201,7 +256,7 @@ public class Wills : AbstractEnemy
     {
         if(Mathf.Abs(rb.linearVelocityX) <= xEpsilon && Mathf.Abs(rb.linearVelocityY) <= yEpsilon)
         {
-            SetIntent(Intent.WaitUntilGround, false, Intent.WaitUntilStill);
+            SetIntent(Intent.WaitUntilGround, AIFacingDirection.None, false, Intent.WaitUntilStill);
         }
     }
 
@@ -237,22 +292,9 @@ public class Wills : AbstractEnemy
             rb.linearVelocity = Vector2.zero;
             rb.bodyType = RigidbodyType2D.Kinematic;
 
-            NavMeshQueryFilter filter = new NavMeshQueryFilter()
-            {
-                agentTypeID = agent.agentTypeID,
-                areaMask = NavMesh.AllAreas
-            };
-            NavMeshHit hit;
-            if(NavMesh.SamplePosition(transform.position, out hit, 10.0f, filter)) // WARN: Magic number
-            {
-                agent.Warp(hit.position);
-            }
-            else
-            {
-                Debug.LogError($"Agent Can't Warp, at {transform.position}");
-            }
+            SafeWarp();
             agent.enabled = true;
-            SetIntent(Intent.Idle, false, Intent.WaitUntilGround);
+            SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.WaitUntilGround); // FIXME?: fail to set intent sometimes
         }
     }
 
@@ -263,32 +305,33 @@ public class Wills : AbstractEnemy
         if(++chasePlayer_counter != chasePlayer_count){return;}
         else{chasePlayer_counter = 0;}
 
-        agent.SetDestination(playerTrans.position);
+        RaycastHit2D info = Physics2D.Raycast(playerTrans.position, Vector2.down, 100.0f, GlobalVariables.GroundLayerMask);
+        agent.SetDestination(info.point);
 
         DynamicAIAction action = null;
         if(
             agent.isOnOffMeshLink && 
-            listeningJumpBlock.ContainsKey(agent.currentOffMeshLinkData.owner.name)
+            listeningDynamicAction.ContainsKey(agent.currentOffMeshLinkData.owner.name)
         ) {
-            action = listeningJumpBlock[agent.currentOffMeshLinkData.owner.name];
+            action = listeningDynamicAction[agent.currentOffMeshLinkData.owner.name];
         }
         else if(
             agent.nextOffMeshLinkData.owner != null &&
-            listeningJumpBlock.ContainsKey(agent.nextOffMeshLinkData.owner.name)
+            listeningDynamicAction.ContainsKey(agent.nextOffMeshLinkData.owner.name)
         ) {
-            action = listeningJumpBlock[agent.nextOffMeshLinkData.owner.name];
+            action = listeningDynamicAction[agent.nextOffMeshLinkData.owner.name];
         }
         if(action != null)
         {
             switch (action.Type)
             {
                 case DynamicAIAction.ActionType.Jump:
-                    jumpIntent_action = action;
-                    SetIntent(Intent.Jump);
+                    prepJumpIntent_pendingAction = action;
+                    SetIntent(Intent.PrepJump, AIFacingDirection.SameAsMoving);
                     break;
                 case DynamicAIAction.ActionType.WalkOffEdge:
                     walkOffEdgeIntent_action = action;
-                    SetIntent(Intent.WalkOffEdge);
+                    SetIntent(Intent.WalkOffEdge, AIFacingDirection.SameAsMoving);
                     break;
             }
         }
@@ -297,8 +340,40 @@ public class Wills : AbstractEnemy
     [ContextMenu("Log stuffs")]
     public void LogStuffs()
     {
-        string listners = string.Join(Environment.NewLine, listeningJumpBlock);
-        Debug.Log($"name: {name}, intent: {intent}, listeners: {listners}, onlink: {agent.isOnOffMeshLink}, {jumpIntent_stage}, {jumpIntent_waitFrameCounter}, {jumpIntent_waitFrameTarget}");
+        string listners = string.Join(Environment.NewLine, listeningDynamicAction);
+        string agentVelocity = agent.enabled?agent.velocity.ToString():"Not enabled";
+        Debug.Log($"name: {name}, intent: {intent}, listeners: {listners}, onlink: {agent.isOnOffMeshLink}, agentVelocity: {agentVelocity}, linear velocity: {rb.linearVelocity}");
+    }
+
+    private void ProcessAttackIntent()
+    {
+    }
+
+    private DynamicAIAction prepJumpIntent_pendingAction = null;
+    private Vector2 prepJumpIntent_pendingVelocity;
+    private int prepJumpIntent_stage = 0;
+    private void ProcessPrepJumpIntent()
+    {
+        if(prepJumpIntent_stage == 0)
+        {
+            prepJumpIntent_pendingVelocity = new Vector2(Mathf.Sign(prepJumpIntent_pendingAction.gameObject.transform.position.x-transform.position.x)*agent.speed, 0.0f);
+            agent.enabled = false;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.gravityScale = 1.0f;
+            rb.linearVelocity = prepJumpIntent_pendingVelocity;
+
+            prepJumpIntent_stage = 1;
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(Mathf.Sign(prepJumpIntent_pendingAction.gameObject.transform.position.x-transform.position.x)*agent.speed, 0.0f);
+            if(prepJumpIntent_pendingAction.JumpRangeLeft <= transform.position.x &&
+               transform.position.x <= prepJumpIntent_pendingAction.JumpRangeRight
+            ){
+                jumpIntent_action = prepJumpIntent_pendingAction;
+                SetIntent(Intent.Jump, AIFacingDirection.SameAsMoving);
+            }
+        }
     }
 
     private DynamicAIAction jumpIntent_action;
@@ -309,7 +384,7 @@ public class Wills : AbstractEnemy
     {
         if(jumpIntent_stage == 0)
         {
-            Vector2 agentVelocity = agent.velocity;
+            Vector2 agentVelocity = new Vector2(Mathf.Sign(jumpIntent_action.XSpeed)*agent.speed, 0.0f);
             agent.enabled = false;
 
             rb.bodyType = RigidbodyType2D.Dynamic;
@@ -328,7 +403,7 @@ public class Wills : AbstractEnemy
                     jumpIntent_action.XSpeed,
                     jumpIntent_action.JumpSpeed + Random.Range(-jumpIntent_action.JumpSpeedRange, jumpIntent_action.JumpSpeedRange)
                 );
-                SetIntent(Intent.WaitUntilGround);
+                SetIntent(Intent.WaitUntilGround, AIFacingDirection.SameAsMoving);
             }
         }
     }
@@ -342,21 +417,19 @@ public class Wills : AbstractEnemy
             agent.enabled = false;
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.gravityScale = 1.0f;
-            rb.linearVelocity = new Vector2(walkOffEdgeIntent_action.XSpeed, 0.0f);
-            SpRr.flipX = walkOffEdgeIntent_action.XSpeed <= 0.0f;
-            walking = true;
+            rb.linearVelocity = new Vector2(walkOffEdgeIntent_action.XSpeed, 0.1f);
             walkOffEdgeIntent_stage = 1;
         }
         else
         {
-            rb.linearVelocityX = walkOffEdgeIntent_action.XSpeed;
+            rb.linearVelocity = new Vector2(walkOffEdgeIntent_action.XSpeed, 0.1f);
             if(
                 (walkOffEdgeIntent_action.XSpeed < 0.0f)
                     ?transform.position.x < walkOffEdgeIntent_action.TargetX
                     :transform.position.x > walkOffEdgeIntent_action.TargetX
             )
             {
-                SetIntent(Intent.WaitUntilGround);
+                SetIntent(Intent.WaitUntilGround, AIFacingDirection.SameAsMoving);
             }
         }
     }
@@ -368,8 +441,7 @@ public class Wills : AbstractEnemy
         DynamicAIAction jumpBlock;
         if(otherGameObject.TryGetComponent<DynamicAIAction>(out jumpBlock))
         {
-            // Debug.Log($"Add listener {jumpBlock.Link.name}");
-            listeningJumpBlock.Add(jumpBlock.Link.name, jumpBlock);
+            listeningDynamicAction.Add(jumpBlock.Link.name, jumpBlock);
         }
     }
 
@@ -383,11 +455,35 @@ public class Wills : AbstractEnemy
 
         GameObject otherGameObject = other.gameObject;
 
+
         DynamicAIAction jumpBlock;
         if(otherGameObject.TryGetComponent<DynamicAIAction>(out jumpBlock))
         {
-            // Debug.Log($"Remove listener {jumpBlock.Link.name}");
-            listeningJumpBlock.Remove(jumpBlock.Link.name);
+            if( intent == Intent.PrepJump && 
+                jumpBlock.Type == DynamicAIAction.ActionType.Jump &&
+                prepJumpIntent_pendingAction == jumpBlock
+            ) {
+                SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.PrepJump);
+            }
+            listeningDynamicAction.Remove(jumpBlock.Link.name);
+        }
+    }
+
+    void SafeWarp()
+    {
+        NavMeshQueryFilter filter = new NavMeshQueryFilter()
+        {
+            agentTypeID = agent.agentTypeID,
+            areaMask = NavMesh.AllAreas
+        };
+        NavMeshHit hit;
+        if(NavMesh.SamplePosition(transform.position, out hit, 10.0f, filter)) // WARN: Magic number
+        {
+            agent.Warp(hit.position);
+        }
+        else
+        {
+            Debug.LogError($"Agent Can't Warp, at {transform.position}"); // TODO: FIXME: you know this is not the solution
         }
     }
 }

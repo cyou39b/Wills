@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: be857a347e233c5419873e6dd65d17ab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8507545068316732755
+    second: preset_flat_blueish_0
+  - first:
+      213: -5601764260763626189
+    second: preset_flat_blueish_1
+  - first:
+      213: 6592957726353862488
+    second: preset_flat_blueish_2
+  - first:
+      213: 6689475920915371589
+    second: preset_flat_blueish_3
+  - first:
+      213: -6450268921363485675
+    second: preset_flat_blueish_4
+  - first:
+      213: -3804840764759478886
+    second: preset_flat_blueish_5
+  - first:
+      213: 8442451609738523768
+    second: preset_flat_blueish_6
+  - first:
+      213: -3860585318107882007
+    second: preset_flat_blueish_7
+  - first:
+      213: -8873366703650519048
+    second: preset_flat_blueish_8
+  - first:
+      213: -3428376337422809348
+    second: preset_flat_blueish_9
+  - first:
+      213: 7354013621933902659
+    second: preset_flat_blueish_10
+  - first:
+      213: -545374927552282090
+    second: preset_flat_blueish_11
+  - first:
+      213: 7877531921242724884
+    second: preset_flat_blueish_12
+  - first:
+      213: -4808702174965963934
+    second: preset_flat_blueish_13
+  - first:
+      213: -3492271216828346263
+    second: preset_flat_blueish_14
+  - first:
+      213: -1294199608719526791
+    second: preset_flat_blueish_15
+  - first:
+      213: 1148143995853520843
+    second: preset_flat_blueish_16
+  - first:
+      213: -4681332006985487208
+    second: preset_flat_blueish_17
+  - first:
+      213: 270550777141675724
+    second: preset_flat_blueish_18
+  - first:
+      213: -3552467769527461758
+    second: preset_flat_blueish_19
+  - first:
+      213: 3247441902844788155
+    second: preset_flat_blueish_20
+  - first:
+      213: 8602367034735505889
+    second: preset_flat_blueish_21
+  - first:
+      213: 7883356598433263230
+    second: preset_flat_blueish_22
+  - first:
+      213: -3375323386207494295
+    second: preset_flat_blueish_23
+  - first:
+      213: -4170163603373014356
+    second: preset_flat_blueish_24
+  - first:
+      213: -1458387464739749781
+    second: preset_flat_blueish_25
+  - first:
+      213: 7140967010422544085
+    second: preset_flat_blueish_26
+  - first:
+      213: -3622828718250089709
+    second: preset_flat_blueish_27
+  - first:
+      213: 5275942720558837449
+    second: preset_flat_blueish_28
+  - first:
+      213: -1490893065470307506
+    second: preset_flat_blueish_29
+  - first:
+      213: 636239894193278172
+    second: preset_flat_blueish_30
+  - first:
+      213: -8704482255291723799
+    second: preset_flat_blueish_31
+  - first:
+      213: 6716436051467402894
+    second: preset_flat_blueish_32
+  - first:
+      213: -551641378477356182
+    second: preset_flat_blueish_33
+  - first:
+      213: 3599152856404147352
+    second: preset_flat_blueish_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: preset_flat_blueish_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 543
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2da54d5d02fe980800000000000000
+      internalID: -8507545068316732755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 542
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33594b195198242b0800000000000000
+      internalID: -5601764260763626189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_2
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 538
+        width: 60
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f2d720f14ee7b50800000000000000
+      internalID: 6592957726353862488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_3
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 540
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54690bf58eac5dc50800000000000000
+      internalID: 6689475920915371589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_4
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 538
+        width: 75
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51c236c479a0c76a0800000000000000
+      internalID: -6450268921363485675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_5
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 535
+        width: 61
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9de59dbb7d723bc0800000000000000
+      internalID: -3804840764759478886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_6
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 416
+        width: 76
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 874b3ef420d992570800000000000000
+      internalID: 8442451609738523768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_7
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 416
+        width: 83
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed57118b127c6ac0800000000000000
+      internalID: -3860585318107882007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_8
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 416
+        width: 101
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f7c1230ff77bd480800000000000000
+      internalID: -8873366703650519048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_9
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 413
+        width: 108
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf60f8ba2e5fb60d0800000000000000
+      internalID: -3428376337422809348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_10
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 428
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b01c80d64be0660800000000000000
+      internalID: 7354013621933902659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_11
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 410
+        width: 82
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61287d594607e68f0800000000000000
+      internalID: -545374927552282090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_12
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 413
+        width: 76
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a1970ab8d925d60800000000000000
+      internalID: 7877531921242724884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_13
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 286
+        width: 82
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263618679de044db0800000000000000
+      internalID: -4808702174965963934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 286
+        width: 81
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96010a5c4d5f88fc0800000000000000
+      internalID: -3492271216828346263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_15
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 286
+        width: 84
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974b2d510541a0ee0800000000000000
+      internalID: -1294199608719526791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_16
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 286
+        width: 80
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcfb8df81e60fef00800000000000000
+      internalID: 1148143995853520843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_17
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 283
+        width: 95
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ca6f7a751980fb0800000000000000
+      internalID: -4681332006985487208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_18
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 284
+        width: 81
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc64c359f7031c300800000000000000
+      internalID: 270550777141675724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_19
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 307
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2889a49a26913bec0800000000000000
+      internalID: -3552467769527461758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_20
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 158
+        width: 78
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd38c7743b311d20800000000000000
+      internalID: 3247441902844788155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_21
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 157
+        width: 73
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e1b0f4ad3fb16770800000000000000
+      internalID: 8602367034735505889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_22
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 197
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ea857fe0f476d60800000000000000
+      internalID: 7883356598433263230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_23
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 161
+        width: 69
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f980373417821d0800000000000000
+      internalID: -3375323386207494295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_24
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 61
+        width: 78
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca240b51c4a9026c0800000000000000
+      internalID: -4170163603373014356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_25
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 164
+        width: 75
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b600e43e354c2cbe0800000000000000
+      internalID: -1458387464739749781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_26
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 170
+        width: 69
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d6d40959afc91360800000000000000
+      internalID: 7140967010422544085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_27
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 183
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313ae9ea97029bdc0800000000000000
+      internalID: -3622828718250089709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_28
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 45
+        width: 68
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cea73283f9e73940800000000000000
+      internalID: 5275942720558837449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_29
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 68
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e439c82f7a84f4be0800000000000000
+      internalID: -1490893065470307506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_30
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 45
+        width: 42
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdc825510d064d800800000000000000
+      internalID: 636239894193278172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_31
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 58
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ef45a3d187733780800000000000000
+      internalID: -8704482255291723799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_32
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 60
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8e775ce003953d50800000000000000
+      internalID: 6716436051467402894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_33
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 59
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6b4378c61d2858f0800000000000000
+      internalID: -551641378477356182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: preset_flat_blueish_34
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 51
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c3d4a2472c2f130800000000000000
+      internalID: 3599152856404147352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      preset_flat_blueish_0: -8507545068316732755
+      preset_flat_blueish_1: -5601764260763626189
+      preset_flat_blueish_10: 7354013621933902659
+      preset_flat_blueish_11: -545374927552282090
+      preset_flat_blueish_12: 7877531921242724884
+      preset_flat_blueish_13: -4808702174965963934
+      preset_flat_blueish_14: -3492271216828346263
+      preset_flat_blueish_15: -1294199608719526791
+      preset_flat_blueish_16: 1148143995853520843
+      preset_flat_blueish_17: -4681332006985487208
+      preset_flat_blueish_18: 270550777141675724
+      preset_flat_blueish_19: -3552467769527461758
+      preset_flat_blueish_2: 6592957726353862488
+      preset_flat_blueish_20: 3247441902844788155
+      preset_flat_blueish_21: 8602367034735505889
+      preset_flat_blueish_22: 7883356598433263230
+      preset_flat_blueish_23: -3375323386207494295
+      preset_flat_blueish_24: -4170163603373014356
+      preset_flat_blueish_25: -1458387464739749781
+      preset_flat_blueish_26: 7140967010422544085
+      preset_flat_blueish_27: -3622828718250089709
+      preset_flat_blueish_28: 5275942720558837449
+      preset_flat_blueish_29: -1490893065470307506
+      preset_flat_blueish_3: 6689475920915371589
+      preset_flat_blueish_30: 636239894193278172
+      preset_flat_blueish_31: -8704482255291723799
+      preset_flat_blueish_32: 6716436051467402894
+      preset_flat_blueish_33: -551641378477356182
+      preset_flat_blueish_34: 3599152856404147352
+      preset_flat_blueish_4: -6450268921363485675
+      preset_flat_blueish_5: -3804840764759478886
+      preset_flat_blueish_6: 8442451609738523768
+      preset_flat_blueish_7: -3860585318107882007
+      preset_flat_blueish_8: -8873366703650519048
+      preset_flat_blueish_9: -3428376337422809348
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

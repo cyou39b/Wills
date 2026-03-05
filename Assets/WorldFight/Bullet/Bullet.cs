@@ -3,7 +3,7 @@ using UnityEngine;
 // Bullet上的Script
 
 [RequireComponent(typeof(AudioSource), typeof(Rigidbody2D), typeof(SpriteRenderer))]
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, ICanKnockback
 {
     private SpriteRenderer spRerr;
     public Sprite[] BulletSprites; // Bullet所有可能的Sprite，在Inspector中調整
@@ -69,24 +69,30 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    public bool DoKnockback(GameObject other) 
+        => other.layer == GlobalVariables.EnemyLayer;
+    public Vector2 KnockbackDir => transform.right;
+    public float KnockbackPower => DistacneToPowerCurve.Evaluate(Vector2.Distance(transform.position, initialPosition)) * Power;
+    public bool KnockbackStun => false;
     // 在碰到另一個GameObject時會被call的function
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
+
         GameObject colliderGameObject = collision.collider.gameObject;
         
         if (colliderGameObject.layer == GlobalVariables.GroundLayer || colliderGameObject.layer == GlobalVariables.WallLayer)
         {
             SpawnEffects(3);
-            ProperDestroy(); // Destroy(gameObject);
+            ProperDestroy();
             return;
         }
 
         if(colliderGameObject.layer == GlobalVariables.EnemyLayer)
         {
-            IKnockbackable knockbackable;
-            if(colliderGameObject.TryGetComponent<IKnockbackable>(out knockbackable))
+            IKnockbackable otherKnockbackable;
+            if(colliderGameObject.TryGetComponent<IKnockbackable>(out otherKnockbackable) && DoKnockback(colliderGameObject))
             {
-                knockbackable.GetKnockbacked(transform.right, DistacneToPowerCurve.Evaluate(Vector2.Distance(transform.position, initialPosition)) * Power, false);
+                otherKnockbackable.GetKnockbacked(KnockbackDir, KnockbackPower, KnockbackStun);
             }
 
             AbstractEnemy enemy;
@@ -100,7 +106,7 @@ public class Bullet : MonoBehaviour
             }
 
             SpawnEffects(5);
-            ProperDestroy(); // Destroy(gameObject);
+            ProperDestroy();
             return;
         }
     }

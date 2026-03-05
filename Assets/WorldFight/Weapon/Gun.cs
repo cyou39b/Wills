@@ -40,15 +40,15 @@ public class Gun : MonoBehaviour
             mousePosition.x-transform.position.x
         );
 
-        if(jack.dir == FacingDirection.Left)
-        {
-            if(mouseRot < 0.0f) {mouseRot += Mathf.PI + Mathf.PI;}
-            mouseRot = Mathf.Clamp(mouseRot, MathUtil.HalfPI + 0.001f, Mathf.PI + MathUtil.HalfPI - 0.001f);
-        }
-        else
-        {
-            mouseRot = Mathf.Clamp(mouseRot, MathUtil.HalfNPI, MathUtil.HalfPI);
-        }
+        // if(jack.dir == FacingDirection.Left) // EXPL: this sucks
+        // {
+        //     if(mouseRot < 0.0f) {mouseRot += Mathf.PI + Mathf.PI;}
+        //     mouseRot = Mathf.Clamp(mouseRot, MathUtil.HalfPI + 0.001f, Mathf.PI + MathUtil.HalfPI - 0.001f);
+        // }
+        // else
+        // {
+        //     mouseRot = Mathf.Clamp(mouseRot, MathUtil.HalfNPI, MathUtil.HalfPI);
+        // }
 
         if(mouseRot <= MathUtil.HalfPI && mouseRot >= MathUtil.HalfNPI)
         {
