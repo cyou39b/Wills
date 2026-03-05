@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 // 在遊戲進行中的menu
 
@@ -73,10 +74,11 @@ public class MenuManager : MonoBehaviour
 
     public void ExitScene()
     {
-        #if UNITY_EDITOR
+        SceneManager.LoadScene("MainMenu");
+        /*#if UNITY_EDITOR
             EditorApplication.isPlaying = false;
         #else
             #warning TODO: Figure out what to do here.
-        #endif
+        #endif*/
     }
 }

@@ -31,7 +31,7 @@ public class ShopInterfaceLogic : MonoBehaviour{
         }
     }
     void Start(){
-        AllGoods = GlobalVariables.Instance.GoodsRecords;
+        //AllGoods = GlobalVariables.Instance.GoodsRecords;
         UpdateButton();
     }
     void Update(){
@@ -84,7 +84,7 @@ public class ShopInterfaceLogic : MonoBehaviour{
         Shop.SetActive(false);
         isBuying = false;
         Menu.SetActive(true);
-        RecordMerchandise();
+        //RecordMerchandise();
         Time.timeScale = timeScaleBeforeShoppingStart;
     }
     void UpdateButton(){
@@ -120,7 +120,7 @@ public class ShopInterfaceLogic : MonoBehaviour{
     public void CloseSoldMsg(){
         SoldMsg.SetActive(false);
     }
-    void RecordMerchandise(){
+    /*void RecordMerchandise(){
         GlobalVariables.Instance.GoodsRecords = AllGoods;
-    }
+    }*/
 }
