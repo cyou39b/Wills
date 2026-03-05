@@ -49,7 +49,7 @@ public class DataSave : MonoBehaviour{
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-        if(FailUIPrefab.transform.Find("Close").TryGetComponent<Button>(out Button btn)){
+        if(FailUIPrefab.transform.Find("OK").TryGetComponent<Button>(out Button btn)){
             btn.onClick.AddListener(CloseFailedUI);
         }
     }

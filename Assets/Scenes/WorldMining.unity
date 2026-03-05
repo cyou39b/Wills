@@ -258745,6 +258745,7 @@ MonoBehaviour:
   DownKey: 33
   FindMineKey: 28
   possession: []
+  AllPossession: []
 --- !u!4 &1143096137
 Transform:
   m_ObjectHideFlags: 0
