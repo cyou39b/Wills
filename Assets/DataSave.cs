@@ -44,12 +44,14 @@ public class DataSave : MonoBehaviour{
         path = Application.persistentDataPath + "/save.json";
         if (Instance != null && Instance != this){
             Destroy(this.gameObject);
+            return;
         }
         else{
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         if(FailUIPrefab.transform.Find("OK").TryGetComponent<Button>(out Button btn)){
+            btn.onClick.RemoveAllListeners();
             btn.onClick.AddListener(CloseFailedUI);
         }
     }

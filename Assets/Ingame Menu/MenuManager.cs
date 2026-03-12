@@ -47,7 +47,8 @@ public class MenuManager : MonoBehaviour
             MapScenesSwicher.isMapOpening || 
             DeathManager.Activated ||
             DialogueManager.IsTalking||
-            ShopInterfaceLogic.isBuying)
+            ShopInterfaceLogic.isBuying ||
+            BackpackLogic.IsBackpackOpening)
             {return;}
         IsMenuOpen = true;
         timeScaleBefaorePause = Time.timeScale;
