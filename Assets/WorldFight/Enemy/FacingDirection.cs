@@ -1,13 +1,14 @@
 public enum FacingDirection
 {
     Left,
-    Right,
-    None
+    Right
 }
 
 public enum AIFacingDirection
 {
     SameAsMoving,
     NegFromMoving,
+    FacingPlayer,
+    NotFacingPlayer,
     None
 }

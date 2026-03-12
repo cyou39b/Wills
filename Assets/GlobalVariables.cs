@@ -73,7 +73,10 @@ public class GlobalVariables : MonoBehaviour
     public List<PossessionItems> possession;
     //public Merchandise[] GoodsRecords;
     public PossessionItems[] AllPossession;
-    
+}
+
+public class DefinedLayers 
+{
     // Defined layers
     public const int PlayerLayer = 7;
     public const int PlayerLayerMask = 1 << PlayerLayer;
@@ -83,4 +86,6 @@ public class GlobalVariables : MonoBehaviour
     public const int GroundLayerMask = 1 << GroundLayer;
     public const int WallLayer = 10;
     public const int WallLayerMask = 1 << WallLayer;
+    public const int AttackLayer = 11;
+    public const int AttackLayerMask = 1 << AttackLayer;
 }

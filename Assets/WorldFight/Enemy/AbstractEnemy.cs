@@ -183,7 +183,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
             // change intent
             Debug.Log($"{name} intent change: {intent} => {to}");
             intent = to;
-            FacingDirection = direction;
+            AIFacingDirection = direction;
         }
         else
         {
@@ -192,14 +192,15 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
             {
                 Debug.Log($"{name} intent change: {intent} => {to}");
                 intent=to;
-                FacingDirection = direction;
+                AIFacingDirection = direction;
             }
         }
         // yeah, at this point I'm pretty sure that I hate this implementaion.
     }
     protected abstract void MainProcessIntent();
     protected bool isIntentPassive;
-    protected AIFacingDirection FacingDirection;
+    protected AIFacingDirection AIFacingDirection;
+    protected virtual FacingDirection CurrentRealFacingDirection{get;set;}
 
     protected virtual void FixedUpdate()
     {
@@ -214,19 +215,22 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     public float collisionForceKeepPercentage = 0.3f;
     public bool DoKnockback(GameObject other)
         => intent == Intent.GetKnockbacked || intent == Intent.WaitUntilStill;
-    public Vector2 KnockbackDir => rb.linearVelocity.normalized;
-    public float KnockbackPower => rb.linearVelocity.magnitude * rb.mass / Time.fixedDeltaTime * collisionForceGivePercentage;
+    public Vector2 KnockbackDir(GameObject other)
+        => rb.linearVelocity.normalized;
+    public float KnockbackPower(GameObject other) 
+        => rb.linearVelocity.magnitude * rb.mass / Time.fixedDeltaTime * collisionForceGivePercentage;
     public bool KnockbackStun => false;
 
-    public virtual void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         IKnockbackable knockbackable;
-        if(collision.gameObject.TryGetComponent<IKnockbackable>(out knockbackable))
+        GameObject other = collision.gameObject;
+        if(other.TryGetComponent<IKnockbackable>(out knockbackable))
         {
             knockbackablesInContact.Add(knockbackable);
-            if(DoKnockback(collision.gameObject))
+            if(DoKnockback(other))
             {
-                knockbackable.GetKnockbacked(KnockbackDir, KnockbackPower, KnockbackStun);
+                knockbackable.GetKnockbacked(KnockbackDir(other), KnockbackPower(other), KnockbackStun);
                 rb.linearVelocity *= collisionForceKeepPercentage;
             }
         }

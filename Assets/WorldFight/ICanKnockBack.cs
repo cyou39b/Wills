@@ -1,8 +1,8 @@
 using UnityEngine;
 public interface ICanKnockback
 {
-    public abstract Vector2 KnockbackDir{get;}
-    public abstract float KnockbackPower{get;}
+    public abstract Vector2 KnockbackDir(GameObject other);
+    public abstract float KnockbackPower(GameObject other);
     public abstract bool KnockbackStun{get;}
     public abstract bool DoKnockback(GameObject other);
 
