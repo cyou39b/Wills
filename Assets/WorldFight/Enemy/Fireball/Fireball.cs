@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -20,8 +21,10 @@ public class Fireball : MonoBehaviour
     }
 
     public float InitializeDistance;
-    public void Initialize(Vector3 targetPos)
+    private GameObject spawner;
+    public void Initialize(GameObject spawner, Vector3 targetPos)
     {
+        this.spawner = spawner;
         Vector3 dPos = targetPos - transform.position;
 
         transform.SetPositionAndRotation(
@@ -36,6 +39,7 @@ public class Fireball : MonoBehaviour
 
     public void Cancel()
     {
+        if(this == null || gameObject == null) {return;} // FIXME:
         StartCoroutine(dissipate());
     }
 
@@ -67,15 +71,18 @@ public class Fireball : MonoBehaviour
             other.layer == DefinedLayers.WallLayer   ||
             other.layer == DefinedLayers.PlayerLayer )
         {
-            Instantiate(fireEffectPrefab, transform.position + 0.6f*transform.right, Quaternion.identity);
+            GameObject newObj = Instantiate(fireEffectPrefab, transform.position + 0.6f*transform.right, Quaternion.identity);
+            foreach(Transform childTransform in newObj.transform)
+            {
+                FireEffectCollider fireEffectCollider;
+                if(newObj.TryGetComponent<FireEffectCollider>(out fireEffectCollider))
+                {
+                    fireEffectCollider.fireballSpawner = spawner;
+                    break;
+                }
+            }
             Destroy(gameObject);
         }
-    }
-
-    [ContextMenu("Spawn")]
-    void sp()
-    {
-            Instantiate(fireEffectPrefab, transform.position, Quaternion.identity);
     }
 
     void OnTriggerExit2D(Collider2D other)

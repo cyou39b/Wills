@@ -112,6 +112,9 @@ public class Flyer : AbstractEnemy
                     SetIntent(Intent.ChasePlayer, AIFacingDirection.SameAsMoving);
                 }
                 break;
+            case Intent.RandomlyRoam:
+                ProcessRandomlyRoam();
+                break;
             case Intent.ChasePlayer:
                 ProcessChasePlayerIntent();
                 break;
@@ -143,6 +146,9 @@ public class Flyer : AbstractEnemy
             if(base.intent == Intent.Attack && attackIntent_chargingFireball != null) {attackIntent_chargingFireball.Cancel();}
             switch(value)
             {
+                case Intent.ChasePlayer:
+                    randomlyRoam_setDestionationLock = false;
+                    break;
                 case Intent.Attack:
                     attackIntent_chargingFireball = null;
                     attackIntent_fireballChargeFrameCounter = 0;
@@ -164,7 +170,6 @@ public class Flyer : AbstractEnemy
                 info.collider.gameObject == player;
     }   
 
-
     private int destinationUpdateCounter = 0;
     private const int destinationUpdateCount = 7;
     void ProcessChasePlayerIntent()
@@ -178,6 +183,21 @@ public class Flyer : AbstractEnemy
         if(TrySeePlayer())
         {
             SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
+        }
+    }
+
+    public float roamRadius;
+    private bool randomlyRoam_setDestionationLock;
+    void ProcessRandomlyRoam()
+    {
+        if (!randomlyRoam_setDestionationLock)
+        {
+            agent.SetDestination(MathUtil.RandomPointInCircle(transform.position, roamRadius));
+            randomlyRoam_setDestionationLock = true;
+        }
+        if (Vector2.Distance(agent.destination, transform.position) <= 0.25f)
+        {
+            SetIntent(Intent.Idle, AIFacingDirection.SameAsMoving, false, Intent.RandomlyRoam);
         }
     }
 
@@ -196,27 +216,30 @@ public class Flyer : AbstractEnemy
             {
                 Debug.LogError("Fireball no Fireball");
             }
-            attackIntent_chargingFireball.Initialize(playerTrans.position);
+            attackIntent_chargingFireball.Initialize(gameObject, playerTrans.position);
         }
         if(attackIntent_fireballChargeFrameCounter++ >= attackIntent_FireballChargeTargetFrame) {attackIntent_fireballChargeFrameCounter = 0;}
         else{return;}
 
         attackIntent_chargingFireball.GO();
         attackIntent_chargingFireball = null;
-        SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.Attack);
+        SetIntent(Intent.RandomlyRoam, AIFacingDirection.None, false, Intent.Attack);
     }
 
-    public override void GetKnockbacked(Vector2 direction, float power, bool stun)
+    public override void GetKnockbacked(Vector2 direction, float power, bool stun, Vector2 forcePosition)
     {
         getKnockbackedIntent_force += direction * power;
+        getKnockbackIntent_position = forcePosition;
         getKnockbackedIntent_stun |= stun;
         SetIntent(Intent.GetKnockbacked, AIFacingDirection.NegFromMoving, true);
     }
 
-    private Vector2 getKnockbackedIntent_force;
+    private Vector2 getKnockbackedIntent_force = Vector2.zero;
+    private Vector2 getKnockbackIntent_position = Vector2.zero;
     private bool getKnockbackedIntent_stun;
     private void ProcessGetKnockbackedIntent()
     {
+        Debug.Log($"{name} get knockback with force {getKnockbackedIntent_force}");
         if(knockbackablesInContact.Count > 0)
         {
             Vector2 normalizeForce = getKnockbackedIntent_force.normalized;
@@ -236,11 +259,15 @@ public class Flyer : AbstractEnemy
                 float thisSimilarity  = Vector2.Dot(dPos.normalized, normalizeForce); // Since direction's magnitude SHOULD be 1
                 if(thisSimilarity > 0.0f)
                 {
-                    knockbackable.GetKnockbacked(dPos.normalized, thisSimilarity * power * collisionForceGivePercentage, false);
+                    ((ICanKnockback)this).DoKnockback(
+                        knockbackable,
+                        normalizeForce,
+                        power * thisSimilarity / totalSimilarity,
+                        false
+                    );
                 }
             }
-
-            getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepPercentage));
+            getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepRatio));
         }
 
         agent.enabled = false;

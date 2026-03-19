@@ -215,18 +215,21 @@ public class Wills : AbstractEnemy
         } 
     }
 
-    public override void GetKnockbacked(Vector2 direction, float power, bool stun)
+    public override void GetKnockbacked(Vector2 direction, float power, bool stun, Vector2 forcePosition)
     {
         getKnockbackedIntent_force += direction * power;
+        getKnockbackIntent_position = forcePosition; 
         getKnockbackedIntent_stun |= stun;
         SetIntent(Intent.GetKnockbacked, AIFacingDirection.NegFromMoving, true);
     }
 
     public float xEpsilon, yEpsilon;
     private Vector2 getKnockbackedIntent_force = Vector2.zero;
+    private Vector2 getKnockbackIntent_position = Vector2.zero;
     private bool getKnockbackedIntent_stun = false;
     private void ProcessGetKnockbackedIntent()
     {
+        Debug.Log($"{name} get knockback with force {getKnockbackedIntent_force}");
         if(knockbackablesInContact.Count > 0)
         {
             Vector2 normalizeForce = getKnockbackedIntent_force.normalized;
@@ -246,16 +249,20 @@ public class Wills : AbstractEnemy
                 float thisSimilarity  = Vector2.Dot(dPos.normalized, normalizeForce); // Since direction's magnitude SHOULD be 1
                 if(thisSimilarity > 0.0f)
                 {
-                    knockbackable.GetKnockbacked(dPos.normalized, thisSimilarity * power * collisionForceGivePercentage, false);
+                    ((ICanKnockback)this).DoKnockback(
+                        knockbackable,
+                        normalizeForce,
+                        thisSimilarity * power / totalSimilarity,
+                        false
+                    );
                 }
             }
-
-            getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepPercentage));
+            getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepRatio));
         }
 
         agent.enabled = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.AddForce(getKnockbackedIntent_force);
+        rb.AddForceAtPosition(getKnockbackedIntent_force, getKnockbackIntent_position);
         SetIntent(Intent.WaitUntilStill, AIFacingDirection.NegFromMoving ,  false, Intent.GetKnockbacked);
         
         getKnockbackedIntent_force = Vector2.zero;

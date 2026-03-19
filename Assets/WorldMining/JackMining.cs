@@ -43,7 +43,7 @@ public class JackMining : MonoBehaviour{
 
 
     void Update(){
-        if(!Map.activeSelf){
+        if(!Map.activeSelf && !MenuManager.IsMenuOpen){
             int idx0, idx1;
             if (Keyboard.current[GlobalVariables.Instance.UpKey].isPressed){
                 rb.linearVelocityY = moveSpeed;

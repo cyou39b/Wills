@@ -75,11 +75,7 @@ public class MenuManager : MonoBehaviour
 
     public void ExitScene()
     {
-        SceneManager.LoadScene("MainMenu");
-        /*#if UNITY_EDITOR
-            EditorApplication.isPlaying = false;
-        #else
-            #warning TODO: Figure out what to do here.
-        #endif*/
+        LoadSceneManager.NextScene = "MainMenu";
+        SceneManager.LoadScene("LoadSceneBuffer");
     }
 }

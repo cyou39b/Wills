@@ -20,7 +20,6 @@ public class JackCameraMove : MonoBehaviour{
     void FixedUpdate()
     {
         Vector3 lv = Player.rb.linearVelocity;
-        if(Player.inKnockbackStun){lv.x = -lv.x;}
         lv.x = Mathf.Clamp(lv.x, -MaxX, MaxX);
         lv.y = Mathf.Clamp(lv.y, -MaxY, MaxY);
 

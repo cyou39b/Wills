@@ -88,11 +88,12 @@ public class DeathManager : MonoBehaviour
 
     public void RestartCallBack()
     {
-    
+     // TODO:
     }
 
     public void QuitCallBack()
     {
-        SceneManager.LoadScene("MainMenu");
+        LoadSceneManager.NextScene = "MainMenu";
+        SceneManager.LoadScene("LoadSceneBuffer");
     }
 }

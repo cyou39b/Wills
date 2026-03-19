@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 //  Jack的Script
 [RequireComponent(typeof(Rigidbody2D))]
-public class Jack : MonoBehaviour, IKnockbackable
+public class Jack : MonoBehaviour//, IKnockbackable
 {
     private Transform rendererTrans;
     private Vector3 rendererTransScale;
@@ -15,8 +15,8 @@ public class Jack : MonoBehaviour, IKnockbackable
     private HPBar HpBar;
 
     [NonSerialized] public Rigidbody2D rb;
-    Rigidbody2D IKnockbackable.rb => rb;
-    GameObject IKnockbackable.gameObject => gameObject;
+    // Rigidbody2D IKnockbackable.rb => rb;
+    // GameObject IKnockbackable.gameObject => gameObject;
     public float MoveSpeed;
 
     public float JumpSpeed;
@@ -27,7 +27,6 @@ public class Jack : MonoBehaviour, IKnockbackable
     private float jumpHoldTimer = 0.0f;
 
     public float StillEpsilon;
-    [NonSerialized] public bool inKnockbackStun = false;
     private bool isJumpReduced = false;
     private int groundTouchedCount = 0;
     private bool isGrounded => groundTouchedCount != 0;
@@ -107,112 +106,90 @@ public class Jack : MonoBehaviour, IKnockbackable
     public void FixedUpdate()
     {
         if(Explode.Activated) {return;}
-
-        if (inKnockbackStun)
-        {
-            if(rb.linearVelocity.x <= StillEpsilon && isGrounded) 
+        
+        float runCycle = Mathf.Repeat(animator.GetCurrentAnimatorStateInfo(0).normalizedTime, 1.0f);
+        float frontLeg = 
+            (143.0f/166.0f <= runCycle || runCycle <= 15.0f/166.0f) || 
+            (98.0f/166.0f <= runCycle && runCycle <= 140.0f/166.0f)
+                ?1.0f
+                :-1.0f; // 1 for left and -1 for right
+        if (leftPressed){
+            rb.linearVelocityX = -MoveSpeed;
+            rendererTransScale.z = -0.19f;
+            rendererTrans.localScale = rendererTransScale;
+            if(animationState != AnimationState.Walking)
             {
-                inKnockbackStun = false;
+                animator.SetBool("walking", true);
+                animator.SetBool("leftFront", false);
+                animator.SetBool("rightFront", false);
+                float normalizedFrameCount = 1.0f/166.0f * ((animationState == AnimationState.LeftFront)
+                    ?101.0f
+                    :57.0f
+                    );
+                animator.Play("Walking", 0, normalizedFrameCount);
+
+                animationState = AnimationState.Walking;
             }
+        }  
+        else if (rightPressed) {
+            rb.linearVelocityX = MoveSpeed;
+            rendererTransScale.z = 0.19f;
+            rendererTrans.localScale = rendererTransScale;
+            if(animationState != AnimationState.Walking)
+            {
+                animator.SetBool("walking", true);
+                animator.SetBool("leftFront", false);
+                animator.SetBool("rightFront", false);
+                float normalizedFrameCount = 1.0f/166.0f * ((animationState == AnimationState.LeftFront)
+                    ?101.0f
+                    :57.0f
+                    );
+                animator.Play("Walking", 0, normalizedFrameCount);
+
+                animationState = AnimationState.Walking;
+            }
+        }
+        else{
+            rb.linearVelocityX = 0.0f;
+            if(animationState == AnimationState.Walking)
+            {
+                if(prevFromtLeg != runCycle)
+                {
+                    animationState = (frontLeg==1.0f)
+                        ?AnimationState.LeftFront
+                        :AnimationState.RightFront;
+                    animator.SetBool("walking", false);
+                    animator.SetBool("leftFront", frontLeg==1.0f);
+                    animator.SetBool("rightFront", frontLeg!=1.0f);
+                }
+            }
+        }
+        prevFromtLeg = frontLeg;
+        prevRunCycle = runCycle;
+
+        if(jumpReleased)
+        {
+            if(!isJumpReduced)
+            {
+                isJumpReduced = true;
+            }
+        }
+        else if(!isJumpReduced && jumpHoldTimer <= JumpHoldMaxTime)
+        {
+            jumpHoldTimer += 0.02f; // FixedUpdate dt;
+            rb.gravityScale = 0.0f;
         }
         else
         {
-            float runCycle = Mathf.Repeat(animator.GetCurrentAnimatorStateInfo(0).normalizedTime, 1.0f);
-            float frontLeg = 
-                (143.0f/166.0f <= runCycle || runCycle <= 15.0f/166.0f) || 
-                (98.0f/166.0f <= runCycle && runCycle <= 140.0f/166.0f)
-                    ?1.0f
-                    :-1.0f; // 1 for left and -1 for right
-            if (leftPressed){
-                rb.linearVelocityX = -MoveSpeed;
-                rendererTransScale.z = -0.19f;
-                rendererTrans.localScale = rendererTransScale;
-                if(animationState != AnimationState.Walking)
-                {
-                    animator.SetBool("walking", true);
-                    animator.SetBool("leftFront", false);
-                    animator.SetBool("rightFront", false);
-                    float normalizedFrameCount = 1.0f/166.0f * ((animationState == AnimationState.LeftFront)
-                        ?101.0f
-                        :57.0f
-                        );
-                    animator.Play("Walking", 0, normalizedFrameCount);
-
-                    animationState = AnimationState.Walking;
-                }
-            }  
-            else if (rightPressed) {
-                rb.linearVelocityX = MoveSpeed;
-                rendererTransScale.z = 0.19f;
-                rendererTrans.localScale = rendererTransScale;
-                if(animationState != AnimationState.Walking)
-                {
-                    animator.SetBool("walking", true);
-                    animator.SetBool("leftFront", false);
-                    animator.SetBool("rightFront", false);
-                    float normalizedFrameCount = 1.0f/166.0f * ((animationState == AnimationState.LeftFront)
-                        ?101.0f
-                        :57.0f
-                        );
-                    animator.Play("Walking", 0, normalizedFrameCount);
-
-                    animationState = AnimationState.Walking;
-                }
-            }
-            else{
-                rb.linearVelocityX = 0.0f;
-                if(animationState == AnimationState.Walking)
-                {
-                    if(prevFromtLeg != runCycle)
-                    {
-                        animationState = (frontLeg==1.0f)
-                            ?AnimationState.LeftFront
-                            :AnimationState.RightFront;
-                        animator.SetBool("walking", false);
-                        animator.SetBool("leftFront", frontLeg==1.0f);
-                        animator.SetBool("rightFront", frontLeg!=1.0f);
-                    }
-                }
-            }
-            prevFromtLeg = frontLeg;
-            prevRunCycle = runCycle;
-
-            if(jumpReleased)
-            {
-                if(!isJumpReduced)
-                {
-                    isJumpReduced = true;
-                }
-            }
-            else if(!isJumpReduced && jumpHoldTimer <= JumpHoldMaxTime)
-            {
-                jumpHoldTimer += 0.02f; // FixedUpdate dt;
-                rb.gravityScale = 0.0f;
-            }
-            else
-            {
-                rb.gravityScale = 1.7f;
-            }
-
-            if(isGrounded && rb.linearVelocityY == 0.0f && jumpBufferTimer >= 0.0f){
-                rb.linearVelocityY = JumpSpeed;
-                jumpHoldTimer = 0.0f;
-                isJumpReduced = false;
-                jumpBufferTimer = -0.1f; // 把Timer設成負值，避免出現什麼奇怪的bug
-            }
+            rb.gravityScale = 1.7f;
         }
-    }
 
-    void IKnockbackable.GetKnockbacked(Vector2 direction, float power, bool stun)
-    {
-        jumpReleased = true;
-        isJumpReduced = true;
-        rb.gravityScale = 1.7f;
-
-        rb.linearVelocity = Vector2.zero;
-        rb.AddForce(direction*power);
-        Debug.Log($"{direction*power}");
-        inKnockbackStun = true;
+        if(isGrounded && rb.linearVelocityY == 0.0f && jumpBufferTimer >= 0.0f){
+            rb.linearVelocityY = JumpSpeed;
+            jumpHoldTimer = 0.0f;
+            isJumpReduced = false;
+            jumpBufferTimer = -0.1f; // 把Timer設成負值，避免出現什麼奇怪的bug
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other){
@@ -234,15 +211,6 @@ public class Jack : MonoBehaviour, IKnockbackable
             groundTouchedCount--;
         }
     }
-
-    // void OnCollisionStay2D(Collision2D other)
-    // {
-    //     GameObject otherGameObject = other.gameObject;
-    //     if(otherGameObject.layer == GlobalVariables.EnemyLayer)
-    //     {
-    //         HpBar.HP -= 0.1f;
-    //     }
-    // }
 }
 
 enum AnimationState

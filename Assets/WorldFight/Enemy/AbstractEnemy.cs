@@ -8,7 +8,9 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
 {
     protected Rigidbody2D rb;
     Rigidbody2D IKnockbackable.rb => rb; // I hate myself (and c#)
+    Rigidbody2D ICanKnockback.rb => rb;
     GameObject IKnockbackable.gameObject => gameObject;
+    GameObject ICanKnockback.gameObject => gameObject;
     protected new Collider2D collider;
 
     protected GameObject renderingChildObject;
@@ -164,6 +166,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     public enum Intent
     {
         Idle,
+        RandomlyRoam,
         ChasePlayer,
         Attack,
         PrepJump,
@@ -207,20 +210,15 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
         MainProcessIntent();
     }
 
-    public abstract void GetKnockbacked(Vector2 direction, float power, bool stun);
+    public abstract void GetKnockbacked(Vector2 direction, float power, bool stun, Vector2 forcePosition);
 
     protected HashSet<IKnockbackable> knockbackablesInContact = new HashSet<IKnockbackable>();
 
-    public float collisionForceGivePercentage = 0.9f; // 0.9f and 0.3f is tested value.
-    public float collisionForceKeepPercentage = 0.3f;
-    public bool DoKnockback(GameObject other)
-        => intent == Intent.GetKnockbacked || intent == Intent.WaitUntilStill;
-    public Vector2 KnockbackDir(GameObject other)
-        => rb.linearVelocity.normalized;
-    public float KnockbackPower(GameObject other) 
-        => rb.linearVelocity.magnitude * rb.mass / Time.fixedDeltaTime * collisionForceGivePercentage;
-    public bool KnockbackStun => false;
+    public float collisionForceGiveRatio = 0.75f; // 0.9f and 0.3f is tested value.
+    public float collisionForceKeepRatio = 0.4f;
 
+    float ICanKnockback.collisionForceGiveRatio => collisionForceGiveRatio;
+    float ICanKnockback.collisionForceKeepRatio => collisionForceKeepRatio;
     public void OnCollisionEnter2D(Collision2D collision)
     {
         IKnockbackable knockbackable;
@@ -228,10 +226,14 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
         if(other.TryGetComponent<IKnockbackable>(out knockbackable))
         {
             knockbackablesInContact.Add(knockbackable);
-            if(DoKnockback(other))
+            if(intent == Intent.WaitUntilStill)
             {
-                knockbackable.GetKnockbacked(KnockbackDir(other), KnockbackPower(other), KnockbackStun);
-                rb.linearVelocity *= collisionForceKeepPercentage;
+                ((ICanKnockback)this).DoKnockback(
+                    knockbackable,
+                    rb.linearVelocity.normalized,
+                    rb.linearVelocity.magnitude * rb.mass / Time.fixedDeltaTime * collisionForceGiveRatio,
+                    false
+                );
             }
         }
     }
@@ -251,4 +253,5 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
             return;
         }
     }
+
 }

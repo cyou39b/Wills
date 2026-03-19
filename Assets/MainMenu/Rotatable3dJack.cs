@@ -15,7 +15,7 @@ public class Rotatable3dJack : MonoBehaviour
 
     private bool isHovered;
     private RaycastHit rayCastInfo;
-    private bool getGrabbed;
+    private bool getGrabbed = false;
     private Vector3 prevFrameMousePosition;
 
     private MenuSoundEffect soundEffect;
@@ -69,7 +69,7 @@ public class Rotatable3dJack : MonoBehaviour
         {
             getGrabbed = true;
             angularVelocity = Vector3.zero;
-        } 
+        }
         else if(getGrabbed)
         {
             Vector3 diff = mouseScreenPos - prevFrameMousePosition;
