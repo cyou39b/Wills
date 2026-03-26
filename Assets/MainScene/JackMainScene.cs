@@ -46,43 +46,51 @@ public class JackMainScene : MonoBehaviour{
     void Start(){}
 
     void Update(){
-        int idx0,idx1;
-        if (Keyboard.current[GlobalVariables.Instance.UpKey].isPressed){
-            rb.linearVelocityY = moveSpeed;
-            idx1 = 0;
-        }
-        else if (Keyboard.current[GlobalVariables.Instance.DownKey].isPressed){
-            rb.linearVelocityY = -moveSpeed;
-            idx1 = 2;
-        }
-        else{
-            rb.linearVelocityY = 0f;
-            idx1 = 1;
-        }
-        if (Keyboard.current[GlobalVariables.Instance.MoveRightKey].isPressed){
-            rb.linearVelocityX = moveSpeed;
-            idx0 = 2;
-        }
-        else if (Keyboard.current[GlobalVariables.Instance.MoveLeftKey].isPressed){
-            rb.linearVelocityX = -moveSpeed;
-            idx0 = 0;
-        }
-        else{
-            rb.linearVelocityX = 0f;
-            idx0 = 1;
+        if( !MenuManager.IsMenuOpen && 
+            !DialogueManager.IsTalking && 
+            !BackpackLogic.IsBackpackOpening &&
+            !MenuInSceneLogic.IsSceneMenuOpen){
+            int idx0,idx1;
+            if (Keyboard.current[GlobalVariables.Instance.UpKey].isPressed){
+                rb.linearVelocityY = moveSpeed;
+                idx1 = 0;
+            }
+            else if (Keyboard.current[GlobalVariables.Instance.DownKey].isPressed){
+                rb.linearVelocityY = -moveSpeed;
+                idx1 = 2;
+            }
+            else{
+                rb.linearVelocityY = 0f;
+                idx1 = 1;
+            }
+            if (Keyboard.current[GlobalVariables.Instance.MoveRightKey].isPressed){
+                rb.linearVelocityX = moveSpeed;
+                idx0 = 2;
+            }
+            else if (Keyboard.current[GlobalVariables.Instance.MoveLeftKey].isPressed){
+                rb.linearVelocityX = -moveSpeed;
+                idx0 = 0;
+            }
+            else{
+                rb.linearVelocityX = 0f;
+                idx0 = 1;
+            }
+
+            if(idx1 != 1 || idx0 != 1)
+            {
+                animator.speed = 1.2f;
+                renderer.transform.rotation = rotations[idx0][idx1];
+            }
+            else
+            {
+                animator.speed = 0.0f;
+            }
         }
 
-        if(idx1 != 1 || idx0 != 1)
-       {
-            animator.speed = 1.2f;
-            renderer.transform.rotation = rotations[idx0][idx1];
-        }
-        else
-        {
-            animator.speed = 0.0f;
-        }
-
-        if (Keyboard.current[GlobalVariables.Instance.InteractKey].wasPressedThisFrame && Button1.gameObject.activeSelf && !MenuManager.IsMenuOpen){
+        if (Keyboard.current[GlobalVariables.Instance.InteractKey].wasPressedThisFrame && 
+            Button1.gameObject.activeSelf && 
+            !MenuManager.IsMenuOpen && 
+            !DialogueManager.IsTalking){
             DialogueManager.Instance.StartDialogue(closestObj);
         }
     }

@@ -21,6 +21,7 @@ public class ShopInterfaceLogic : MonoBehaviour{
     public Text MineNumInPanel;
     public GameObject IF;
     public GameObject SoldMsg;
+    public PossessionItems MinesInPossession;
     void Awake(){
         if(Instance == null){
             Instance = this;
@@ -77,6 +78,7 @@ public class ShopInterfaceLogic : MonoBehaviour{
         if(current.Price<= GlobalVariables.Instance.NumMines){
             current.num -= 1;
             GlobalVariables.Instance.NumMines -= current.Price;
+            MinesInPossession.Num = GlobalVariables.Instance.NumMines;
             GlobalVariables.Instance.possession.Add(GlobalVariables.Instance.AllPossession[current.indexInPosssession]);
         }
     }

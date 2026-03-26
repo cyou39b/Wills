@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PossessionLogic : MonoBehaviour{
@@ -27,8 +28,28 @@ public class PossessionLogic : MonoBehaviour{
                     txt2.text = $"Number : {ThisPossession.Num.ToString()}";
                 }
                 if(panel.transform.Find("Info").TryGetComponent<Text>(out Text txt3)){
-                    txt3.text = ThisPossession.Effect;
+                    txt3.text = ThisPossession.information;
                 }
+                if(panel.transform.Find("Use").TryGetComponent<Button>(out Button use)){
+                    use.onClick.RemoveAllListeners();
+                    if(ThisPossession.effect.effectType == EffectType.none){
+                        //Do nothing?
+                    }
+                    else if(!ThisPossession.effect.stackable && ThisPossession.effect.usedTimes >= 1){
+                        //write panel and ???
+                    }
+                    else if(ThisPossession.effect.scene == UsableScene.All ||
+                        ThisPossession.effect.scene.ToString() == SceneManager.GetActiveScene().name){
+                        //create effect
+                    }
+                    else{
+                        use.onClick.AddListener(() =>{
+                            if(panel.transform.Find("Msg").TryGetComponent<GameObject>(out GameObject component)){
+                                component.SetActive(true);
+                            }
+                        });
+                    }
+                }   
                 panel.SetActive(true);
             });
         }

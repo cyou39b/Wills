@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour{
@@ -11,6 +12,7 @@ public class DialogueManager : MonoBehaviour{
     public static DialogueManager Instance{get;private set;}
     DialogueData current = null;
     public GameObject Menu;
+    public GameObject MenuInSceneButton;
     int index = 0;
     public Button Option1;
     public Button Option2;
@@ -25,13 +27,16 @@ public class DialogueManager : MonoBehaviour{
     }
     void Update(){}
     public void StartDialogue(IInteract interact){
-        if (MenuManager.IsMenuOpen || ShopInterfaceLogic.isBuying){
+        if (MenuManager.IsMenuOpen || 
+            ShopInterfaceLogic.isBuying || 
+            BackpackLogic.IsBackpackOpening){
             return;
         }
         Option1.gameObject.SetActive(false);
         Option2.gameObject.SetActive(false);
         GoNextLine.gameObject.SetActive(true);
         IsTalking = true;
+        MenuInSceneButton.SetActive(false);
         Menu.SetActive(false);
         timeScaleBeforeDialogeStart = Time.timeScale;
         Time.timeScale = 0.0f;
@@ -80,6 +85,7 @@ public class DialogueManager : MonoBehaviour{
         DialoguePanel.SetActive(false);
         IsTalking = false;
         Menu.SetActive(true);
+        MenuInSceneButton.SetActive(true);
         Time.timeScale = timeScaleBeforeDialogeStart;
         current = null;
     }
@@ -100,6 +106,11 @@ public class DialogueManager : MonoBehaviour{
                 ShopInterfaceLogic.timeScaleBeforeShoppingStart = Time.timeScale;
                 Time.timeScale = 0.0f;
                 index = 0;
+                break;
+            case DialogueCommand.Fight:
+                EndDialogue();
+                LoadSceneManager.NextScene = "WorldFight";
+                SceneManager.LoadScene("LoadSceneBuffer");
                 break;
         }
     }

@@ -9,8 +9,6 @@ TagManager:
   - Bullet
   - Field
   - Interact
-  - WorldMining
-  - MainScene
   - Ledge
   layers:
   - Default

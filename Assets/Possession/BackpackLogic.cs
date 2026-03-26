@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class BackpackLogic : MonoBehaviour{
     public GameObject Backpack;
     public GameObject Panel;
-    public GameObject Prefab;
+    public GameObject PossessionPrefab;
     List<GameObject> BackpackGameobjectButtonList = new List<GameObject>();
     public GameObject Content;
     public Button BackpackIcon;
     public GameObject ISMsg;
     public static bool IsBackpackOpening = false;
+    float timeScaleBeforeBackpackOpen; 
     public static BackpackLogic Instance{get;private set;} = null;
     void Awake(){
         if(Instance == null){
@@ -29,13 +30,14 @@ public class BackpackLogic : MonoBehaviour{
         Backpack.SetActive(false);
         BackpackIcon.gameObject.SetActive(true);
         IsBackpackOpening = false;
+        //Time.timeScale = timeScaleBeforeBackpackOpen;
         foreach(GameObject items in BackpackGameobjectButtonList){
             Destroy(items);
         }
     }
     public void Spawn(){ //call when the backpack button onClick
         for(int i = 0; i < GlobalVariables.Instance.possession.Count ; i++){
-            GameObject tmp = Instantiate(Prefab,Content.transform);
+            GameObject tmp = Instantiate(PossessionPrefab,Content.transform);
             if(tmp.TryGetComponent<RectTransform>(out RectTransform rect)){
                 rect.anchoredPosition = new Vector2(-750+350*(i%5),0-350*math.floor(i/5));
             }
@@ -54,6 +56,8 @@ public class BackpackLogic : MonoBehaviour{
         BackpackIcon.gameObject.SetActive(false);
         Backpack.SetActive(true);
         IsBackpackOpening = true;
+        //timeScaleBeforeBackpackOpen = Time.timeScale;
+        //Time.timeScale = 0.0f;
         Spawn();
     }
     public void ClosePanel(){

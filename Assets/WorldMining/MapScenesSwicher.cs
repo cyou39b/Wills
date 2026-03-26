@@ -11,7 +11,9 @@ public class MapScenesSwicher : MonoBehaviour{
     void Start(){}
 
     void Update(){
-        if (Keyboard.current.mKey.wasPressedThisFrame && MenuManager.IsMenuOpen == false){
+        if (Keyboard.current.mKey.wasPressedThisFrame && 
+            MenuManager.IsMenuOpen == false && 
+            !MenuInMining.IsMenuPanelOpening){
             LoadMap();
         }
         if(Map.activeSelf && Keyboard.current.escapeKey.wasPressedThisFrame){

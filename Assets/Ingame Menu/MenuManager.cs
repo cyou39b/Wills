@@ -48,7 +48,9 @@ public class MenuManager : MonoBehaviour
             DeathManager.Activated ||
             DialogueManager.IsTalking||
             ShopInterfaceLogic.isBuying ||
-            BackpackLogic.IsBackpackOpening)
+            BackpackLogic.IsBackpackOpening ||
+            MenuInSceneLogic.IsSceneMenuOpen ||
+            MenuInMining.IsMenuPanelOpening)
             {return;}
         IsMenuOpen = true;
         timeScaleBefaorePause = Time.timeScale;

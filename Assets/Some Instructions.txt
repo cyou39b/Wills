@@ -1,0 +1,6 @@
+-Backpack
+move children's position
+Make sure that the prefab is always at the (0,0,0)
+
+You have to write the script that controls the Menu button if u want.
+Not because I'm lazy,honestly:)

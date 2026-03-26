@@ -19,5 +19,6 @@ public class DialogueLine{
 public enum DialogueCommand{
     none,
     OpenShop,
-    End
+    End,
+    Fight
 }

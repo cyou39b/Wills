@@ -29,6 +29,7 @@ public class MachineLogic : MonoBehaviour{
     
     public float DetectRangeRadius;
     public float MinableRangeRadius;
+    public PossessionItems MinesInPossession;
 
     public float NEAREST = float.PositiveInfinity;
 
@@ -96,6 +97,7 @@ public class MachineLogic : MonoBehaviour{
                 {
                     Destroy(mineObj);
                     GlobalVariables.Instance.NumMines++;
+                    MinesInPossession.Num = GlobalVariables.Instance.NumMines;
                     UpdateNumMinesText();
                 }
                 else
