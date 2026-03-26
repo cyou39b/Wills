@@ -8,7 +8,9 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
 {
     protected Rigidbody2D rb;
     Rigidbody2D IKnockbackable.rb => rb; // I hate myself (and c#)
+    Rigidbody2D ICanKnockback.rb => rb;
     GameObject IKnockbackable.gameObject => gameObject;
+    GameObject ICanKnockback.gameObject => gameObject;
     protected new Collider2D collider;
 
     protected GameObject renderingChildObject;
@@ -164,6 +166,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     public enum Intent
     {
         Idle,
+        RandomlyRoam,
         ChasePlayer,
         Attack,
         PrepJump,
@@ -183,7 +186,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
             // change intent
             Debug.Log($"{name} intent change: {intent} => {to}");
             intent = to;
-            FacingDirection = direction;
+            AIFacingDirection = direction;
         }
         else
         {
@@ -192,42 +195,45 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
             {
                 Debug.Log($"{name} intent change: {intent} => {to}");
                 intent=to;
-                FacingDirection = direction;
+                AIFacingDirection = direction;
             }
         }
         // yeah, at this point I'm pretty sure that I hate this implementaion.
     }
     protected abstract void MainProcessIntent();
     protected bool isIntentPassive;
-    protected AIFacingDirection FacingDirection;
+    protected AIFacingDirection AIFacingDirection;
+    protected virtual FacingDirection CurrentRealFacingDirection{get;set;}
 
     protected virtual void FixedUpdate()
     {
         MainProcessIntent();
     }
 
-    public abstract void GetKnockbacked(Vector2 direction, float power, bool stun);
+    public abstract void GetKnockbacked(Vector2 direction, float power, bool stun, Vector2 forcePosition);
 
     protected HashSet<IKnockbackable> knockbackablesInContact = new HashSet<IKnockbackable>();
 
-    public float collisionForceGivePercentage = 0.9f; // 0.9f and 0.3f is tested value.
-    public float collisionForceKeepPercentage = 0.3f;
-    public bool DoKnockback(GameObject other)
-        => intent == Intent.GetKnockbacked || intent == Intent.WaitUntilStill;
-    public Vector2 KnockbackDir => rb.linearVelocity.normalized;
-    public float KnockbackPower => rb.linearVelocity.magnitude * rb.mass / Time.fixedDeltaTime * collisionForceGivePercentage;
-    public bool KnockbackStun => false;
+    public float collisionForceGiveRatio = 0.75f; // 0.9f and 0.3f is tested value.
+    public float collisionForceKeepRatio = 0.4f;
 
-    public virtual void OnCollisionEnter2D(Collision2D collision)
+    float ICanKnockback.collisionForceGiveRatio => collisionForceGiveRatio;
+    float ICanKnockback.collisionForceKeepRatio => collisionForceKeepRatio;
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         IKnockbackable knockbackable;
-        if(collision.gameObject.TryGetComponent<IKnockbackable>(out knockbackable))
+        GameObject other = collision.gameObject;
+        if(other.TryGetComponent<IKnockbackable>(out knockbackable))
         {
             knockbackablesInContact.Add(knockbackable);
-            if(DoKnockback(collision.gameObject))
+            if(intent == Intent.WaitUntilStill)
             {
-                knockbackable.GetKnockbacked(KnockbackDir, KnockbackPower, KnockbackStun);
-                rb.linearVelocity *= collisionForceKeepPercentage;
+                ((ICanKnockback)this).DoKnockback(
+                    knockbackable,
+                    rb.linearVelocity.normalized,
+                    rb.linearVelocity.magnitude * rb.mass / Time.fixedDeltaTime * collisionForceGiveRatio,
+                    false
+                );
             }
         }
     }
@@ -247,4 +253,5 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
             return;
         }
     }
+
 }

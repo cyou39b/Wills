@@ -45,19 +45,56 @@ public class Flyer : AbstractEnemy
     void Update()
     {
         Debug.DrawRay(transform.position, playerTrans.position - transform.position, Color.green);
-        if(!isIntentPassive)
+
+        Vector3 dir = (agent.enabled)
+            ?agent.steeringTarget - transform.position
+            :rb.linearVelocity;
+        switch(AIFacingDirection)
         {
-            // not passive & agent not enabled => in attack/dodge intent and
-            // direction is handled in intent coroutine
-            if(agent.enabled)
+            case AIFacingDirection.SameAsMoving:
+                CurrentRealFacingDirection = dir.x <= 0.0f
+                    ?FacingDirection.Left
+                    :FacingDirection.Right;
+                break;
+            case AIFacingDirection.NegFromMoving:
+                CurrentRealFacingDirection = dir.x >= 0.0f
+                    ?FacingDirection.Left
+                    :FacingDirection.Right;
+                break;
+            case AIFacingDirection.FacingPlayer:
+                CurrentRealFacingDirection = playerTrans.position.x > transform.position.x
+                    ?FacingDirection.Right
+                    :FacingDirection.Left;
+                break;
+            case AIFacingDirection.NotFacingPlayer:
+                CurrentRealFacingDirection = playerTrans.position.x < transform.position.x
+                    ?FacingDirection.Right
+                    :FacingDirection.Left;
+                break;
+            case AIFacingDirection.None:
+                //* Nothin
+                break;
+        };
+    }
+
+    protected override FacingDirection CurrentRealFacingDirection 
+    { 
+        get => base.CurrentRealFacingDirection;
+        set 
+        {
+            if(value == base.CurrentRealFacingDirection) {return;}
+
+            if(value == FacingDirection.Left)
             {
-                Vector3 targetDirection = agent.steeringTarget - transform.position;
-                SpRr.flipX = targetDirection.x <= 0.0f;
+                SpRr.flipX = true;
+                renderingChildObject.transform.localPosition = new Vector3( 0.55f, 0.36f, 0.0f);
             }
-        }
-        else
-        {
-            SpRr.flipX = rb.linearVelocity.x <= 0.0f;
+            else
+            {
+                SpRr.flipX = false;
+                renderingChildObject.transform.localPosition = new Vector3(-0.55f, 0.36f, 0.0f);
+            }
+            base.CurrentRealFacingDirection = value;
         }
     }
 
@@ -66,11 +103,17 @@ public class Flyer : AbstractEnemy
         switch(intent)
         {
             case Intent.Idle:
-                if(trySeePlayer())
+                if(TrySeePlayer())
                 {
-                    SetIntent(Intent.Attack, AIFacingDirection.SameAsMoving);
+                    SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
                 }
-                SetIntent(Intent.ChasePlayer, AIFacingDirection.SameAsMoving);
+                else
+                {
+                    SetIntent(Intent.ChasePlayer, AIFacingDirection.SameAsMoving);
+                }
+                break;
+            case Intent.RandomlyRoam:
+                ProcessRandomlyRoam();
                 break;
             case Intent.ChasePlayer:
                 ProcessChasePlayerIntent();
@@ -93,16 +136,39 @@ public class Flyer : AbstractEnemy
         }
     }
 
+    public override Intent intent 
+    { 
+        get => base.intent;
+        set
+        {
+            if(value == intent){return;}
+
+            if(base.intent == Intent.Attack && attackIntent_chargingFireball != null) {attackIntent_chargingFireball.Cancel();}
+            switch(value)
+            {
+                case Intent.ChasePlayer:
+                    randomlyRoam_setDestionationLock = false;
+                    break;
+                case Intent.Attack:
+                    attackIntent_chargingFireball = null;
+                    attackIntent_fireballChargeFrameCounter = 0;
+                    break;
+            }
+            base.intent = value;
+        }
+    }
+
     public float SeeDistance = 3.0f;
-    private const int seeRayCastMsk = ~0 ^GlobalVariables.EnemyLayerMask ^(1<<2); // (1<<2) is mask for ignore raycast
-    bool trySeePlayer()
+    private const int seeRayCastMsk = ~0 
+        ^DefinedLayers.EnemyLayerMask 
+        ^DefinedLayers.AttackLayerMask 
+        ^(1<<2);// (1<<2) is mask for ignore raycast
+    bool TrySeePlayer()
     {
         RaycastHit2D info = Physics2D.Raycast(transform.position, playerTrans.position-transform.position, SeeDistance, seeRayCastMsk);
-
         return  info.collider != null && 
                 info.collider.gameObject == player;
     }   
-
 
     private int destinationUpdateCounter = 0;
     private const int destinationUpdateCount = 7;
@@ -114,30 +180,66 @@ public class Flyer : AbstractEnemy
         agent.SetDestination(playerTrans.position);
         Anmor.speed = Mathf.Max(0.0f, agent.velocity.y / 9.81f + 1.0f);
 
-        if(trySeePlayer())
+        if(TrySeePlayer())
         {
-            SetIntent(Intent.Attack, AIFacingDirection.SameAsMoving);
+            SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
+        }
+    }
+
+    public float roamRadius;
+    private bool randomlyRoam_setDestionationLock;
+    void ProcessRandomlyRoam()
+    {
+        if (!randomlyRoam_setDestionationLock)
+        {
+            agent.SetDestination(MathUtil.RandomPointInCircle(transform.position, roamRadius));
+            randomlyRoam_setDestionationLock = true;
+        }
+        if (Vector2.Distance(agent.destination, transform.position) <= 0.25f)
+        {
+            SetIntent(Intent.Idle, AIFacingDirection.SameAsMoving, false, Intent.RandomlyRoam);
         }
     }
 
     public GameObject FireballPrefab;
+    private const int attackIntent_FireballChargeTargetFrame = 30;
+    private int attackIntent_fireballChargeFrameCounter = 0;
+    private Fireball attackIntent_chargingFireball = null;
     void ProccesAttackIntent()
     {
-        Instantiate(FireballPrefab, transform.position, transform.rotation);
-        SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.Attack);
+        if(attackIntent_fireballChargeFrameCounter == 0)
+        {
+            agent.SetDestination(transform.position); // NOTE: assumes that agent is enabled && is on NavMesh
+
+            GameObject newObj = Instantiate(FireballPrefab, transform);
+            if(!newObj.TryGetComponent<Fireball>(out attackIntent_chargingFireball))
+            {
+                Debug.LogError("Fireball no Fireball");
+            }
+            attackIntent_chargingFireball.Initialize(gameObject, playerTrans.position);
+        }
+        if(attackIntent_fireballChargeFrameCounter++ >= attackIntent_FireballChargeTargetFrame) {attackIntent_fireballChargeFrameCounter = 0;}
+        else{return;}
+
+        attackIntent_chargingFireball.GO();
+        attackIntent_chargingFireball = null;
+        SetIntent(Intent.RandomlyRoam, AIFacingDirection.None, false, Intent.Attack);
     }
 
-    public override void GetKnockbacked(Vector2 direction, float power, bool stun)
+    public override void GetKnockbacked(Vector2 direction, float power, bool stun, Vector2 forcePosition)
     {
         getKnockbackedIntent_force += direction * power;
+        getKnockbackIntent_position = forcePosition;
         getKnockbackedIntent_stun |= stun;
         SetIntent(Intent.GetKnockbacked, AIFacingDirection.NegFromMoving, true);
     }
 
-    private Vector2 getKnockbackedIntent_force;
+    private Vector2 getKnockbackedIntent_force = Vector2.zero;
+    private Vector2 getKnockbackIntent_position = Vector2.zero;
     private bool getKnockbackedIntent_stun;
     private void ProcessGetKnockbackedIntent()
     {
+        Debug.Log($"{name} get knockback with force {getKnockbackedIntent_force}");
         if(knockbackablesInContact.Count > 0)
         {
             Vector2 normalizeForce = getKnockbackedIntent_force.normalized;
@@ -157,14 +259,16 @@ public class Flyer : AbstractEnemy
                 float thisSimilarity  = Vector2.Dot(dPos.normalized, normalizeForce); // Since direction's magnitude SHOULD be 1
                 if(thisSimilarity > 0.0f)
                 {
-                    knockbackable.GetKnockbacked(dPos.normalized, thisSimilarity * power * collisionForceGivePercentage, false);
+                    ((ICanKnockback)this).DoKnockback(
+                        knockbackable,
+                        normalizeForce,
+                        power * thisSimilarity / totalSimilarity,
+                        false
+                    );
                 }
             }
-
-            getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepPercentage));
+            getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepRatio));
         }
-
-        Debug.Log($"{name} got knockbacked with force: {getKnockbackedIntent_force}");
 
         agent.enabled = false;
         rb.bodyType = RigidbodyType2D.Dynamic;

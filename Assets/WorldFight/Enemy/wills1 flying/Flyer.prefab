@@ -83,8 +83,8 @@ Rigidbody2D:
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 1
+  m_UseAutoMass: 0
+  m_Mass: 4
   m_LinearDamping: 0.8
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -135,8 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   HPBarPrefab: {fileID: 7012469317006889741, guid: aeaa31a668b0bb540a33b5b1508e6bbf, type: 3}
   TrianglePrefab: {fileID: 8092762973403955582, guid: f38691ae2752f0a4f8d0002033f56be9, type: 3}
-  collisionForceGivePercentage: 0.9
-  collisionForceKeepPercentage: 0.3
+  collisionForceGiveRatio: 0.9
+  collisionForceKeepRatio: 0.5
   FaceColors:
   - {r: 0.7803922, g: 0.3137255, b: 0.3137255, a: 1}
   FaceOutlineColors:
@@ -149,8 +149,9 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   WingYColors:
   - {r: 0, g: 0, b: 0, a: 0}
-  StillEpsilon: 2
-  SeeDistance: 3
+  StillEpsilon: 3.5
+  SeeDistance: 3.5
+  roamRadius: 0
   FireballPrefab: {fileID: 2218664321196448271, guid: 4d578fa04eb4b8647b5950a2e9f76c30, type: 3}
 --- !u!1 &8163495396468613436
 GameObject:

@@ -87,39 +87,51 @@ public class Wills : AbstractEnemy
         Vector3 dir = (agent.enabled) 
             ?agent.steeringTarget-transform.position
             :rb.linearVelocity;
-        // Debug.Log(dir.ToString());
-        switch(base.FacingDirection)
+        switch(AIFacingDirection)
         {
             case AIFacingDirection.SameAsMoving:
-                SpRr.flipX = dir.x<=0.0f;
+                CurrentRealFacingDirection = dir.x<=0.0f
+                    ?FacingDirection.Left
+                    :FacingDirection.Right;
                 break;
             case AIFacingDirection.NegFromMoving:
-                SpRr.flipX = dir.x>=0.0f;
+                CurrentRealFacingDirection = dir.x>=0.0f
+                    ?FacingDirection.Left
+                    :FacingDirection.Right;
+                break;
+            case AIFacingDirection.FacingPlayer:
+                CurrentRealFacingDirection = playerTrans.position.x > transform.position.x
+                    ?FacingDirection.Right
+                    :FacingDirection.Left;
+                break;
+            case AIFacingDirection.NotFacingPlayer:
+                CurrentRealFacingDirection = playerTrans.position.x < transform.position.x
+                    ?FacingDirection.Right
+                    :FacingDirection.Left;
                 break;
             case AIFacingDirection.None:
                 //* Nothin
                 break;
         }
+    }
 
-        // if(!isIntentPassive)
-        // {
-        //     // not passive & agent not enabled => in attack/dodge intent and
-        //     // direction is handled in intent coroutine
-        //     if(agent.enabled)
-        //     {
-        //         Vector3 targetDirection = agent.steeringTarget - transform.position;
-        //         if(targetDirection.x != 0.0f)
-        //         {
-        //             SpRr.flipX = targetDirection.x < 0.0f;
-        //         }
-        //         walking = agent.desiredVelocity.magnitude >= 0.0f;
-        //     }
-        // }
-        // else
-        // {
-        //     SpRr.flipX = rb.linearVelocity.x >= 0.0f;
-        //     walking = true;
-        // }
+    protected override FacingDirection CurrentRealFacingDirection
+    { 
+        get => base.CurrentRealFacingDirection;
+        set
+        {
+            if(value == base.CurrentRealFacingDirection) {return;}
+
+            if(value == FacingDirection.Left)
+            {
+                SpRr.flipX = true;
+            }
+            else
+            {
+                SpRr.flipX = false;
+            }
+            base.CurrentRealFacingDirection = value; 
+        } 
     }
 
     protected override void MainProcessIntent()
@@ -180,6 +192,7 @@ public class Wills : AbstractEnemy
         get => base.intent; 
         set
         {
+            if(value == intent){return;}
             switch(value)
             {
                 case Intent.ChasePlayer:
@@ -202,18 +215,21 @@ public class Wills : AbstractEnemy
         } 
     }
 
-    public override void GetKnockbacked(Vector2 direction, float power, bool stun)
+    public override void GetKnockbacked(Vector2 direction, float power, bool stun, Vector2 forcePosition)
     {
         getKnockbackedIntent_force += direction * power;
+        getKnockbackIntent_position = forcePosition; 
         getKnockbackedIntent_stun |= stun;
         SetIntent(Intent.GetKnockbacked, AIFacingDirection.NegFromMoving, true);
     }
 
     public float xEpsilon, yEpsilon;
     private Vector2 getKnockbackedIntent_force = Vector2.zero;
+    private Vector2 getKnockbackIntent_position = Vector2.zero;
     private bool getKnockbackedIntent_stun = false;
     private void ProcessGetKnockbackedIntent()
     {
+        Debug.Log($"{name} get knockback with force {getKnockbackedIntent_force}");
         if(knockbackablesInContact.Count > 0)
         {
             Vector2 normalizeForce = getKnockbackedIntent_force.normalized;
@@ -233,19 +249,20 @@ public class Wills : AbstractEnemy
                 float thisSimilarity  = Vector2.Dot(dPos.normalized, normalizeForce); // Since direction's magnitude SHOULD be 1
                 if(thisSimilarity > 0.0f)
                 {
-                    knockbackable.GetKnockbacked(dPos.normalized, thisSimilarity * power * collisionForceGivePercentage, false);
+                    ((ICanKnockback)this).DoKnockback(
+                        knockbackable,
+                        normalizeForce,
+                        thisSimilarity * power / totalSimilarity,
+                        false
+                    );
                 }
             }
-
-            getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepPercentage));
+            getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepRatio));
         }
-
-        Debug.Log($"{name} got knockbacked with force: {getKnockbackedIntent_force}");
 
         agent.enabled = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.gravityScale = 1.0f;
-        rb.AddForce(getKnockbackedIntent_force);
+        rb.AddForceAtPosition(getKnockbackedIntent_force, getKnockbackIntent_position);
         SetIntent(Intent.WaitUntilStill, AIFacingDirection.NegFromMoving ,  false, Intent.GetKnockbacked);
         
         getKnockbackedIntent_force = Vector2.zero;
@@ -305,7 +322,7 @@ public class Wills : AbstractEnemy
         if(++chasePlayer_counter != chasePlayer_count){return;}
         else{chasePlayer_counter = 0;}
 
-        RaycastHit2D info = Physics2D.Raycast(playerTrans.position, Vector2.down, 100.0f, GlobalVariables.GroundLayerMask);
+        RaycastHit2D info = Physics2D.Raycast(playerTrans.position, Vector2.down, 100.0f, DefinedLayers.GroundLayerMask);
         agent.SetDestination(info.point);
 
         DynamicAIAction action = null;

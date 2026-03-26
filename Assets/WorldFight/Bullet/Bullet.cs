@@ -14,6 +14,11 @@ public class Bullet : MonoBehaviour, ICanKnockback
     private AudioSource audioSource;
 
     private Rigidbody2D rb;
+    Rigidbody2D ICanKnockback.rb => rb;
+    GameObject ICanKnockback.gameObject => gameObject;
+    float ICanKnockback.collisionForceGiveRatio => 1.0f;
+    float ICanKnockback.collisionForceKeepRatio => 0.0f;
+
     public float MoveSpeed;
     public float InitialDistance; // 在Bullet被創造時調整position的距離值
 
@@ -43,7 +48,6 @@ public class Bullet : MonoBehaviour, ICanKnockback
         Vector2 dPos = new Vector2(dx, dy);
         transform.position += (Vector3)dPos * InitialDistance;
         initialPosition = transform.position;
-        // Debug.Break();
 
         // 設定這個Bullet的速度
         rb.linearVelocity = dPos;
@@ -69,36 +73,36 @@ public class Bullet : MonoBehaviour, ICanKnockback
         }
     }
 
-    public bool DoKnockback(GameObject other) 
-        => other.layer == GlobalVariables.EnemyLayer;
-    public Vector2 KnockbackDir => transform.right;
-    public float KnockbackPower => DistacneToPowerCurve.Evaluate(Vector2.Distance(transform.position, initialPosition)) * Power;
-    public bool KnockbackStun => false;
     // 在碰到另一個GameObject時會被call的function
     public void OnCollisionEnter2D(Collision2D collision)
     {
 
-        GameObject colliderGameObject = collision.collider.gameObject;
+        GameObject other = collision.gameObject;
         
-        if (colliderGameObject.layer == GlobalVariables.GroundLayer || colliderGameObject.layer == GlobalVariables.WallLayer)
+        if (other.layer == DefinedLayers.GroundLayer || other.layer == DefinedLayers.WallLayer)
         {
             SpawnEffects(3);
             ProperDestroy();
             return;
         }
 
-        if(colliderGameObject.layer == GlobalVariables.EnemyLayer)
+        if(other.layer == DefinedLayers.EnemyLayer)
         {
             IKnockbackable otherKnockbackable;
-            if(colliderGameObject.TryGetComponent<IKnockbackable>(out otherKnockbackable) && DoKnockback(colliderGameObject))
+            if(other.TryGetComponent<IKnockbackable>(out otherKnockbackable))
             {
-                otherKnockbackable.GetKnockbacked(KnockbackDir, KnockbackPower, KnockbackStun);
+                ((ICanKnockback)this).DoKnockback(
+                    otherKnockbackable,
+                    transform.right,
+                    DistacneToPowerCurve.Evaluate(Vector2.Distance(transform.position, initialPosition)) * Power,
+                    false
+                );
             }
 
             AbstractEnemy enemy;
-            if(!colliderGameObject.TryGetComponent<AbstractEnemy>(out enemy))
+            if(!other.TryGetComponent<AbstractEnemy>(out enemy))
             {
-                Debug.LogError($"GameObject {colliderGameObject.name} is having enemy layer but doesn't have AbstractEnemy Component.");
+                Debug.LogError($"GameObject {other.name} is having enemy layer but doesn't have AbstractEnemy Component.");
             }
             else
             {
@@ -115,7 +119,7 @@ public class Bullet : MonoBehaviour, ICanKnockback
     {
         if(collision.CompareTag("Field"))
         {
-            ProperDestroy(); // Destroy(gameObject);
+            ProperDestroy();
             return;
         }
     }

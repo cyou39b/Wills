@@ -28,6 +28,7 @@ public class LoadSceneManager : MonoBehaviour{
             async.allowSceneActivation = false; // To disable automatic loading
             while(!async.isDone){
                 if(async.progress >= 0.9f){ // if allowSceneActivation == false , the max value of progress == 0.9
+                    Time.timeScale = 1.0f;
                     async.allowSceneActivation = true;
                 }
                 yield return null;

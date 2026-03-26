@@ -1,20 +1,22 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 //  Jack的Script
 [RequireComponent(typeof(Rigidbody2D))]
-public class Jack : MonoBehaviour{
-    private Camera cam;
-
+public class Jack : MonoBehaviour//, IKnockbackable
+{
     private Transform rendererTrans;
     private Vector3 rendererTransScale;
     private Animator animator;
     private AnimationState animationState = AnimationState.LeftFront;
-    public FacingDirection dir = FacingDirection.None;
+    // public FacingDirection dir = FacingDirection.;
     
     public GameObject HPBarPrefab;
     private HPBar HpBar;
 
-    private Rigidbody2D rb;
+    [NonSerialized] public Rigidbody2D rb;
+    // Rigidbody2D IKnockbackable.rb => rb;
+    // GameObject IKnockbackable.gameObject => gameObject;
     public float MoveSpeed;
 
     public float JumpSpeed;
@@ -24,6 +26,7 @@ public class Jack : MonoBehaviour{
     public float JumpHoldMaxTime;
     private float jumpHoldTimer = 0.0f;
 
+    public float StillEpsilon;
     private bool isJumpReduced = false;
     private int groundTouchedCount = 0;
     private bool isGrounded => groundTouchedCount != 0;
@@ -75,8 +78,6 @@ public class Jack : MonoBehaviour{
                 break;
             }
         }
-
-        cam = Camera.main;
     }
 
     private bool leftPressed;
@@ -105,7 +106,7 @@ public class Jack : MonoBehaviour{
     public void FixedUpdate()
     {
         if(Explode.Activated) {return;}
-
+        
         float runCycle = Mathf.Repeat(animator.GetCurrentAnimatorStateInfo(0).normalizedTime, 1.0f);
         float frontLeg = 
             (143.0f/166.0f <= runCycle || runCycle <= 15.0f/166.0f) || 
@@ -114,9 +115,8 @@ public class Jack : MonoBehaviour{
                 :-1.0f; // 1 for left and -1 for right
         if (leftPressed){
             rb.linearVelocityX = -MoveSpeed;
-            rendererTransScale.z = -Mathf.Abs(rendererTransScale.z);
+            rendererTransScale.z = -0.19f;
             rendererTrans.localScale = rendererTransScale;
-            dir = FacingDirection.Left;
             if(animationState != AnimationState.Walking)
             {
                 animator.SetBool("walking", true);
@@ -133,9 +133,8 @@ public class Jack : MonoBehaviour{
         }  
         else if (rightPressed) {
             rb.linearVelocityX = MoveSpeed;
-            rendererTransScale.z = Mathf.Abs(rendererTransScale.z);
+            rendererTransScale.z = 0.19f;
             rendererTrans.localScale = rendererTransScale;
-            dir = FacingDirection.Right;
             if(animationState != AnimationState.Walking)
             {
                 animator.SetBool("walking", true);
@@ -151,7 +150,7 @@ public class Jack : MonoBehaviour{
             }
         }
         else{
-            rb.linearVelocityX = 0f;
+            rb.linearVelocityX = 0.0f;
             if(animationState == AnimationState.Walking)
             {
                 if(prevFromtLeg != runCycle)
@@ -197,7 +196,7 @@ public class Jack : MonoBehaviour{
         // 在Jack碰到其他實體時...
         GameObject colliderGameObject = other.collider.gameObject;
 
-        if (colliderGameObject.layer == GlobalVariables.GroundLayer)
+        if (colliderGameObject.layer == DefinedLayers.GroundLayer)
         {
             isJumpReduced = true;
             groundTouchedCount++;
@@ -208,17 +207,8 @@ public class Jack : MonoBehaviour{
 
         GameObject colliderGameObject = other.collider.gameObject;
 
-        if (colliderGameObject.layer == GlobalVariables.GroundLayer){
+        if (colliderGameObject.layer == DefinedLayers.GroundLayer){
             groundTouchedCount--;
-        }
-    }
-
-    void OnCollisionStay2D(Collision2D other)
-    {
-        GameObject otherGameObject = other.gameObject;
-        if(otherGameObject.layer == GlobalVariables.EnemyLayer)
-        {
-            HpBar.HP -= 0.1f;
         }
     }
 }
