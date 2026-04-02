@@ -22,10 +22,20 @@ public static class MathUtil
         return center;
     }
 
+    public static Vector2 RandomPointInDonut(Vector2 center, float small_radius, float large_radius)
+    {
+        small_radius /= large_radius;
+        float r = Mathf.Sqrt(Random.Range(small_radius * small_radius, 1.0f)) * large_radius;
+        float theta = Random.Range(NPI, PI);
+        center.x += r*Mathf.Cos(theta);
+        center.y += r*Mathf.Sin(theta);
+        return center;
+    }
+
     public static Vector2 RotateVector2(Vector2 a, float rot)
     {
         float dir = Mathf.Atan2(a.y, a.x);
-        float r = a.magnitude;
+        float r = a.magnitude + rot;
         a.x = r * Mathf.Cos(dir);
         a.y = r * Mathf.Sin(dir);
         return a;

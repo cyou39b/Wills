@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 //  Jack的Script
@@ -9,15 +10,30 @@ public class Jack : MonoBehaviour//, IKnockbackable
     private Vector3 rendererTransScale;
     private Animator animator;
     private AnimationState animationState = AnimationState.LeftFront;
-    // public FacingDirection dir = FacingDirection.;
     
     public GameObject HPBarPrefab;
     private HPBar HpBar;
 
     [NonSerialized] public Rigidbody2D rb;
-    // Rigidbody2D IKnockbackable.rb => rb;
-    // GameObject IKnockbackable.gameObject => gameObject;
-    public float MoveSpeed;
+    private bool _knockbackStun = false;
+    private bool knocbackStun
+    {
+        get => _knockbackStun;
+        set
+        {
+            if (value)
+            {
+                animator.speed = 1.0f;
+            }
+            else
+            {
+                animator.speed = 1.25f;
+            }
+            _knockbackStun = value;
+        }
+    }
+
+    public static float MoveSpeed = 6.0f;
 
     public float JumpSpeed;
     public float JumpBufferMaxTime;
@@ -26,13 +42,11 @@ public class Jack : MonoBehaviour//, IKnockbackable
     public float JumpHoldMaxTime;
     private float jumpHoldTimer = 0.0f;
 
-    public float StillEpsilon;
     private bool isJumpReduced = false;
-    private int groundTouchedCount = 0;
-    private bool isGrounded => groundTouchedCount != 0;
-    // FIXME?: This method could cause some problem if Jack \
-    // can touch multiple grounds at once. 
+    private bool isGrounded => leg.objectsStandingOn.Count != 0;
     
+    private JacLeg leg;
+
     public void Start()
     {
         GameObject newObj = Instantiate(
@@ -60,29 +74,37 @@ public class Jack : MonoBehaviour//, IKnockbackable
 
         rb = gameObject.GetComponent<Rigidbody2D>();
 
-        foreach(Transform childTrans in transform)
+        rendererTrans = transform.Find("Renderer");
+        if(rendererTrans == null)
         {
-            GameObject child = childTrans.gameObject;
-            if(child.name.Equals("Renderer"))
-            {
-                rendererTrans = childTrans;
-                rendererTransScale = rendererTrans.localScale;
+            Debug.LogError("Jack should have a child gameobject that is the model");
+        }
+        rendererTransScale = rendererTrans.localScale;
+        GameObject rendererChild = rendererTrans.gameObject;
 
-                if(!child.TryGetComponent<Animator>(out animator))
-                {
-                    Debug.LogError("Renderer child GameObject is expected to have a animator.");
-                }
-                animator.speed = 1.25f;
-                animator.Play("Stand Left Front", 0, 0.0f);
+        if(!rendererChild.TryGetComponent<Animator>(out animator))
+        {
+            Debug.LogError("Renderer child GameObject is expected to have a animator.");
+        }
+        animator.speed = 1.25f;
+        animator.Play("Stand Left Front", 0, 0.0f);
 
-                break;
-            }
+        Transform legTrans = transform.Find("Jack Leg");
+        if(legTrans == null)
+        {
+            Debug.LogError("Jack no leg trigger gameobject :(");
+        }
+        if(!legTrans.gameObject.TryGetComponent<JacLeg>(out leg))
+        {
+            Debug.LogError("Leg no JacLeg ?");
         }
     }
 
     private bool leftPressed;
     private bool rightPressed;
     private bool jumpReleased;
+    private float prevRunCycle = 0.0f;
+    private float prevFromtLeg = 1.0f;
     void Update(){
         // Do nothing if the game is stopped
         if(Time.timeScale == 0.0f){return;}
@@ -90,51 +112,14 @@ public class Jack : MonoBehaviour//, IKnockbackable
         leftPressed = Keyboard.current[GlobalVariables.Instance.MoveLeftKey].isPressed;
         rightPressed = Keyboard.current[GlobalVariables.Instance.MoveRightKey].isPressed;
         
-        jumpBufferTimer -= Time.deltaTime;
-        if (Keyboard.current[GlobalVariables.Instance.JumpKey].wasPressedThisFrame)
-        {
-            // Jump Buffering：把上次JumpKey被按下的時間記下來
-            // 在碰到地板時檢查是否上次按下Jump的時間還算近
-            jumpBufferTimer = JumpBufferMaxTime;
-        }
-
-        jumpReleased = Keyboard.current[GlobalVariables.Instance.JumpKey].wasReleasedThisFrame;
-    }
-
-    float prevRunCycle = 0.0f;
-    float prevFromtLeg = 1.0f;
-    public void FixedUpdate()
-    {
-        if(Explode.Activated) {return;}
-        
         float runCycle = Mathf.Repeat(animator.GetCurrentAnimatorStateInfo(0).normalizedTime, 1.0f);
         float frontLeg = 
             (143.0f/166.0f <= runCycle || runCycle <= 15.0f/166.0f) || 
             (98.0f/166.0f <= runCycle && runCycle <= 140.0f/166.0f)
                 ?1.0f
                 :-1.0f; // 1 for left and -1 for right
-        if (leftPressed){
-            rb.linearVelocityX = -MoveSpeed;
-            rendererTransScale.z = -0.19f;
-            rendererTrans.localScale = rendererTransScale;
-            if(animationState != AnimationState.Walking)
-            {
-                animator.SetBool("walking", true);
-                animator.SetBool("leftFront", false);
-                animator.SetBool("rightFront", false);
-                float normalizedFrameCount = 1.0f/166.0f * ((animationState == AnimationState.LeftFront)
-                    ?101.0f
-                    :57.0f
-                    );
-                animator.Play("Walking", 0, normalizedFrameCount);
-
-                animationState = AnimationState.Walking;
-            }
-        }  
-        else if (rightPressed) {
-            rb.linearVelocityX = MoveSpeed;
-            rendererTransScale.z = 0.19f;
-            rendererTrans.localScale = rendererTransScale;
+        if (leftPressed)
+        {
             if(animationState != AnimationState.Walking)
             {
                 animator.SetBool("walking", true);
@@ -149,8 +134,24 @@ public class Jack : MonoBehaviour//, IKnockbackable
                 animationState = AnimationState.Walking;
             }
         }
-        else{
-            rb.linearVelocityX = 0.0f;
+        else if (rightPressed)
+        {
+            if(animationState != AnimationState.Walking)
+            {
+                animator.SetBool("walking", true);
+                animator.SetBool("leftFront", false);
+                animator.SetBool("rightFront", false);
+                float normalizedFrameCount = 1.0f/166.0f * ((animationState == AnimationState.LeftFront)
+                    ?101.0f
+                    :57.0f
+                    );
+                animator.Play("Walking", 0, normalizedFrameCount);
+
+                animationState = AnimationState.Walking;
+            }
+        }
+        else
+        {
             if(animationState == AnimationState.Walking)
             {
                 if(prevFromtLeg != runCycle)
@@ -166,6 +167,42 @@ public class Jack : MonoBehaviour//, IKnockbackable
         }
         prevFromtLeg = frontLeg;
         prevRunCycle = runCycle;
+        
+        jumpBufferTimer -= Time.deltaTime;
+        if (Keyboard.current[GlobalVariables.Instance.JumpKey].wasPressedThisFrame)
+        {
+            // Jump Buffering：把上次JumpKey被按下的時間記下來
+            // 在碰到地板時檢查是否上次按下Jump的時間還算近
+            jumpBufferTimer = JumpBufferMaxTime;
+        }
+
+        jumpReleased = Keyboard.current[GlobalVariables.Instance.JumpKey].wasReleasedThisFrame;
+    }
+
+    void FixedUpdate()
+    {
+        if(Explode.Activated) {return;}
+
+        if (knocbackStun)
+        {
+            if(rb.linearVelocityX <= 0.1f && isGrounded) {knocbackStun = false;}
+        }
+        else
+        {
+            if (leftPressed){
+                rb.linearVelocityX = -MoveSpeed;
+                rendererTransScale.z = -0.19f;
+                rendererTrans.localScale = rendererTransScale;
+            }  
+            else if (rightPressed) {
+                rb.linearVelocityX = MoveSpeed;
+                rendererTransScale.z = 0.19f;
+                rendererTrans.localScale = rendererTransScale;
+            }
+            else{
+                rb.linearVelocityX = 0.0f;
+            }
+        }
 
         if(jumpReleased)
         {
@@ -184,32 +221,30 @@ public class Jack : MonoBehaviour//, IKnockbackable
             rb.gravityScale = 1.7f;
         }
 
-        if(isGrounded && rb.linearVelocityY == 0.0f && jumpBufferTimer >= 0.0f){
-            rb.linearVelocityY = JumpSpeed;
-            jumpHoldTimer = 0.0f;
-            isJumpReduced = false;
-            jumpBufferTimer = -0.1f; // 把Timer設成負值，避免出現什麼奇怪的bug
+        // if(isGrounded && rb.linearVelocityY == 0.0f && jumpBufferTimer >= 0.0f){
+        if(isGrounded && jumpBufferTimer >= 0.0f){
+            Jump();
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other){
-        // 在Jack碰到其他實體時...
-        GameObject colliderGameObject = other.collider.gameObject;
+    public float JumpPushForceModifier;
+    void Jump()
+    {
+        rb.linearVelocityY = JumpSpeed;
+        jumpHoldTimer = 0.0f;
+        isJumpReduced = false;
+        jumpBufferTimer = -0.1f; // 把Timer設成負值，避免出現什麼奇怪的bug
 
-        if (colliderGameObject.layer == DefinedLayers.GroundLayer)
+        foreach(KeyValuePair<GameObject, IKnockbackable> kv in leg.objectsStandingOn)
         {
-            isJumpReduced = true;
-            groundTouchedCount++;
+            if(kv.Value == null){continue;}
+            kv.Value.GetKnockbacked(Vector2.down, JumpSpeed * JumpPushForceModifier * rb.mass / Time.fixedDeltaTime, false, leg.transform.position);
         }
     }
-    void OnCollisionExit2D(Collision2D other){
-        // 在Jack離開其他實體時...
 
-        GameObject colliderGameObject = other.collider.gameObject;
-
-        if (colliderGameObject.layer == DefinedLayers.GroundLayer){
-            groundTouchedCount--;
-        }
+    public void GetDamaged(float damage)
+    {
+        HpBar.HP -= damage;
     }
 }
 

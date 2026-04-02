@@ -43,22 +43,19 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     }
     protected virtual void InitializeRenderingGameObject()
     {
-        foreach(Transform childTransform in transform)
+        Transform rendererChildTrans = transform.Find("Renderer");
+        if(rendererChildTrans == null)
         {
-            GameObject child = childTransform.gameObject;
-            if(child.name.Equals("Renderer"))
-            {
-                renderingChildObject = child;
-                if(!renderingChildObject.TryGetComponent<SpriteRenderer>(out SpRr))
-                {
-                    Debug.LogError("AbstractEnemy doesn't have a Renderer child gameObject.");
-                }
-                if(!renderingChildObject.TryGetComponent<Animator>(out Anmor))
-                {
-                    Debug.LogError("AbstractEnemy doesn't have a Renderer child gameObject.");
-                }
-                break;
-            }
+            Debug.Log("Abstract enemy should have a child gameobject for rendering called renderer");
+        }
+        renderingChildObject = rendererChildTrans.gameObject;
+        if(!renderingChildObject.TryGetComponent<SpriteRenderer>(out SpRr))
+        {
+            Debug.LogError("AbstractEnemy doesn't have a Renderer child gameObject.");
+        }
+        if(!renderingChildObject.TryGetComponent<Animator>(out Anmor))
+        {
+            Debug.LogError("AbstractEnemy doesn't have a Renderer child gameObject.");
         }
 
         Mat = SpRr.material;
@@ -205,6 +202,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     protected AIFacingDirection AIFacingDirection;
     protected virtual FacingDirection CurrentRealFacingDirection{get;set;}
 
+    public bool AI = true;
     protected virtual void FixedUpdate()
     {
         MainProcessIntent();
@@ -235,6 +233,11 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
                     false
                 );
             }
+        }
+
+        if(other == player && AI)
+        {
+            SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
         }
     }
     public void OnCollisionExit2D(Collision2D collision)
