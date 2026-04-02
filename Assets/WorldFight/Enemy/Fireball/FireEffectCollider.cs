@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider2D), typeof(Rigidbody2D))]
 public class FireEffectCollider : MonoBehaviour, ICanKnockback
 {
-    [NonSerialized] public GameObject fireballSpawner;
+    [NonSerialized] public GameObject player;
     private new CapsuleCollider2D collider;
     private GameObject parent;
 
@@ -14,6 +14,8 @@ public class FireEffectCollider : MonoBehaviour, ICanKnockback
     GameObject ICanKnockback.gameObject => gameObject;
     float ICanKnockback.collisionForceGiveRatio => 1.0f;
     float ICanKnockback.collisionForceKeepRatio => 0.0f;
+
+    public static float Damage = 10.0f;
 
     private static readonly Vector3 animationOffset = new Vector3(0.0f, 0.33f, 0.0f);
     private static readonly Vector3 startScale = new Vector3(0.48f, 0.48f, 1.0f);
@@ -41,22 +43,18 @@ public class FireEffectCollider : MonoBehaviour, ICanKnockback
         Destroy(parent);
     }
 
-    public float Power = 750.0f;
-    public void OnTriggerStay2D(Collider2D collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
         GameObject other = collider.gameObject;
-        IKnockbackable knockbackable;
-        if(
-            other != fireballSpawner && 
-            other.TryGetComponent<IKnockbackable>(out knockbackable)
-          )
+        if(other == player)
         {
-            ((ICanKnockback)this).DoKnockback(
-                knockbackable,
-                other.transform.position - transform.position,
-                Power,
-                false
-            );
+            Jack jack;
+            if(!other.TryGetComponent<Jack>(out jack))
+            {
+                Debug.LogError("ERROR");
+            }
+
+            jack.GetDamaged(Damage);
         }
     }
 }

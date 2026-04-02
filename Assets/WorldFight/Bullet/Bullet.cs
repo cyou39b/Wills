@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour, ICanKnockback
     public ParticleSystem.MinMaxCurve DistacneToPowerCurve;
     private Vector2 initialPosition;
 
-    public float Damage;
+    public static float Damage = 5.0f;
 
     void Start()
     {

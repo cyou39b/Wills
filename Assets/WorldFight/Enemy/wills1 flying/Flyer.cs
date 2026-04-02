@@ -33,13 +33,18 @@ public class Flyer : AbstractEnemy
         }
 
         int idx = Random.Range(0, FaceColors.Length);
-        mainColor = FaceColors[idx];
-        mat.SetColor("_Eyes_Color", EyesColors[idx]);
-        mat.SetColor("_Face_Color", FaceColors[idx]);
-        mat.SetColor("_Face_Outline_Color", FaceOutlineColors[idx]);
-        mat.SetColor("_WingB_Color", WingBColors[idx]);
-        mat.SetColor("_WingG_Color", WingGColors[idx]);
-        mat.SetColor("_WingY_Color", WingYColors[idx]);
+        mainColor = RandColor();
+        mat.SetColor("_Eyes_Color", RandColor());
+        mat.SetColor("_Face_Color", mainColor);
+        mat.SetColor("_Face_Outline_Color", RandColor());
+        mat.SetColor("_WingB_Color", RandColor());
+        mat.SetColor("_WingG_Color", RandColor());
+        mat.SetColor("_WingY_Color", RandColor());
+    }
+
+    Color RandColor()
+    {
+        return new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), 0.0f);
     }
 
     void Update()
@@ -103,6 +108,7 @@ public class Flyer : AbstractEnemy
         switch(intent)
         {
             case Intent.Idle:
+                if(!AI){return;}
                 if(TrySeePlayer())
                 {
                     SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
@@ -143,7 +149,6 @@ public class Flyer : AbstractEnemy
         {
             if(value == intent){return;}
 
-            if(base.intent == Intent.Attack && attackIntent_chargingFireball != null) {attackIntent_chargingFireball.Cancel();}
             switch(value)
             {
                 case Intent.ChasePlayer:
@@ -192,10 +197,14 @@ public class Flyer : AbstractEnemy
     {
         if (!randomlyRoam_setDestionationLock)
         {
-            agent.SetDestination(MathUtil.RandomPointInCircle(transform.position, roamRadius));
+            agent.SetDestination(MathUtil.RandomPointInDonut(playerTrans.position, SeeDistance, roamRadius));
             randomlyRoam_setDestionationLock = true;
         }
-        if (Vector2.Distance(agent.destination, transform.position) <= 0.25f)
+
+        if(
+            !agent.pathPending && 
+            agent.remainingDistance <= agent.stoppingDistance
+        )
         {
             SetIntent(Intent.Idle, AIFacingDirection.SameAsMoving, false, Intent.RandomlyRoam);
         }
@@ -216,14 +225,11 @@ public class Flyer : AbstractEnemy
             {
                 Debug.LogError("Fireball no Fireball");
             }
-            attackIntent_chargingFireball.Initialize(gameObject, playerTrans.position);
+            attackIntent_chargingFireball.Initialize(player, playerTrans.position);
         }
         if(attackIntent_fireballChargeFrameCounter++ >= attackIntent_FireballChargeTargetFrame) {attackIntent_fireballChargeFrameCounter = 0;}
         else{return;}
-
-        attackIntent_chargingFireball.GO();
-        attackIntent_chargingFireball = null;
-        SetIntent(Intent.RandomlyRoam, AIFacingDirection.None, false, Intent.Attack);
+        SetIntent(Intent.RandomlyRoam, AIFacingDirection.SameAsMoving, false, Intent.Attack);
     }
 
     public override void GetKnockbacked(Vector2 direction, float power, bool stun, Vector2 forcePosition)
@@ -273,7 +279,7 @@ public class Flyer : AbstractEnemy
         agent.enabled = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = getKnockbackedIntent_stun?1.0f:0.0f;
-        rb.AddForce(getKnockbackedIntent_force);
+        rb.AddForceAtPosition(getKnockbackedIntent_force, getKnockbackIntent_position);
         SetIntent(Intent.WaitUntilStill, AIFacingDirection.NegFromMoving, false, Intent.GetKnockbacked);
 
         getKnockbackedIntent_force = Vector2.zero;

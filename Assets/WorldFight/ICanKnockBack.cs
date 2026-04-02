@@ -16,7 +16,7 @@ public interface ICanKnockback
         {
             if(contact.gameObject != knockbackable.gameObject) {continue;}
             
-            Debug.Log($"{gameObject.name} knockback {knockbackable.gameObject.name}");
+            // Debug.Log($"{gameObject.name} knockback {knockbackable.gameObject.name}");
             knockbackable.GetKnockbacked(
                 dir, 
                 power * collisionForceGiveRatio, 

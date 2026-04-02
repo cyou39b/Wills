@@ -3,7 +3,6 @@ using Random = UnityEngine.Random;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Wills : AbstractEnemy
@@ -140,6 +139,13 @@ public class Wills : AbstractEnemy
         switch(intent)
         {
             case Intent.Idle:
+            #if UNITY_EDITOR
+                if(!AI){break;}
+            #endif
+                if(TrySeePlayer())
+                {
+                    SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
+                }
                 if (!agent.enabled)
                 {
                     SafeWarp();
@@ -196,7 +202,7 @@ public class Wills : AbstractEnemy
             switch(value)
             {
                 case Intent.ChasePlayer:
-                    chasePlayer_counter = chasePlayer_count - 1;
+                    chasePlayer_counter = chasePlayer_count;
                     break;
                 case Intent.PrepJump:
                     prepJumpIntent_stage = 0;
@@ -319,12 +325,6 @@ public class Wills : AbstractEnemy
     private int chasePlayer_counter = 0;
     private void ProcessChasePlayerIntent()
     {
-        if(++chasePlayer_counter != chasePlayer_count){return;}
-        else{chasePlayer_counter = 0;}
-
-        RaycastHit2D info = Physics2D.Raycast(playerTrans.position, Vector2.down, 100.0f, DefinedLayers.GroundLayerMask);
-        agent.SetDestination(info.point);
-
         DynamicAIAction action = null;
         if(
             agent.isOnOffMeshLink && 
@@ -345,13 +345,19 @@ public class Wills : AbstractEnemy
                 case DynamicAIAction.ActionType.Jump:
                     prepJumpIntent_pendingAction = action;
                     SetIntent(Intent.PrepJump, AIFacingDirection.SameAsMoving);
-                    break;
+                    return;
                 case DynamicAIAction.ActionType.WalkOffEdge:
                     walkOffEdgeIntent_action = action;
                     SetIntent(Intent.WalkOffEdge, AIFacingDirection.SameAsMoving);
-                    break;
+                    return;
             }
         }
+
+        if(++chasePlayer_counter < chasePlayer_count){return;}
+        else{chasePlayer_counter = 0;}
+
+        RaycastHit2D info = Physics2D.Raycast(playerTrans.position, Vector2.down, 100.0f, DefinedLayers.GroundLayerMask);
+        agent.SetDestination(info.point);
     }
 
     [ContextMenu("Log stuffs")]
@@ -362,8 +368,19 @@ public class Wills : AbstractEnemy
         Debug.Log($"name: {name}, intent: {intent}, listeners: {listners}, onlink: {agent.isOnOffMeshLink}, agentVelocity: {agentVelocity}, linear velocity: {rb.linearVelocity}");
     }
 
+    private const int seeRayCastMsk = ~0 
+        ^DefinedLayers.EnemyLayerMask 
+        ^DefinedLayers.AttackLayerMask 
+        ^(1<<2);// (1<<2) is mask for ignore raycast
+    bool TrySeePlayer()
+    {
+        RaycastHit2D info = Physics2D.Raycast(transform.position, playerTrans.position-transform.position, float.PositiveInfinity, seeRayCastMsk);
+        return  info.collider != null && 
+                info.collider.gameObject == player;
+    }   
     private void ProcessAttackIntent()
     {
+        SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.Attack);
     }
 
     private DynamicAIAction prepJumpIntent_pendingAction = null;

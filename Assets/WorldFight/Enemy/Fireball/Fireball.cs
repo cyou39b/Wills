@@ -20,11 +20,12 @@ public class Fireball : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private const int goFrame = 30;
     public float InitializeDistance;
-    private GameObject spawner;
-    public void Initialize(GameObject spawner, Vector3 targetPos)
+    private GameObject player;
+    public void Initialize(GameObject player, Vector3 targetPos)
     {
-        this.spawner = spawner;
+        this.player = player;
         Vector3 dPos = targetPos - transform.position;
 
         transform.SetPositionAndRotation(
@@ -35,27 +36,16 @@ public class Fireball : MonoBehaviour
                 Mathf.Atan2(dPos.y, dPos.x) * Mathf.Rad2Deg
             )
         );
-    }
 
-    public void Cancel()
-    {
-        if(this == null || gameObject == null) {return;} // FIXME:
-        StartCoroutine(dissipate());
-    }
-
-    private static readonly WaitForSeconds dissipateTimeSpan = new WaitForSeconds(17f/48f);
-    private IEnumerator dissipate()
-    {
-        animator.SetBool(animatorDissipateParameterName, true);
-        yield return dissipateTimeSpan;
-        Destroy(gameObject);
+        StartCoroutine(GO());
     }
 
     public float Speed;
-    public void GO()
+    IEnumerator GO()
     {
-        if(this == null) {return;} // FIXME: GO was called after destroyed sometimes.
+        for(int _=0;_<goFrame;_++){yield return new WaitForFixedUpdate();}
 
+        if(this == null || gameObject == null) {yield break;}
         transform.parent = null;
         collider.forceReceiveLayers = ~0;
         collider.forceSendLayers = ~0;
@@ -63,24 +53,22 @@ public class Fireball : MonoBehaviour
         rb.linearVelocity = new Vector3(Mathf.Cos(rot), Mathf.Sin(rot), 0.0f) * Speed;
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        GameObject other = collision.gameObject;
+        GameObject other = collider.gameObject;
         if(
             other.layer == DefinedLayers.GroundLayer || 
             other.layer == DefinedLayers.WallLayer   ||
             other.layer == DefinedLayers.PlayerLayer )
         {
             GameObject newObj = Instantiate(fireEffectPrefab, transform.position + 0.6f*transform.right, Quaternion.identity);
-            foreach(Transform childTransform in newObj.transform)
-            {
-                FireEffectCollider fireEffectCollider;
-                if(newObj.TryGetComponent<FireEffectCollider>(out fireEffectCollider))
-                {
-                    fireEffectCollider.fireballSpawner = spawner;
-                    break;
-                }
-            }
+            Transform fireEffectColliderTrans = newObj.transform.Find("Collider");
+            if(fireEffectColliderTrans == null) {Debug.LogError("Missing child object");}
+
+            FireEffectCollider fireEffectCollider;
+            if(!fireEffectColliderTrans.TryGetComponent<FireEffectCollider>(out fireEffectCollider)){Debug.LogError("Missing Component (Monobehaviour script)");}
+
+            fireEffectCollider.player = player;
             Destroy(gameObject);
         }
     }
