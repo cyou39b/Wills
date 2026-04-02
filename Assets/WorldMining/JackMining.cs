@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class JackMining : MonoBehaviour{
-    public float moveSpeed = 5f;
+    public static float moveSpeed = 5f;
     private Rigidbody2D rb;
 
     public GameObject Map;

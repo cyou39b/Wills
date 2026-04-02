@@ -37,12 +37,37 @@ public class PossessionLogic : MonoBehaviour{
                     }
                     else if(!ThisPossession.effect.stackable && ThisPossession.effect.usedTimes >= 1){
                         //write panel and ???
+                        use.onClick.AddListener(() =>{
+                            if(panel.transform.Find("Msg").TryGetComponent<GameObject>(out GameObject component)){
+                                if(component.transform.Find("Msg").TryGetComponent<Text>(out Text txt4)){
+                                    txt4.text = "You have already used it";
+                                }
+                                component.SetActive(true);
+                            }
+                        });
                     }
                     else if(ThisPossession.effect.scene == UsableScene.All ||
                         ThisPossession.effect.scene.ToString() == SceneManager.GetActiveScene().name){
                         //create effect
+                        EffectType thisEffect = pos.effect.effectType;
+                        switch(thisEffect){
+                            case EffectType.none:
+                            case EffectType.ATKBoost:
+                                EffectManager.Instance.ATKBoostFunc(pos);
+                                break;
+                            case EffectType.HPBoost:
+                                break;
+                            case EffectType.SPDUp:
+                                EffectManager.Instance.SPDUpFunc(pos);
+                                break;
+                            case EffectType.HPUP:
+                                break;
+                            default:
+                                break;
+                        }
+                        EffectManager.Instance.nowEffect.Add(pos);
                     }
-                    else{
+                    else{ //
                         use.onClick.AddListener(() =>{
                             if(panel.transform.Find("Msg").TryGetComponent<GameObject>(out GameObject component)){
                                 component.SetActive(true);

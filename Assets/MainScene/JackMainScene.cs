@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class JackMainScene : MonoBehaviour{
-    public float moveSpeed = 5.0f;
+    public static float moveSpeed = 5.0f;
     public Rigidbody2D rb;
     List<IInteract> inRange = new List<IInteract>();
     public Button Button1;

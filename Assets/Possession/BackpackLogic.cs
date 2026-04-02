@@ -13,7 +13,7 @@ public class BackpackLogic : MonoBehaviour{
     public GameObject ISMsg;
     public static bool IsBackpackOpening = false;
     float timeScaleBeforeBackpackOpen; 
-    public static BackpackLogic Instance{get;private set;} = null;
+    /*public static BackpackLogic Instance{get;private set;} = null;
     void Awake(){
         if(Instance == null){
             Instance = this;
@@ -22,7 +22,7 @@ public class BackpackLogic : MonoBehaviour{
             Destroy(this.gameObject);
             return;
         }
-    }
+    }*/
     void Start(){}
 
     void Update(){}

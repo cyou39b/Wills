@@ -14,7 +14,9 @@ public class PossessionItems : ScriptableObject{
 public enum EffectType{
     none,
     ATKBoost,
-    HPBoost
+    HPBoost, //Player
+    SPDUp,
+    HPUP // Enemy
 }
 public enum UsableScene{
     none,
@@ -26,7 +28,7 @@ public enum UsableScene{
 [System.Serializable]
 public class ItemEffect{
     public EffectType effectType;
-    public float EffectRate; // 1~100%
+    public float EffectRate; //0~1
     public UsableScene scene;
     public bool stackable;
     public int usedTimes;

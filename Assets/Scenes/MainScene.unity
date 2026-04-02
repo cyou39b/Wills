@@ -216,7 +216,7 @@ MonoBehaviour:
   Speaker: {fileID: 2021542837}
   GoNextLine: {fileID: 1840411083}
   Menu: {fileID: 418344780}
-  MenuInSceneButton: {fileID: 0}
+  MenuInSceneButton: {fileID: 3021553342357279616}
   Option1: {fileID: 489881381}
   Option2: {fileID: 2023845443}
 --- !u!4 &36988889
@@ -4293,10 +4293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMove
   Target: {fileID: 1571390219}
-  TargetRB: {fileID: 0}
   Offset: {x: 0, y: 0, z: -10}
   SmoothTime: 0.3
-  rbOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &781151546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111341,6 +111339,11 @@ PrefabInstance:
       addedObject: {fileID: 1953415968}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6ad876ad31055c42837ef3335853538, type: 3}
+--- !u!1 &3021553342357279616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9170620757986856578, guid: e6ad876ad31055c42837ef3335853538, type: 3}
+  m_PrefabInstance: {fileID: 3021553342357279615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
