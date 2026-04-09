@@ -31,5 +31,6 @@ public class ItemEffect{
     public float EffectRate; //0~1
     public UsableScene scene;
     public bool stackable;
-    public int usedTimes;
+    public int usedTimes; //reset
+    public float duration;
 }

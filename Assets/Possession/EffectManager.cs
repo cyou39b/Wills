@@ -1,10 +1,10 @@
-using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Dead
 public class EffectManager : MonoBehaviour{
+    HPBar JackHPBar;
     public static EffectManager Instance{get;private set;} = null;
     //public Dictionary<EffectType,Action> EffectWay = new Dictionary<EffectType, Action>();
     public List<PossessionItems> nowEffect = new List<PossessionItems>(); // Before scene change,the List will be cleared
@@ -18,10 +18,13 @@ public class EffectManager : MonoBehaviour{
             return;
         }
     }
-    void Start(){}
+    void Start(){
+        GameObject Player = GameObject.FindWithTag("Player");
+    }
     void Update(){}
     public void ATKBoostFunc(PossessionItems pos){
         pos.effect.usedTimes++;
+        Bullet.Damage *= (pos.effect.EffectRate+1);
     }
     public void SPDUpFunc(PossessionItems pos){
         pos.effect.usedTimes++;
@@ -39,6 +42,9 @@ public class EffectManager : MonoBehaviour{
                 Debug.LogError("I don't know why you can use it......");
                 break;
         }
+    }
+    public void HPBoostFunc(PossessionItems pos){
+        pos.effect.usedTimes++;
     }
     //it will be called when the effect(s) end(s) or before the scene change
     public void ResetItem(PossessionItems pos){
@@ -66,6 +72,10 @@ public class EffectManager : MonoBehaviour{
                 }
                 break;
             case EffectType.HPBoost:
+                
+                break;
+            case EffectType.ATKBoost:
+                Bullet.Damage = 5.0f;
                 break;
             default:
                 break;

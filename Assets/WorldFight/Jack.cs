@@ -12,7 +12,7 @@ public class Jack : MonoBehaviour//, IKnockbackable
     private AnimationState animationState = AnimationState.LeftFront;
     
     public GameObject HPBarPrefab;
-    private HPBar HpBar;
+    public HPBar HpBar;
 
     [NonSerialized] public Rigidbody2D rb;
     private bool _knockbackStun = false;

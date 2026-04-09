@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//shit
 public class PossessionLogic : MonoBehaviour{
     public void Initialize(PossessionItems pos,GameObject panel){
         PossessionItems ThisPossession = pos;
@@ -48,24 +49,9 @@ public class PossessionLogic : MonoBehaviour{
                     }
                     else if(ThisPossession.effect.scene == UsableScene.All ||
                         ThisPossession.effect.scene.ToString() == SceneManager.GetActiveScene().name){
+                        pos.effect.usedTimes++;
+                        pos.Num--;
                         //create effect
-                        EffectType thisEffect = pos.effect.effectType;
-                        switch(thisEffect){
-                            case EffectType.none:
-                            case EffectType.ATKBoost:
-                                EffectManager.Instance.ATKBoostFunc(pos);
-                                break;
-                            case EffectType.HPBoost:
-                                break;
-                            case EffectType.SPDUp:
-                                EffectManager.Instance.SPDUpFunc(pos);
-                                break;
-                            case EffectType.HPUP:
-                                break;
-                            default:
-                                break;
-                        }
-                        EffectManager.Instance.nowEffect.Add(pos);
                     }
                     else{ //
                         use.onClick.AddListener(() =>{
