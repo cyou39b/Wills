@@ -28,8 +28,11 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     protected GameObject player;
     protected Transform playerTrans;
 
+    private Camera cam;
+
     protected virtual void Start()
     {
+        cam = Camera.main;
         InitialPlayerInfoReference();
         InitializeRenderingGameObject();
         InitializeHpBar();
@@ -86,7 +89,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
         }
         playerTrans = player.transform;
     }
-    protected abstract (float ,float , Vector3)HpBarData{get;}
+    public abstract (float ,float , Vector3)HpBarData{get;}
     protected virtual void InitializeHpBar()
     {
         GameObject hpBarGameObject = Instantiate(HPBarPrefab, transform.position, transform.rotation);
@@ -154,7 +157,11 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
         // so I have to do this null check every time.
         if(triangle != null) {Destroy(triangle.gameObject);}
         if(HpBar != null) {Destroy(HpBar.gameObject);}
-        if(gameObject != null) {Destroy(gameObject);}
+        if(gameObject != null) 
+        {
+            RbCameraMovement.Enemys.Remove(transform);
+            Destroy(gameObject);
+        }
     }
 
     // I hate this implementation. Previous one with coroutine is prettier.
@@ -257,4 +264,47 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
         }
     }
 
+    public void InsertAndRemoveFromEnemyList()
+    {
+        if(RbCameraMovement.Enemys.ContainsKey(transform))
+        {
+            if(camCoroutine != null) {StopCoroutine(camCoroutine);}
+            camCoroutine = StartCoroutine(InsertAndRemoveFromEnemyListIt());
+            return;
+        }
+
+        Vector3 viewPort = cam.WorldToViewportPoint(transform.position);
+        bool onCamera = viewPort.z > 0.0f && 
+                        viewPort.x >= 0.0f && viewPort.x <= 1.0f && 
+                        viewPort.y >= 0.0f && viewPort.y <= 1.0f;
+        if(onCamera)
+        {
+            camCoroutine = StartCoroutine(InsertAndRemoveFromEnemyListIt());
+        }
+    }
+
+    Coroutine camCoroutine = null;
+    private static readonly float maxPanTime = 0.55f;
+    private static readonly WaitForSeconds pointTwoSecond = new WaitForSeconds(0.2f);
+    private IEnumerator InsertAndRemoveFromEnemyListIt()
+    {
+        RbCameraMovement.Enemys[transform] = 1.0f;
+
+        float startTime = Time.time;
+        yield return new WaitWhile(()=> (Time.time - startTime < maxPanTime) && (intent == Intent.GetKnockbacked || intent == Intent.WaitUntilGround || intent == Intent.WaitUntilStill));
+
+        for(int _ = 0; _ < 10; _++)
+        {
+            if (RbCameraMovement.Enemys.ContainsKey(transform))
+            {
+                RbCameraMovement.Enemys[transform] -= 0.1f;
+            }
+            else
+            {
+                yield break;
+            }
+            yield return pointTwoSecond;
+        }
+        RbCameraMovement.Enemys.Remove(transform);
+    }
 }

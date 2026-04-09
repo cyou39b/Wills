@@ -26,6 +26,8 @@ public class HPBar : MonoBehaviour
                 // Debug.LogWarningFormat("Setting hp to {0}, which is greater than max hp {1}", value, _maxHP);
                 value = _maxHP;
             }
+            if(_HP <= 0.0f) {return;}
+
             _HP = value;
             if(_HP <= 0.0f)
             {

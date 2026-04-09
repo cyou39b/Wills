@@ -7,6 +7,9 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Wills : AbstractEnemy
 {
+    public GameObject BulletPrefab;
+    public Vector3 BulletInitializePositionOffest;
+
     public Color[] BodyColors;
     public Color[] EyeColors;
 
@@ -14,7 +17,6 @@ public class Wills : AbstractEnemy
     private bool _walking = false;
     private bool walking 
     {
-        get => _walking;
         set
         {
             if(_walking != value)
@@ -42,24 +44,7 @@ public class Wills : AbstractEnemy
         agent.updateUpAxis = false;
         agent.autoTraverseOffMeshLink = false;
 
-        if(!agent.isOnNavMesh)
-        {
-            NavMeshQueryFilter filter = new NavMeshQueryFilter()
-            {
-                agentTypeID = agent.agentTypeID,
-                areaMask = NavMesh.AllAreas
-            };
-
-            NavMeshHit info;
-            if(NavMesh.SamplePosition(transform.position, out info, 10.0f, filter))
-            {
-                agent.Warp(info.position);
-            }
-            else
-            {
-                Debug.LogError("Agent Sample position failed.");
-            }
-        }
+        SafeWarp();
 
         if(BodyColors.Length != EyeColors.Length)
         {
@@ -74,9 +59,11 @@ public class Wills : AbstractEnemy
         Mat.SetColor("_BodyColor", BodyColors[idx]);
         mainColor = BodyColors[idx];
         Mat.SetColor("_EyeColor", EyeColors[idx]);
+
+        walking = false;
     }
 
-    protected override (float, float, Vector3) HpBarData 
+    public override (float, float, Vector3) HpBarData 
         => (40.0f, 40.0f, new Vector3(0.0f, 2.0f, 0.0f));
 
     public void Update()
@@ -149,7 +136,6 @@ public class Wills : AbstractEnemy
                 if (!agent.enabled)
                 {
                     SafeWarp();
-                    agent.enabled = true;
                 }
                 SetIntent(Intent.ChasePlayer, AIFacingDirection.SameAsMoving, false);
                 goto case Intent.ChasePlayer;
@@ -202,15 +188,22 @@ public class Wills : AbstractEnemy
             switch(value)
             {
                 case Intent.ChasePlayer:
+                    walking = true;
                     chasePlayer_counter = chasePlayer_count;
+                    break;
+                case Intent.Attack:
+                    walking = false;
+                    attack_coolDownTimer = 0;
                     break;
                 case Intent.PrepJump:
                     prepJumpIntent_stage = 0;
                     break;
                 case Intent.Jump:
+                    walking = false;
                     jumpIntent_stage = 0;
                     break;
                 case Intent.WalkOffEdge:
+                    walking = true;
                     walkOffEdgeIntent_stage = 0;
                     break;
                 case Intent.WaitUntilGround:
@@ -316,7 +309,6 @@ public class Wills : AbstractEnemy
             rb.bodyType = RigidbodyType2D.Kinematic;
 
             SafeWarp();
-            agent.enabled = true;
             SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.WaitUntilGround); // FIXME?: fail to set intent sometimes
         }
     }
@@ -360,13 +352,13 @@ public class Wills : AbstractEnemy
         agent.SetDestination(info.point);
     }
 
-    [ContextMenu("Log stuffs")]
-    public void LogStuffs()
-    {
-        string listners = string.Join(Environment.NewLine, listeningDynamicAction);
-        string agentVelocity = agent.enabled?agent.velocity.ToString():"Not enabled";
-        Debug.Log($"name: {name}, intent: {intent}, listeners: {listners}, onlink: {agent.isOnOffMeshLink}, agentVelocity: {agentVelocity}, linear velocity: {rb.linearVelocity}");
-    }
+    // [ContextMenu("Log stuffs")]
+    // public void LogStuffs()
+    // {
+    //     string listners = string.Join(Environment.NewLine, listeningDynamicAction);
+    //     string agentVelocity = agent.enabled?agent.velocity.ToString():"Not enabled";
+    //     Debug.Log($"name: {name}, intent: {intent}, listeners: {listners}, onlink: {agent.isOnOffMeshLink}, agentVelocity: {agentVelocity}, linear velocity: {rb.linearVelocity}");
+    // }
 
     private const int seeRayCastMsk = ~0 
         ^DefinedLayers.EnemyLayerMask 
@@ -374,12 +366,29 @@ public class Wills : AbstractEnemy
         ^(1<<2);// (1<<2) is mask for ignore raycast
     bool TrySeePlayer()
     {
-        RaycastHit2D info = Physics2D.Raycast(transform.position, playerTrans.position-transform.position, float.PositiveInfinity, seeRayCastMsk);
+        Vector3 startPos = transform.position + BulletInitializePositionOffest;
+        RaycastHit2D info = Physics2D.Raycast(startPos, playerTrans.position-startPos, float.PositiveInfinity, seeRayCastMsk);
+        if(info.collider != null && info.collider.gameObject != player) {Debug.Log(info.collider.name);}
         return  info.collider != null && 
                 info.collider.gameObject == player;
-    }   
+    }
+
+    private const int attack_coolDownTarget = 60;
+    private int attack_coolDownTimer = 0;
     private void ProcessAttackIntent()
     {
+        if(attack_coolDownTimer++ == 0)
+        {
+            agent.enabled = false;
+
+            Vector3 dir = playerTrans.position - transform.position - BulletInitializePositionOffest;
+            Instantiate(BulletPrefab, transform.position + BulletInitializePositionOffest, Quaternion.Euler(
+                    0.0f, 0.0f, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg
+                )
+            );
+        }
+        if(attack_coolDownTimer < attack_coolDownTarget) {return;}
+
         SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.Attack);
     }
 
@@ -505,6 +514,7 @@ public class Wills : AbstractEnemy
 
     void SafeWarp()
     {
+        if(agent.enabled && agent.isOnNavMesh) {return;}
         NavMeshQueryFilter filter = new NavMeshQueryFilter()
         {
             agentTypeID = agent.agentTypeID,
@@ -519,5 +529,6 @@ public class Wills : AbstractEnemy
         {
             Debug.LogError($"Agent Can't Warp, at {transform.position}"); // TODO: FIXME: you know this is not the solution
         }
+        agent.enabled = true;
     }
 }

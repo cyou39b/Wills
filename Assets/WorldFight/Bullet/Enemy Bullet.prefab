@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3738892040180884762
+--- !u!1 &2836655839697112275
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1432707537822900503}
-  - component: {fileID: 7188205616813677146}
-  - component: {fileID: 3151527485709832683}
-  - component: {fileID: 2468768707808355602}
-  - component: {fileID: -5963789708713677817}
-  - component: {fileID: 1767670548164451393}
+  - component: {fileID: 6532524559175926169}
+  - component: {fileID: 377718633368334584}
+  - component: {fileID: 2109922850158102303}
+  - component: {fileID: 2997206362692756085}
+  - component: {fileID: 3760402076212467686}
+  - component: {fileID: 2667093355123224985}
   m_Layer: 11
-  m_Name: Bullet
+  m_Name: Enemy Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1432707537822900503
+--- !u!4 &6532524559175926169
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738892040180884762}
+  m_GameObject: {fileID: 2836655839697112275}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.43894, y: 3.30012, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7188205616813677146
+--- !u!61 &377718633368334584
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738892040180884762}
+  m_GameObject: {fileID: 2836655839697112275}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -82,14 +82,14 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.65, y: 0.94}
   m_EdgeRadius: 0
---- !u!50 &3151527485709832683
+--- !u!50 &2109922850158102303
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738892040180884762}
+  m_GameObject: {fileID: 2836655839697112275}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
@@ -109,13 +109,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!212 &2468768707808355602
+--- !u!212 &2997206362692756085
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738892040180884762}
+  m_GameObject: {fileID: 2836655839697112275}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -167,13 +167,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!82 &-5963789708713677817
+--- !u!82 &3760402076212467686
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738892040180884762}
+  m_GameObject: {fileID: 2836655839697112275}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -264,23 +264,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1767670548164451393
+--- !u!114 &2667093355123224985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738892040180884762}
+  m_GameObject: {fileID: 2836655839697112275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c63edf3f87b8f46a8be5b1cea39af3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d322894335f405498c5db5cad64f310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
   BulletSprites:
-  - {fileID: 1017609225550985244, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
+  - {fileID: -3543048863620948104, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
   - {fileID: 1757937406519661826, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
   - {fileID: 7431529995326980795, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
-  - {fileID: -3543048863620948104, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
+  - {fileID: 1017609225550985244, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
   BulletEffectPrefab: {fileID: 4135009946272690, guid: 7c1ed949817aa3840adf916682eac02b, type: 3}
   LaserSFX:
   - {fileID: 8300000, guid: 40a6a65ccf512984a98a75713edffeaa, type: 3}
@@ -288,57 +288,3 @@ MonoBehaviour:
   SoundEffectPlayerPrefab: {fileID: 8586090092282678644, guid: 7ced2028775690342a2666a803e3b245, type: 3}
   MoveSpeed: 20
   InitialDistance: 0.05
-  Power: 4000
-  DistacneToPowerCurve:
-    m_Mode: 1
-    m_CurveMultiplier: 1
-    m_CurveMin:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_CurveMax:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 7.006079
-        value: 0.50552464
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_ConstantMin: 0
-    m_ConstantMax: 0

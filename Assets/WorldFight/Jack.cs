@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 //  Jack的Script
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))]
 public class Jack : MonoBehaviour//, IKnockbackable
 {
     private Transform rendererTrans;
@@ -12,26 +12,9 @@ public class Jack : MonoBehaviour//, IKnockbackable
     private AnimationState animationState = AnimationState.LeftFront;
     
     public GameObject HPBarPrefab;
-    public HPBar HpBar;
+    [NonSerialized] public HPBar HpBar;
 
     [NonSerialized] public Rigidbody2D rb;
-    private bool _knockbackStun = false;
-    private bool knocbackStun
-    {
-        get => _knockbackStun;
-        set
-        {
-            if (value)
-            {
-                animator.speed = 1.0f;
-            }
-            else
-            {
-                animator.speed = 1.25f;
-            }
-            _knockbackStun = value;
-        }
-    }
 
     public static float MoveSpeed = 6.0f;
 
@@ -44,11 +27,20 @@ public class Jack : MonoBehaviour//, IKnockbackable
 
     private bool isJumpReduced = false;
     private bool isGrounded => leg.objectsStandingOn.Count != 0;
-    
+
+    private Gun weapon;
     private JacLeg leg;
+
+    private AudioSource audioSource;
+    public AudioClip DeathSoundEffect;
+
+    public GameObject HeadStomePrefab;
 
     public void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = DeathSoundEffect;
+
         GameObject newObj = Instantiate(
             HPBarPrefab,
             transform.position,
@@ -66,7 +58,12 @@ public class Jack : MonoBehaviour//, IKnockbackable
             HpBar.SmoothTime = 0.05f;
             HpBar.MaxHP = 100.0f;
             HpBar.HP = 100.0f;
-            HpBar.OnHpLE0 = () => {DeathManager.StartDeath(0.0f, 1.0f);};
+            HpBar.OnHpLE0 = () => {
+                Transform trans = transform;
+                Instantiate(HeadStomePrefab, trans.position, trans.rotation);
+                audioSource.Play();
+                DeathManager.StartDeath(0.0f, 1.0f);
+            };
             #if UNITY_EDITOR
             HpBar.name = string.Format("{0} - HPBar", this.name);
             #endif
@@ -98,6 +95,16 @@ public class Jack : MonoBehaviour//, IKnockbackable
         {
             Debug.LogError("Leg no JacLeg ?");
         }
+    
+        Transform weaponChildTrans = transform.Find("Weapon");
+        if(weaponChildTrans == null)
+        {
+            Debug.LogError("Jack don't have weapon?");
+        }
+        if(!weaponChildTrans.gameObject.TryGetComponent<Gun>(out weapon))
+        {
+            Debug.LogError("Weapon gameobject missing component");
+        }
     }
 
     private bool leftPressed;
@@ -118,7 +125,7 @@ public class Jack : MonoBehaviour//, IKnockbackable
             (98.0f/166.0f <= runCycle && runCycle <= 140.0f/166.0f)
                 ?1.0f
                 :-1.0f; // 1 for left and -1 for right
-        if (leftPressed)
+        if (leftPressed && weapon.attackFreezeTimer<0.0f)
         {
             if(animationState != AnimationState.Walking)
             {
@@ -134,7 +141,7 @@ public class Jack : MonoBehaviour//, IKnockbackable
                 animationState = AnimationState.Walking;
             }
         }
-        else if (rightPressed)
+        else if (rightPressed && weapon.attackFreezeTimer<0.0f)
         {
             if(animationState != AnimationState.Walking)
             {
@@ -183,9 +190,19 @@ public class Jack : MonoBehaviour//, IKnockbackable
     {
         if(Explode.Activated) {return;}
 
-        if (knocbackStun)
+        if(weapon.attackFreezeTimer >= 0.0f)
         {
-            if(rb.linearVelocityX <= 0.1f && isGrounded) {knocbackStun = false;}
+            rb.linearVelocityX = 0.0f;
+            if(weapon.facingLeft)
+            {
+                rendererTransScale.z = -0.19f;
+                rendererTrans.localScale = rendererTransScale;
+            }
+            else
+            {
+                rendererTransScale.z = 0.19f;
+                rendererTrans.localScale = rendererTransScale;
+            }
         }
         else
         {
@@ -202,28 +219,28 @@ public class Jack : MonoBehaviour//, IKnockbackable
             else{
                 rb.linearVelocityX = 0.0f;
             }
-        }
 
-        if(jumpReleased)
-        {
-            if(!isJumpReduced)
+            if(jumpReleased)
             {
-                isJumpReduced = true;
+                if(!isJumpReduced)
+                {
+                    isJumpReduced = true;
+                }
             }
-        }
-        else if(!isJumpReduced && jumpHoldTimer <= JumpHoldMaxTime)
-        {
-            jumpHoldTimer += 0.02f; // FixedUpdate dt;
-            rb.gravityScale = 0.0f;
-        }
-        else
-        {
-            rb.gravityScale = 1.7f;
-        }
+            else if(!isJumpReduced && jumpHoldTimer <= JumpHoldMaxTime)
+            {
+                jumpHoldTimer += 0.02f; // FixedUpdate dt;
+                rb.gravityScale = 0.0f;
+            }
+            else
+            {
+                rb.gravityScale = 1.7f;
+            }
 
-        // if(isGrounded && rb.linearVelocityY == 0.0f && jumpBufferTimer >= 0.0f){
-        if(isGrounded && jumpBufferTimer >= 0.0f){
-            Jump();
+            // if(isGrounded && rb.linearVelocityY == 0.0f && jumpBufferTimer >= 0.0f){
+            if(isGrounded && jumpBufferTimer >= 0.0f){
+                Jump();
+            }
         }
     }
 

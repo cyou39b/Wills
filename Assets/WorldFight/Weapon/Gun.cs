@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(AudioSource))]
 public class Gun : MonoBehaviour
@@ -12,18 +14,18 @@ public class Gun : MonoBehaviour
     public GameObject GunFireAnimation;
     public SpriteRenderer GunFireAnimationSpriteRenderer;
     
-    private Jack jack;
+    private Camera cam;
 
     public float FireCoolDown;
     private float fireCoolDownTimer=0.0f;
 
+    public float AttackFreezeTime;
+    [NonSerialized] public float attackFreezeTimer;
+    [NonSerialized] public bool facingLeft;
+
     void Start()
     {
-        GameObject parent = transform.parent.gameObject;
-        if(!parent.TryGetComponent<Jack>(out jack))
-        {
-            Debug.LogError("Parent is Jack?");
-        }
+        cam = Camera.main;
     }
 
     void Update()
@@ -34,29 +36,21 @@ public class Gun : MonoBehaviour
 
         // 計算mouse的角度
         Vector2 mousePixelPosition = Mouse.current.position.ReadValue();
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(mousePixelPosition);
+        Vector3 mousePosition = cam.ScreenToWorldPoint(mousePixelPosition);
         float mouseRot = Mathf.Atan2(
             mousePosition.y-transform.position.y,
             mousePosition.x-transform.position.x
         );
 
-        // if(jack.dir == FacingDirection.Left) // EXPL: this sucks
-        // {
-        //     if(mouseRot < 0.0f) {mouseRot += Mathf.PI + Mathf.PI;}
-        //     mouseRot = Mathf.Clamp(mouseRot, MathUtil.HalfPI + 0.001f, Mathf.PI + MathUtil.HalfPI - 0.001f);
-        // }
-        // else
-        // {
-        //     mouseRot = Mathf.Clamp(mouseRot, MathUtil.HalfNPI, MathUtil.HalfPI);
-        // }
-
         if(mouseRot <= MathUtil.HalfPI && mouseRot >= MathUtil.HalfNPI)
         {
             Sprerr.flipY = false;
+            facingLeft = false;
         }
         else
         {
             Sprerr.flipY = true;
+            facingLeft = true;
         }
 
         transform.rotation = Quaternion.Euler(
@@ -66,9 +60,11 @@ public class Gun : MonoBehaviour
         );
 
         fireCoolDownTimer -= Time.deltaTime; // 如果已經cooldown了
+        attackFreezeTimer -= Time.deltaTime;
         if (fireCoolDownTimer <= 0.0f && Mouse.current.leftButton.wasPressedThisFrame)
         {
             fireCoolDownTimer = FireCoolDown;
+            attackFreezeTimer = AttackFreezeTime;
 
             // 發射的小動畫
             GunFireAnimation.SetActive(true);
@@ -90,7 +86,6 @@ public class Gun : MonoBehaviour
                 }
             }
         }
-
     }
 
     private static readonly WaitForSeconds EndGunFireAnimationWS = new WaitForSeconds(0.09f);

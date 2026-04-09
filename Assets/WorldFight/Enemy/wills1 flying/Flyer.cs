@@ -15,7 +15,7 @@ public class Flyer : AbstractEnemy
 
     private NavMeshAgent agent;
 
-    protected override (float, float, Vector3) HpBarData 
+    public override (float, float, Vector3) HpBarData 
         => (40.0f, 40.0f, new Vector3(0.0f, 1.15f, 0.0f));
 
     protected override void Start()

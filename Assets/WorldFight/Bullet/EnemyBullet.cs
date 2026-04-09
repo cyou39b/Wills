@@ -3,7 +3,7 @@ using UnityEngine;
 // Bullet上的Script
 
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer))]
-public class Bullet : MonoBehaviour, ICanKnockback
+public class EnemyBullet : MonoBehaviour
 {
     private SpriteRenderer spRerr;
     public Sprite[] BulletSprites; // Bullet所有可能的Sprite，在Inspector中調整
@@ -14,17 +14,8 @@ public class Bullet : MonoBehaviour, ICanKnockback
     public GameObject SoundEffectPlayerPrefab;
 
     private Rigidbody2D rb;
-    Rigidbody2D ICanKnockback.rb => rb;
-    GameObject ICanKnockback.gameObject => gameObject;
-    float ICanKnockback.collisionForceGiveRatio => 1.0f;
-    float ICanKnockback.collisionForceKeepRatio => 0.0f;
-
     public float MoveSpeed;
     public float InitialDistance; // 在Bullet被創造時調整position的距離值
-
-    public float Power;
-    public ParticleSystem.MinMaxCurve DistacneToPowerCurve;
-    private Vector2 initialPosition;
 
     public static float Damage = 5.0f;
 
@@ -50,7 +41,6 @@ public class Bullet : MonoBehaviour, ICanKnockback
         float dy = Mathf.Sin(rot * Mathf.Deg2Rad) * MoveSpeed;
         Vector2 dPos = new Vector2(dx, dy);
         transform.position += (Vector3)dPos * InitialDistance;
-        initialPosition = transform.position;
 
         // 設定這個Bullet的速度
         rb.linearVelocity = dPos;
@@ -79,7 +69,6 @@ public class Bullet : MonoBehaviour, ICanKnockback
     // 在碰到另一個GameObject時會被call的function
     public void OnCollisionEnter2D(Collision2D collision)
     {
-
         GameObject other = collision.gameObject;
         
         if (other.layer == DefinedLayers.GroundLayer || other.layer == DefinedLayers.WallLayer)
@@ -89,28 +78,16 @@ public class Bullet : MonoBehaviour, ICanKnockback
             return;
         }
 
-        if(other.layer == DefinedLayers.EnemyLayer)
+        if(other.layer == DefinedLayers.PlayerLayer)
         {
-            IKnockbackable otherKnockbackable;
-            if(other.TryGetComponent<IKnockbackable>(out otherKnockbackable))
+            Jack player;
+            if(!other.TryGetComponent<Jack>(out player))
             {
-                ((ICanKnockback)this).DoKnockback(
-                    otherKnockbackable,
-                    transform.right,
-                    DistacneToPowerCurve.Evaluate(Vector2.Distance(transform.position, initialPosition)) * Power,
-                    false
-                );
-            }
-
-            AbstractEnemy enemy;
-            if(!other.TryGetComponent<AbstractEnemy>(out enemy))
-            {
-                Debug.LogError($"GameObject {other.name} is having enemy layer but doesn't have AbstractEnemy Component.");
+                Debug.LogError($"GameObject {other.name} is having player layer but doesn't have Jack Component.");
             }
             else
             {
-                enemy.InsertAndRemoveFromEnemyList();
-                enemy.GetDamaged(Damage);
+                player.GetDamaged(Damage);
             }
 
             SpawnEffects(5);

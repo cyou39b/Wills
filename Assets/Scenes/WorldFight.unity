@@ -842,7 +842,6 @@ GameObject:
   - component: {fileID: 381401394}
   - component: {fileID: 381401397}
   - component: {fileID: 381401398}
-  - component: {fileID: 381401399}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -893,7 +892,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -980,25 +979,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97133caf5bce2024a9329c5659520b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RbCameraMove
-  state: 0
-  Player: {fileID: 1024952361}
-  Offset: {x: 0, y: 0, z: -10}
-  RbOffestSmoothTime: 0.2
   SmoothTime: 0.3
+  Offset: {x: 0, y: 1.5, z: -10}
   MaxX: 1.85
   MaxY: 0.3
---- !u!114 &381401399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381401393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8372ecef37ad5a49adc5766a52ffac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
+  Player: {fileID: 1024952361}
+  RbOffestSmoothTime: 0.2
+  CameraSizeSmoothTime: 0.25
+  CameraSizeSmoothTimeFast: 0.05
 --- !u!1 &381708937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,7 +1714,7 @@ GameObject:
   - component: {fileID: 633545280}
   - component: {fileID: 633545278}
   m_Layer: 2
-  m_Name: Jack Weapon
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1828,6 +1816,7 @@ MonoBehaviour:
   GunFireAnimation: {fileID: 1144482189}
   GunFireAnimationSpriteRenderer: {fileID: 1144482191}
   FireCoolDown: 0.4
+  AttackFreezeTime: 0.125
 --- !u!61 &633545279
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2025,11 +2014,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2429670849555049026, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5981363390417570603, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: AI
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8509144427956929406, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_Mass
@@ -2544,6 +2533,7 @@ GameObject:
   - component: {fileID: 1024952363}
   - component: {fileID: 1024952368}
   - component: {fileID: 1024952361}
+  - component: {fileID: 1024952369}
   m_Layer: 7
   m_Name: Jack
   m_TagString: Player
@@ -2567,6 +2557,8 @@ MonoBehaviour:
   JumpSpeed: 7.5
   JumpBufferMaxTime: 0.125
   JumpHoldMaxTime: 0.155
+  DeathSoundEffect: {fileID: 8300000, guid: f7cc4266032b8f7458728eceff7b2701, type: 3}
+  HeadStomePrefab: {fileID: 3212331554645681913, guid: ffa5ed6d471aa604498056260f708faa, type: 3}
   JumpPushForceModifier: 4.3789
 --- !u!50 &1024952363
 Rigidbody2D:
@@ -2661,6 +2653,103 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.1, y: 0.845}
   m_EdgeRadius: 0.05
+--- !u!82 &1024952369
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024952360}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1136040788
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,7 +3190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 187887714477552309, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.01
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 187887714477552309, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3134,6 +3223,10 @@ PrefabInstance:
     - target: {fileID: 187887714477552309, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6450020476661581342, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7327592780018563279, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
       propertyPath: m_Name
@@ -3413,7 +3506,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 89.17, y: 52.5}
+  m_Size: {x: 81.63, y: 30.6}
   m_EdgeRadius: 0
 --- !u!4 &1517532549
 Transform:
@@ -4546,7 +4639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2429670849555049026, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5981363390417570603, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: AI
@@ -4567,6 +4660,10 @@ PrefabInstance:
     - target: {fileID: 8509144427956929406, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_Mass
       value: 3.7125
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509144427956929406, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
