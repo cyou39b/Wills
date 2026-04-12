@@ -158,6 +158,10 @@ public class Flyer : AbstractEnemy
                     attackIntent_chargingFireball = null;
                     attackIntent_fireballChargeFrameCounter = 0;
                     break;
+                case Intent.RandomlyRoam:
+                    randomlyRoam_setDestionationLock = false;
+                    randomlyRoam_coolDownTimer = 0;
+                    break;
             }
             base.intent = value;
         }
@@ -167,6 +171,7 @@ public class Flyer : AbstractEnemy
     private const int seeRayCastMsk = ~0 
         ^DefinedLayers.EnemyLayerMask 
         ^DefinedLayers.AttackLayerMask 
+        ^DefinedLayers.NavMeshLayerMask
         ^(1<<2);// (1<<2) is mask for ignore raycast
     bool TrySeePlayer()
     {
@@ -192,9 +197,13 @@ public class Flyer : AbstractEnemy
     }
 
     public float roamRadius;
+    public float roamStoppingVelocity;
     private bool randomlyRoam_setDestionationLock;
+    private const int randomlyRoam_coolDownTarget = 5;
+    private int randomlyRoam_coolDownTimer = 0;
     void ProcessRandomlyRoam()
     {
+        if(++randomlyRoam_coolDownTimer < randomlyRoam_coolDownTarget) {return;}
         if (!randomlyRoam_setDestionationLock)
         {
             agent.SetDestination(MathUtil.RandomPointInDonut(playerTrans.position, SeeDistance, roamRadius));
@@ -203,9 +212,9 @@ public class Flyer : AbstractEnemy
 
         if(
             !agent.pathPending && 
-            agent.remainingDistance <= agent.stoppingDistance
-        )
-        {
+            agent.remainingDistance <= agent.stoppingDistance &&
+            agent.desiredVelocity.magnitude <= roamStoppingVelocity
+        ) {
             SetIntent(Intent.Idle, AIFacingDirection.SameAsMoving, false, Intent.RandomlyRoam);
         }
     }

@@ -234,7 +234,7 @@ public class Jack : MonoBehaviour//, IKnockbackable
             }
             else
             {
-                rb.gravityScale = 1.7f;
+                rb.gravityScale = 1.0f;
             }
 
             // if(isGrounded && rb.linearVelocityY == 0.0f && jumpBufferTimer >= 0.0f){

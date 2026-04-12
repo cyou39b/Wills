@@ -68,19 +68,19 @@ public class Wills : AbstractEnemy
 
     public void Update()
     {
-        walking = (agent.enabled)?agent.velocity.magnitude>=0.0f:rb.linearVelocity.magnitude>=0.0f;
-
-        Vector3 dir = (agent.enabled) 
+        Vector3 dir = agent.enabled
             ?agent.steeringTarget-transform.position
             :rb.linearVelocity;
         switch(AIFacingDirection)
         {
             case AIFacingDirection.SameAsMoving:
+                if(dir.x==0.0f) {break;}
                 CurrentRealFacingDirection = dir.x<=0.0f
                     ?FacingDirection.Left
                     :FacingDirection.Right;
                 break;
             case AIFacingDirection.NegFromMoving:
+                if(dir.x==0.0f) {break;}
                 CurrentRealFacingDirection = dir.x>=0.0f
                     ?FacingDirection.Left
                     :FacingDirection.Right;
@@ -185,6 +185,18 @@ public class Wills : AbstractEnemy
         set
         {
             if(value == intent){return;}
+
+            // NOTE: On leaving a intent
+            switch(intent)
+            {
+                case Intent.Jump:
+                    rb.linearDamping = 0.5f;
+                    break;
+                default:
+                    break;
+            }
+
+            // NOTE: On entering a intent
             switch(value)
             {
                 case Intent.ChasePlayer:
@@ -199,8 +211,7 @@ public class Wills : AbstractEnemy
                     prepJumpIntent_stage = 0;
                     break;
                 case Intent.Jump:
-                    walking = false;
-                    jumpIntent_stage = 0;
+                    walking = true;
                     break;
                 case Intent.WalkOffEdge:
                     walking = true;
@@ -208,8 +219,10 @@ public class Wills : AbstractEnemy
                     break;
                 case Intent.WaitUntilGround:
                     waitUntilGround_stage = 0;
+                    waitUntilGround_keepXSpeed = float.NaN;
                     break;
             }
+            
             base.intent = value;
         } 
     }
@@ -259,6 +272,7 @@ public class Wills : AbstractEnemy
             getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepRatio));
         }
 
+        if(rb.linearVelocityY < 0.0f) {rb.linearVelocityY *= 0.65f;}
         agent.enabled = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.AddForceAtPosition(getKnockbackedIntent_force, getKnockbackIntent_position);
@@ -277,39 +291,56 @@ public class Wills : AbstractEnemy
     }
 
     private int waitUntilGround_stage = 0;
+    private float waitUntilGround_keepXSpeed;
     private void ProcessWaitUntilGroundedIntent()
     {
-        if(waitUntilGround_stage == 0)
+        switch(waitUntilGround_stage)
         {
-            if(rb.linearVelocityY == 0.0f) 
-            {
-                waitUntilGround_stage = 3;
-            }
-            else
-            {
-                waitUntilGround_stage = 1;
-            }
-        }
+            case 0:
+                if(rb.linearVelocityY == 0.0f) 
+                {
+                    waitUntilGround_stage = 3;
+                    goto case 3;
+                }
+                else
+                {
+                    waitUntilGround_stage = 1;
+                    goto case 1;
+                }
+            case 1:
+                // wait until it's falling
+                if(!float.IsNaN(waitUntilGround_keepXSpeed))
+                {
+                    rb.linearVelocityX = waitUntilGround_keepXSpeed;
+                }
+                if(rb.linearVelocityY < 0.0f) 
+                {
+                    waitUntilGround_stage = 2;
+                    goto case 2;
+                }
+                break;
+            case 2:
+                // wait while it's still falling
+                if(!float.IsNaN(waitUntilGround_keepXSpeed))
+                {
+                    rb.linearVelocityX = waitUntilGround_keepXSpeed;
+                }
+                if(rb.linearVelocityY == 0.0f) 
+                {
+                    waitUntilGround_stage = 3;
+                    goto case 3;
+                }
+                break;
+            case 3:
+                rb.linearVelocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Kinematic;
 
-        if(waitUntilGround_stage == 1)
-        {
-            // wait until it's falling
-            if(rb.linearVelocityY < 0.0f) {waitUntilGround_stage = 2;}
-        }
-
-        if(waitUntilGround_stage == 2)
-        {
-            // wait while it's still falling
-            if(rb.linearVelocityY == 0.0f) {waitUntilGround_stage = 3;}
-        }
-
-        if(waitUntilGround_stage == 3)
-        {
-            rb.linearVelocity = Vector2.zero;
-            rb.bodyType = RigidbodyType2D.Kinematic;
-
-            SafeWarp();
-            SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.WaitUntilGround); // FIXME?: fail to set intent sometimes
+                SafeWarp();
+                SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.WaitUntilGround); // FIXME?: fail to set intent sometimes
+                break;
+            default:
+                Debug.LogError($"Invalid stage number: {waitUntilGround_stage}");
+                break;
         }
     }
 
@@ -330,7 +361,7 @@ public class Wills : AbstractEnemy
         ) {
             action = listeningDynamicAction[agent.nextOffMeshLinkData.owner.name];
         }
-        if(action != null)
+        if(action != null && action.inRange(transform.position.x))
         {
             switch (action.Type)
             {
@@ -348,29 +379,37 @@ public class Wills : AbstractEnemy
         if(++chasePlayer_counter < chasePlayer_count){return;}
         else{chasePlayer_counter = 0;}
 
+        if(TrySeePlayer()) 
+        {
+            SetIntent(Intent.Attack, AIFacingDirection.SameAsMoving);
+            return;
+        }
+
         RaycastHit2D info = Physics2D.Raycast(playerTrans.position, Vector2.down, 100.0f, DefinedLayers.GroundLayerMask);
         agent.SetDestination(info.point);
     }
 
-    // [ContextMenu("Log stuffs")]
-    // public void LogStuffs()
-    // {
-    //     string listners = string.Join(Environment.NewLine, listeningDynamicAction);
-    //     string agentVelocity = agent.enabled?agent.velocity.ToString():"Not enabled";
-    //     Debug.Log($"name: {name}, intent: {intent}, listeners: {listners}, onlink: {agent.isOnOffMeshLink}, agentVelocity: {agentVelocity}, linear velocity: {rb.linearVelocity}");
-    // }
+    [ContextMenu("Log stuffs")]
+    public void LogStuffs()
+    {
+        string listners = string.Join(Environment.NewLine, listeningDynamicAction);
+        string ol = agent.isOnOffMeshLink ? agent.currentOffMeshLinkData.owner.name : "False";
+        Debug.Log($"name: {name}, intent: {intent}, listeners: {listners}, onlink: {ol}, owner==null: {agent.nextOffMeshLinkData.owner == null}, dest: {agent.destination}");
+    }
 
     private const int seeRayCastMsk = ~0 
         ^DefinedLayers.EnemyLayerMask 
         ^DefinedLayers.AttackLayerMask 
+        ^DefinedLayers.NavMeshLayerMask
         ^(1<<2);// (1<<2) is mask for ignore raycast
+    public float SeeDistance;
     bool TrySeePlayer()
     {
         Vector3 startPos = transform.position + BulletInitializePositionOffest;
-        RaycastHit2D info = Physics2D.Raycast(startPos, playerTrans.position-startPos, float.PositiveInfinity, seeRayCastMsk);
-        if(info.collider != null && info.collider.gameObject != player) {Debug.Log(info.collider.name);}
+        RaycastHit2D info = Physics2D.Raycast(startPos, playerTrans.position-startPos, SeeDistance, seeRayCastMsk);
+        if(info.collider && info.collider.gameObject.layer != DefinedLayers.PlayerLayer) {Debug.Log(info.collider.name);}
         return  info.collider != null && 
-                info.collider.gameObject == player;
+                info.collider.gameObject.layer == DefinedLayers.PlayerLayer;
     }
 
     private const int attack_coolDownTarget = 60;
@@ -395,6 +434,8 @@ public class Wills : AbstractEnemy
     private DynamicAIAction prepJumpIntent_pendingAction = null;
     private Vector2 prepJumpIntent_pendingVelocity;
     private int prepJumpIntent_stage = 0;
+    private int prepJumpIntent_waitFrameTimer = 0;
+    private int prepJumpIntent_waitFrameTarget = 0;
     private void ProcessPrepJumpIntent()
     {
         if(prepJumpIntent_stage == 0)
@@ -405,69 +446,71 @@ public class Wills : AbstractEnemy
             rb.gravityScale = 1.0f;
             rb.linearVelocity = prepJumpIntent_pendingVelocity;
 
+            prepJumpIntent_waitFrameTimer = 0;
+            prepJumpIntent_waitFrameTarget = Random.Range(0, prepJumpIntent_pendingAction.TimeRange);
             prepJumpIntent_stage = 1;
         }
         else
         {
-            rb.linearVelocity = new Vector2(Mathf.Sign(prepJumpIntent_pendingAction.gameObject.transform.position.x-transform.position.x)*agent.speed, 0.0f);
-            if(prepJumpIntent_pendingAction.JumpRangeLeft <= transform.position.x &&
-               transform.position.x <= prepJumpIntent_pendingAction.JumpRangeRight
-            ){
-                jumpIntent_action = prepJumpIntent_pendingAction;
-                SetIntent(Intent.Jump, AIFacingDirection.SameAsMoving);
-            }
+            if(++prepJumpIntent_waitFrameTimer < prepJumpIntent_waitFrameTarget) {return;}
+            jumpIntent_action = prepJumpIntent_pendingAction;
+            SetIntent(Intent.Jump, AIFacingDirection.SameAsMoving);
         }
     }
 
     private DynamicAIAction jumpIntent_action;
-    private int jumpIntent_waitFrameCounter = 0;
-    private int jumpIntent_waitFrameTarget;
-    private int jumpIntent_stage = 0;
     private void ProcessJumpIntent()
     {
-        if(jumpIntent_stage == 0)
-        {
-            Vector2 agentVelocity = new Vector2(Mathf.Sign(jumpIntent_action.XSpeed)*agent.speed, 0.0f);
-            agent.enabled = false;
+        agent.enabled = false;
 
-            rb.bodyType = RigidbodyType2D.Dynamic;
-            rb.linearVelocity = agentVelocity;
-            rb.gravityScale = 1.0f;
-
-            jumpIntent_waitFrameTarget = Random.Range(0, jumpIntent_action.TimeRange);
-            jumpIntent_stage = 1;
-        }
-        else
+        JumpFunction jf;
+        (string op_err, JumpFunction? op_jf) = MathUtil.CalculateJumpCurveWithRange(
+            transform.position, 
+            jumpIntent_action.StartZoneLeft, 
+            jumpIntent_action.StartZoneRight,
+            jumpIntent_action.Link.transform.rotation * jumpIntent_action.Link.endPoint + jumpIntent_action.Link.transform.position,
+            jumpIntent_action.EndZoneLeft,
+            jumpIntent_action.EndZoneRight,
+            jumpIntent_action.JumpHighestPoint
+        );
+        if(op_jf == null)
         {
-            if(jumpIntent_waitFrameCounter++ >= jumpIntent_waitFrameTarget)
-            {
-                jumpIntent_waitFrameCounter = 0;
-                rb.linearVelocity = new Vector2(
-                    jumpIntent_action.XSpeed,
-                    jumpIntent_action.JumpSpeed + Random.Range(-jumpIntent_action.JumpSpeedRange, jumpIntent_action.JumpSpeedRange)
-                );
-                SetIntent(Intent.WaitUntilGround, AIFacingDirection.SameAsMoving);
-            }
+            Debug.LogError(op_err);
+            return;
         }
+        else {jf = op_jf.Value;}
+
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.gravityScale = 1.0f;
+        rb.linearDamping = 0.0f;
+        rb.linearVelocity = new Vector2(
+            jf.xt.velocity,
+            jf.yt.b
+        );
+        SetIntent(Intent.WaitUntilGround, AIFacingDirection.SameAsMoving);
+        waitUntilGround_keepXSpeed = jf.xt.velocity;
     }
 
     private DynamicAIAction walkOffEdgeIntent_action;
+    private float walkOffEdgeIntent_dir;
     private int walkOffEdgeIntent_stage = 0;
     private void ProcessWalkOffEdgeIntent()
     {
         if(walkOffEdgeIntent_stage == 0)
         {
+            walkOffEdgeIntent_dir = Mathf.Sign(walkOffEdgeIntent_action.TargetX - transform.position.x);
+            
             agent.enabled = false;
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.gravityScale = 1.0f;
-            rb.linearVelocity = new Vector2(walkOffEdgeIntent_action.XSpeed, 0.1f);
+            rb.linearVelocity = new Vector2(walkOffEdgeIntent_action.XSpeed * walkOffEdgeIntent_dir, 0.001f);
             walkOffEdgeIntent_stage = 1;
         }
         else
         {
-            rb.linearVelocity = new Vector2(walkOffEdgeIntent_action.XSpeed, 0.1f);
+            rb.linearVelocity = new Vector2(walkOffEdgeIntent_action.XSpeed * walkOffEdgeIntent_dir, 0.001f);
             if(
-                (walkOffEdgeIntent_action.XSpeed < 0.0f)
+                (walkOffEdgeIntent_dir < 0.0f)
                     ?transform.position.x < walkOffEdgeIntent_action.TargetX
                     :transform.position.x > walkOffEdgeIntent_action.TargetX
             )
@@ -481,10 +524,13 @@ public class Wills : AbstractEnemy
     {
         GameObject otherGameObject = other.gameObject;
 
-        DynamicAIAction jumpBlock;
-        if(otherGameObject.TryGetComponent<DynamicAIAction>(out jumpBlock))
+        ConnectionDatas datas;
+        if(otherGameObject.layer == DefinedLayers.NavMeshLayer && otherGameObject.TryGetComponent<ConnectionDatas>(out datas))
         {
-            listeningDynamicAction.Add(jumpBlock.Link.name, jumpBlock);
+            foreach(DynamicAIAction action in datas.Actions)
+            {
+                listeningDynamicAction.Add(action.Link.name, action);
+            }
         }
     }
 
@@ -498,17 +544,13 @@ public class Wills : AbstractEnemy
 
         GameObject otherGameObject = other.gameObject;
 
-
-        DynamicAIAction jumpBlock;
-        if(otherGameObject.TryGetComponent<DynamicAIAction>(out jumpBlock))
+        ConnectionDatas datas;
+        if(otherGameObject.layer == DefinedLayers.NavMeshLayer && otherGameObject.TryGetComponent<ConnectionDatas>(out datas))
         {
-            if( intent == Intent.PrepJump && 
-                jumpBlock.Type == DynamicAIAction.ActionType.Jump &&
-                prepJumpIntent_pendingAction == jumpBlock
-            ) {
-                SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.PrepJump);
+            foreach(DynamicAIAction action in datas.Actions)
+            {
+                listeningDynamicAction.Remove(action.Link.name);
             }
-            listeningDynamicAction.Remove(jumpBlock.Link.name);
         }
     }
 

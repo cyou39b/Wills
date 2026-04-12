@@ -153,6 +153,7 @@ MonoBehaviour:
   StillEpsilon: 3.5
   SeeDistance: 3.5
   roamRadius: 0
+  roamStoppingVelocity: 0.25
   FireballPrefab: {fileID: 2218664321196448271, guid: 4d578fa04eb4b8647b5950a2e9f76c30, type: 3}
 --- !u!1 &8163495396468613436
 GameObject:

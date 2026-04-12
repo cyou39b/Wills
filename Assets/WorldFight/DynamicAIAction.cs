@@ -1,3 +1,5 @@
+using System;
+using NavMeshPlus.Components;
 using UnityEngine;
 
 public class DynamicAIAction : MonoBehaviour
@@ -11,21 +13,32 @@ public class DynamicAIAction : MonoBehaviour
     public ActionType Type;
 
     [Tooltip("The link this data is describing.")]
-    public GameObject Link;
-    [Tooltip("Speed on X direction.")]
-    public float XSpeed;
+    public NavMeshLink Link;
     
-    [Tooltip("Da speed that wills1 jump.")]
-    public float JumpSpeed;
-    [Tooltip("Make the jump speed be in range [Speed - SpeedRange, Speed + SpeedRange].\n Sometimes a little randomness just makes your game better. (I suppose)")]
-    public float JumpSpeedRange;
-    [Tooltip("The range of x-value that wills1 can jump.")]
-    public float JumpRangeLeft;
-    [Tooltip("The range of x-value that wills1 can jump.")]
-    public float JumpRangeRight;
     [Tooltip("Wills1 will jump after [0, TimeRange] fixed updates when it enters jumpRange.")]
     public int TimeRange;
+    [Tooltip("The highest point of the jump curve")]
+    public float JumpHighestPoint;
+    public float StartZoneLeft = -2.0f;
+    public float StartZoneRight = 11.0f;
+    public float EndZoneLeft = 0.0f;
+    public float EndZoneRight = 1.0f;
 
+
+    [Tooltip("Speed on X direction.")]
+    public float XSpeed;
+    [Tooltip("Where to switch into walk off edge intent.")]
+    public float StartX;
     [Tooltip("Keep walking until the GameObject cross this line.")]
     public float TargetX;
+
+    public bool inRange(float x)
+    {
+        return Type switch
+        {
+            ActionType.Jump => StartZoneLeft <= x && x <= StartZoneRight,
+            ActionType.WalkOffEdge => StartX < TargetX ? StartX <= x : StartX >= x,
+            _ => false
+        };
+    }
 }

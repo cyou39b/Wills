@@ -241,11 +241,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
                 );
             }
         }
-
-        if(other == player && AI)
-        {
-            SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
-        }
     }
     public void OnCollisionExit2D(Collision2D collision)
     {

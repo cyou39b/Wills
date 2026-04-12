@@ -75,7 +75,7 @@ public class RbCameraMovement: MonoBehaviour{
         );
     }
 
-    private const float minProjectionSize = 5.5f;
+    private const float minProjectionSize = 5.75f;
     private const float yToxAspectRatio = 16.0f / 9.0f;
     private const float xToyAspectRatio = 9.0f / 16.0f;
     private float CalculateProjectionSize(Vector3 pos)

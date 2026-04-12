@@ -76,7 +76,6 @@ public class GlobalVariables : MonoBehaviour
 
 public class DefinedLayers 
 {
-    // Defined layers
     public const int PlayerLayer = 7;
     public const int PlayerLayerMask = 1 << PlayerLayer;
     public const int EnemyLayer = 8;
@@ -87,4 +86,6 @@ public class DefinedLayers
     public const int WallLayerMask = 1 << WallLayer;
     public const int AttackLayer = 11;
     public const int AttackLayerMask = 1 << AttackLayer;
+    public const int NavMeshLayer = 13;
+    public const int NavMeshLayerMask = 1 << NavMeshLayer;
 }
