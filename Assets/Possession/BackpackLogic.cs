@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BackpackLogic : MonoBehaviour{
@@ -12,7 +13,7 @@ public class BackpackLogic : MonoBehaviour{
     public Button BackpackIcon;
     public GameObject ISMsg;
     public static bool IsBackpackOpening = false;
-    float timeScaleBeforeBackpackOpen; 
+    float timeScaleBeforeBackpackOpen;
     /*public static BackpackLogic Instance{get;private set;} = null;
     void Awake(){
         if(Instance == null){
@@ -42,7 +43,7 @@ public class BackpackLogic : MonoBehaviour{
                 rect.anchoredPosition = new Vector2(-750+350*(i%5),0-350*math.floor(i/5));
             }
             if(tmp.TryGetComponent<PossessionLogic>(out PossessionLogic LogicScript)){
-                LogicScript.Initialize(GlobalVariables.Instance.possession[i],Panel);
+                LogicScript.Initialize(GlobalVariables.Instance.possession[i],Panel,this);
             }
             else{
                 Debug.LogError("Get Script Failed");

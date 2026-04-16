@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour, ICanKnockback
     public float MoveSpeed;
     public float InitialDistance; // 在Bullet被創造時調整position的距離值
 
-    public float Power;
+    public static float Power = 4000.0f;
     public ParticleSystem.MinMaxCurve DistacneToPowerCurve;
     private Vector2 initialPosition;
 

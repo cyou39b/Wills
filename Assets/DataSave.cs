@@ -15,7 +15,6 @@ public class PlayerData{
     public float yPos;
     public float zPos;
     public List<int> BackpackIndex; //TODO
-    //public ShopItemsContent[] Items;
     //record Player setting
     public int FrameRate;
     public string Jump;
@@ -27,15 +26,6 @@ public class PlayerData{
     public string Attack;
     public string FindMine;
 }
-//it will read a List called GoodRecords in GlobalVariables
-/*public struct ShopItemsContent{
-    public int index;
-    public int Num;
-    public Sprite sprite;
-    public string information;
-    public int Price;
-    public int indexInPosssession;
-}*/
 public class DataSave : MonoBehaviour{
     string path;
     public static DataSave Instance{get;private set;} = null;
@@ -76,15 +66,6 @@ public class DataSave : MonoBehaviour{
         foreach(PossessionItems item in GlobalVariables.Instance.possession){
             data.BackpackIndex.Add(item.index);
         }
-
-        /*for(int i = 0; i < GlobalVariables.Instance.GoodsRecords.Length; i++){
-            data.Items[i].index = GlobalVariables.Instance.GoodsRecords[i].index;
-            data.Items[i].Num = GlobalVariables.Instance.GoodsRecords[i].num;
-            data.Items[i].information = GlobalVariables.Instance.GoodsRecords[i].Information;
-            data.Items[i].Price = GlobalVariables.Instance.GoodsRecords[i].Price;
-            data.Items[i].indexInPosssession = GlobalVariables.Instance.GoodsRecords[i].indexInPosssession;
-            data.Items[i].sprite = GlobalVariables.Instance.GoodsRecords[i].pic;
-        }*/
 
         string content = JsonUtility.ToJson(data);
         try{

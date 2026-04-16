@@ -4,8 +4,10 @@ using UnityEngine.UI;
 
 //shit
 public class PossessionLogic : MonoBehaviour{
-    public void Initialize(PossessionItems pos,GameObject panel){
+    public void Initialize(PossessionItems pos,GameObject panel,BackpackLogic logic){
         PossessionItems ThisPossession = pos;
+        string nowSceneName = SceneManager.GetActiveScene().name;
+        Transform effectManager = transform.Find("EffectManager");
         if(gameObject.transform.Find("Image").TryGetComponent<Image>(out Image img)){
             img.sprite = ThisPossession.sprite;
         }
@@ -33,30 +35,35 @@ public class PossessionLogic : MonoBehaviour{
                 }
                 if(panel.transform.Find("Use").TryGetComponent<Button>(out Button use)){
                     use.onClick.RemoveAllListeners();
-                    if(ThisPossession.effect.effectType == EffectType.none){
+                    if(ThisPossession.effect.effectType == EffectType.none || ThisPossession.Num <= 0){
                         //Do nothing?
                     }
                     else if(!ThisPossession.effect.stackable && ThisPossession.effect.usedTimes >= 1){
                         //write panel and ???
                         use.onClick.AddListener(() =>{
-                            if(panel.transform.Find("Msg").TryGetComponent<GameObject>(out GameObject component)){
-                                if(component.transform.Find("Msg").TryGetComponent<Text>(out Text txt4)){
-                                    txt4.text = "You have already used it";
-                                }
-                                component.SetActive(true);
+                            Transform msg = panel.transform.Find("Msg");
+                            if(msg != null){
+                                msg.gameObject.SetActive(true);
                             }
                         });
                     }
                     else if(ThisPossession.effect.scene == UsableScene.All ||
-                        ThisPossession.effect.scene.ToString() == SceneManager.GetActiveScene().name){
-                        pos.effect.usedTimes++;
-                        pos.Num--;
+                        ThisPossession.effect.scene.ToString() == nowSceneName){
+                        ThisPossession.effect.usedTimes++;
                         //create effect
+                        ThisPossession.Num--;
+                        EffectManager.Instance.TrueInstance.GetPossessionEffectAction(ThisPossession);
+                        if(ThisPossession.Num <= 0){
+                            GlobalVariables.Instance.possession.Remove(ThisPossession);
+                        }
+                        logic.CloseBackpack();
+                        logic.OpenBackpack();
                     }
                     else{ //
                         use.onClick.AddListener(() =>{
-                            if(panel.transform.Find("Msg").TryGetComponent<GameObject>(out GameObject component)){
-                                component.SetActive(true);
+                            Transform Msg = panel.transform.Find("Msg");
+                            if(Msg != null){
+                                Msg.gameObject.SetActive(true);
                             }
                         });
                     }

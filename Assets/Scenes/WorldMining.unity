@@ -257754,7 +257754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573ef98ec9ba404429a03434e4cbeb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 5
   Map: {fileID: 1471074779}
   renderer: {fileID: 1168906738}
   animator: {fileID: 919132149246799660}
@@ -260423,10 +260422,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMove
   Target: {fileID: 652239461}
-  TargetRB: {fileID: 0}
   Offset: {x: 0, y: 0, z: -7.5}
   SmoothTime: 0.3
-  rbOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1704003983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260717,6 +260714,50 @@ PolygonCollider2D:
       - {x: 1.4222995, y: -5.5034227}
       - {x: 1.398962, y: 0.72492975}
   m_UseDelaunayMesh: 0
+--- !u!1 &1829613835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1829613837}
+  - component: {fileID: 1829613836}
+  m_Layer: 0
+  m_Name: EffectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1829613836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829613835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f003d65977528241b55ec589bcb3b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectManager
+--- !u!4 &1829613837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829613835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.58576, y: 5.16795, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1872481016
 GameObject:
   m_ObjectHideFlags: 0
@@ -268225,3 +268266,4 @@ SceneRoots:
   - {fileID: 1780267787}
   - {fileID: 835979570}
   - {fileID: 2051369571}
+  - {fileID: 1829613837}

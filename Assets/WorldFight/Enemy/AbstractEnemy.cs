@@ -20,7 +20,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     protected Animator Anmor;
 
     public GameObject HPBarPrefab;
-    protected HPBar HpBar;
+    public HPBar HpBar;
 
     public GameObject TrianglePrefab;
     protected Triangle triangle;

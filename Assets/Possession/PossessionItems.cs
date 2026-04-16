@@ -14,9 +14,10 @@ public class PossessionItems : ScriptableObject{
 public enum EffectType{
     none,
     ATKBoost,
-    HPBoost, //Player
+    PlayerHPBoost,
     SPDUp,
-    HPUP // Enemy
+    EnemyHPUP,
+    BulletKnockbackForceUp
 }
 public enum UsableScene{
     none,
@@ -31,6 +32,7 @@ public class ItemEffect{
     public float EffectRate; //0~1
     public UsableScene scene;
     public bool stackable;
-    public int usedTimes; //reset
+    public int usedTimes;
     public float duration;
+    [System.NonSerialized]public float endTime;
 }
