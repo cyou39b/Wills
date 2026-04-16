@@ -13,7 +13,18 @@ public class Flyer : AbstractEnemy
 
     [SerializeField] private float StillEpsilon;
 
-    private NavMeshAgent agent;
+    private float _moveSpeed = 6.0f;
+    public override float MoveSpeed 
+    {
+        get => _moveSpeed;
+        set
+        {
+            _moveSpeed = value;
+            agent.speed = value;
+        }
+    }
+
+   private NavMeshAgent agent;
 
     public override (float, float, Vector3) HpBarData 
         => (40.0f, 40.0f, new Vector3(0.0f, 1.15f, 0.0f));
@@ -49,9 +60,7 @@ public class Flyer : AbstractEnemy
 
     void Update()
     {
-        Debug.DrawRay(transform.position, playerTrans.position - transform.position, Color.green);
-
-        Vector3 dir = (agent.enabled)
+        Vector3 dir = agent.enabled
             ?agent.steeringTarget - transform.position
             :rb.linearVelocity;
         switch(AIFacingDirection)
@@ -113,10 +122,7 @@ public class Flyer : AbstractEnemy
                 {
                     SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
                 }
-                else
-                {
-                    SetIntent(Intent.ChasePlayer, AIFacingDirection.SameAsMoving);
-                }
+                SetIntent(Intent.ChasePlayer, AIFacingDirection.SameAsMoving);
                 break;
             case Intent.RandomlyRoam:
                 ProcessRandomlyRoam();

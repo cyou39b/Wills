@@ -38,6 +38,12 @@ public class Explode : MonoBehaviour
         viewPortPoint += new Vector3(0.5f, 0.5f, 0.0f);
         pos = cam.ViewportToWorldPoint(viewPortPoint);
 
+        RbCameraMovement rbCameraMovement;
+        if(cam.TryGetComponent<RbCameraMovement>(out rbCameraMovement))
+        {
+            rbCameraMovement.Shake(0.8f, 10.0f);
+        }
+
         StartCoroutine(StartExplosionAt(pos));
         audioSrc.clip = Clips[Random.Range(0, Clips.Length)];
         audioSrc.Play();

@@ -65,6 +65,15 @@ public static class MathUtil
     }
 
     /// <summary>
+    /// See if two numbers fave the same sign.
+    /// </summary>
+    /// <returns>T/F</returns>
+    public static bool SameSign(float a, float b)
+    {
+        return Mathf.Sign(a) == Mathf.Sign(b);
+    }
+
+    /// <summary>
     /// Solves a quadratic formula.
     /// </summary>
     /// <param name="a">The coefficient of quadratic term.</param>
@@ -188,10 +197,10 @@ public static class MathUtil
 
         float xRatio = startRangeLeft < endRangeLeft 
             ? (startRangeRight - startPoint.x) / (startRangeRight - startRangeLeft) 
-            : (startRangeLeft - startPoint.x) / (startRangeRight - startRangeLeft);
+            : (startRangeLeft - startPoint.x) / (startRangeLeft - startRangeRight);
         end_x = startRangeLeft < endRangeLeft
-            ? endRangeRight - (endRangeRight - endRangeLeft) * xRatio
-            : endRangeLeft + (endRangeRight - endRangeLeft) * xRatio;
+            ? endRangeLeft + (endRangeRight - endRangeLeft) * xRatio
+            : endRangeRight - (endRangeRight - endRangeLeft) * xRatio;
         velocity_x = (start_x - end_x) / (start_t - end_t);
         vertex_x = velocity_x * vertex_t + start_x;
         

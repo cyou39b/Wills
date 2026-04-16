@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Gun : MonoBehaviour
 {
     public GameObject BulletPrefab;
 
-    public SpriteRenderer Sprerr;
+    private SpriteRenderer Sprerr;
     public Sprite[] GunFireSprites;
-    public GameObject GunFireAnimation;
+    private GameObject GunFireAnimation;
     public SpriteRenderer GunFireAnimationSpriteRenderer;
     
     private Camera cam;
@@ -26,6 +26,8 @@ public class Gun : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        Sprerr = GetComponent<SpriteRenderer>();
+        GunFireAnimation = GunFireAnimationSpriteRenderer.gameObject;
     }
 
     void Update()

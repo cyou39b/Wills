@@ -7,8 +7,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Wills : AbstractEnemy
 {
+    public WillsWeapon weapon;
     public GameObject BulletPrefab;
-    public Vector3 BulletInitializePositionOffest;
 
     public Color[] BodyColors;
     public Color[] EyeColors;
@@ -27,7 +27,18 @@ public class Wills : AbstractEnemy
                 _walking = value;
             }
         }
-    } 
+    }
+
+    private float _moveSpeed = 5.5f;
+    public override float MoveSpeed 
+    {
+        get => _moveSpeed;
+        set
+        {
+            _moveSpeed = value;
+            agent.speed = value;
+        }
+    }
 
     private Dictionary<string, DynamicAIAction> listeningDynamicAction = new Dictionary<string, DynamicAIAction>();
 
@@ -58,6 +69,7 @@ public class Wills : AbstractEnemy
         int idx = Random.Range(0, BodyColors.Length);
         Mat.SetColor("_BodyColor", BodyColors[idx]);
         mainColor = BodyColors[idx];
+        triangle.wills1Color = mainColor;
         Mat.SetColor("_EyeColor", EyeColors[idx]);
 
         walking = false;
@@ -98,6 +110,27 @@ public class Wills : AbstractEnemy
             case AIFacingDirection.None:
                 //* Nothin
                 break;
+        }
+    }
+
+    [ContextMenu("Dir")]
+    void g()
+    {
+        Debug.Log($"{agent.enabled}, {agent.steeringTarget}, {transform.position}, {rb.linearVelocity}");
+    }
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+
+        if(TrySeePlayer())
+        {
+            Vector3 dir = playerTrans.position - weapon.transform.position;
+            weapon.SetRotation(dir);
+        }
+        else
+        {
+            weapon.SetRotation(CurrentRealFacingDirection == FacingDirection.Left ? Vector3.left : Vector3.right);
         }
     }
 
@@ -190,7 +223,7 @@ public class Wills : AbstractEnemy
             switch(intent)
             {
                 case Intent.Jump:
-                    rb.linearDamping = 0.5f;
+                    rb.linearDamping = 0.25f;
                     break;
                 default:
                     break;
@@ -236,6 +269,7 @@ public class Wills : AbstractEnemy
     }
 
     public float xEpsilon, yEpsilon;
+    public float xKnockbackModifier, yKnockbackModifier;
     private Vector2 getKnockbackedIntent_force = Vector2.zero;
     private Vector2 getKnockbackIntent_position = Vector2.zero;
     private bool getKnockbackedIntent_stun = false;
@@ -272,7 +306,8 @@ public class Wills : AbstractEnemy
             getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepRatio));
         }
 
-        if(rb.linearVelocityY < 0.0f) {rb.linearVelocityY *= 0.65f;}
+        getKnockbackedIntent_force.x *= xKnockbackModifier;
+        getKnockbackedIntent_force.y *= yKnockbackModifier;
         agent.enabled = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.AddForceAtPosition(getKnockbackedIntent_force, getKnockbackIntent_position);
@@ -405,14 +440,14 @@ public class Wills : AbstractEnemy
     public float SeeDistance;
     bool TrySeePlayer()
     {
-        Vector3 startPos = transform.position + BulletInitializePositionOffest;
-        RaycastHit2D info = Physics2D.Raycast(startPos, playerTrans.position-startPos, SeeDistance, seeRayCastMsk);
-        if(info.collider && info.collider.gameObject.layer != DefinedLayers.PlayerLayer) {Debug.Log(info.collider.name);}
-        return  info.collider != null && 
-                info.collider.gameObject.layer == DefinedLayers.PlayerLayer;
+        Vector3 startPos = weapon.transform.position;
+        Vector3 dir = playerTrans.position - startPos;
+        RaycastHit2D info = Physics2D.Raycast(startPos, dir, SeeDistance, seeRayCastMsk);
+        return info.collider != null &&
+               info.collider.gameObject.layer == DefinedLayers.PlayerLayer;
     }
 
-    private const int attack_coolDownTarget = 60;
+    private const int attack_coolDownTarget = 100;
     private int attack_coolDownTimer = 0;
     private void ProcessAttackIntent()
     {
@@ -420,8 +455,8 @@ public class Wills : AbstractEnemy
         {
             agent.enabled = false;
 
-            Vector3 dir = playerTrans.position - transform.position - BulletInitializePositionOffest;
-            Instantiate(BulletPrefab, transform.position + BulletInitializePositionOffest, Quaternion.Euler(
+            Vector3 dir = playerTrans.position - weapon.transform.position;
+            Instantiate(BulletPrefab, weapon.transform.position, Quaternion.Euler(
                     0.0f, 0.0f, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg
                 )
             );
@@ -440,7 +475,14 @@ public class Wills : AbstractEnemy
     {
         if(prepJumpIntent_stage == 0)
         {
-            prepJumpIntent_pendingVelocity = new Vector2(Mathf.Sign(prepJumpIntent_pendingAction.gameObject.transform.position.x-transform.position.x)*agent.speed, 0.0f);
+            prepJumpIntent_pendingVelocity = new Vector2(
+                Mathf.Sign(
+                    prepJumpIntent_pendingAction.EndZoneRight > prepJumpIntent_pendingAction.StartZoneRight
+                        ?prepJumpIntent_pendingAction.StartZoneRight - transform.position.x
+                        :prepJumpIntent_pendingAction.StartZoneLeft - transform.position.x
+                ) * agent.speed, 
+                0.0f
+            );
             agent.enabled = false;
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.gravityScale = 1.0f;
@@ -529,7 +571,7 @@ public class Wills : AbstractEnemy
         {
             foreach(DynamicAIAction action in datas.Actions)
             {
-                listeningDynamicAction.Add(action.Link.name, action);
+                listeningDynamicAction.TryAdd(action.Link.name, action);
             }
         }
     }

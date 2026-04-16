@@ -229,12 +229,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   Type: 0
   Link: {fileID: 2055420923}
-  TimeRange: 0
+  TimeRange: 5
   JumpHighestPoint: 1.9788728
   StartZoneLeft: 4.3325634
   StartZoneRight: 7.722804
   EndZoneLeft: 9.180708
-  EndZoneRight: 10.944941
+  EndZoneRight: 11.462959
   XSpeed: 5.1
   StartX: 0
   TargetX: 0
@@ -892,7 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshLink
   m_AgentTypeID: 0
-  m_StartPoint: {x: 2.8896961, y: 2.129425, z: 0}
+  m_StartPoint: {x: 1.6571255, y: 2.129425, z: 0}
   m_EndPoint: {x: 2.5715322, y: -0.20428824, z: 0}
   m_Width: 0
   m_CostModifier: 0
@@ -1076,7 +1076,7 @@ MonoBehaviour:
   Player: {fileID: 1024952361}
   RbOffestSmoothTime: 0.2
   CameraSizeSmoothTime: 0.25
-  CameraSizeSmoothTimeFast: 0.025
+  CameraSizeSmoothTimeFast: 0.15
 --- !u!1 &381708937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d87764b9473e843a00a760ba1364f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Cnt: 0
 --- !u!1 &386738584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,7 +2189,6 @@ GameObject:
   - component: {fileID: 633545276}
   - component: {fileID: 633545277}
   - component: {fileID: 633545279}
-  - component: {fileID: 633545280}
   - component: {fileID: 633545278}
   m_Layer: 2
   m_Name: Weapon
@@ -2286,13 +2284,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   BulletPrefab: {fileID: 3738892040180884762, guid: 9515cc6d5205f444593729b8217288d9, type: 3}
-  Sprerr: {fileID: 633545277}
   GunFireSprites:
   - {fileID: 222052927499986755, guid: efd06b73ef02b1a44b4529972fec6064, type: 3}
   - {fileID: -2306648962647271530, guid: efd06b73ef02b1a44b4529972fec6064, type: 3}
   - {fileID: -836114177238022055, guid: efd06b73ef02b1a44b4529972fec6064, type: 3}
   - {fileID: 9078227129156802685, guid: efd06b73ef02b1a44b4529972fec6064, type: 3}
-  GunFireAnimation: {fileID: 1144482189}
   GunFireAnimationSpriteRenderer: {fileID: 1144482191}
   FireCoolDown: 0.4
   AttackFreezeTime: 0.125
@@ -2342,103 +2338,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.67, y: 0.25}
   m_EdgeRadius: 0
---- !u!82 &633545280
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633545275}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &656490970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2447,10 +2346,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6678288830978238134, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
-      propertyPath: m_Radius
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 691926346712285647, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.77
@@ -2497,7 +2392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2429670849555049026, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5981363390417570603, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: AI
@@ -2883,7 +2778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshLink
   m_AgentTypeID: 0
-  m_StartPoint: {x: 3.592205, y: 1.6767645, z: 0}
+  m_StartPoint: {x: 5.7982903, y: 1.6767645, z: 0}
   m_EndPoint: {x: 3.944378, y: 0.4888177, z: 0}
   m_Width: 0
   m_CostModifier: 0
@@ -3400,8 +3295,8 @@ GameObject:
   - component: {fileID: 1024952365}
   - component: {fileID: 1024952363}
   - component: {fileID: 1024952368}
-  - component: {fileID: 1024952361}
   - component: {fileID: 1024952369}
+  - component: {fileID: 1024952361}
   m_Layer: 7
   m_Name: Jack
   m_TagString: Player
@@ -3440,7 +3335,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.52812505
+  m_Mass: 0.40898004
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -3465,7 +3360,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.98, y: 1.14, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 543450653195838822}
@@ -3668,7 +3563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshLink
   m_AgentTypeID: 0
-  m_StartPoint: {x: -1.7199133e-14, y: 0.25731897, z: 0.21843654}
+  m_StartPoint: {x: -1.06542914e-13, y: 0.25731897, z: -2.0685735}
   m_EndPoint: {x: -2.5069345e-13, y: -0.8374591, z: -0.21226753}
   m_Width: 0
   m_CostModifier: 0
@@ -4029,7 +3924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshLink
   m_AgentTypeID: 0
-  m_StartPoint: {x: 5.073329, y: 2.133451, z: 0}
+  m_StartPoint: {x: 6.3786287, y: 2.1219673, z: 0}
   m_EndPoint: {x: 5.4576683, y: 0.7729256, z: 0}
   m_Width: 0
   m_CostModifier: 0
@@ -4208,11 +4103,11 @@ MonoBehaviour:
   Type: 0
   Link: {fileID: 278667149}
   TimeRange: 5
-  JumpHighestPoint: -2.013114
+  JumpHighestPoint: -1.3538297
   StartZoneLeft: -23.847649
   StartZoneRight: -21.815302
   EndZoneLeft: -20.262268
-  EndZoneRight: -19.151535
+  EndZoneRight: -18.643337
   XSpeed: 4.5
   StartX: 0
   TargetX: 0
@@ -4335,11 +4230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7327592780018563279, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7457401974003859422, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
       propertyPath: AI
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7457401974003859422, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
       propertyPath: roamRadius
@@ -4561,7 +4456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshLink
   m_AgentTypeID: 0
-  m_StartPoint: {x: -0.0000002384186, y: 0.3454194, z: 0.32149556}
+  m_StartPoint: {x: -0.00000023841864, y: 0.3454194, z: -1.5937855}
   m_EndPoint: {x: -7.901172e-14, y: -0.85746574, z: -0.32149446}
   m_Width: 0
   m_CostModifier: 0
@@ -4934,7 +4829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshLink
   m_AgentTypeID: 0
-  m_StartPoint: {x: 5.9846764, y: 1.7391605, z: 0}
+  m_StartPoint: {x: 6.826927, y: 1.7391605, z: 0}
   m_EndPoint: {x: 6.20945, y: 1.1854037, z: 0}
   m_Width: 0
   m_CostModifier: 0
@@ -5510,7 +5405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshLink
   m_AgentTypeID: 0
-  m_StartPoint: {x: 6.126457, y: 1.7347016, z: 0}
+  m_StartPoint: {x: 5.2469234, y: 1.7347016, z: 0}
   m_EndPoint: {x: 5.6509075, y: 0.7799578, z: 0}
   m_Width: 0
   m_CostModifier: 0
@@ -5772,9 +5667,9 @@ MonoBehaviour:
   Link: {fileID: 174470642}
   TimeRange: 5
   JumpHighestPoint: 0.4887352
-  StartZoneLeft: 12.257235
-  StartZoneRight: 15.623179
-  EndZoneLeft: 10.35053
+  StartZoneLeft: 12.452638
+  StartZoneRight: 15.288202
+  EndZoneLeft: 9.155852
   EndZoneRight: 11.507695
   XSpeed: -4.5
   StartX: 0
@@ -6218,29 +6113,13 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 5.5
       objectReference: {fileID: 0}
-    - target: {fileID: -6678288830978238134, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
-      propertyPath: m_Height
-      value: 0.81
-      objectReference: {fileID: 0}
-    - target: {fileID: -6678288830978238134, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
-      propertyPath: m_Radius
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: -6678288830978238134, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
-      propertyPath: m_AutoBraking
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -6678288830978238134, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 691926346712285647, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.689074
+      value: 30.5
       objectReference: {fileID: 0}
     - target: {fileID: 691926346712285647, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.466388
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 691926346712285647, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
       propertyPath: m_LocalPosition.z

@@ -6,9 +6,7 @@ using System.Text;
 public class JacLeg : MonoBehaviour
 {
     [NonSerialized] public Dictionary<GameObject, IKnockbackable> objectsStandingOn = new Dictionary<GameObject, IKnockbackable>();
-    public int Cnt = 0;
 
-    void Update(){Cnt = objectsStandingOn.Count;}
     [ContextMenu("All contacts")]
     void l()
     {

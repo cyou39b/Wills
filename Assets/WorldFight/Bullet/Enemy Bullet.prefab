@@ -287,4 +287,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 51bf7cb96fe51614a83a4bf16a74bb29, type: 3}
   SoundEffectPlayerPrefab: {fileID: 8586090092282678644, guid: 7ced2028775690342a2666a803e3b245, type: 3}
   MoveSpeed: 20
-  InitialDistance: 0.05
+  InitialDistance: 0.02

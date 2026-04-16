@@ -13,6 +13,42 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     GameObject ICanKnockback.gameObject => gameObject;
     protected new Collider2D collider;
 
+    protected const float SlowDownRatio = 0.6f;
+    protected const float SlowDownRatioHeadOn = 0.85f;
+    public abstract float MoveSpeed{get;set;}
+    protected HashSet<AbstractEnemy> slowedEnemy = new HashSet<AbstractEnemy>();
+    public void SpeedChangeChainReaction(float changeRatio)
+    {
+        MoveSpeed *= changeRatio;
+        foreach(AbstractEnemy next in slowedEnemy)
+        {
+            next.SpeedChangeChainReaction(changeRatio);
+        }
+    }
+
+    public void UpdateStartOverlappingSpeed(AbstractEnemy other)
+    {
+        if(other.MoveSpeed > MoveSpeed || (other.MoveSpeed == MoveSpeed && other.GetInstanceID() > GetInstanceID()))
+        {
+            return;
+        }
+
+        slowedEnemy.Add(other);
+
+        other.SpeedChangeChainReaction(SlowDownRatio);
+    }
+
+    public void UpdateEndOverlappingSpeed(AbstractEnemy other)
+    {
+        if(other.MoveSpeed > MoveSpeed || (other.MoveSpeed == MoveSpeed && other.GetInstanceID() > GetInstanceID()))
+        {
+            return;
+        }
+
+        slowedEnemy.Remove(other);
+        other.SpeedChangeChainReaction(1.0f / SlowDownRatio);
+    }
+
     protected GameObject renderingChildObject;
     protected SpriteRenderer SpRr;
     protected Material Mat;
@@ -129,6 +165,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
         // use SetInt or SetFloat instead
         Mat.SetInt("_Blink", 1);
         Color originalColor = triangle.wills1Color;
+        Debug.Log(originalColor);
         triangle.wills1Color = new Color(1.0f, 1.0f, 1.0f, originalColor.a);
 
         yield return blinkTimeSpan;
@@ -226,8 +263,9 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     float ICanKnockback.collisionForceKeepRatio => collisionForceKeepRatio;
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        IKnockbackable knockbackable;
         GameObject other = collision.gameObject;
+
+        IKnockbackable knockbackable;
         if(other.TryGetComponent<IKnockbackable>(out knockbackable))
         {
             knockbackablesInContact.Add(knockbackable);
@@ -241,13 +279,27 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
                 );
             }
         }
+
+        AbstractEnemy abstractEnemy;
+        if(other.TryGetComponent<AbstractEnemy>(out abstractEnemy))
+        {
+            UpdateStartOverlappingSpeed(abstractEnemy);
+        }
     }
     public void OnCollisionExit2D(Collision2D collision)
     {
+        GameObject other = collision.gameObject;
+
         IKnockbackable knockbackable;
-        if(collision.collider.TryGetComponent<IKnockbackable>(out knockbackable))
+        if(other.TryGetComponent<IKnockbackable>(out knockbackable))
         {
             knockbackablesInContact.Remove(knockbackable);
+        }
+
+        AbstractEnemy abstractEnemy;
+        if(other.TryGetComponent<AbstractEnemy>(out abstractEnemy))
+        {
+            UpdateEndOverlappingSpeed(abstractEnemy);
         }
     }
     protected virtual void OnTriggerExit2D(Collider2D other)
@@ -279,27 +331,24 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     }
 
     Coroutine camCoroutine = null;
-    private static readonly float maxPanTime = 0.55f;
-    private static readonly WaitForSeconds pointTwoSecond = new WaitForSeconds(0.2f);
+    private static readonly float maxPanTime = 0.95f;
     private IEnumerator InsertAndRemoveFromEnemyListIt()
     {
-        RbCameraMovement.Enemys[transform] = 1.0f;
+        RbCameraMovement.Enemys[transform] = rb;
 
         float startTime = Time.time;
-        yield return new WaitWhile(()=> (Time.time - startTime < maxPanTime) && (intent == Intent.GetKnockbacked || intent == Intent.WaitUntilGround || intent == Intent.WaitUntilStill));
-
-        for(int _ = 0; _ < 10; _++)
+        while(true)
         {
-            if (RbCameraMovement.Enemys.ContainsKey(transform))
+            yield return new WaitForFixedUpdate();
+            if(intent == Intent.GetKnockbacked)
             {
-                RbCameraMovement.Enemys[transform] -= 0.1f;
+                startTime = Time.time;
             }
-            else
-            {
-                yield break;
-            }
-            yield return pointTwoSecond;
+            else if(intent != Intent.WaitUntilGround && intent != Intent.WaitUntilStill) {break;}
+
+            if(Time.time - startTime >= maxPanTime) {break;}
         }
+
         RbCameraMovement.Enemys.Remove(transform);
     }
 }

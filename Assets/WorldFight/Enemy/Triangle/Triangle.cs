@@ -8,7 +8,7 @@ public class Triangle : MonoBehaviour
     private SpriteRenderer spRerr = null;
     [NonSerialized] public AbstractEnemy wills1;
 
-    private Color _wills1Color = Color.green;
+    private Color _wills1Color;
     public Color wills1Color
     {
         get => _wills1Color;
@@ -25,7 +25,6 @@ public class Triangle : MonoBehaviour
     {
         wills1 = targetWills1;
         wills1Color = color;
-
     }
 
     void Start()
@@ -55,6 +54,7 @@ public class Triangle : MonoBehaviour
         {
             sprColor.a = 1.0f;
         }
+        wills1Color = sprColor;
         spRerr.color = sprColor;
 
         Vector3 diff = wills1.transform.position - cam.transform.position;
