@@ -56,6 +56,12 @@ public class GlobalVariables : MonoBehaviour
         }
     }
 
+    public bool isQuitting = false;
+    void OnApplicationQuit()
+    {
+        isQuitting = true;
+    }
+
     // ----------------- variables below ------------------------
     public int FrameRate = 60;
     public int NumMines = 0;

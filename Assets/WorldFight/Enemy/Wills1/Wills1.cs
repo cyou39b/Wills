@@ -29,20 +29,13 @@ public class Wills : AbstractEnemy
         }
     }
 
-    private float _moveSpeed = 5.5f;
-    public override float MoveSpeed 
-    {
-        get => _moveSpeed;
-        set
-        {
-            _moveSpeed = value;
-            agent.speed = value;
-        }
-    }
-
     private Dictionary<string, DynamicAIAction> listeningDynamicAction = new Dictionary<string, DynamicAIAction>();
 
     private NavMeshAgent agent;
+    protected override void RecalculateMoveSpeed()
+    {
+        agent.speed = 5.5f * (agent.steeringTarget.x < transform.position.x ? MoveSpeedOverlappingModifier.left : MoveSpeedOverlappingModifier.right);
+    }
 
     public GameObject FireworkPrefab;
 
@@ -54,8 +47,6 @@ public class Wills : AbstractEnemy
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         agent.autoTraverseOffMeshLink = false;
-
-        SafeWarp();
 
         if(BodyColors.Length != EyeColors.Length)
         {
@@ -73,6 +64,9 @@ public class Wills : AbstractEnemy
         Mat.SetColor("_EyeColor", EyeColors[idx]);
 
         walking = false;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.linearVelocity = new Vector2(0.0f, -9f);
+        SetIntent(Intent.WaitUntilGround, AIFacingDirection.SameAsMoving, true);
     }
 
     public override (float, float, Vector3) HpBarData 
@@ -144,10 +138,12 @@ public class Wills : AbstractEnemy
             if(value == FacingDirection.Left)
             {
                 SpRr.flipX = true;
+                weapon.transform.localPosition = new Vector3(-0.14f, 0.31f, -0.1f);
             }
             else
             {
                 SpRr.flipX = false;
+                weapon.transform.localPosition = new Vector3(0.14f, 0.31f, -0.1f);
             }
             base.CurrentRealFacingDirection = value; 
         } 
@@ -162,13 +158,13 @@ public class Wills : AbstractEnemy
             #if UNITY_EDITOR
                 if(!AI){break;}
             #endif
-                if(TrySeePlayer())
-                {
-                    SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
-                }
                 if (!agent.enabled)
                 {
                     SafeWarp();
+                }
+                if(TrySeePlayer())
+                {
+                    SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
                 }
                 SetIntent(Intent.ChasePlayer, AIFacingDirection.SameAsMoving, false);
                 goto case Intent.ChasePlayer;
@@ -306,6 +302,7 @@ public class Wills : AbstractEnemy
             getKnockbackedIntent_force *= Mathf.Max(0.0f, 1.0f - totalSimilarity * (1.0f-collisionForceKeepRatio));
         }
 
+        rb.linearVelocityY *= 0.1f;
         getKnockbackedIntent_force.x *= xKnockbackModifier;
         getKnockbackedIntent_force.y *= yKnockbackModifier;
         agent.enabled = false;
@@ -348,7 +345,7 @@ public class Wills : AbstractEnemy
                 {
                     rb.linearVelocityX = waitUntilGround_keepXSpeed;
                 }
-                if(rb.linearVelocityY < 0.0f) 
+                if(rb.linearVelocityY <= 0.0f) 
                 {
                     waitUntilGround_stage = 2;
                     goto case 2;
@@ -384,19 +381,22 @@ public class Wills : AbstractEnemy
     private void ProcessChasePlayerIntent()
     {
         DynamicAIAction action = null;
+        bool valid = false;
         if(
             agent.isOnOffMeshLink && 
             listeningDynamicAction.ContainsKey(agent.currentOffMeshLinkData.owner.name)
         ) {
             action = listeningDynamicAction[agent.currentOffMeshLinkData.owner.name];
+            valid = true;
         }
         else if(
             agent.nextOffMeshLinkData.owner != null &&
             listeningDynamicAction.ContainsKey(agent.nextOffMeshLinkData.owner.name)
         ) {
             action = listeningDynamicAction[agent.nextOffMeshLinkData.owner.name];
+            valid = action.inRange(transform.position.x);
         }
-        if(action != null && action.inRange(transform.position.x))
+        if(action != null && valid)
         {
             switch (action.Type)
             {
@@ -422,6 +422,7 @@ public class Wills : AbstractEnemy
 
         RaycastHit2D info = Physics2D.Raycast(playerTrans.position, Vector2.down, 100.0f, DefinedLayers.GroundLayerMask);
         agent.SetDestination(info.point);
+        RecalculateMoveSpeed();
     }
 
     [ContextMenu("Log stuffs")]
@@ -429,7 +430,7 @@ public class Wills : AbstractEnemy
     {
         string listners = string.Join(Environment.NewLine, listeningDynamicAction);
         string ol = agent.isOnOffMeshLink ? agent.currentOffMeshLinkData.owner.name : "False";
-        Debug.Log($"name: {name}, intent: {intent}, listeners: {listners}, onlink: {ol}, owner==null: {agent.nextOffMeshLinkData.owner == null}, dest: {agent.destination}");
+        Debug.Log($"name: {name}, intent: {intent}, listeners: {listners}, onlink: {ol}, untilGroundStage = {waitUntilGround_stage}");
     }
 
     private const int seeRayCastMsk = ~0 
@@ -453,8 +454,6 @@ public class Wills : AbstractEnemy
     {
         if(attack_coolDownTimer++ == 0)
         {
-            agent.enabled = false;
-
             Vector3 dir = playerTrans.position - weapon.transform.position;
             Instantiate(BulletPrefab, weapon.transform.position, Quaternion.Euler(
                     0.0f, 0.0f, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg
@@ -463,7 +462,7 @@ public class Wills : AbstractEnemy
         }
         if(attack_coolDownTimer < attack_coolDownTarget) {return;}
 
-        SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.Attack);
+        SetIntent(Intent.Idle, AIFacingDirection.FacingPlayer, false, Intent.Attack);
     }
 
     private DynamicAIAction prepJumpIntent_pendingAction = null;

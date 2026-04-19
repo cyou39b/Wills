@@ -13,40 +13,37 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     GameObject ICanKnockback.gameObject => gameObject;
     protected new Collider2D collider;
 
-    protected const float SlowDownRatio = 0.6f;
-    protected const float SlowDownRatioHeadOn = 0.85f;
-    public abstract float MoveSpeed{get;set;}
-    protected HashSet<AbstractEnemy> slowedEnemy = new HashSet<AbstractEnemy>();
-    public void SpeedChangeChainReaction(float changeRatio)
-    {
-        MoveSpeed *= changeRatio;
-        foreach(AbstractEnemy next in slowedEnemy)
-        {
-            next.SpeedChangeChainReaction(changeRatio);
-        }
-    }
-
+    public (float left, float right) MoveSpeedOverlappingModifier = (1.0f, 1.0f);
+    protected abstract void RecalculateMoveSpeed();
+    public HashSet<AbstractEnemy> overlappingEnemys = new HashSet<AbstractEnemy>();
     public void UpdateStartOverlappingSpeed(AbstractEnemy other)
     {
-        if(other.MoveSpeed > MoveSpeed || (other.MoveSpeed == MoveSpeed && other.GetInstanceID() > GetInstanceID()))
-        {
-            return;
-        }
-
-        slowedEnemy.Add(other);
-
-        other.SpeedChangeChainReaction(SlowDownRatio);
+        overlappingEnemys.Add(other);
+        UpdateOverlappingMoveSpeed();
     }
 
     public void UpdateEndOverlappingSpeed(AbstractEnemy other)
     {
-        if(other.MoveSpeed > MoveSpeed || (other.MoveSpeed == MoveSpeed && other.GetInstanceID() > GetInstanceID()))
-        {
-            return;
-        }
+        overlappingEnemys.Remove(other);
+        UpdateOverlappingMoveSpeed();
+    }
 
-        slowedEnemy.Remove(other);
-        other.SpeedChangeChainReaction(1.0f / SlowDownRatio);
+    public void UpdateOverlappingMoveSpeed()
+    {
+        int d = 0;
+        foreach(AbstractEnemy enemy in overlappingEnemys)
+        {
+            d += (enemy.transform.position.x < transform.position.x) ? 1 : -1;
+        }
+        if(d > 0)
+        {
+            MoveSpeedOverlappingModifier = (Mathf.Lerp(0.7f, 0.3f, Mathf.Clamp(d, 0, 10) / 10.0f), 1.0f);
+        }
+        else if(d < 0)
+        {
+            MoveSpeedOverlappingModifier = (1.0f, Mathf.Lerp(0.7f, 0.3f, Mathf.Clamp(-d, 0, 10) / 10.0f));
+        }
+        RecalculateMoveSpeed();
     }
 
     protected GameObject renderingChildObject;
@@ -69,6 +66,8 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     protected virtual void Start()
     {
         cam = Camera.main;
+        EnemySpawner.AllEnemys.Add(this);
+        name = name[0..^7] + " " + EnemySpawner.EnemyUid;
         InitialPlayerInfoReference();
         InitializeRenderingGameObject();
         InitializeHpBar();
@@ -165,7 +164,6 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
         // use SetInt or SetFloat instead
         Mat.SetInt("_Blink", 1);
         Color originalColor = triangle.wills1Color;
-        Debug.Log(originalColor);
         triangle.wills1Color = new Color(1.0f, 1.0f, 1.0f, originalColor.a);
 
         yield return blinkTimeSpan;
@@ -178,6 +176,11 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
             triangle.wills1Color.a
         );
     }
+    protected virtual void OnDestroy()
+    {
+        EnemySpawner.AllEnemys.Remove(this);
+        RbCameraMovement.Enemys.Remove(transform);
+    }
     protected virtual void OnHPLE0()
     {
         Explode.ExplodePosition = transform.position;
@@ -185,20 +188,36 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
         Destroy(HpBar.gameObject);
         Destroy(gameObject);
     }
+
+    public GameObject FadeoutEffectPrefab;
     protected virtual void OnOutOfField()
     {
+        if(GlobalVariables.Instance == null || GlobalVariables.Instance.isQuitting){return;}
+
         Debug.Log("Enemy out of field");
+        
+        GameObject newObj = Instantiate(FadeoutEffectPrefab, transform.position, transform.rotation);
+        EnemyFadeoutEffect enemyFadeoutEffect;
+        if(!newObj.TryGetComponent<EnemyFadeoutEffect>(out enemyFadeoutEffect))
+        {
+            Debug.LogError("Missing component");
+        }
+        else
+        {
+            enemyFadeoutEffect.Initialize(SpRr, renderingChildObject.transform.localPosition, rb, transform.lossyScale);
+        }
 
         // because that stupid OnTriggerExit2D was called when the `field`
         // GameObject got destroyed while loading another scene/ quitting application
         // so I have to do this null check every time.
-        if(triangle != null) {Destroy(triangle.gameObject);}
-        if(HpBar != null) {Destroy(HpBar.gameObject);}
-        if(gameObject != null) 
-        {
-            RbCameraMovement.Enemys.Remove(transform);
-            Destroy(gameObject);
-        }
+        // if(triangle != null) {Destroy(triangle.gameObject);}
+        // if(HpBar != null) {Destroy(HpBar.gameObject);}
+        // if(gameObject != null) {Destroy(gameObject);}
+        // NOTE: This thing is fixed by doing a OnApplicationQuit check.
+
+        Destroy(triangle.gameObject);
+        Destroy(HpBar.gameObject);
+        Destroy(gameObject);
     }
 
     // I hate this implementation. Previous one with coroutine is prettier.
@@ -331,7 +350,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     }
 
     Coroutine camCoroutine = null;
-    private static readonly float maxPanTime = 0.95f;
+    private static readonly float maxPanTime = 1.35f;
     private IEnumerator InsertAndRemoveFromEnemyListIt()
     {
         RbCameraMovement.Enemys[transform] = rb;

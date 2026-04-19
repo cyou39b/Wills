@@ -134,10 +134,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   HPBarPrefab: {fileID: 7012469317006889741, guid: aeaa31a668b0bb540a33b5b1508e6bbf, type: 3}
+  HpBar: {fileID: 0}
   TrianglePrefab: {fileID: 8092762973403955582, guid: f38691ae2752f0a4f8d0002033f56be9, type: 3}
+  FadeoutEffectPrefab: {fileID: 7996657083104266949, guid: c34cef506d6180e4c9897bbf23b5e852, type: 3}
   AI: 1
   collisionForceGiveRatio: 0.9
-  collisionForceKeepRatio: 0.5
+  collisionForceKeepRatio: 0.6
   FaceColors:
   - {r: 0.7803922, g: 0.3137255, b: 0.3137255, a: 1}
   FaceOutlineColors:
@@ -152,8 +154,8 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   StillEpsilon: 3.5
   SeeDistance: 3.5
-  roamRadius: 0
-  roamStoppingVelocity: 0.25
+  roamRadius: 4
+  roamStoppingVelocity: 0.1
   FireballPrefab: {fileID: 2218664321196448271, guid: 4d578fa04eb4b8647b5950a2e9f76c30, type: 3}
 --- !u!1 &8163495396468613436
 GameObject:

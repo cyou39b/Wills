@@ -13,18 +13,11 @@ public class Flyer : AbstractEnemy
 
     [SerializeField] private float StillEpsilon;
 
-    private float _moveSpeed = 6.0f;
-    public override float MoveSpeed 
+    private NavMeshAgent agent;
+    protected override void RecalculateMoveSpeed()
     {
-        get => _moveSpeed;
-        set
-        {
-            _moveSpeed = value;
-            agent.speed = value;
-        }
+        agent.speed = 6.0f * (agent.steeringTarget.x < transform.position.x ? MoveSpeedOverlappingModifier.left : MoveSpeedOverlappingModifier.right);
     }
-
-   private NavMeshAgent agent;
 
     public override (float, float, Vector3) HpBarData 
         => (40.0f, 40.0f, new Vector3(0.0f, 1.15f, 0.0f));
@@ -66,12 +59,14 @@ public class Flyer : AbstractEnemy
         switch(AIFacingDirection)
         {
             case AIFacingDirection.SameAsMoving:
-                CurrentRealFacingDirection = dir.x <= 0.0f
+                if(dir.x == 0.0f){break;}
+                CurrentRealFacingDirection = dir.x < 0.0f
                     ?FacingDirection.Left
                     :FacingDirection.Right;
                 break;
             case AIFacingDirection.NegFromMoving:
-                CurrentRealFacingDirection = dir.x >= 0.0f
+                if(dir.x == 0.0f){break;}
+                CurrentRealFacingDirection = dir.x > 0.0f
                     ?FacingDirection.Left
                     :FacingDirection.Right;
                 break;
@@ -194,8 +189,9 @@ public class Flyer : AbstractEnemy
         else{destinationUpdateCounter = 0;}
 
         agent.SetDestination(playerTrans.position);
-        Anmor.speed = Mathf.Max(0.0f, agent.velocity.y / 9.81f + 1.0f);
-
+        RecalculateMoveSpeed();
+        Anmor.speed = Mathf.Max(0.0f, agent.desiredVelocity.y / 9.81f + 1.0f);
+        
         if(TrySeePlayer())
         {
             SetIntent(Intent.Attack, AIFacingDirection.FacingPlayer);
@@ -213,6 +209,7 @@ public class Flyer : AbstractEnemy
         if (!randomlyRoam_setDestionationLock)
         {
             agent.SetDestination(MathUtil.RandomPointInDonut(playerTrans.position, SeeDistance, roamRadius));
+            RecalculateMoveSpeed();
             randomlyRoam_setDestionationLock = true;
         }
 

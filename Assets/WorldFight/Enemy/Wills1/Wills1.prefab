@@ -45,11 +45,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2429670849555049026}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1.5
+  m_Mass: 1.94
   m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -117,7 +117,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2429670849555049026}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.05
   m_Speed: 5.5
@@ -145,10 +145,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Wills
   HPBarPrefab: {fileID: 7012469317006889741, guid: aeaa31a668b0bb540a33b5b1508e6bbf, type: 3}
+  HpBar: {fileID: 0}
   TrianglePrefab: {fileID: 8092762973403955582, guid: f38691ae2752f0a4f8d0002033f56be9, type: 3}
+  FadeoutEffectPrefab: {fileID: 7996657083104266949, guid: c34cef506d6180e4c9897bbf23b5e852, type: 3}
   AI: 1
-  collisionForceGiveRatio: 0.9
-  collisionForceKeepRatio: 0.5
+  collisionForceGiveRatio: 0.95
+  collisionForceKeepRatio: 0.65
   weapon: {fileID: 4516931540328971090}
   BulletPrefab: {fileID: 2836655839697112275, guid: 124abd7042df142429a84b104eb77616, type: 3}
   BodyColors:
@@ -167,7 +169,7 @@ MonoBehaviour:
   xEpsilon: 4
   yEpsilon: 0.25
   xKnockbackModifier: 0.45
-  yKnockbackModifier: 1.4
+  yKnockbackModifier: 1
   SeeDistance: 5
 --- !u!1 &5263319498312172273
 GameObject:

@@ -4,10 +4,12 @@ using UnityEngine;
 public class SoundEffectPlayer : MonoBehaviour
 {
     private AudioSource audioSource;
-    void Start() { audioSource = GetComponent<AudioSource>();}
+    void Awake() { audioSource = GetComponent<AudioSource>();}
 
+    bool initialized = false;
     public void Initialize(AudioClip clip, float minPitch = 1.0f, float maxPitch = 1.0f)
     {
+        initialized = true;
         if(audioSource == null) {return;}
         audioSource.clip = clip;
         audioSource.pitch = Random.Range(minPitch, maxPitch);
@@ -16,6 +18,6 @@ public class SoundEffectPlayer : MonoBehaviour
 
     void Update()
     {
-        if(!audioSource.isPlaying){Destroy(gameObject);}
+        if(initialized && !audioSource.isPlaying){Destroy(gameObject);}
     }
 }

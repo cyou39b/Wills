@@ -29,7 +29,7 @@ public class EnemyBullet : MonoBehaviour
         SoundEffectPlayer soundEffectPlayer;
         if(!newObj.TryGetComponent<SoundEffectPlayer>(out soundEffectPlayer))
         {
-            Debug.LogError("");
+            Debug.LogError("Missing component");
         }
         soundEffectPlayer.Initialize(LaserSFX[Random.Range(0, LaserSFX.Length)], 0.9f, 1.1f);
 

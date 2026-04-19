@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour, ICanKnockback
     public float MoveSpeed;
     public float InitialDistance; // 在Bullet被創造時調整position的距離值
 
-    public static float Power = 4000.0f;
+    public static float Power = 2888.0f;
     public ParticleSystem.MinMaxCurve DistacneToPowerCurve;
     private Vector2 initialPosition;
 
@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour, ICanKnockback
         SoundEffectPlayer soundEffectPlayer;
         if(!newObj.TryGetComponent<SoundEffectPlayer>(out soundEffectPlayer))
         {
-            Debug.LogError("");
+            Debug.LogError("Missing component");
         }
         soundEffectPlayer.Initialize(LaserSFX[Random.Range(0, LaserSFX.Length)], 0.9f, 1.1f);
 

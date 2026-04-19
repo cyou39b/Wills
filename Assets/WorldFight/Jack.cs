@@ -47,29 +47,7 @@ public class Jack : MonoBehaviour//, IKnockbackable
             transform.rotation
         );
         
-        if(!newObj.TryGetComponent<HPBar>(out this.HpBar))
-        {
-            Debug.LogErrorFormat("Failed to get HPBar component from gameObject created for GameObject named {}.", this.name);
-        }
-        else
-        {
-            HpBar.Followee = gameObject;
-            HpBar.Offset = new Vector3(0f, 1.5f, 0f);
-            HpBar.SmoothTime = 0.05f;
-            HpBar.MaxHP = 100.0f;
-            HpBar.HP = 100.0f;
-            HpBar.OnHpLE0 = () => {
-                Transform trans = transform;
-                Instantiate(HeadStomePrefab, trans.position, trans.rotation);
-                audioSource.Play();
-                DeathManager.StartDeath(0.0f, 1.0f);
-            };
-            #if UNITY_EDITOR
-            HpBar.name = string.Format("{0} - HPBar", this.name);
-            #endif
-        }
-
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         rendererTrans = transform.Find("Renderer");
         if(rendererTrans == null)
@@ -105,6 +83,30 @@ public class Jack : MonoBehaviour//, IKnockbackable
         {
             Debug.LogError("Weapon gameobject missing component");
         }
+
+        if(!newObj.TryGetComponent<HPBar>(out this.HpBar))
+        {
+            Debug.LogErrorFormat("Failed to get HPBar component from gameObject created for GameObject named {}.", this.name);
+        }
+        else
+        {
+            HpBar.Followee = gameObject;
+            HpBar.Offset = new Vector3(0f, 1.5f, 0f);
+            HpBar.SmoothTime = 0.05f;
+            HpBar.MaxHP = 100.0f;
+            HpBar.HP = 100.0f;
+            HpBar.OnHpLE0 = () => {
+                Transform trans = transform;
+                Instantiate(HeadStomePrefab, trans.position, trans.rotation);
+                audioSource.Play();
+                rendererChild.SetActive(false);
+                DeathManager.StartDeath(0.0f, 1.0f);
+            };
+            #if UNITY_EDITOR
+            HpBar.name = string.Format("{0} - HPBar", this.name);
+            #endif
+        }
+
     }
 
     private bool leftPressed;

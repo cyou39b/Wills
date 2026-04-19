@@ -63,7 +63,11 @@ public class Gun : MonoBehaviour
 
         fireCoolDownTimer -= Time.deltaTime; // 如果已經cooldown了
         attackFreezeTimer -= Time.deltaTime;
-        if (fireCoolDownTimer <= 0.0f && Mouse.current.leftButton.wasPressedThisFrame)
+    }
+
+    public void TryFire()
+    {
+        if (fireCoolDownTimer <= 0.0f)
         {
             fireCoolDownTimer = FireCoolDown;
             attackFreezeTimer = AttackFreezeTime;

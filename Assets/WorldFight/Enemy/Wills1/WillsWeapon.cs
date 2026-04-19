@@ -11,7 +11,7 @@ public class WillsWeapon : MonoBehaviour
     private GameObject GunFireAnimation;
     public SpriteRenderer GunFireAnimationSpriteRenderer;
 
-    void Start()
+    void Awake()
     {
         GunFireAnimation = GunFireAnimationSpriteRenderer.gameObject;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -20,8 +20,8 @@ public class WillsWeapon : MonoBehaviour
     public void SetRotation(Vector3 dir)
     {
         dir.z = 0.0f;
-        transform.rotation = Quaternion.FromToRotation(Vector3.right, dir);
         float rot = Mathf.Atan2(dir.y, dir.x);
+        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rot * Mathf.Rad2Deg);
         if(rot <= MathUtil.HalfPI && rot >= MathUtil.HalfNPI)
         {
             spriteRenderer.flipY = false;
