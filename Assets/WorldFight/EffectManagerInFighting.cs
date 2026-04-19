@@ -58,43 +58,56 @@ public class EffectManagerInFighting : AbstractEffectManager{
         nowEffect.Add(pos);
     }
     public override void ClearAllEffect(){
-        foreach(PossessionItems item in nowEffect){
-            switch (item.effect.effectType){
-                case EffectType.ATKBoost:
-                    ClearATKBoost(item);
-                    break;
-                case EffectType.PlayerHPBoost:
-                    ClearPlayerHPBoost(item);
-                    break;
-                case EffectType.SPDUp:
-                    ClearSPDUp(item);
-                    break;
-                case EffectType.EnemyHPUP:
-                    ClearEnemyHPUP(item);
-                    break;
-                case EffectType.BulletKnockbackForceUp:
-                    ClearBulletKnockbackForceUpFunc(item);
-                    break;
-                default:
-                    break;
+        if(nowEffect != null){
+            foreach(PossessionItems item in nowEffect){
+                switch (item.effect.effectType){
+                    case EffectType.ATKBoost:
+                        ClearATKBoost(item);
+                        item.effect.usedTimes--;
+                        break;
+                    case EffectType.PlayerHPBoost:
+                        ClearPlayerHPBoost(item);
+                        item.effect.usedTimes--;
+                        break;
+                    case EffectType.SPDUp:
+                        ClearSPDUp(item);
+                        item.effect.usedTimes--;
+                        break;
+                    case EffectType.EnemyHPUP:
+                        ClearEnemyHPUP(item);
+                        item.effect.usedTimes--;
+                        break;
+                    case EffectType.BulletKnockbackForceUp:
+                        ClearBulletKnockbackForceUpFunc(item);
+                        item.effect.usedTimes--;
+                        break;
+                    default:
+                        break;
+                }
             }
+            nowEffect.Clear();
         }
-        nowEffect.Clear();
     }
     public override void ClearSPDUp(PossessionItems pos){
         Jack.MoveSpeed /= pos.effect.EffectRate+1;
+        pos.effect.usedTimes--;
     }
     public override void ClearPlayerHPBoost(PossessionItems pos){
         script.HpBar.MaxHP /= pos.effect.EffectRate+1;
+        pos.effect.usedTimes--;
     }
     public override void ClearATKBoost(PossessionItems pos){
         Bullet.Damage /= pos.effect.EffectRate+1;
+        pos.effect.usedTimes--;
+
     }
     public override void ClearEnemyHPUP(PossessionItems pos){
         enemyScript.HpBar.MaxHP /= pos.effect.EffectRate+1;
+        pos.effect.usedTimes--;
     }
     public override void ClearBulletKnockbackForceUpFunc(PossessionItems pos){
         Bullet.Power /= pos.effect.EffectRate+1;
+        pos.effect.usedTimes--;
     }
     public override Action GetPossessionEffectAction(PossessionItems pos){
         switch (pos.effect.effectType){

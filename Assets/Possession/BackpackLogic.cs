@@ -30,6 +30,7 @@ public class BackpackLogic : MonoBehaviour{
     public void CloseBackpack(){
         Backpack.SetActive(false);
         BackpackIcon.gameObject.SetActive(true);
+        ClosePanel();
         IsBackpackOpening = false;
         //Time.timeScale = timeScaleBeforeBackpackOpen;
         foreach(GameObject items in BackpackGameobjectButtonList){

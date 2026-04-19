@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 //revive
+//To instance AbstractEffectManager easily,AbstractEffectManager doesn't inherit MonoBehaviour
+//use class "EffectManager" run start and update in unity
 public class EffectManager : MonoBehaviour{
     public static EffectManager Instance{get;private set;} = null;
     public AbstractEffectManager TrueInstance = null;
@@ -19,6 +21,7 @@ public class EffectManager : MonoBehaviour{
                     break;
                 case "MainScene":
                     TrueInstance = new EffectManagerInMainScene();
+                    Debug.Log($"{SceneManager.GetActiveScene().name}");
                     break;
                 case "WorldFighting":
                     TrueInstance = new EffectManagerInFighting();

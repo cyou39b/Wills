@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PossessionItems
   index: 0
   sprite: {fileID: -1128947775675819744, guid: 2cf494e907bb9224d9f1931701671238, type: 3}
-  Name: 123456
+  Name: test
   information: test
-  Num: 1
+  Num: 0
   effect:
-    effectType: 0
-    EffectRate: 0
-    scene: 0
+    effectType: 3
+    EffectRate: 1
+    scene: 2
     stackable: 0
     usedTimes: 0
+    duration: 5

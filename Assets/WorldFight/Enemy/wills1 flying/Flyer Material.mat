@@ -122,9 +122,9 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EyeColor: {r: 0.7509433, g: 0.49165523, b: 0.5755426, a: 1}
-    - _Eyes_Color: {r: 0.75294125, g: 0.4901961, b: 0.5764706, a: 1}
-    - _Face_Color: {r: 0.95294124, g: 0.6862745, b: 0.7725491, a: 1}
-    - _Face_Outline_Color: {r: 0.72156864, g: 0.47450984, b: 0.5568628, a: 1}
+    - _Eyes_Color: {r: 0.3726415, g: 0.13886169, b: 0.31636384, a: 1}
+    - _Face_Color: {r: 0.995283, g: 0.5915361, b: 0.72216004, a: 1}
+    - _Face_Outline_Color: {r: 0, g: 0, b: 0, a: 1}
     - _MainTex: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _TargetColor: {r: 0.9529411, g: 0.68627447, b: 0.7725491, a: 1}

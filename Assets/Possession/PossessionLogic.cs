@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,7 +8,7 @@ public class PossessionLogic : MonoBehaviour{
     public void Initialize(PossessionItems pos,GameObject panel,BackpackLogic logic){
         PossessionItems ThisPossession = pos;
         string nowSceneName = SceneManager.GetActiveScene().name;
-        Transform effectManager = transform.Find("EffectManager");
+        //Transform effectManager = transform.Find("EffectManager");
         if(gameObject.transform.Find("Image").TryGetComponent<Image>(out Image img)){
             img.sprite = ThisPossession.sprite;
         }
@@ -49,15 +50,19 @@ public class PossessionLogic : MonoBehaviour{
                     }
                     else if(ThisPossession.effect.scene == UsableScene.All ||
                         ThisPossession.effect.scene.ToString() == nowSceneName){
-                        ThisPossession.effect.usedTimes++;
-                        //create effect
-                        ThisPossession.Num--;
-                        EffectManager.Instance.TrueInstance.GetPossessionEffectAction(ThisPossession);
-                        if(ThisPossession.Num <= 0){
-                            GlobalVariables.Instance.possession.Remove(ThisPossession);
-                        }
-                        logic.CloseBackpack();
-                        logic.OpenBackpack();
+                        use.onClick.AddListener(() =>{
+                            ThisPossession.effect.usedTimes++;
+                            //create effect
+                            ThisPossession.Num--;
+                            Action function = EffectManager.Instance.TrueInstance.GetPossessionEffectAction(ThisPossession);
+                            function();
+                            Debug.Log($"{pos.Name} is used");
+                            if(ThisPossession.Num <= 0){
+                                GlobalVariables.Instance.possession.Remove(ThisPossession);
+                            }
+                            logic.CloseBackpack();
+                            //logic.OpenBackpack();
+                            });
                     }
                     else{ //
                         use.onClick.AddListener(() =>{
