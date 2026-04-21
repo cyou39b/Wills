@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class BackpackLogic : MonoBehaviour{
     public GameObject Backpack;
     public GameObject Panel;
@@ -14,17 +15,12 @@ public class BackpackLogic : MonoBehaviour{
     public GameObject ISMsg;
     public static bool IsBackpackOpening = false;
     float timeScaleBeforeBackpackOpen;
-    /*public static BackpackLogic Instance{get;private set;} = null;
-    void Awake(){
-        if(Instance == null){
-            Instance = this;
-        }
-        else{
-            Destroy(this.gameObject);
-            return;
-        }
-    }*/
-    void Start(){}
+
+    private AudioSource openBackpackSFX;
+    void Start()
+    {
+        openBackpackSFX = GetComponent<AudioSource>();
+    }
 
     void Update(){}
     public void CloseBackpack(){
@@ -55,6 +51,7 @@ public class BackpackLogic : MonoBehaviour{
         }
     }
     public void OpenBackpack(){
+        openBackpackSFX.PlayOneShot(openBackpackSFX.clip);
         BackpackIcon.gameObject.SetActive(false);
         Backpack.SetActive(true);
         IsBackpackOpening = true;

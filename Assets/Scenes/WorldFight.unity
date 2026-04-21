@@ -5718,10 +5718,10 @@ MonoBehaviour:
     height: 10.04
   enemyPrefabs:
   - prefab: {fileID: 2429670849555049026, guid: 88f3803d76a345148851f492839b0fe3, type: 3}
-    weight: 0.99
+    weight: 0.5
   - prefab: {fileID: 7327592780018563279, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
-    weight: 0.01
-  spawnCnt: 2
+    weight: 0.5
+  spawnCnt: 5
 --- !u!4 &1949241809
 Transform:
   m_ObjectHideFlags: 0

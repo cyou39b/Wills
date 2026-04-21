@@ -185,8 +185,15 @@ MonoBehaviour:
   - {fileID: 1017609225550985244, guid: efe7998092cb6f8408c96554eb3e5977, type: 3}
   BulletEffectPrefab: {fileID: 4135009946272690, guid: 7c1ed949817aa3840adf916682eac02b, type: 3}
   LaserSFX:
-  - {fileID: 8300000, guid: 40a6a65ccf512984a98a75713edffeaa, type: 3}
-  - {fileID: 8300000, guid: 51bf7cb96fe51614a83a4bf16a74bb29, type: 3}
+  - {fileID: 8300000, guid: 6540797797009cb479772cea1e0eb702, type: 3}
+  - {fileID: 8300000, guid: 0770c28a628b7dc4592f9912a30a71b3, type: 3}
+  - {fileID: 8300000, guid: 6010cf030ddb9da4fb4120af9f0ba27f, type: 3}
+  - {fileID: 8300000, guid: 41fd8ce3f0e06e141a9f46a9d033aeff, type: 3}
+  - {fileID: 8300000, guid: 2a67ddc3b42b7e447acbad9412066dc0, type: 3}
+  - {fileID: 8300000, guid: f5bf8e73d3936924981f7db9fbf588dd, type: 3}
+  - {fileID: 8300000, guid: 5a8853bc5b574d1478248230a2a777e4, type: 3}
+  - {fileID: 8300000, guid: e447057c94484f446933a5df285fa79d, type: 3}
+  - {fileID: 8300000, guid: 2464f754d6b13bd4a85d1c949ee02434, type: 3}
   SoundEffectPlayerPrefab: {fileID: 8586090092282678644, guid: 7ced2028775690342a2666a803e3b245, type: 3}
   MoveSpeed: 20
   InitialDistance: 0.02

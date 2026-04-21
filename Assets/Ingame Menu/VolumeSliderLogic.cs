@@ -12,6 +12,12 @@ public class VolumeSliderLogic : MonoBehaviour, IPointerUpHandler
     public Slider VolumeSlider;
     public Text VolumeText;
 
+    void Start()
+    {
+        VolumeSlider.value = AudioListener.volume;
+        OnValueChange();
+    }
+
     public void OnValueChange()
     {
         VolumeText.text = Math.Round(VolumeSlider.value*100f).ToString()+"%";

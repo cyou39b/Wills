@@ -7,7 +7,10 @@ public class Ground : MonoBehaviour
     public GameObject soundEffectPlayerPrefab;
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(VelocityToVolume.Evaluate(Mathf.Abs(collision.relativeVelocity.y)) > 0.0f)
+        float volume = VelocityToVolume.Evaluate(-collision.relativeVelocity.y);
+
+        Debug.Log($"{collision.relativeVelocity.y}, {volume}, {collision.collider.name}");
+        if(volume > 0.0f)
         {
             GameObject newObj = Instantiate(soundEffectPlayerPrefab, transform.position, transform.rotation);
             SoundEffectPlayer soundEffectPlayer;
@@ -15,7 +18,7 @@ public class Ground : MonoBehaviour
             {
                 Debug.LogError("Missing component");
             }
-            soundEffectPlayer.Initialize(fallSFX, 0.9f, 1.1f);
+            soundEffectPlayer.Initialize(fallSFX, 0.9f, 1.1f, volume, 1.0f);
         }
     }
 }

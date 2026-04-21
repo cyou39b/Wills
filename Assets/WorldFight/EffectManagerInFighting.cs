@@ -5,10 +5,16 @@ using System;
 
 public class EffectManagerInFighting : AbstractEffectManager{
     List<PossessionItems> nowEffect = new List<PossessionItems>();
-    public GameObject Player;
+    private GameObject Player;
     Jack script;
     public AbstractEnemy enemyScript;
     public override void Start(){
+        Player = GameObject.Find("Jack");
+        if(Player == null)
+        {
+            Debug.LogError("Can't find player (gameObject named \"Jack\") in scene.");
+        }
+
         if(Player.TryGetComponent<Jack>(out Jack jack)){
             script = jack;
         }

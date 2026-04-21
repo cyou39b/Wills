@@ -188,6 +188,7 @@ public class Jack : MonoBehaviour//, IKnockbackable
         jumpReleased = Keyboard.current[GlobalVariables.Instance.JumpKey].wasReleasedThisFrame;
     }
 
+    private bool prevFrameGrounded = false;
     void FixedUpdate()
     {
         if(Explode.Activated) {return;}
@@ -239,10 +240,10 @@ public class Jack : MonoBehaviour//, IKnockbackable
                 rb.gravityScale = 1.0f;
             }
 
-            // if(isGrounded && rb.linearVelocityY == 0.0f && jumpBufferTimer >= 0.0f){
-            if(isGrounded && jumpBufferTimer >= 0.0f){
+            if(prevFrameGrounded && jumpBufferTimer >= 0.0f){
                 Jump();
             }
+            prevFrameGrounded = isGrounded;
         }
     }
 

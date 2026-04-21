@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GlobalVariables : MonoBehaviour
 {
     public static GlobalVariables Instance {get; private set;} = null; // The singleton instance, initialize as null
-
+    private static bool firstLoad = true;
 // The function "Awake" initialize "GlobalVariables.Instance"
 // You MUST somehow make sure the "Awake" function gets called \
 // at least once or "GlobalVariables.Instance" will be null \
@@ -28,10 +28,15 @@ public class GlobalVariables : MonoBehaviour
             Debug.Log("Global Instance created");
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
-            SceneManager.activeSceneChanged += OnSceneChange;
-            QualitySettings.antiAliasing = 0;
-            QualitySettings.vSyncCount = 0; // Disable VSync to use targetFrameRate
-            Application.targetFrameRate = GlobalVariables.Instance.FrameRate;
+            if (firstLoad)
+            {
+                firstLoad = false;
+                AudioListener.volume = 0.9f;
+                SceneManager.activeSceneChanged += OnSceneChange;
+                QualitySettings.antiAliasing = 0;
+                QualitySettings.vSyncCount = 0; // Disable VSync to use targetFrameRate
+                Application.targetFrameRate = GlobalVariables.Instance.FrameRate;
+            }
         }
 
     }
