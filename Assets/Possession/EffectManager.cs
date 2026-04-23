@@ -22,7 +22,7 @@ public class EffectManager : MonoBehaviour{
                 case "MainScene":
                     TrueInstance = new EffectManagerInMainScene();
                     break;
-                case "WorldFighting":
+                case "WorldFight":
                     TrueInstance = new EffectManagerInFighting();
                     break;
                 default:

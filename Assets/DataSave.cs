@@ -30,6 +30,8 @@ public class DataSave : MonoBehaviour{
     string path;
     public static DataSave Instance{get;private set;} = null;
     public GameObject FailUIPrefab;
+    public GameObject Panel;
+    GameObject Player;
     void Awake(){
         path = Application.persistentDataPath + "/save.json";
         if (Instance != null && Instance != this){
@@ -43,6 +45,10 @@ public class DataSave : MonoBehaviour{
         if(FailUIPrefab.transform.Find("OK").TryGetComponent<Button>(out Button btn)){
             btn.onClick.RemoveAllListeners();
             btn.onClick.AddListener(CloseFailedUI);
+        }
+        Player = GameObject.FindWithTag("Player"); 
+        if(Player == null){
+            Debug.Log("You enter a scene without player");
         }
     }
     public void SaveData(GameObject Player){
@@ -119,5 +125,14 @@ public class DataSave : MonoBehaviour{
     }
     void CloseFailedUI(){
         FailUIPrefab.SetActive(false);
+    }
+    public void OpenPanel(){
+        Panel.SetActive(true);
+    }
+    public void ClosePanel(){
+        Panel.SetActive(false);
+    }
+    public void ToSaveData(){
+        SaveData(Player);
     }
 }

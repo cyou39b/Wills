@@ -7,7 +7,7 @@ public class EffectManagerInFighting : AbstractEffectManager{
     List<PossessionItems> nowEffect = new List<PossessionItems>();
     private GameObject Player;
     Jack script;
-    public AbstractEnemy enemyScript;
+    //public AbstractEnemy enemyScript;
     public override void Start(){
         Player = GameObject.Find("Jack");
         if(Player == null)
@@ -22,7 +22,6 @@ public class EffectManagerInFighting : AbstractEffectManager{
     //that's weird,though
     public override IEnumerator LateStart(){
         yield return null;
-        
     }
     public override void Update(){
         for(int i = 0;i < nowEffect.Count;i++){
@@ -59,7 +58,11 @@ public class EffectManagerInFighting : AbstractEffectManager{
         nowEffect.Add(pos);
     }
     public override void EnemyHPUPFunc(PossessionItems pos){
-        enemyScript.HpBar.MaxHP *= pos.effect.EffectRate+1;
+        //enemyScript.HpBar.MaxHP *= pos.effect.EffectRate+1;
+        foreach(AbstractEnemy enemy in EnemySpawner.AllEnemys){
+            enemy.HpBar.MaxHP *= pos.effect.EffectRate+1;
+            enemy.HpBar.HP = enemy.HpBar.MaxHP;
+        }
         pos.effect.endTime = float.PositiveInfinity;
         nowEffect.Add(pos);
     }
@@ -108,7 +111,10 @@ public class EffectManagerInFighting : AbstractEffectManager{
 
     }
     public override void ClearEnemyHPUP(PossessionItems pos){
-        enemyScript.HpBar.MaxHP /= pos.effect.EffectRate+1;
+        //enemyScript.HpBar.MaxHP /= pos.effect.EffectRate+1;
+        foreach(AbstractEnemy enemy in EnemySpawner.AllEnemys){
+            enemy.HpBar.MaxHP /= pos.effect.EffectRate+1;
+        }
         pos.effect.usedTimes--;
     }
     public override void ClearBulletKnockbackForceUpFunc(PossessionItems pos){
