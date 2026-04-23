@@ -6,12 +6,10 @@ using System;
 public class EffectManagerInMainScene : AbstractEffectManager{
     List<PossessionItems> nowEffect = new List<PossessionItems>();
     public override void Update(){
-        if(nowEffect != null){
-            foreach(PossessionItems items in nowEffect){
-                if(Time.time >= items.effect.endTime){
-                    ClearSPDUp(items);
-                    nowEffect.Remove(items);
-                }
+        for(int i = 0;i < nowEffect.Count;i++){
+            if(Time.time >= nowEffect[i].effect.endTime){
+                ClearSPDUp(nowEffect[i]);
+                nowEffect.Remove(nowEffect[i]);
             }
         }
     }
@@ -24,7 +22,6 @@ public class EffectManagerInMainScene : AbstractEffectManager{
     public override void ClearAllEffect(){
         foreach(PossessionItems items in nowEffect){
             ClearSPDUp(items);
-            items.effect.usedTimes--;
         }
         nowEffect.Clear();
     }

@@ -32,6 +32,7 @@ public class BackpackLogic : MonoBehaviour{
         foreach(GameObject items in BackpackGameobjectButtonList){
             Destroy(items);
         }
+        BackpackGameobjectButtonList.Clear();
     }
     public void Spawn(){ //call when the backpack button onClick
         for(int i = 0; i < GlobalVariables.Instance.possession.Count ; i++){

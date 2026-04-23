@@ -49,7 +49,7 @@ public class PossessionLogic : MonoBehaviour{
                         });
                     }
                     else if(ThisPossession.effect.scene == UsableScene.All ||
-                        ThisPossession.effect.scene.ToString() == nowSceneName){
+                            ThisPossession.effect.scene.ToString() == nowSceneName){
                         use.onClick.AddListener(() =>{
                             ThisPossession.effect.usedTimes++;
                             //create effect

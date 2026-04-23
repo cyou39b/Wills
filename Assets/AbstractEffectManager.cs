@@ -6,6 +6,9 @@ using UnityEngine;
 public abstract class AbstractEffectManager{
     public virtual void Start(){}
     public abstract void Update();
+    public virtual IEnumerator LateStart(){
+        yield return null;
+    }
     public virtual void ATKBoostFunc(PossessionItems pos){}
     public abstract void SPDUpFunc(PossessionItems pos);
     public virtual void PlayerHPBoostFunc(PossessionItems pos){}

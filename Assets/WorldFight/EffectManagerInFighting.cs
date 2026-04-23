@@ -19,20 +19,25 @@ public class EffectManagerInFighting : AbstractEffectManager{
             script = jack;
         }
     }
+    //that's weird,though
+    public override IEnumerator LateStart(){
+        yield return null;
+        
+    }
     public override void Update(){
-        foreach(PossessionItems pos in nowEffect){
-            if(Time.time >= pos.effect.endTime){
-                if(pos.effect.effectType == EffectType.ATKBoost){
-                    ClearSPDUp(pos);
-                    nowEffect.Remove(pos);
+        for(int i = 0;i < nowEffect.Count;i++){
+            if(Time.time >= nowEffect[i].effect.endTime){
+                if(nowEffect[i].effect.effectType == EffectType.ATKBoost){
+                    ClearSPDUp(nowEffect[i]);
+                    nowEffect.Remove(nowEffect[i]);
                 }
-                else if(pos.effect.effectType == EffectType.ATKBoost){
-                    ClearATKBoost(pos);
-                    nowEffect.Remove(pos);
+                else if(nowEffect[i].effect.effectType == EffectType.ATKBoost){
+                    ClearATKBoost(nowEffect[i]);
+                    nowEffect.Remove(nowEffect[i]);
                 }
-                else if(pos.effect.effectType == EffectType.BulletKnockbackForceUp){
-                    ClearBulletKnockbackForceUpFunc(pos);
-                    nowEffect.Remove(pos);
+                else if(nowEffect[i].effect.effectType == EffectType.BulletKnockbackForceUp){
+                    ClearBulletKnockbackForceUpFunc(nowEffect[i]);
+                    nowEffect.Remove(nowEffect[i]);
                 }
             }
         }
@@ -69,23 +74,18 @@ public class EffectManagerInFighting : AbstractEffectManager{
                 switch (item.effect.effectType){
                     case EffectType.ATKBoost:
                         ClearATKBoost(item);
-                        item.effect.usedTimes--;
                         break;
                     case EffectType.PlayerHPBoost:
                         ClearPlayerHPBoost(item);
-                        item.effect.usedTimes--;
                         break;
                     case EffectType.SPDUp:
                         ClearSPDUp(item);
-                        item.effect.usedTimes--;
                         break;
                     case EffectType.EnemyHPUP:
                         ClearEnemyHPUP(item);
-                        item.effect.usedTimes--;
                         break;
                     case EffectType.BulletKnockbackForceUp:
                         ClearBulletKnockbackForceUpFunc(item);
-                        item.effect.usedTimes--;
                         break;
                     default:
                         break;

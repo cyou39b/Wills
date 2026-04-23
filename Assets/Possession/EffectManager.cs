@@ -21,7 +21,6 @@ public class EffectManager : MonoBehaviour{
                     break;
                 case "MainScene":
                     TrueInstance = new EffectManagerInMainScene();
-                    Debug.Log($"{SceneManager.GetActiveScene().name}");
                     break;
                 case "WorldFighting":
                     TrueInstance = new EffectManagerInFighting();
@@ -34,6 +33,7 @@ public class EffectManager : MonoBehaviour{
     }
     void Start(){
         TrueInstance.Start();
+        StartCoroutine(TrueInstance.LateStart());
     }
     void Update(){
         TrueInstance.Update();

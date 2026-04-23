@@ -90,7 +90,8 @@ public class JackMainScene : MonoBehaviour{
         if (Keyboard.current[GlobalVariables.Instance.InteractKey].wasPressedThisFrame && 
             Button1.gameObject.activeSelf && 
             !MenuManager.IsMenuOpen && 
-            !DialogueManager.IsTalking){
+            !DialogueManager.IsTalking &&
+            !BackpackLogic.IsBackpackOpening){
             DialogueManager.Instance.StartDialogue(closestObj);
         }
     }

@@ -6,12 +6,10 @@ using UnityEngine;
 public class EffectManagerInMining : AbstractEffectManager{
     List<PossessionItems> nowEffect = new List<PossessionItems>();
     public override void Update(){
-        if(nowEffect != null){
-            foreach(PossessionItems pos in nowEffect){
-                if(Time.time >= pos.effect.endTime){
-                    ClearSPDUp(pos);
-                    nowEffect.Remove(pos);
-                }
+        for(int i = 0;i < nowEffect.Count;i++){
+            if(Time.time >= nowEffect[i].effect.endTime){
+                ClearSPDUp(nowEffect[i]);
+                nowEffect.Remove(nowEffect[i]);
             }
         }
     }
@@ -23,7 +21,6 @@ public class EffectManagerInMining : AbstractEffectManager{
     public override void ClearAllEffect(){
         foreach(PossessionItems items in nowEffect){
             ClearSPDUp(items);
-            items.effect.usedTimes--;
         }
         nowEffect.Clear();
     }

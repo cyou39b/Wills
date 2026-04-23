@@ -19,7 +19,7 @@ MonoBehaviour:
   Num: 0
   effect:
     effectType: 3
-    EffectRate: 1
+    EffectRate: 0.5
     scene: 2
     stackable: 0
     usedTimes: 0

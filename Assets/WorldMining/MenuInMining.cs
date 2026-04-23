@@ -7,7 +7,6 @@ public class MenuInMining : MonoBehaviour
     public GameObject MenuPanel;
     public static bool IsMenuPanelOpening = false;
     float timeScaleBeforeMenuPanelOpening; 
-    //And don't ask why I use timescale to control here but replace this kind of method in MainMenu , I just ..... forget the reason
     void Start(){}
 
     void Update(){
