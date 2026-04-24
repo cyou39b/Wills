@@ -9,7 +9,7 @@ public class EffectManagerInFighting : AbstractEffectManager{
     Jack script;
     //public AbstractEnemy enemyScript;
     public override void Start(){
-        Player = GameObject.Find("Jack");
+        Player = GameObject.FindWithTag("Player");
         if(Player == null)
         {
             Debug.LogError("Can't find player (gameObject named \"Jack\") in scene.");
@@ -26,7 +26,7 @@ public class EffectManagerInFighting : AbstractEffectManager{
     public override void Update(){
         for(int i = 0;i < nowEffect.Count;i++){
             if(Time.time >= nowEffect[i].effect.endTime){
-                if(nowEffect[i].effect.effectType == EffectType.ATKBoost){
+                if(nowEffect[i].effect.effectType == EffectType.SPDUp){
                     ClearSPDUp(nowEffect[i]);
                     nowEffect.Remove(nowEffect[i]);
                 }

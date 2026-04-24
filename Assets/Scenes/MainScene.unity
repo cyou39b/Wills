@@ -502,7 +502,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2067444817}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DataSave, Assembly-CSharp
         m_MethodName: OpenPanel
         m_Mode: 1
@@ -552,11 +552,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88049314}
   m_CullTransparentMesh: 1
---- !u!1 &88182405 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4658562143557041770, guid: db472cb23e04c2845b2d58c644f13c91, type: 3}
-  m_PrefabInstance: {fileID: 2985041226798950561}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &88182406 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3177193411392157649, guid: db472cb23e04c2845b2d58c644f13c91, type: 3}
@@ -1063,9 +1058,7 @@ MonoBehaviour:
   possession:
   - {fileID: 11400000, guid: e739f22c2bae10b4e84f4d539fc510d2, type: 2}
   - {fileID: 11400000, guid: 0cadb824067d0a64c80843306fbfc143, type: 2}
-  AllPossession:
-  - {fileID: 11400000, guid: e739f22c2bae10b4e84f4d539fc510d2, type: 2}
-  - {fileID: 11400000, guid: 0cadb824067d0a64c80843306fbfc143, type: 2}
+  allPossessionList: {fileID: 11400000, guid: 6087f53cdc6158f44983f32d855457a0, type: 2}
 --- !u!4 &182799927
 Transform:
   m_ObjectHideFlags: 0
@@ -2362,7 +2355,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2067444817}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DataSave, Assembly-CSharp
         m_MethodName: ClosePanel
         m_Mode: 1
@@ -5258,6 +5251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 866036671}
+  - component: {fileID: 866036672}
   m_Layer: 5
   m_Name: DataSave
   m_TagString: Untagged
@@ -5286,6 +5280,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &866036672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866036670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2582332b52962c45ba82905a8fe90a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataSave
+  ConfirmPanel: {fileID: 0}
+  FailedPanel: {fileID: 0}
+  FailedPanelMsgText: {fileID: 0}
 --- !u!1 &912198782
 GameObject:
   m_ObjectHideFlags: 0
@@ -15303,7 +15312,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2067444817}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DataSave, Assembly-CSharp
         m_MethodName: ToSaveData
         m_Mode: 1
@@ -19404,52 +19413,6 @@ Transform:
   - {fileID: 4458254}
   m_Father: {fileID: 372033507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2067444815
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2067444816}
-  - component: {fileID: 2067444817}
-  m_Layer: 0
-  m_Name: DataSave
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2067444816
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067444815}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 287.2615, y: 133.52538, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2067444817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067444815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2582332b52962c45ba82905a8fe90a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DataSave
-  FailUIPrefab: {fileID: 88182405}
-  Panel: {fileID: 912198782}
 --- !u!1001 &2078240571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112726,6 +112689,5 @@ SceneRoots:
   - {fileID: 1897497106}
   - {fileID: 348258815}
   - {fileID: 392615919}
-  - {fileID: 2067444816}
   - {fileID: 1638464603}
   - {fileID: 944926754}

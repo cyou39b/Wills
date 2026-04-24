@@ -10,6 +10,7 @@ TagManager:
   - Field
   - Interact
   - Ledge
+  - Jack Head
   layers:
   - Default
   - TransparentFX

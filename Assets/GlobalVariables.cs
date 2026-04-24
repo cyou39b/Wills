@@ -43,12 +43,15 @@ public class GlobalVariables : MonoBehaviour
 
     public void OnSceneChange(Scene prev, Scene curr)
     {
+        Debug.Log($"Scene change: {prev.name} -> {curr.name}");
+
         string currSceneName = curr.name;
         switch(currSceneName)
         {
+            case "LoadSceneBuffer":
+                break;
             case "MainMenu":
             case "MainScene":
-            case "LoadSceneBuffer":
             case "WorldMining":
                 QualitySettings.antiAliasing = 0;
                 break;
@@ -59,12 +62,58 @@ public class GlobalVariables : MonoBehaviour
                 Debug.LogWarning("OnSceneChange: unknown scene loaded.");
                 break;
         }
+
+        if(DataSave.DataBuffer != null &&
+           DataSave.DataBuffer.PlayerPos != null && 
+           !DataSave.DataBuffer.positionWasRead &&
+           currSceneName == DataSave.DataBuffer.CurrentSceneName
+        ) {
+            DataSave.DataBuffer.positionWasRead = true;
+            GameObject player = GameObject.Find("Player");
+            if(player == null)
+            {
+                Debug.LogError("Current scene don't have player.");
+            }
+
+            player.transform.position = DataSave.DataBuffer.PlayerPos.Value;
+        }
     }
 
     public bool isQuitting = false;
     void OnApplicationQuit()
     {
         isQuitting = true;
+    }
+
+    public void LoadKeys(in PlayerData data)
+    {
+        try
+        {
+            Instance.AttackKey = (Key)System.Enum.Parse(typeof(Key),data.AttackKey);
+            Instance.MoveRightKey = (Key)System.Enum.Parse(typeof(Key),data.MoveRightKey);
+            Instance.DownKey = (Key)System.Enum.Parse(typeof(Key),data.DownKey);
+            Instance.FindMineKey = (Key)System.Enum.Parse(typeof(Key),data.FindMineKey);
+            Instance.JumpKey = (Key)System.Enum.Parse(typeof(Key),data.JumpKey);
+            Instance.MoveLeftKey = (Key)System.Enum.Parse(typeof(Key),data.MoveLeftKey);
+            Instance.InteractKey = (Key)System.Enum.Parse(typeof(Key),data.InteractKey);
+            Instance.UpKey = (Key)System.Enum.Parse(typeof(Key),data.UpKey);
+        }
+        catch(System.Exception e)
+        {
+            Debug.LogError($"{e.Message}, {e.GetType()}");
+        }
+    }
+
+    public void SaveKeys(PlayerData data)
+    {
+        data.InteractKey = Instance.InteractKey.ToString();
+        data.FindMineKey = Instance.FindMineKey.ToString();
+        data.JumpKey = Instance.JumpKey.ToString();
+        data.AttackKey = Instance.AttackKey.ToString();
+        data.MoveLeftKey = Instance.MoveLeftKey.ToString();
+        data.MoveRightKey = Instance.MoveRightKey.ToString();
+        data.UpKey = Instance.UpKey.ToString();
+        data.DownKey = Instance.DownKey.ToString();
     }
 
     // ----------------- variables below ------------------------
@@ -82,7 +131,8 @@ public class GlobalVariables : MonoBehaviour
     public Key FindMineKey = Key.N;
 
     public List<PossessionItems> possession;
-    public PossessionItems[] AllPossession;
+    public PossessionItems[] AllPossession => allPossessionList.List;
+    public AllPossessionList allPossessionList;
 }
 
 public class DefinedLayers 

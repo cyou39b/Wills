@@ -1,138 +1,157 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [System.Serializable]
 public class PlayerData{
     // basic data in game 
+    public string CurrentSceneName;
+
+// NOTE: Due some to technical issue, some fields loaded can't be used immediately in LoadData,
+// NOTE: they might come with a "wasRead" variable to make it them be used in the right time.
+    [System.NonSerialized]
+    public bool positionWasRead = false;
+    public Vector3? PlayerPos;
+
+    public List<int> BackpackIndex = new List<int>();
     public int Mine;
-    public string Scene;
-    public float xPos;
-    public float yPos;
-    public float zPos;
-    public List<int> BackpackIndex; //TODO
-    //record Player setting
+
+    // ------------ Player settings ---------------
     public int FrameRate;
-    public string Jump;
-    public string MoveLeft;
-    public string MoveRight;
-    public string Up;
-    public string Down;
-    public string Interact;
-    public string Attack;
-    public string FindMine;
+
+    public string JumpKey;
+    public string MoveLeftKey;
+    public string MoveRightKey;
+    public string UpKey;
+    public string DownKey;
+    public string InteractKey;
+    public string AttackKey;
+    public string FindMineKey;
 }
+
 public class DataSave : MonoBehaviour{
-    string path;
-    public static DataSave Instance{get;private set;} = null;
-    public GameObject FailUIPrefab;
-    public GameObject Panel;
-    GameObject Player;
+    // NOTE: Inspector field
+    public GameObject ConfirmPanel;
+    public GameObject FailedPanel;
+    public Text FailedPanelMsgText;
+
+    static string SaveDataPath = null;
+    public static PlayerData DataBuffer {get; private set;} = null;
     void Awake(){
-        path = Application.persistentDataPath + "/save.json";
-        if (Instance != null && Instance != this){
-            Destroy(this.gameObject);
-            return;
+        if(SaveDataPath == null) 
+        {
+            SaveDataPath = Application.persistentDataPath + "/save.json";
+            Debug.Log(SaveDataPath);
         }
-        else{
-            Instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        if(FailUIPrefab.transform.Find("OK").TryGetComponent<Button>(out Button btn)){
-            btn.onClick.RemoveAllListeners();
-            btn.onClick.AddListener(CloseFailedUI);
-        }
-        Player = GameObject.FindWithTag("Player"); 
-        if(Player == null){
-            Debug.Log("You enter a scene without player");
+
+        if(DataBuffer == null)
+        {
+            if(ExistSavedGame())
+            {
+                LoadData();
+            }
         }
     }
-    public void SaveData(GameObject Player){
-        PlayerData data = new PlayerData();
-        data.Mine = GlobalVariables.Instance.NumMines;
-        data.Scene = SceneManager.GetActiveScene().name;
-        data.xPos = Player.transform.position.x;
-        data.yPos = Player.transform.position.y;
-        data.zPos = Player.transform.position.z;
 
-        data.Attack = GlobalVariables.Instance.AttackKey.ToString();
-        data.Down = GlobalVariables.Instance.DownKey.ToString();
-        data.FindMine = GlobalVariables.Instance.FindMineKey.ToString();
-        data.FrameRate = GlobalVariables.Instance.FrameRate;
-        data.Interact = GlobalVariables.Instance.InteractKey.ToString();
-        data.Jump = GlobalVariables.Instance.JumpKey.ToString();
-        data.MoveLeft = GlobalVariables.Instance.MoveLeftKey.ToString();
-        data.MoveRight = GlobalVariables.Instance.MoveRightKey.ToString();
-        data.Up = GlobalVariables.Instance.UpKey.ToString();
+    [ContextMenu("Save Data")]
+    public void SaveData(){
+        if(DataBuffer == null) {DataBuffer = new PlayerData();}
+
+        DataBuffer.CurrentSceneName = SceneManager.GetActiveScene().name;
+
+        GameObject player = GameObject.FindWithTag("Player");
+        if(player == null)
+        {
+            DataBuffer.PlayerPos = null;
+        }
+        else
+        {
+            DataBuffer.PlayerPos = player.transform.position;
+        }
+
+        GlobalVariables.Instance.SaveKeys(DataBuffer);
+
+        DataBuffer.Mine = GlobalVariables.Instance.NumMines;
+
+
+        DataBuffer.FrameRate = GlobalVariables.Instance.FrameRate;
 
         foreach(PossessionItems item in GlobalVariables.Instance.possession){
-            data.BackpackIndex.Add(item.index);
+            DataBuffer.BackpackIndex.Add(item.index);
         }
 
-        string content = JsonUtility.ToJson(data);
+        string content = JsonUtility.ToJson(DataBuffer);
         try{
-            File.WriteAllText(path,content);
+            FileInfo file = new FileInfo(SaveDataPath);
+            file.Directory?.Create(); // Creates the directory that target will be in if it doesn't exist.
+
+            File.WriteAllText(file.FullName, content);
         }
-        catch(Exception e){
-            Debug.LogError(e);
-            //show Failed UI
-            if(FailUIPrefab.transform.Find("Msg").TryGetComponent<Text>(out Text txt3)){
-                txt3.text = e.Message;
-            }
-            FailUIPrefab.SetActive(true);
+        catch(System.Exception e){
+            Debug.LogError($"{e.Message}, {e.GetType()}");
+
+            FailedPanel.SetActive(true);
+            FailedPanelMsgText.text = $"Some error occurred during saving, {e.Message} : {e.GetType()}";
             return;
         }
     }
+
     public void LoadData(){
-        if (!File.Exists(path)){
-            Debug.LogWarning("Couldn't find the save data");
+        try
+        {
+            string jsonContent = File.ReadAllText(SaveDataPath);
+            DataBuffer = JsonUtility.FromJson<PlayerData>(jsonContent);
+        }
+        catch(System.Exception e)
+        {
+            Debug.LogError($"{e.Message}, {e.GetType()}");
+
+            FailedPanel.SetActive(true);
+            FailedPanelMsgText.text = $"Some error occurred during loading, {e.Message} : {e.GetType()}";
             return;
         }
-        string jsonContent = File.ReadAllText(path);
-        PlayerData deserializeData = JsonUtility.FromJson<PlayerData>(jsonContent);
 
-        GlobalVariables.Instance.AttackKey = (Key)System.Enum.Parse(typeof(Key),deserializeData.Attack);
-        GlobalVariables.Instance.DownKey = (Key)System.Enum.Parse(typeof(Key),deserializeData.Down);
-        GlobalVariables.Instance.FindMineKey = (Key)System.Enum.Parse(typeof(Key),deserializeData.FindMine);
-        GlobalVariables.Instance.FrameRate = deserializeData.FrameRate;
-        GlobalVariables.Instance.InteractKey = (Key)System.Enum.Parse(typeof(Key),deserializeData.Interact);
-        GlobalVariables.Instance.JumpKey = (Key)System.Enum.Parse(typeof(Key),deserializeData.Jump);
-        GlobalVariables.Instance.MoveLeftKey = (Key)System.Enum.Parse(typeof(Key),deserializeData.MoveLeft);
-        GlobalVariables.Instance.MoveRightKey = (Key)System.Enum.Parse(typeof(Key),deserializeData.MoveRight);
-        GlobalVariables.Instance.UpKey = (Key)System.Enum.Parse(typeof(Key),deserializeData.Up);
+        GlobalVariables.Instance.FrameRate = DataBuffer.FrameRate;
 
-        foreach(int index in deserializeData.BackpackIndex){
+        GlobalVariables.Instance.LoadKeys(DataBuffer);
+
+        foreach(int index in DataBuffer.BackpackIndex){
             GlobalVariables.Instance.possession.Add(GlobalVariables.Instance.AllPossession[index]);
         }
 
-        LoadSceneManager.NextScene = deserializeData.Scene;
-        SceneManager.LoadScene("LoadSceneBuffer");
-        if(SceneManager.GetActiveScene().name == deserializeData.Scene){ //Fixed
-            GameObject Player = GameObject.FindWithTag("Player");
-            if(Player == null){ 
-                Debug.LogError("Couldn't find player");
-                SceneManager.LoadScene("MainMenu");
-                return;
-            }
-            else{
-                Player.transform.position = new Vector3(deserializeData.xPos,deserializeData.yPos,deserializeData.zPos);
-            }
+    }
+
+    public bool ExistSavedGame()
+    {
+        try
+        {
+            FileStream fs = File.Open(SaveDataPath, FileMode.Open);
+            fs.Close();
         }
+        catch(FileNotFoundException)
+        {
+            return false;
+        }
+        catch(System.Exception e)
+        {
+            Debug.LogError($"{e.Message}, {e.GetType()}");
+            return false;
+        }
+
+        return true;
     }
-    void CloseFailedUI(){
-        FailUIPrefab.SetActive(false);
+
+    public void CloseFailedPanel(){
+        FailedPanel.SetActive(false);
     }
-    public void OpenPanel(){
-        Panel.SetActive(true);
+
+    public void OpenConfirmPanel(){
+        ConfirmPanel.SetActive(true);
     }
-    public void ClosePanel(){
-        Panel.SetActive(false);
-    }
-    public void ToSaveData(){
-        SaveData(Player);
+
+    public void CloseConfirmPanel(){
+        ConfirmPanel.SetActive(false);
     }
 }

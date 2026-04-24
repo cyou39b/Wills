@@ -9,7 +9,7 @@ public class Ground : MonoBehaviour
     {
         float volume = VelocityToVolume.Evaluate(-collision.relativeVelocity.y);
 
-        Debug.Log($"{collision.relativeVelocity.y}, {volume}, {collision.collider.name}");
+        // Debug.Log($"{collision.relativeVelocity.y}, {volume}, {collision.collider.name}");
         if(volume > 0.0f)
         {
             GameObject newObj = Instantiate(soundEffectPlayerPrefab, transform.position, transform.rotation);

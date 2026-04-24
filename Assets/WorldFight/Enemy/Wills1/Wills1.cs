@@ -43,6 +43,9 @@ public class Wills : AbstractEnemy
     {
         base.Start();
 
+        CurrentRealFacingDirection = FacingDirection.Left;
+        CurrentRealFacingDirection = FacingDirection.Right;
+
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -218,8 +221,15 @@ public class Wills : AbstractEnemy
             // NOTE: On leaving a intent
             switch(intent)
             {
+                case Intent.WaitUntilGround:
+                    rb.linearVelocity = Vector2.zero;
+                    rb.bodyType = RigidbodyType2D.Kinematic;
+                    waitUntilGround_stage = 0;
+                    waitUntilGround_keepXSpeed = float.NaN;
+                    break;
                 case Intent.Jump:
                     rb.linearDamping = 0.25f;
+                    jumpIntent_precalculatedVelocity = null;
                     break;
                 default:
                     break;
@@ -245,10 +255,6 @@ public class Wills : AbstractEnemy
                 case Intent.WalkOffEdge:
                     walking = true;
                     walkOffEdgeIntent_stage = 0;
-                    break;
-                case Intent.WaitUntilGround:
-                    waitUntilGround_stage = 0;
-                    waitUntilGround_keepXSpeed = float.NaN;
                     break;
             }
             
@@ -364,9 +370,6 @@ public class Wills : AbstractEnemy
                 }
                 break;
             case 3:
-                rb.linearVelocity = Vector2.zero;
-                rb.bodyType = RigidbodyType2D.Kinematic;
-
                 SafeWarp();
                 SetIntent(Intent.Idle, AIFacingDirection.None, false, Intent.WaitUntilGround); // FIXME?: fail to set intent sometimes
                 break;
@@ -500,36 +503,42 @@ public class Wills : AbstractEnemy
     }
 
     private DynamicAIAction jumpIntent_action;
+    private Vector2? jumpIntent_precalculatedVelocity = null;
     private void ProcessJumpIntent()
     {
         agent.enabled = false;
 
-        JumpFunction jf;
-        (string op_err, JumpFunction? op_jf) = MathUtil.CalculateJumpCurveWithRange(
-            transform.position, 
-            jumpIntent_action.StartZoneLeft, 
-            jumpIntent_action.StartZoneRight,
-            jumpIntent_action.Link.transform.rotation * jumpIntent_action.Link.endPoint + jumpIntent_action.Link.transform.position,
-            jumpIntent_action.EndZoneLeft,
-            jumpIntent_action.EndZoneRight,
-            jumpIntent_action.JumpHighestPoint
-        );
-        if(op_jf == null)
+        if(jumpIntent_precalculatedVelocity == null)
         {
-            Debug.LogError(op_err);
-            return;
+            JumpFunction jf;
+            (string op_err, JumpFunction? op_jf) = MathUtil.CalculateJumpCurveWithRange(
+                transform.position, 
+                jumpIntent_action.StartZoneLeft, 
+                jumpIntent_action.StartZoneRight,
+                jumpIntent_action.Link.transform.rotation * jumpIntent_action.Link.endPoint + jumpIntent_action.Link.transform.position,
+                jumpIntent_action.EndZoneLeft,
+                jumpIntent_action.EndZoneRight,
+                jumpIntent_action.JumpHighestPoint
+            );
+            if(op_jf == null)
+            {
+                Debug.LogError(op_err);
+                return;
+            }
+            else {jf = op_jf.Value;}
+
+            jumpIntent_precalculatedVelocity = new Vector2(
+                jf.xt.velocity,
+                jf.yt.b
+            );
         }
-        else {jf = op_jf.Value;}
 
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 1.0f;
         rb.linearDamping = 0.0f;
-        rb.linearVelocity = new Vector2(
-            jf.xt.velocity,
-            jf.yt.b
-        );
+        rb.linearVelocity = jumpIntent_precalculatedVelocity.Value;
+        waitUntilGround_keepXSpeed = rb.linearVelocityX;
         SetIntent(Intent.WaitUntilGround, AIFacingDirection.SameAsMoving);
-        waitUntilGround_keepXSpeed = jf.xt.velocity;
     }
 
     private DynamicAIAction walkOffEdgeIntent_action;
@@ -561,6 +570,7 @@ public class Wills : AbstractEnemy
         }
     }
 
+    private bool onTopOfJack = false;
     public void OnTriggerEnter2D(Collider2D other)
     {
         GameObject otherGameObject = other.gameObject;
@@ -572,6 +582,11 @@ public class Wills : AbstractEnemy
             {
                 listeningDynamicAction.TryAdd(action.Link.name, action);
             }
+        }
+    
+        if(otherGameObject.layer == DefinedLayers.PlayerLayer && otherGameObject.CompareTag("Jack Head"))
+        {
+            onTopOfJack = true;
         }
     }
 
@@ -593,18 +608,33 @@ public class Wills : AbstractEnemy
                 listeningDynamicAction.Remove(action.Link.name);
             }
         }
+
+        if(otherGameObject.layer == DefinedLayers.PlayerLayer && otherGameObject.CompareTag("Jack Head"))
+        {
+            onTopOfJack = false;
+        }
     }
 
     void SafeWarp()
     {
         if(agent.enabled && agent.isOnNavMesh) {return;}
+
+        if(onTopOfJack)
+        {
+            // NOTE: Workaround but it  works!!
+            float v_x = Random.Range(0, 1) == 0 ? -5.0f : 5.0f;
+            jumpIntent_precalculatedVelocity = new Vector2(v_x, 7.5f);
+            SetIntent(Intent.Jump, AIFacingDirection.SameAsMoving, true);
+            return;
+        }
+
         NavMeshQueryFilter filter = new NavMeshQueryFilter()
         {
             agentTypeID = agent.agentTypeID,
             areaMask = NavMesh.AllAreas
         };
         NavMeshHit hit;
-        if(NavMesh.SamplePosition(transform.position, out hit, 10.0f, filter)) // WARN: Magic number
+        if(NavMesh.SamplePosition(transform.position, out hit, 0.5f, filter)) // WARN: Magic number
         {
             agent.Warp(hit.position);
         }

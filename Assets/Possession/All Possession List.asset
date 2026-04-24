@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b7b54d2e3723642a9c13288c298be8, type: 3}
+  m_Name: All Possession List
+  m_EditorClassIdentifier: Assembly-CSharp::AllPossessionList
+  List:
+  - {fileID: 11400000, guid: e739f22c2bae10b4e84f4d539fc510d2, type: 2}
+  - {fileID: 11400000, guid: 0cadb824067d0a64c80843306fbfc143, type: 2}

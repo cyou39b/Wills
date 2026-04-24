@@ -258806,9 +258806,7 @@ MonoBehaviour:
   DownKey: 33
   FindMineKey: 28
   possession: []
-  AllPossession:
-  - {fileID: 11400000, guid: e739f22c2bae10b4e84f4d539fc510d2, type: 2}
-  - {fileID: 11400000, guid: 0cadb824067d0a64c80843306fbfc143, type: 2}
+  allPossessionList: {fileID: 11400000, guid: 6087f53cdc6158f44983f32d855457a0, type: 2}
 --- !u!4 &1143096137
 Transform:
   m_ObjectHideFlags: 0

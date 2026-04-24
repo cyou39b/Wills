@@ -26,6 +26,9 @@ public class Flyer : AbstractEnemy
     {
         base.Start();
 
+        CurrentRealFacingDirection = FacingDirection.Left;
+        CurrentRealFacingDirection = FacingDirection.Right;
+
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -37,18 +40,13 @@ public class Flyer : AbstractEnemy
         }
 
         int idx = Random.Range(0, FaceColors.Length);
-        mainColor = RandColor();
-        mat.SetColor("_Eyes_Color", RandColor());
-        mat.SetColor("_Face_Color", mainColor);
-        mat.SetColor("_Face_Outline_Color", RandColor());
-        mat.SetColor("_WingB_Color", RandColor());
-        mat.SetColor("_WingG_Color", RandColor());
-        mat.SetColor("_WingY_Color", RandColor());
-    }
-
-    Color RandColor()
-    {
-        return new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), 0.0f);
+        mainColor = FaceColors[idx];
+        mat.SetColor("_Eyes_Color", EyesColors[idx]);
+        mat.SetColor("_Face_Color", FaceColors[idx]);
+        mat.SetColor("_Face_Outline_Color", FaceOutlineColors[idx]);
+        mat.SetColor("_WingB_Color", WingBColors[idx]);
+        mat.SetColor("_WingG_Color", WingGColors[idx]);
+        mat.SetColor("_WingY_Color", WingYColors[idx]);
     }
 
     void Update()
