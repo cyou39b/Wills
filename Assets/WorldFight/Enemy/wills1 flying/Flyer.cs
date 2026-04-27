@@ -13,6 +13,8 @@ public class Flyer : AbstractEnemy
 
     [SerializeField] private float StillEpsilon;
 
+    protected override SpriteRenderer[] GetAllSpriteRenderers() => new SpriteRenderer[1]{SpRr};
+
     private NavMeshAgent agent;
     protected override void RecalculateMoveSpeed()
     {

@@ -15,7 +15,9 @@ public class MainMenuLogic : MonoBehaviour
     {
         StartGameButtonText.text = (DataSave.DataBuffer != null)
             ? "Load Game"
-            : "Start New Game"; 
+            : "Start New Game";
+
+        UIStack.Instance.emptyAction += OpenOptions;
     }
 
     public void StartGame()
@@ -41,10 +43,19 @@ public class MainMenuLogic : MonoBehaviour
             Application.Quit();
         #endif
     }
+
+    private int pid;
     public void OpenOptions(){
         OptionsScreen.SetActive(true);
+        pid = UIStack.Instance.NewPanel(
+            () =>
+            {
+                OptionsScreen.SetActive(false);
+            }
+        );
     }
-    public void CloseOptions(){
-        OptionsScreen.SetActive(false);
+    public void CloseOptions()
+    {
+        UIStack.Instance.RemovePanel(pid);
     }
 }

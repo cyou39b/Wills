@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 //  Jack的Script
 [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))]
-public class Jack : MonoBehaviour//, IKnockbackable
+public class Jack : MonoBehaviour
 {
     private Transform rendererTrans;
     private Vector3 rendererTransScale;
@@ -193,6 +193,16 @@ public class Jack : MonoBehaviour//, IKnockbackable
     {
         if(Explode.Activated) {return;}
 
+        if(BackpackLogic.IsBackpackOpening)
+        {
+            rb.linearVelocityX = 0.0f;
+
+            isJumpReduced = true;
+            jumpHoldTimer = JumpHoldMaxTime;
+            rb.gravityScale = 1.0f;
+            return;
+        }
+
         if(weapon.attackFreezeTimer >= 0.0f)
         {
             rb.linearVelocityX = 0.0f;
@@ -225,15 +235,12 @@ public class Jack : MonoBehaviour//, IKnockbackable
 
             if(jumpReleased)
             {
-                if(!isJumpReduced)
-                {
-                    isJumpReduced = true;
-                }
+                isJumpReduced = true;
             }
-            else if(!isJumpReduced && jumpHoldTimer <= JumpHoldMaxTime)
+
+            if(!isJumpReduced && jumpHoldTimer <= JumpHoldMaxTime)
             {
-                jumpHoldTimer += 0.02f; // FixedUpdate dt;
-                rb.gravityScale = 0.0f;
+                jumpHoldTimer += Time.fixedDeltaTime;
             }
             else
             {
@@ -251,6 +258,7 @@ public class Jack : MonoBehaviour//, IKnockbackable
     void Jump()
     {
         rb.linearVelocityY = JumpSpeed;
+        rb.gravityScale = 0.0f;
         jumpHoldTimer = 0.0f;
         isJumpReduced = false;
         jumpBufferTimer = -0.1f; // 把Timer設成負值，避免出現什麼奇怪的bug

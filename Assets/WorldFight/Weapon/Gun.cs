@@ -34,7 +34,7 @@ public class Gun : MonoBehaviour
     {
         // Do nothing if the game is paused
         if(Time.timeScale == 0.0f){return;}
-        if(Explode.Activated){return;}
+        if(Explode.Activated || BackpackLogic.IsBackpackOpening){return;}
 
         // 計算mouse的角度
         Vector2 mousePixelPosition = Mouse.current.position.ReadValue();

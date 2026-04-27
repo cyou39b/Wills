@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8509144427956929406}
   - component: {fileID: 9181721162363800019}
   - component: {fileID: -6678288830978238134}
+  - component: {fileID: 3036144993618218139}
   - component: {fileID: 5981363390417570603}
   m_Layer: 8
   m_Name: Wills1
@@ -132,6 +133,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
+--- !u!114 &3036144993618218139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429670849555049026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d84bbba52a2a9a47bd383fe791955a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFadeoutEffect
+  FadeoutTime: 0.5
+  RbMaxVelocityMagnitude: 2
 --- !u!114 &5981363390417570603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +162,6 @@ MonoBehaviour:
   HPBarPrefab: {fileID: 7012469317006889741, guid: aeaa31a668b0bb540a33b5b1508e6bbf, type: 3}
   HpBar: {fileID: 0}
   TrianglePrefab: {fileID: 8092762973403955582, guid: f38691ae2752f0a4f8d0002033f56be9, type: 3}
-  FadeoutEffectPrefab: {fileID: 7996657083104266949, guid: c34cef506d6180e4c9897bbf23b5e852, type: 3}
   AI: 1
   collisionForceGiveRatio: 0.95
   collisionForceKeepRatio: 0.65

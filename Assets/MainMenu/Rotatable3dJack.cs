@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Collider))]
@@ -20,6 +22,8 @@ public class Rotatable3dJack : MonoBehaviour
 
     private MenuSoundEffect soundEffect;
     private Vector3 angularVelocity;
+
+    public GameObject OptionMenu;
 
     void Start()
     {
@@ -46,17 +50,8 @@ public class Rotatable3dJack : MonoBehaviour
         Vector3 mouseScreenPos = currentMouse.position.ReadValue();
 
         Ray mouseRay = cam.ScreenPointToRay(mouseScreenPos);
-        if(Physics.Raycast(mouseRay, out rayCastInfo)){isHovered = rayCastInfo.collider == this.collider;}
+        if(!OptionMenu.activeInHierarchy && Physics.Raycast(mouseRay, out rayCastInfo)){isHovered = rayCastInfo.collider == this.collider;}
         else{isHovered = false;}
-
-        // if(isHovered)
-        // {
-        //     CursorManager.CurrentCursorName = currentMouse.leftButton.isPressed?"Grab":"Can Grab";
-        // }
-        // else
-        // {
-        //     CursorManager.CurrentCursorName = "Normal";
-        // }
 
         if(currentMouse.leftButton.wasReleasedThisFrame && getGrabbed) {
             getGrabbed = false;

@@ -68,9 +68,13 @@ public class OptionMenu : MonoBehaviour
             BindingBlur.SetActive(false);
         }));
     }
-    public IEnumerator BindKey(Action<Key> callback)
+
+    IEnumerator BindKey(Action<Key> callback)
     {
         BindingBlur.SetActive(true);
+
+        int pid = UIStack.Instance.NewPanel(() =>{});
+
         IsBinding = true;
         bool done = false;
         while (!done) // 重複直到有按鈕被按下
@@ -99,5 +103,6 @@ public class OptionMenu : MonoBehaviour
             yield return null;
         }
         IsBinding = false;
+        UIStack.Instance.RemovePanel(pid);
     }
 }

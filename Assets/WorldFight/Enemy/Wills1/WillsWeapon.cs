@@ -6,7 +6,7 @@ public class WillsWeapon : MonoBehaviour
 {
     public GameObject BulletPrefab;
 
-    private SpriteRenderer spriteRenderer;
+    [System.NonSerialized] public SpriteRenderer spriteRenderer;
     public Sprite[] GunFireSprites;
     private GameObject GunFireAnimation;
     public SpriteRenderer GunFireAnimationSpriteRenderer;

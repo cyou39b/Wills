@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 // Bullet上的Script
 
@@ -103,11 +102,7 @@ public class Bullet : MonoBehaviour, ICanKnockback
             }
 
             AbstractEnemy enemy;
-            if(!other.TryGetComponent<AbstractEnemy>(out enemy))
-            {
-                Debug.LogError($"GameObject {other.name} is having enemy layer but doesn't have AbstractEnemy Component.");
-            }
-            else
+            if(other.TryGetComponent<AbstractEnemy>(out enemy))
             {
                 enemy.InsertAndRemoveFromEnemyList();
                 enemy.GetDamaged(Damage);

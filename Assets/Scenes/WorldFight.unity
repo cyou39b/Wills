@@ -932,7 +932,7 @@ MonoBehaviour:
   MaxY: 0.3
   Player: {fileID: 1024952361}
   RbOffestSmoothTime: 0.2
-  CameraSizeSmoothTime: 0.25
+  CameraSizeSmoothTime: 0.45
   CameraSizeSmoothTimeFast: 0.15
 --- !u!1 &381708937
 GameObject:

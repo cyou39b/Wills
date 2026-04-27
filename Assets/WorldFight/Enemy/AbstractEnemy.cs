@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(EnemyFadeoutEffect))]
 public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockback
 {
     protected Rigidbody2D rb;
@@ -48,6 +48,8 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
 
     protected GameObject renderingChildObject;
     protected SpriteRenderer SpRr;
+    protected abstract SpriteRenderer[] GetAllSpriteRenderers();
+
     protected Material Mat;
     [NonSerialized] public Color mainColor = Color.green;
     protected Animator Anmor;
@@ -176,48 +178,32 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
             triangle.wills1Color.a
         );
     }
-    protected virtual void OnDestroy()
-    {
-        EnemySpawner.AllEnemys.Remove(this);
-        RbCameraMovement.Enemys.Remove(transform);
-    }
     protected virtual void OnHPLE0()
     {
         Explode.ExplodePosition = transform.position;
+        EnemySpawner.AllEnemys.Remove(this);
+        RbCameraMovement.Enemys.Remove(transform);
+
         Destroy(triangle.gameObject);
         Destroy(HpBar.gameObject);
         Destroy(gameObject);
     }
 
-    public GameObject FadeoutEffectPrefab;
     protected virtual void OnOutOfField()
     {
         if(GlobalVariables.Instance == null || GlobalVariables.Instance.isQuitting){return;}
+        if(this == null) {return;}
 
         Debug.Log("Enemy out of field");
-        
-        GameObject newObj = Instantiate(FadeoutEffectPrefab, transform.position, transform.rotation);
-        EnemyFadeoutEffect enemyFadeoutEffect;
-        if(!newObj.TryGetComponent<EnemyFadeoutEffect>(out enemyFadeoutEffect))
-        {
-            Debug.LogError("Missing component");
-        }
-        else
-        {
-            enemyFadeoutEffect.Initialize(SpRr, renderingChildObject.transform.localPosition, rb, transform.lossyScale);
-        }
 
-        // because that stupid OnTriggerExit2D was called when the `field`
-        // GameObject got destroyed while loading another scene/ quitting application
-        // so I have to do this null check every time.
-        // if(triangle != null) {Destroy(triangle.gameObject);}
-        // if(HpBar != null) {Destroy(HpBar.gameObject);}
-        // if(gameObject != null) {Destroy(gameObject);}
-        // NOTE: This thing is fixed by doing a OnApplicationQuit check.
+        EnemyFadeoutEffect fadeoutEffect = GetComponent<EnemyFadeoutEffect>();
+        fadeoutEffect.Initialize(GetAllSpriteRenderers(), rb);
 
-        Destroy(triangle.gameObject);
-        Destroy(HpBar.gameObject);
-        Destroy(gameObject);
+        if(triangle != null) {Destroy(triangle.gameObject);}
+        if(HpBar != null) {Destroy(HpBar.gameObject);}
+
+        EnemySpawner.AllEnemys.Remove(this);
+        Destroy(this);
     }
 
     // I hate this implementation. Previous one with coroutine is prettier.

@@ -13,6 +13,8 @@ public class Wills : AbstractEnemy
     public Color[] BodyColors;
     public Color[] EyeColors;
 
+    protected override SpriteRenderer[] GetAllSpriteRenderers() => new SpriteRenderer[2]{SpRr, weapon.spriteRenderer};
+
     private const string anmorIsWalkingTag = "isWalking";
     private bool _walking = false;
     private bool walking 
@@ -640,6 +642,7 @@ public class Wills : AbstractEnemy
         }
         else
         {
+            Debug.Break();
             Debug.LogError($"Agent Can't Warp, at {transform.position}"); // TODO: FIXME: you know this is not the solution
         }
         agent.enabled = true;

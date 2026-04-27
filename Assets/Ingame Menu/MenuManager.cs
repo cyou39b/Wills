@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 
 // 在遊戲進行中的menu
@@ -23,24 +21,11 @@ public class MenuManager : MonoBehaviour
         Blur.SetActive(false);
         MenuScreen.SetActive(false);
         CloseMenuButton.SetActive(false);
+
+        UIStack.Instance.emptyAction += OpenMenu;
     }
 
-    void Update()
-    {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            // 不打開menu的條件
-            if (IsMenuOpen)
-            {
-                CloseMenu();
-            }
-            else
-            {
-                OpenMenu();
-            }
-        }
-    }
-
+    private int pid;
     public void OpenMenu()
     {
         if( OptionMenu.IsBinding || 
@@ -50,11 +35,30 @@ public class MenuManager : MonoBehaviour
             ShopInterfaceLogic.isBuying ||
             BackpackLogic.IsBackpackOpening ||
             MenuInSceneLogic.IsSceneMenuOpen ||
-            MenuInMining.IsMenuPanelOpening)
-            {return;}
+            MenuInMining.IsMenuPanelOpening
+        ) {return;}
+
+        pid = UIStack.Instance.NewPanel(
+            () =>
+            {
+                if( OptionMenu.IsBinding || 
+                    MapScenesSwicher.isMapOpening || 
+                    DeathManager.Activated)
+                    {return;}
+                IsMenuOpen = false;
+                Time.timeScale = timeScaleBefaorePause ;
+                Blur.SetActive(false);
+                MenuScreen.SetActive(false);
+                PauseButton.SetActive(true);
+                CloseMenuButton.SetActive(false);
+            }
+        );
+
         IsMenuOpen = true;
+
         timeScaleBefaorePause = Time.timeScale;
         Time.timeScale = 0.0f;
+
         Blur.SetActive(true);
         MenuScreen.SetActive(true);
         PauseButton.SetActive(false);
@@ -63,16 +67,7 @@ public class MenuManager : MonoBehaviour
     
     public void CloseMenu()
     {
-        if( OptionMenu.IsBinding || 
-            MapScenesSwicher.isMapOpening || 
-            DeathManager.Activated)
-            {return;}
-        IsMenuOpen = false;
-        Time.timeScale = timeScaleBefaorePause ;
-        Blur.SetActive(false);
-        MenuScreen.SetActive(false);
-        PauseButton.SetActive(true);
-        CloseMenuButton.SetActive(false);
+        UIStack.Instance.RemovePanel(pid);
     }
 
     public void ExitScene()
