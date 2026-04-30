@@ -16,10 +16,11 @@ MonoBehaviour:
   sprite: {fileID: -2449117553472781384, guid: 78a17d2402290e640b4109e53f8536fe, type: 3}
   Name: Mine
   information: 123456
-  Num: 0
+  Num: 1100
   effect:
     effectType: 0
     EffectRate: 0
-    scene: 0
+    scene: 4
     stackable: 0
     usedTimes: 0
+    duration: 0

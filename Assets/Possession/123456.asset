@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: -1128947775675819744, guid: 2cf494e907bb9224d9f1931701671238, type: 3}
   Name: test
   information: test
-  Num: 96
+  Num: 88
   effect:
     effectType: 3
     EffectRate: 0.5

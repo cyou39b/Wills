@@ -118,15 +118,33 @@ public class Jack : MonoBehaviour
         // Do nothing if the game is stopped
         if(Time.timeScale == 0.0f){return;}
         
-        leftPressed = Keyboard.current[GlobalVariables.Instance.MoveLeftKey].isPressed;
-        rightPressed = Keyboard.current[GlobalVariables.Instance.MoveRightKey].isPressed;
-        
         float runCycle = Mathf.Repeat(animator.GetCurrentAnimatorStateInfo(0).normalizedTime, 1.0f);
         float frontLeg = 
             (143.0f/166.0f <= runCycle || runCycle <= 15.0f/166.0f) || 
             (98.0f/166.0f <= runCycle && runCycle <= 140.0f/166.0f)
                 ?1.0f
                 :-1.0f; // 1 for left and -1 for right
+
+        if(BackpackLogic.IsBackpackOpening) 
+        {
+            if(animationState == AnimationState.Walking)
+            {
+                if(prevFromtLeg != runCycle)
+                {
+                    animationState = (frontLeg==1.0f)
+                        ?AnimationState.LeftFront
+                        :AnimationState.RightFront;
+                    animator.SetBool("walking", false);
+                    animator.SetBool("leftFront", frontLeg==1.0f);
+                    animator.SetBool("rightFront", frontLeg!=1.0f);
+                }
+            }
+            return;
+        }
+        
+        leftPressed = Keyboard.current[GlobalVariables.Instance.MoveLeftKey].isPressed;
+        rightPressed = Keyboard.current[GlobalVariables.Instance.MoveRightKey].isPressed;
+
         if (leftPressed && weapon.attackFreezeTimer<0.0f)
         {
             if(animationState != AnimationState.Walking)

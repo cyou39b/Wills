@@ -13,14 +13,19 @@ public class OptionMenu : MonoBehaviour
     public Text JumpKeyText;
     public Text LeftKeyText;
     public Text RightKeyText;
+    public Text UpKeyText;
+    public Text DownKeyText;
     public Text InteractKeyText;
     public Text FindMineText;
+
     void Start()
     {
         // 寫好按鈕上預設的字
         JumpKeyText.text = GlobalVariables.Instance.JumpKey.ToString();
         LeftKeyText.text = GlobalVariables.Instance.MoveLeftKey.ToString();
         RightKeyText.text = GlobalVariables.Instance.MoveRightKey.ToString();
+        UpKeyText.text = GlobalVariables.Instance.UpKey.ToString();
+        DownKeyText.text = GlobalVariables.Instance.DownKey.ToString();
         InteractKeyText.text = GlobalVariables.Instance.InteractKey.ToString();
         FindMineText.text = GlobalVariables.Instance.FindMineKey.ToString();
     }
@@ -49,6 +54,22 @@ public class OptionMenu : MonoBehaviour
         StartCoroutine(BindKey((k)=>{
             GlobalVariables.Instance.MoveLeftKey = k;
             LeftKeyText.text = k.ToString();
+            BindingBlur.SetActive(false);
+        }));
+    }
+    public void BindUpKey()
+    {
+        StartCoroutine(BindKey((k)=>{
+            GlobalVariables.Instance.UpKey = k;
+            UpKeyText.text = k.ToString();
+            BindingBlur.SetActive(false);
+        }));
+    }
+    public void BindDownKey()
+    {
+        StartCoroutine(BindKey((k)=>{
+            GlobalVariables.Instance.DownKey = k;
+            DownKeyText.text = k.ToString();
             BindingBlur.SetActive(false);
         }));
     }

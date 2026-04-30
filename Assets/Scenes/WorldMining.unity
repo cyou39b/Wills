@@ -259879,11 +259879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!1 &1407510042 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1408765291624241213, guid: e6ad876ad31055c42837ef3335853538, type: 3}
-  m_PrefabInstance: {fileID: 1407510038}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1407510043 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1413318442624692856, guid: e6ad876ad31055c42837ef3335853538, type: 3}
@@ -263974,7 +263969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2051369570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263988,11 +263983,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackpackLogic
   Backpack: {fileID: 471093337}
-  Panel: {fileID: 1407510043}
-  PossessionPrefab: {fileID: 4309275733088508750, guid: 6ed8f81e712dcfd42995164664b522c5, type: 3}
-  Content: {fileID: 1407510042}
   BackpackIcon: {fileID: 1407510041}
+  PossessionPrefab: {fileID: 4309275733088508750, guid: 6ed8f81e712dcfd42995164664b522c5, type: 3}
+  ScrollViewContent: {fileID: 0}
+  Panel: {fileID: 1407510043}
   ISMsg: {fileID: 1407510040}
+  sfxClip: {fileID: 0}
 --- !u!4 &2051369571
 Transform:
   m_ObjectHideFlags: 0

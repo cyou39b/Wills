@@ -5802,7 +5802,7 @@ MonoBehaviour:
     weight: 0.99
   - prefab: {fileID: 7327592780018563279, guid: 285e276392309da48b4a035fa7e1ad7e, type: 3}
     weight: 1
-  spawnCnt: 2
+  spawnCnt: 0
 --- !u!4 &1949241809
 Transform:
   m_ObjectHideFlags: 0

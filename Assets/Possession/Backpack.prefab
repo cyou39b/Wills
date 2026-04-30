@@ -437,8 +437,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -280}
-  m_SizeDelta: {x: 1850, y: 1200}
+  m_AnchoredPosition: {x: 0, y: -900}
+  m_SizeDelta: {x: 1920, y: 3000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6617495860503341200
 CanvasRenderer:
@@ -651,6 +651,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3317430714153246260}
+  - component: {fileID: 6549221857697463627}
+  - component: {fileID: 6669548014593205939}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -674,9 +676,47 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -2}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &6549221857697463627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414015199135802914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 125
+    m_Right: 0
+    m_Top: 150
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 275, y: 215}
+  m_Constraint: 1
+  m_ConstraintCount: 5
+--- !u!114 &6669548014593205939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414015199135802914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
 --- !u!1 &2006638225398196410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1442,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7608769140800171976}
         m_TargetAssemblyTypeName: BackpackLogic, Assembly-CSharp
-        m_MethodName: CloseMsg
+        m_MethodName: ClosePossessionErrorPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2407,8 +2447,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackpackLogic
   Backpack: {fileID: 1191192077834873254}
-  Panel: {fileID: 1409198319559806055}
-  PossessionPrefab: {fileID: 4309275733088508750, guid: 6ed8f81e712dcfd42995164664b522c5, type: 3}
-  Content: {fileID: 1414015199135802914}
   BackpackIcon: {fileID: 6350147410920468753}
-  ISMsg: {fileID: 2820058258175732245}
+  PossessionPrefab: {fileID: 4309275733088508750, guid: 6ed8f81e712dcfd42995164664b522c5, type: 3}
+  ScrollViewContent: {fileID: 1414015199135802914}
+  PossessionErrorPanel: {fileID: 2820058258175732245}
+  PossessionErrorText: {fileID: 6272752397485300074}
+  Panel: {fileID: 1409198319559806055}
+  PanelItemImage: {fileID: 6115363404891670587}
+  PanelItemNameText: {fileID: 4894179886240398676}
+  PanelItemNumText: {fileID: 6930419308301772757}
+  PanelInfoText: {fileID: 5763982657388607032}
+  PanelUseButton: {fileID: 2888433544518463352}
