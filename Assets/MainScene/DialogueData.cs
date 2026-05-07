@@ -13,12 +13,16 @@ public class DialogueLine{
     public string content;
     public string optionText1;
     public DialogueCommand option1Command;
+    public int JumpToWhichLine1; //starts from zero 
+
     public string optionText2;
     public DialogueCommand option2Command;
+    public int JumpToWhichLine2;
 }
 public enum DialogueCommand{
     none,
     OpenShop,
     End,
-    Fight
+    Fight,
+    JumpToLine
 }

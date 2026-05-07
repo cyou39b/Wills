@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -44,8 +45,9 @@ public class DialogueManager : MonoBehaviour{
         index = 0;
         current = interact.GetDialogueData();
         
-        Dialogue.text = current.lines[index].content;
-        Speaker.text = current.lines[index].speaker;
+        //Dialogue.text = current.lines[index].content;
+        //Speaker.text = current.lines[index].speaker;
+        NextLine();
         DialoguePanel.SetActive(true);
     }
     public void NextLine(){
@@ -55,8 +57,7 @@ public class DialogueManager : MonoBehaviour{
 
         Option1.onClick.RemoveAllListeners();
         Option2.onClick.RemoveAllListeners();
-
-        index++;
+        
         if(index >= current.lines.Count){
             EndDialogue();
             return;
@@ -66,22 +67,26 @@ public class DialogueManager : MonoBehaviour{
             Speaker.text = current.lines[index].speaker;
         }
         if(!string.IsNullOrEmpty(current.lines[index].optionText1)){
+            int optionIndex = index;
+
             if(Option1.transform.Find("Text1").TryGetComponent<Text>(out Text txt1)){
                 txt1.text = current.lines[index].optionText1;
                 Option1.gameObject.SetActive(true);
                 Option1.onClick.AddListener(() =>
-                ExecuteCommand(current.lines[index].option1Command));
+                ExecuteCommand(current.lines[optionIndex].option1Command,1));
             }
+
             if(!string.IsNullOrEmpty(current.lines[index].optionText2)){
                 if(Option2.transform.Find("Text2").TryGetComponent<Text>(out Text txt2)){
                     txt2.text = current.lines[index].optionText2;
                     Option2.gameObject.SetActive(true);
                     Option2.onClick.AddListener(() =>
-                    ExecuteCommand(current.lines[index].option2Command));
+                    ExecuteCommand(current.lines[optionIndex].option2Command,2));
                 }
             }
             GoNextLine.gameObject.SetActive(false);
         }
+        index++;
     }
     public void EndDialogue(){
         DialoguePanel.SetActive(false);
@@ -91,7 +96,7 @@ public class DialogueManager : MonoBehaviour{
         Time.timeScale = timeScaleBeforeDialogeStart;
         current = null;
     }
-    void ExecuteCommand(DialogueCommand cmd){
+    void ExecuteCommand(DialogueCommand cmd,int optionNumber){
         switch (cmd){
             case DialogueCommand.none:
                 NextLine();
@@ -106,8 +111,23 @@ public class DialogueManager : MonoBehaviour{
                 break;
             case DialogueCommand.Fight:
                 EndDialogue();
+                EnemySpawner.spawnCnt = 5;
                 LoadSceneManager.NextScene = "WorldFight";
                 SceneManager.LoadScene("LoadSceneBuffer");
+                break;
+            case DialogueCommand.JumpToLine:
+                switch (optionNumber){
+                    case 1:
+                        index = current.lines[index].JumpToWhichLine1;
+                        break;
+                    case 2:
+                        index = current.lines[index].JumpToWhichLine2;
+                        break;
+                    default:
+                        Debug.LogError("You give a invalid number");
+                        break;
+                }
+                NextLine();
                 break;
         }
     }

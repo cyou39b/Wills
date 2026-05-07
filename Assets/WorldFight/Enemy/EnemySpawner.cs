@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     public Rect spawnRange;
     public List<WeightedEnemyPrefab> enemyPrefabs = new List<WeightedEnemyPrefab>();
     public static string Log = "";
-    public int spawnCnt;
+    public static int spawnCnt;
 
     static public HashSet<AbstractEnemy> AllEnemys = new HashSet<AbstractEnemy>();
 
