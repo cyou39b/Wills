@@ -27,6 +27,7 @@ public class Gun : MonoBehaviour
     {
         cam = Camera.main;
         Sprerr = GetComponent<SpriteRenderer>();
+        Sprerr.enabled = true;
         GunFireAnimation = GunFireAnimationSpriteRenderer.gameObject;
     }
 
@@ -67,6 +68,8 @@ public class Gun : MonoBehaviour
 
     public void TryFire()
     {
+        if(!enabled) {return;} 
+
         if (fireCoolDownTimer <= 0.0f)
         {
             fireCoolDownTimer = FireCoolDown;

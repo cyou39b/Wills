@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -18,9 +17,9 @@ public class EnemySpawner : MonoBehaviour
     public Rect spawnRange;
     public List<WeightedEnemyPrefab> enemyPrefabs = new List<WeightedEnemyPrefab>();
     public static string Log = "";
-    public static int spawnCnt;
+    public static int spawnCnt = 1;
 
-    static public HashSet<AbstractEnemy> AllEnemys = new HashSet<AbstractEnemy>();
+    public static HashSet<AbstractEnemy> AllEnemys = new HashSet<AbstractEnemy>();
 
     void Start()
     {
@@ -73,6 +72,14 @@ public class EnemySpawner : MonoBehaviour
         Gizmos.DrawLine(topRight, bottomRight);
         Gizmos.DrawLine(bottomRight, bottomLeft);
         Gizmos.DrawLine(bottomLeft, topLeft);
+    }
+
+    public static void CheckIfAllEnemyDied()
+    {
+        if(AllEnemys.Count == 0)
+        {
+            Heli.StartWin();
+        }
     }
 }
 

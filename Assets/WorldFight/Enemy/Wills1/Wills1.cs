@@ -425,6 +425,7 @@ public class Wills : AbstractEnemy
             return;
         }
 
+        if(Jack.inEntrence) {return;}
         RaycastHit2D info = Physics2D.Raycast(playerTrans.position, Vector2.down, 100.0f, DefinedLayers.GroundLayerMask);
         agent.SetDestination(info.point);
         RecalculateMoveSpeed();

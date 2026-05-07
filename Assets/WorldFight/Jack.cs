@@ -14,7 +14,7 @@ public class Jack : MonoBehaviour
     public GameObject HPBarPrefab;
     [NonSerialized] public HPBar HpBar;
 
-    [NonSerialized] public Rigidbody2D rb;
+    public Rigidbody2D rb; // for other script to use before Jack's Start
 
     public static float MoveSpeed = 6.0f;
 
@@ -36,8 +36,12 @@ public class Jack : MonoBehaviour
 
     public GameObject HeadStomePrefab;
 
+    public static bool inEntrence = true;
+
     public void Start()
     {
+        inEntrence = true;
+
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = DeathSoundEffect;
 
@@ -47,8 +51,6 @@ public class Jack : MonoBehaviour
             transform.rotation
         );
         
-        rb = GetComponent<Rigidbody2D>();
-
         rendererTrans = transform.Find("Renderer");
         if(rendererTrans == null)
         {
@@ -106,8 +108,18 @@ public class Jack : MonoBehaviour
             HpBar.name = string.Format("{0} - HPBar", this.name);
             #endif
         }
-
     }
+
+    public void StartPlayerAction()
+    {
+        weapon.enabled = true;
+        inEntrence = false;
+    }
+    public void EndPlayerAction()
+    {
+        weapon.enabled = false;
+    }
+
 
     private bool leftPressed;
     private bool rightPressed;

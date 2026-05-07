@@ -203,6 +203,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
         if(HpBar != null) {Destroy(HpBar.gameObject);}
 
         EnemySpawner.AllEnemys.Remove(this);
+        EnemySpawner.CheckIfAllEnemyDied();
         Destroy(this);
     }
 

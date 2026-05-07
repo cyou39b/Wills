@@ -1,8 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Collections;
-using UnityEditor;
 using System.Collections;
 
 // 讓Camera的移動變smooth
@@ -23,6 +20,7 @@ public class RbCameraMovement: MonoBehaviour{
     private Vector3 pos = Vector3.zero;
 
     public static Dictionary<Transform, Rigidbody2D> Enemys = new Dictionary<Transform, Rigidbody2D>();
+    public static bool UseRB = false;
 
     private Camera cam;
     public float CameraSizeSmoothTime;
@@ -54,7 +52,12 @@ public class RbCameraMovement: MonoBehaviour{
 
         Vector3 targetPos;
         float targetSize;
-        if(Enemys.Count > 0)
+        if(!UseRB)
+        {
+            targetPos = Player.transform.position + Offset;
+            targetSize = minProjectionSize;
+        }
+        else if(Enemys.Count > 0)
         {
             targetPos = Player.transform.position + Offset * (cam.orthographicSize / 5.0f) + rbOffset;
             targetSize = CalculateProjectionSize(targetPos);
