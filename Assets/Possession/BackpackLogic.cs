@@ -72,7 +72,7 @@ public class BackpackLogic : MonoBehaviour{
         IsBackpackOpening = true;
 
         Backpack.SetActive(true);
-        BackpackIcon.gameObject.SetActive(false);
+        //BackpackIcon.gameObject.SetActive(false);
 
         SpawnBackpackScrollViewItems();
 
@@ -81,14 +81,17 @@ public class BackpackLogic : MonoBehaviour{
         backpackPid = UIStack.Instance.NewPanel(
             () =>
             {
-                IsBackpackOpening = false;
+                Backpack.SetActive(false); //stack overflow 1.
+                IsBackpackOpening = false; //2.
+                //BackpackIcon.gameObject.SetActive(true);
 
-                Backpack.SetActive(false);
-                BackpackIcon.gameObject.SetActive(true);
+                //ClosePanel(); // The panel might be opened, so we close it. 3.
 
-                ClosePanel(); // The panel might be opened, so we close it.
+                //1. 2. => stack overflow will be thrown after close the backpack
+                //3. => stack overflow will be thrown before close the backpack
             }
         );
+        Debug.Log($"{backpackPid}");
     }
 
     public void CloseBackpack()

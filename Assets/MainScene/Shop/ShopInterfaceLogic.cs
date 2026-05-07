@@ -1,26 +1,36 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopInterfaceLogic : MonoBehaviour{
     public GameObject Panel; //buying Interface
+    int pid;
+
     public GameObject Shop;
+    int shopPid;
     List<Merchandise> Goods;
     List<Merchandise> SoldGoods;
     public Merchandise[] AllGoods;
+
     Merchandise current = null;
     public static bool isBuying = false;
     public GameObject[] AllItems;
     public Text[] ButtonText;
+
     public static ShopInterfaceLogic Instance{get;private set;} = null;
-    public static float timeScaleBeforeShoppingStart;
+    float timeScaleBeforeShoppingStart;
+
     public Text MineNum;
     public GameObject Menu;
     public Button Yes;
     public Text MineNumInPanel;
+
     public GameObject IF;
+    int IFMsgPid;
     public GameObject SoldMsg;
+    int soldMsgPid;
     public PossessionItems MinesInPossession;
     void Awake(){
         if(Instance == null){
@@ -51,6 +61,11 @@ public class ShopInterfaceLogic : MonoBehaviour{
         Yes.onClick.RemoveAllListeners();
         current = goods;
         Panel.SetActive(true);
+        pid = UIStack.Instance.NewPanel(() =>{
+            Panel.SetActive(false);
+        });
+        Debug.Log($"pid is {pid}");
+
         //write panel information
         if(Panel.transform.Find("ItemsName").TryGetComponent<Text>(out Text txt1)){
             txt1.text = current.Name;
@@ -74,6 +89,7 @@ public class ShopInterfaceLogic : MonoBehaviour{
             Yes.onClick.AddListener(OpenSoldMsg);
         }
     }
+
     void BuySomething(){
         if(current.Price<= GlobalVariables.Instance.NumMines){
             current.num -= 1;
@@ -83,12 +99,9 @@ public class ShopInterfaceLogic : MonoBehaviour{
         }
     }
     public void CloseShop(){
-        Shop.SetActive(false);
-        isBuying = false;
-        Menu.SetActive(true);
-        //RecordMerchandise();
-        Time.timeScale = timeScaleBeforeShoppingStart;
+        UIStack.Instance.RemovePanel(shopPid);
     }
+
     void UpdateButton(){
         for(int i = 0; i< ButtonText.Length ; i++){
             if (ButtonText.Length != AllGoods.Length){
@@ -108,21 +121,47 @@ public class ShopInterfaceLogic : MonoBehaviour{
         MineNum.text = $"Mine : {GlobalVariables.Instance.NumMines}";
     }
     public void ClosePanel(){
-        Panel.SetActive(false);
+        UIStack.Instance.RemovePanel(pid);
     }
     public void CloseIFMsg(){
-        IF.SetActive(false);
+        UIStack.Instance.RemovePanel(IFMsgPid);
     }
     void OpenIFMsg(){
+        IFMsgPid = UIStack.Instance.NewPanel(() =>{
+            IF.SetActive(false);
+        });
+
+        Debug.Log($"IFMsg pid is {IFMsgPid}");
         IF.SetActive(true);
     }
+
     void OpenSoldMsg(){
+        UIStack.Instance.NewPanel(() =>{
+            SoldMsg.SetActive(false);
+        });
         SoldMsg.SetActive(true);
     }
     public void CloseSoldMsg(){
-        SoldMsg.SetActive(false);
+        UIStack.Instance.RemovePanel(soldMsgPid);
     }
     /*void RecordMerchandise(){
         GlobalVariables.Instance.GoodsRecords = AllGoods;
     }*/
+    public void OpenShop(){
+        shopPid = UIStack.Instance.NewPanel(() =>{
+            Shop.SetActive(false);
+            isBuying = false;
+            Menu.SetActive(true);
+            //RecordMerchandise();
+            Time.timeScale = timeScaleBeforeShoppingStart;
+        });
+        Debug.Log($"Shop pid is {shopPid}");
+
+        Shop.SetActive(true);
+        DialogueManager.Instance.EndDialogue();
+        Menu.SetActive(false);
+        isBuying = true;
+        timeScaleBeforeShoppingStart = Time.timeScale;
+        Time.timeScale = 0.0f;
+    }
 }

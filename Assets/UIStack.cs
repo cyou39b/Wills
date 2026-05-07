@@ -16,6 +16,7 @@ public class UIStack : MonoBehaviour
     public int NewPanel(System.Action closeAction)
     {
         stack.Add(closeAction);
+        Debug.Log($"stack count is {stack.Count}");
         return stack.Count - 1;
     }
 
@@ -26,6 +27,7 @@ public class UIStack : MonoBehaviour
             stack[i].Invoke();
         }
 
+        Debug.Log($"Panel is removed,{idx}");
         stack.RemoveRange(idx, stack.Count - idx);
     }
 

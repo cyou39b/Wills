@@ -34,7 +34,9 @@ public class PlayerData{
 public class DataSave : MonoBehaviour{
     // NOTE: Inspector field
     public GameObject ConfirmPanel;
+    int ConfirmPid;
     public GameObject FailedPanel;
+    int FailedPid;
     public Text FailedPanelMsgText;
 
     static string SaveDataPath = null;
@@ -92,7 +94,7 @@ public class DataSave : MonoBehaviour{
         catch(System.Exception e){
             Debug.LogError($"{e.Message}, {e.GetType()}");
 
-            FailedPanel.SetActive(true);
+            OpenFailedPanel();
             FailedPanelMsgText.text = $"Some error occurred during saving, {e.Message} : {e.GetType()}";
             return;
         }
@@ -107,8 +109,7 @@ public class DataSave : MonoBehaviour{
         catch(System.Exception e)
         {
             Debug.LogError($"{e.Message}, {e.GetType()}");
-
-            FailedPanel.SetActive(true);
+            OpenFailedPanel();
             FailedPanelMsgText.text = $"Some error occurred during loading, {e.Message} : {e.GetType()}";
             return;
         }
@@ -144,14 +145,24 @@ public class DataSave : MonoBehaviour{
     }
 
     public void CloseFailedPanel(){
-        FailedPanel.SetActive(false);
+        UIStack.Instance.RemovePanel(FailedPid);
+    }
+    void OpenFailedPanel(){
+        FailedPid = UIStack.Instance.NewPanel(() =>{
+            FailedPanel.SetActive(false);
+        });
+        FailedPanel.SetActive(true);
     }
 
     public void OpenConfirmPanel(){
+        ConfirmPid = UIStack.Instance.NewPanel(() =>{
+            ConfirmPanel.SetActive(false);
+        });
+        Debug.Log($"comfirm pid is {ConfirmPid}");
         ConfirmPanel.SetActive(true);
     }
-
+    [ContextMenu("Close Confirm Menu")]
     public void CloseConfirmPanel(){
-        ConfirmPanel.SetActive(false);
+        UIStack.Instance.RemovePanel(ConfirmPid);
     }
 }

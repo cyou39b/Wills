@@ -25,7 +25,6 @@ public class DialogueManager : MonoBehaviour{
             return;
         }
     }
-    void Update(){}
     public void StartDialogue(IInteract interact){
         if (MenuManager.IsMenuOpen || 
             ShopInterfaceLogic.isBuying || 
@@ -35,13 +34,16 @@ public class DialogueManager : MonoBehaviour{
         Option1.gameObject.SetActive(false);
         Option2.gameObject.SetActive(false);
         GoNextLine.gameObject.SetActive(true);
+
         IsTalking = true;
         MenuInSceneButton.SetActive(false);
         Menu.SetActive(false);
+
         timeScaleBeforeDialogeStart = Time.timeScale;
         Time.timeScale = 0.0f;
         index = 0;
         current = interact.GetDialogueData();
+        
         Dialogue.text = current.lines[index].content;
         Speaker.text = current.lines[index].speaker;
         DialoguePanel.SetActive(true);
@@ -99,12 +101,7 @@ public class DialogueManager : MonoBehaviour{
                 index = 0;
                 break;
             case DialogueCommand.OpenShop:
-                ShopInterfaceLogic.Instance.Shop.SetActive(true);
-                EndDialogue();
-                Menu.SetActive(false);
-                ShopInterfaceLogic.isBuying = true;
-                ShopInterfaceLogic.timeScaleBeforeShoppingStart = Time.timeScale;
-                Time.timeScale = 0.0f;
+                ShopInterfaceLogic.Instance.OpenShop();
                 index = 0;
                 break;
             case DialogueCommand.Fight:
