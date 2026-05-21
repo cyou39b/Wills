@@ -20,6 +20,7 @@ public class PlayerData{
 
     // ------------ Player settings ---------------
     public int FrameRate;
+    public int EXP; 
 
     public string JumpKey;
     public string MoveLeftKey;
@@ -76,7 +77,7 @@ public class DataSave : MonoBehaviour{
         GlobalVariables.Instance.SaveKeys(DataBuffer);
 
         DataBuffer.Mine = GlobalVariables.Instance.NumMines;
-
+        DataBuffer.EXP = GlobalVariables.Instance.EXP;
 
         DataBuffer.FrameRate = GlobalVariables.Instance.FrameRate;
 
@@ -115,6 +116,7 @@ public class DataSave : MonoBehaviour{
         }
 
         GlobalVariables.Instance.FrameRate = DataBuffer.FrameRate;
+        GlobalVariables.Instance.EXP = DataBuffer.EXP;
 
         GlobalVariables.Instance.LoadKeys(DataBuffer);
 

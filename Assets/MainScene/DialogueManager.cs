@@ -17,6 +17,8 @@ public class DialogueManager : MonoBehaviour{
     int index = 0;
     public Button Option1;
     public Button Option2;
+    int optionIndex;
+
     void Awake(){
         if(Instance == null){
             Instance = this;
@@ -67,7 +69,7 @@ public class DialogueManager : MonoBehaviour{
             Speaker.text = current.lines[index].speaker;
         }
         if(!string.IsNullOrEmpty(current.lines[index].optionText1)){
-            int optionIndex = index;
+            optionIndex = index;
 
             if(Option1.transform.Find("Text1").TryGetComponent<Text>(out Text txt1)){
                 txt1.text = current.lines[index].optionText1;
@@ -110,18 +112,29 @@ public class DialogueManager : MonoBehaviour{
                 index = 0;
                 break;
             case DialogueCommand.Fight:
+                switch(optionNumber){
+                    case 1 :
+                        Debug.Log($"optionText is {current.lines[optionIndex].optionText1}");
+                        EnemySpawner.spawnCnt = System.Convert.ToInt32(current.lines[optionIndex].optionText1);
+                        break;
+                    case 2:
+                        EnemySpawner.spawnCnt = System.Convert.ToInt32(current.lines[optionIndex].optionText2);
+                        break;
+                    default:
+                        break;
+                }
                 EndDialogue();
-                EnemySpawner.spawnCnt = 5;
                 LoadSceneManager.NextScene = "WorldFight";
                 SceneManager.LoadScene("LoadSceneBuffer");
                 break;
             case DialogueCommand.JumpToLine:
                 switch (optionNumber){
                     case 1:
-                        index = current.lines[index].JumpToWhichLine1;
+                        index = current.lines[optionIndex].JumpToWhichLine1;
+                        Debug.Log($"{index}");
                         break;
                     case 2:
-                        index = current.lines[index].JumpToWhichLine2;
+                        index = current.lines[optionIndex].JumpToWhichLine2;
                         break;
                     default:
                         Debug.LogError("You give a invalid number");

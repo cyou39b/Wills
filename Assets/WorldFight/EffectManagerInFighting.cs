@@ -20,9 +20,6 @@ public class EffectManagerInFighting : AbstractEffectManager{
         }
     }
     //that's weird,though
-    public override IEnumerator LateStart(){
-        yield return null;
-    }
     public override void Update(){
         for(int i = 0;i < nowEffect.Count;i++){
             if(Time.time >= nowEffect[i].effect.endTime){
@@ -71,6 +68,35 @@ public class EffectManagerInFighting : AbstractEffectManager{
         pos.effect.endTime = Time.time + pos.effect.duration;
         nowEffect.Add(pos);
     }
+    public override void HealPlayerFunc(PossessionItems pos){}
+    public override void HealEnemyFunc(PossessionItems pos){}
+
+    public override void ClearSPDUp(PossessionItems pos){
+        Jack.MoveSpeed /= pos.effect.EffectRate+1;
+        pos.effect.usedTimes--;
+    }
+    public override void ClearPlayerHPBoost(PossessionItems pos){
+        script.HpBar.MaxHP /= pos.effect.EffectRate+1;
+        pos.effect.usedTimes--;
+    }
+    public override void ClearATKBoost(PossessionItems pos){
+        Bullet.Damage /= pos.effect.EffectRate+1;
+        pos.effect.usedTimes--;
+
+    }
+    public override void ClearEnemyHPUP(PossessionItems pos){
+        //enemyScript.HpBar.MaxHP /= pos.effect.EffectRate+1;
+        foreach(AbstractEnemy enemy in EnemySpawner.AllEnemys){
+            enemy.HpBar.MaxHP /= pos.effect.EffectRate+1;
+        }
+        pos.effect.usedTimes--;
+    }
+    public override void ClearBulletKnockbackForceUpFunc(PossessionItems pos){
+        Bullet.Power /= pos.effect.EffectRate+1;
+        pos.effect.usedTimes--;
+    }
+    public override void ClearHealEnemy(PossessionItems pos){}
+    public override void ClearHealPayer(PossessionItems pos){}
     public override void ClearAllEffect(){
         if(nowEffect != null){
             foreach(PossessionItems item in nowEffect){
@@ -97,30 +123,7 @@ public class EffectManagerInFighting : AbstractEffectManager{
             nowEffect.Clear();
         }
     }
-    public override void ClearSPDUp(PossessionItems pos){
-        Jack.MoveSpeed /= pos.effect.EffectRate+1;
-        pos.effect.usedTimes--;
-    }
-    public override void ClearPlayerHPBoost(PossessionItems pos){
-        script.HpBar.MaxHP /= pos.effect.EffectRate+1;
-        pos.effect.usedTimes--;
-    }
-    public override void ClearATKBoost(PossessionItems pos){
-        Bullet.Damage /= pos.effect.EffectRate+1;
-        pos.effect.usedTimes--;
 
-    }
-    public override void ClearEnemyHPUP(PossessionItems pos){
-        //enemyScript.HpBar.MaxHP /= pos.effect.EffectRate+1;
-        foreach(AbstractEnemy enemy in EnemySpawner.AllEnemys){
-            enemy.HpBar.MaxHP /= pos.effect.EffectRate+1;
-        }
-        pos.effect.usedTimes--;
-    }
-    public override void ClearBulletKnockbackForceUpFunc(PossessionItems pos){
-        Bullet.Power /= pos.effect.EffectRate+1;
-        pos.effect.usedTimes--;
-    }
     public override Action GetPossessionEffectAction(PossessionItems pos){
         switch (pos.effect.effectType){
             case EffectType.ATKBoost:
@@ -133,6 +136,10 @@ public class EffectManagerInFighting : AbstractEffectManager{
                 return () => EnemyHPUPFunc(pos);
             case EffectType.BulletKnockbackForceUp:
                 return () => BulletKnockbackForceUpFunc(pos);
+            case EffectType.HealPlayer:
+                return () => HealPlayerFunc(pos);
+            case EffectType.HealEnemy:
+                return () => HealEnemyFunc(pos);
             default:
                 return () => {};
         }

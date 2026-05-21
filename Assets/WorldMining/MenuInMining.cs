@@ -7,6 +7,7 @@ public class MenuInMining : MonoBehaviour
     public GameObject MenuPanel;
     public static bool IsMenuPanelOpening = false;
     float timeScaleBeforeMenuPanelOpening; 
+    int pid;
     void Start(){}
 
     void Update(){
@@ -22,10 +23,13 @@ public class MenuInMining : MonoBehaviour
         IsMenuPanelOpening = true;
         timeScaleBeforeMenuPanelOpening = Time.timeScale;
         Time.timeScale = 0.0f;
+        pid = UIStack.Instance.NewPanel(() =>{
+            IsMenuPanelOpening = false;
+            Time.timeScale = timeScaleBeforeMenuPanelOpening;
+            MenuPanel.SetActive(false);
+        });
     }
     public void ClosePanel(){
-        IsMenuPanelOpening = false;
-        Time.timeScale = timeScaleBeforeMenuPanelOpening;
-        MenuPanel.SetActive(false);
+        UIStack.Instance.RemovePanel(pid);
     }
 }

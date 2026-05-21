@@ -33,7 +33,6 @@ public class EffectManager : MonoBehaviour{
     }
     void Start(){
         TrueInstance.Start();
-        StartCoroutine(TrueInstance.LateStart());
     }
     void Update(){
         TrueInstance.Update();

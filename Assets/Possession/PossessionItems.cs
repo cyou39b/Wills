@@ -17,7 +17,9 @@ public enum EffectType{
     PlayerHPBoost,
     SPDUp,
     EnemyHPUP,
-    BulletKnockbackForceUp
+    BulletKnockbackForceUp,
+    HealPlayer,
+    HealEnemy
 }
 public enum UsableScene{
     none,

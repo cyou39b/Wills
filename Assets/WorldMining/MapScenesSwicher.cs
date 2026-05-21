@@ -8,6 +8,7 @@ public class MapScenesSwicher : MonoBehaviour{
     public GameObject Map;
     public GameObject MapButtom;
     public static bool isMapOpening = false;
+    int mapID;
     void Start(){}
 
     void Update(){
@@ -30,10 +31,15 @@ public class MapScenesSwicher : MonoBehaviour{
     public void LoadMap(){
         Map.SetActive(true);
         isMapOpening = true;
+        mapID = UIStack.Instance.NewPanel(() =>{
+            isMapOpening = false;
+            Map.SetActive(false);
+
+        });
     }
 
-    public void CloseMap(){
-        isMapOpening = false;
-        Map.SetActive(false);
+    public void CloseMap()
+    {
+        UIStack.Instance.RemovePanel(mapID);
     }
 }

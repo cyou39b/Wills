@@ -119,6 +119,7 @@ public class GlobalVariables : MonoBehaviour
     // ----------------- variables below ------------------------
     public int FrameRate = 60;
     public int NumMines = 0;
+    public int EXP = 0;
 
     public Key JumpKey = Key.Space;
     public Key MoveLeftKey = Key.A;
