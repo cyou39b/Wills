@@ -50,6 +50,7 @@ public class MenuManager : MonoBehaviour
                 MenuScreen.SetActive(false);
                 PauseButton.SetActive(true);
                 CloseMenuButton.SetActive(false);
+                MenuInSceneLogic.HaveToCloseInteractButton =false;
             }
         );
 
@@ -62,6 +63,7 @@ public class MenuManager : MonoBehaviour
         MenuScreen.SetActive(true);
         PauseButton.SetActive(false);
         CloseMenuButton.SetActive(true);
+        MenuInSceneLogic.HaveToCloseInteractButton = true;
     }
     
     public void CloseMenu()

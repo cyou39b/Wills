@@ -14,6 +14,8 @@ public class JackMainScene : MonoBehaviour{
     public Text Button2Text;
     IInteract closerObj;
     IInteract closestObj;
+    public static bool isInInteractRange1 = false;
+    public static bool isInInteractRange2 = false;
 
     public new GameObject renderer;
     public Animator animator;
@@ -102,8 +104,10 @@ public class JackMainScene : MonoBehaviour{
                 inRange.Add(interact);
             }
             Button1.gameObject.SetActive(true);
+            isInInteractRange1 = true;
             if(inRange.Count > 1){
                 Button2.gameObject.SetActive(true);
+                isInInteractRange2 = true;
             }
             FindClosestAndCloser();
         }
@@ -116,13 +120,17 @@ public class JackMainScene : MonoBehaviour{
             if(inRange.Count >=1){
                 FindClosestAndCloser();
             }
+            if(Button1 == null && Button2 == null){return;}
             switch(inRange.Count){
                 case 1 :
                     Button2.gameObject.SetActive(false);
+                    isInInteractRange2 = false;
                     break;
                 case 0 :
-                    Button1.gameObject.SetActive(false); // (sometimes)MissingReference will be thrown but don't affect during game
+                    Button1.gameObject.SetActive(false);
                     Button2.gameObject.SetActive(false);
+                    isInInteractRange1 = false;
+                    isInInteractRange2 = false;
                     break;
                 default:
                     break;

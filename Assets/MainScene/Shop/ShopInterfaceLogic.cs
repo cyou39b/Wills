@@ -132,12 +132,11 @@ public class ShopInterfaceLogic : MonoBehaviour{
             IF.SetActive(false);
         });
 
-        Debug.Log($"IFMsg pid is {IFMsgPid}");
         IF.SetActive(true);
     }
 
     void OpenSoldMsg(){
-        UIStack.Instance.NewPanel(() =>{
+        soldMsgPid = UIStack.Instance.NewPanel(() =>{
             SoldMsg.SetActive(false);
         });
         SoldMsg.SetActive(true);
@@ -155,8 +154,8 @@ public class ShopInterfaceLogic : MonoBehaviour{
             Menu.SetActive(true);
             //RecordMerchandise();
             Time.timeScale = timeScaleBeforeShoppingStart;
+            MenuInSceneLogic.HaveToCloseInteractButton = false;
         });
-        Debug.Log($"Shop pid is {shopPid}");
 
         Shop.SetActive(true);
         DialogueManager.Instance.EndDialogue();
@@ -164,5 +163,6 @@ public class ShopInterfaceLogic : MonoBehaviour{
         isBuying = true;
         timeScaleBeforeShoppingStart = Time.timeScale;
         Time.timeScale = 0.0f;
+        MenuInSceneLogic.HaveToCloseInteractButton = true;
     }
 }

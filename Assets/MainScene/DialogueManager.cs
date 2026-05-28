@@ -47,6 +47,7 @@ public class DialogueManager : MonoBehaviour{
         index = 0;
         current = interact.GetDialogueData();
         
+        MenuInSceneLogic.HaveToCloseInteractButton = true;
         //Dialogue.text = current.lines[index].content;
         //Speaker.text = current.lines[index].speaker;
         NextLine();
@@ -97,6 +98,7 @@ public class DialogueManager : MonoBehaviour{
         MenuInSceneButton.SetActive(true);
         Time.timeScale = timeScaleBeforeDialogeStart;
         current = null;
+        MenuInSceneLogic.HaveToCloseInteractButton = false;
     }
     void ExecuteCommand(DialogueCommand cmd,int optionNumber){
         switch (cmd){
