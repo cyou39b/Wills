@@ -5,13 +5,22 @@ using UnityEngine;
 
 public class EffectManagerInMining : AbstractEffectManager{
     List<PossessionItems> nowEffect = new List<PossessionItems>();
+
     public override void Update(){
-        for(int i = 0;i < nowEffect.Count;i++){
-            if(Time.time >= nowEffect[i].effect.endTime){
-                ClearSPDUp(nowEffect[i]);
-                nowEffect.Remove(nowEffect[i]);
+        List<PossessionItems> effectsNextFrame = new List<PossessionItems>();
+
+        foreach(PossessionItems pItem in nowEffect){
+            if(Time.time >= pItem.effect.endTime){
+                ClearSPDUp(pItem);
+                nowEffect.Remove(pItem);
+            }
+            else
+            {
+                effectsNextFrame.Add(pItem);
             }
         }
+
+        nowEffect = effectsNextFrame;
     }
     public override void SPDUpFunc(PossessionItems pos){
         JackMining.moveSpeed *= pos.effect.EffectRate+1;

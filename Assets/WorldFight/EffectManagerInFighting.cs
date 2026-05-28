@@ -1,13 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
 using System;
 
 public class EffectManagerInFighting : AbstractEffectManager{
     List<PossessionItems> nowEffect = new List<PossessionItems>();
     private GameObject Player;
     Jack script;
-    //public AbstractEnemy enemyScript;
+
     public override void Start(){
         Player = GameObject.FindWithTag("Player");
         if(Player == null)
@@ -19,24 +18,29 @@ public class EffectManagerInFighting : AbstractEffectManager{
             script = jack;
         }
     }
-    //that's weird,though
+    
     public override void Update(){
-        for(int i = 0;i < nowEffect.Count;i++){
-            if(Time.time >= nowEffect[i].effect.endTime){
-                if(nowEffect[i].effect.effectType == EffectType.SPDUp){
-                    ClearSPDUp(nowEffect[i]);
-                    nowEffect.Remove(nowEffect[i]);
+        List<PossessionItems> effectsNextFrame = new List<PossessionItems>();
+
+        foreach(PossessionItems pItem in nowEffect){
+            if(Time.time >= pItem.effect.endTime){
+                if(pItem.effect.effectType == EffectType.SPDUp){
+                    ClearSPDUp(pItem);
                 }
-                else if(nowEffect[i].effect.effectType == EffectType.ATKBoost){
-                    ClearATKBoost(nowEffect[i]);
-                    nowEffect.Remove(nowEffect[i]);
+                else if(pItem.effect.effectType == EffectType.ATKBoost){
+                    ClearATKBoost(pItem);
                 }
-                else if(nowEffect[i].effect.effectType == EffectType.BulletKnockbackForceUp){
-                    ClearBulletKnockbackForceUpFunc(nowEffect[i]);
-                    nowEffect.Remove(nowEffect[i]);
+                else if(pItem.effect.effectType == EffectType.BulletKnockbackForceUp){
+                    ClearBulletKnockbackForceUpFunc(pItem);
                 }
             }
+            else
+            {
+                effectsNextFrame.Add(pItem);
+            }
         }
+
+        nowEffect = effectsNextFrame;
     }
 
     public override void SPDUpFunc(PossessionItems pos){
@@ -68,9 +72,14 @@ public class EffectManagerInFighting : AbstractEffectManager{
         pos.effect.endTime = Time.time + pos.effect.duration;
         nowEffect.Add(pos);
     }
-    public override void HealPlayerFunc(PossessionItems pos){}
-    public override void HealEnemyFunc(PossessionItems pos){}
-
+    public override void HealPlayerFunc(PossessionItems pos)
+    {
+        script.StartThrowPotion(pos.effect.EffectRate);
+    }
+    public override void HealEnemyFunc(PossessionItems pos)
+    {
+        script.StartThrowPotion(pos.effect.EffectRate);
+    }
     public override void ClearSPDUp(PossessionItems pos){
         Jack.MoveSpeed /= pos.effect.EffectRate+1;
         pos.effect.usedTimes--;
@@ -95,8 +104,8 @@ public class EffectManagerInFighting : AbstractEffectManager{
         Bullet.Power /= pos.effect.EffectRate+1;
         pos.effect.usedTimes--;
     }
-    public override void ClearHealEnemy(PossessionItems pos){}
-    public override void ClearHealPayer(PossessionItems pos){}
+    public override void ClearHealEnemy(PossessionItems pos){return;}
+    public override void ClearHealPayer(PossessionItems pos){return;}
     public override void ClearAllEffect(){
         if(nowEffect != null){
             foreach(PossessionItems item in nowEffect){

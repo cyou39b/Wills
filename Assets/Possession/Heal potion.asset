@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ac9864b38847d34baf2ad33608336e0, type: 3}
-  m_Name: NewPossession
+  m_Name: Heal potion
   m_EditorClassIdentifier: Assembly-CSharp::PossessionItems
-  index: 0
-  sprite: {fileID: 0}
-  Name: 
-  information: 
-  Num: 0
+  index: 4
+  sprite: {fileID: 1546280255045921977, guid: 81cb75d11b45b5b44ab5ae08458c60b7, type: 3}
+  Name: Health potion
+  information: Throw a heal potion to the target you want to heal
+  Num: 48
   effect:
-    effectType: 0
-    EffectRate: 0
-    scene: 0
-    stackable: 0
-    usedTimes: 0
+    effectType: 6
+    EffectRate: 20
+    scene: 1
+    stackable: 1
+    usedTimes: 23
     duration: 0

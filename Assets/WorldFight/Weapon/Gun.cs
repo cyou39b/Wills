@@ -20,7 +20,7 @@ public class Gun : MonoBehaviour
     private float fireCoolDownTimer=0.0f;
 
     public float AttackFreezeTime;
-    [NonSerialized] public float attackFreezeTimer;
+    [NonSerialized] public float attackFreezeTimer = -0.1f;
     [NonSerialized] public bool facingLeft;
 
     void Start()

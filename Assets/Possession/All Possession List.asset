@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: All Possession List
   m_EditorClassIdentifier: Assembly-CSharp::AllPossessionList
   List:
-  - {fileID: 11400000, guid: e739f22c2bae10b4e84f4d539fc510d2, type: 2}
   - {fileID: 11400000, guid: 0cadb824067d0a64c80843306fbfc143, type: 2}
-  - {fileID: 11400000, guid: 85c6a485f62431c4291a651a9f680bc9, type: 2}
   - {fileID: 11400000, guid: a411249e3ab233b41b848e4e25894ef5, type: 2}
+  - {fileID: 11400000, guid: 85c6a485f62431c4291a651a9f680bc9, type: 2}
+  - {fileID: 11400000, guid: e739f22c2bae10b4e84f4d539fc510d2, type: 2}
+  - {fileID: 11400000, guid: 1fa7c54618d08d147b44567dfd3643ca, type: 2}

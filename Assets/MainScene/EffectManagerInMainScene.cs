@@ -6,13 +6,21 @@ using System;
 public class EffectManagerInMainScene : AbstractEffectManager{
     List<PossessionItems> nowEffect = new List<PossessionItems>();
     public override void Update(){
-        for(int i = 0;i < nowEffect.Count;i++){
-            if(Time.time >= nowEffect[i].effect.endTime){
-                ClearSPDUp(nowEffect[i]);
-                nowEffect.Remove(nowEffect[i]);
+        List<PossessionItems> effectsNextFrame = new List<PossessionItems>();
+
+        foreach(PossessionItems pItem in nowEffect){
+            if(Time.time >= pItem.effect.endTime){
+                ClearSPDUp(pItem);
+            }
+            else
+            {
+                effectsNextFrame.Add(pItem);
             }
         }
+
+        nowEffect = effectsNextFrame;
     }
+
     public override void SPDUpFunc(PossessionItems pos){
         JackMainScene.moveSpeed *= pos.effect.EffectRate+1;
         pos.effect.endTime = Time.time + pos.effect.duration;

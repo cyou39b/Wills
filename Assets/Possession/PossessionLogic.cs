@@ -38,6 +38,15 @@ public class PossessionLogic : MonoBehaviour{
         Panel.UseButton.onClick.RemoveAllListeners();
         Panel.UseButton.onClick.AddListener(GetThisPossessionOnUseAction());
 
+        if(Possession.Name == "Mine" || (Possession.Name == "Health potion" && ThrowPotion.inThrow))
+        {
+            Panel.UseButton.interactable = false;
+        }
+        else
+        {
+            Panel.UseButton.interactable = true;
+        }
+
         Backpack.panelPid = UIStack.Instance.NewPanel(
             () =>
             {

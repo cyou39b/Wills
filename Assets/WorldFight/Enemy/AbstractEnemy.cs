@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(EnemyFadeoutEffect))]
-public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockback
+public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockback, IHaveHP
 {
     protected Rigidbody2D rb;
     Rigidbody2D IKnockbackable.rb => rb; // I hate myself (and c#)
@@ -56,6 +56,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
 
     public GameObject HPBarPrefab;
     public HPBar HpBar;
+    HPBar IHaveHP.HPBar => HpBar;
 
     public GameObject TrianglePrefab;
     protected Triangle triangle;

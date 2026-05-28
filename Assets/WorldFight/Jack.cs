@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 //  Jack的Script
 [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))]
-public class Jack : MonoBehaviour
+public class Jack : MonoBehaviour, IHaveHP
 {
     private Transform rendererTrans;
     private Vector3 rendererTransScale;
@@ -13,6 +13,7 @@ public class Jack : MonoBehaviour
     
     public GameObject HPBarPrefab;
     [NonSerialized] public HPBar HpBar;
+    HPBar IHaveHP.HPBar => HpBar;
 
     public Rigidbody2D rb; // for other script to use before Jack's Start
 
@@ -29,6 +30,7 @@ public class Jack : MonoBehaviour
     private bool isGrounded => leg.objectsStandingOn.Count != 0;
 
     private Gun weapon;
+    private ThrowPotion throwPotion;
     private JacLeg leg;
 
     private AudioSource audioSource;
@@ -86,6 +88,17 @@ public class Jack : MonoBehaviour
             Debug.LogError("Weapon gameobject missing component");
         }
 
+        Transform throwPotionChildTrans = transform.Find("throw");
+        if(throwPotionChildTrans == null)
+        {
+            Debug.LogError("throw child?");
+        }
+        if(!throwPotionChildTrans.TryGetComponent<ThrowPotion>(out throwPotion))
+        {
+            Debug.LogError("Missing component");
+        }
+        throwPotion.gameObject.SetActive(false);
+
         if(!newObj.TryGetComponent<HPBar>(out this.HpBar))
         {
             Debug.LogErrorFormat("Failed to get HPBar component from gameObject created for GameObject named {}.", this.name);
@@ -112,12 +125,46 @@ public class Jack : MonoBehaviour
 
     public void StartPlayerAction()
     {
-        weapon.enabled = true;
+        if(!ThrowPotion.inThrow)
+        {
+            weapon.enabled = true;
+            weapon.gameObject.SetActive(true);
+        }
+        else
+        {
+            throwPotion.gameObject.SetActive(true);
+        }
         inEntrence = false;
     }
     public void EndPlayerAction()
     {
         weapon.enabled = false;
+        weapon.gameObject.SetActive(false);
+    }
+    public void DisableGun()
+    {
+        weapon.enabled = false;
+        weapon.gameObject.SetActive(false);
+    }
+    public void EnableGun()
+    {
+        weapon.enabled = true;
+        weapon.gameObject.SetActive(true);
+
+    }
+
+    public void StartThrowPotion(float effectAmount)
+    {
+        if(!inEntrence) {throwPotion.gameObject.SetActive(true);}
+        throwPotion.effectAmount = effectAmount;
+        throwPotion.throwCallback = () =>
+        {
+            EnableGun();
+            throwPotion.gameObject.SetActive(false);
+            ThrowPotion.inThrow = false;
+        };
+        DisableGun();
+        ThrowPotion.inThrow = true;
     }
 
 
