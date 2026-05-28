@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabe989527578ea45ae7fc4b88e939f5, type: 3}
   m_Name: Strength potion
   m_EditorClassIdentifier: Assembly-CSharp::Merchandise
-  index: 0
+  index: 1
   Name: strength potion
   pic: {fileID: 3460918638392189363, guid: 7e9237d9730082946ab1844c3000650b, type: 3}
-  Information: long long words
+  Information: Boosts your attack damage somehow, even though you're using a rifle.
   Price: 5
   indexInPosssession: 2
   num: 0

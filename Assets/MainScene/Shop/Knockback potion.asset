@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabe989527578ea45ae7fc4b88e939f5, type: 3}
   m_Name: Knockback potion
   m_EditorClassIdentifier: Assembly-CSharp::Merchandise
-  index: 0
-  Name: 
-  pic: {fileID: 0}
-  Information: 
-  Price: 0
-  indexInPosssession: 0
-  num: 0
+  index: 2
+  Name: Knockback potion
+  pic: {fileID: -4639609484639749614, guid: ed51e7c13c3a3094eb10212f806347e2, type: 3}
+  Information: Increase the amount of knockback your weapon applies on enemies
+  Price: 4
+  indexInPosssession: 3
+  num: 2

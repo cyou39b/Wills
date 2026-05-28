@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: 3460918638392189363, guid: 7e9237d9730082946ab1844c3000650b, type: 3}
   Name: Strength potion
   information: Boosts your attack damage somehow, even though you're using a rifle.
-  Num: 10
+  Num: 11
   effect:
     effectType: 1
     EffectRate: 1.15

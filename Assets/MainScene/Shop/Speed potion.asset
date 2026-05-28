@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Speed potion
   m_EditorClassIdentifier: Assembly-CSharp::Merchandise
   index: 0
-  Name: 
-  pic: {fileID: 0}
-  Information: 
-  Price: 0
+  Name: Speed potion
+  pic: {fileID: 2024982346104649196, guid: 678077607b239af419997ce6d4bb8cf9, type: 3}
+  Information: Make you go faster
+  Price: 1
   indexInPosssession: 0
-  num: 0
+  num: 5
