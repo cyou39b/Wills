@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -13,9 +14,20 @@ public class PlayerData{
 // NOTE: they might come with a "wasRead" variable to make it them be used in the right time.
     [System.NonSerialized]
     public bool positionWasRead = false;
-    public Vector3? PlayerPos;
+    public bool PlayerHavePos;
+    public Vector3 PlayerPos = Vector3.zero;
 
-    public List<PossessionItems> AllPossessions = new List<PossessionItems>();
+    // The direction player is facing if player is in scene mainScene or worldMine
+    public int dir_idx0, dir_idx1;
+
+    [Serializable]
+    public struct PossessionPair
+    {
+        public int index;
+        public int num;
+    }
+    public List<PossessionPair> AllPossessions = new List<PossessionPair>();
+
     public int Mine;
 
     // ------------ Player settings ---------------
@@ -60,18 +72,40 @@ public class DataSave : MonoBehaviour{
 
     [ContextMenu("Save Data")]
     public void SaveData(){
-        if(DataBuffer == null) {DataBuffer = new PlayerData();}
+        DataBuffer ??= new PlayerData();
 
         DataBuffer.CurrentSceneName = SceneManager.GetActiveScene().name;
 
         GameObject player = GameObject.FindWithTag("Player");
         if(player == null)
         {
-            DataBuffer.PlayerPos = null;
+            DataBuffer.PlayerHavePos = false;
         }
         else
         {
+            DataBuffer.PlayerHavePos = true;
             DataBuffer.PlayerPos = player.transform.position;
+        }
+
+        if(DataBuffer.CurrentSceneName == "MainScene")
+        {
+            JackMainScene jackMainScene = null;
+            if(player == null || !player.TryGetComponent<JackMainScene>(out jackMainScene))
+            {
+                Debug.LogError("player == null || missing component");
+            }
+            DataBuffer.dir_idx0 = jackMainScene.idx0;
+            DataBuffer.dir_idx1 = jackMainScene.idx1;
+        }
+        else if(DataBuffer.CurrentSceneName == "WorldMining")
+        {
+            JackMining jackMining = null;
+            if(player == null || !player.TryGetComponent<JackMining>(out jackMining))
+            {
+                Debug.LogError("player == null || missing component");
+            }
+            DataBuffer.dir_idx0 = jackMining.idx0;
+            DataBuffer.dir_idx1 = jackMining.idx1;
         }
 
         GlobalVariables.Instance.SaveKeys(DataBuffer);
@@ -81,9 +115,14 @@ public class DataSave : MonoBehaviour{
 
         DataBuffer.FrameRate = GlobalVariables.Instance.FrameRate;
 
+        DataBuffer.AllPossessions.Clear();
         foreach(PossessionItems item in GlobalVariables.Instance.AllPossession)
         {
-            DataBuffer.AllPossessions.Add(item);
+            DataBuffer.AllPossessions.Add(new PlayerData.PossessionPair()
+            {
+                index = item.index,
+                num = item.Num
+            });
         }
 
         string content = JsonUtility.ToJson(DataBuffer);
@@ -121,7 +160,8 @@ public class DataSave : MonoBehaviour{
 
         GlobalVariables.Instance.LoadKeys(DataBuffer);
 
-        GlobalVariables.Instance.allPossessionList.List = DataBuffer.AllPossessions.ToArray();
+        GlobalVariables.Instance.allPossessionList.Load(DataBuffer);
+
     }
 
     public bool ExistSavedGame()

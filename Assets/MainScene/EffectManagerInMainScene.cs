@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
 using System;
 
 public class EffectManagerInMainScene : AbstractEffectManager{
@@ -41,7 +40,6 @@ public class EffectManagerInMainScene : AbstractEffectManager{
     public override Action GetPossessionEffectAction(PossessionItems pos){
         switch (pos.effect.effectType){
             case EffectType.SPDUp:
-                Debug.Log("return func");
                 return () => SPDUpFunc(pos);
             default:
                 return () => {};

@@ -7,6 +7,7 @@ public class LoadSceneBuffer : MonoBehaviour{
     void Update(){}
     void OnTriggerEnter2D(){
         EffectManager.Instance.TrueInstance.ClearAllEffect();
+        GlobalVariables.Instance.mainScenePosition = new Vector3(7.0f, 20.0f);
         LoadSceneManager.LoadBufferAndLoadScene(Next);
     }
 }

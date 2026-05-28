@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: -4639609484639749614, guid: ed51e7c13c3a3094eb10212f806347e2, type: 3}
   Name: Knockback potion
   information: Increase the amount of knockback your weapon applies on enemies
-  Num: 98
+  Num: 97
   effect:
     effectType: 5
     EffectRate: 1.05

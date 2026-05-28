@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: 2024982346104649196, guid: 678077607b239af419997ce6d4bb8cf9, type: 3}
   Name: Speed potion
   information: Make you go faster
-  Num: 99
+  Num: 96
   effect:
     effectType: 3
     EffectRate: 0.5

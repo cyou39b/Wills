@@ -27,6 +27,7 @@ public class Flyer : AbstractEnemy
     protected override void Start()
     {
         base.Start();
+        transform.rotation = Quaternion.identity;
 
         CurrentRealFacingDirection = FacingDirection.Left;
         CurrentRealFacingDirection = FacingDirection.Right;

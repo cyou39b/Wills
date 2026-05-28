@@ -10,11 +10,9 @@ public class JackMining : MonoBehaviour{
 
     public new GameObject renderer;
     public Animator animator;
-    private static readonly Quaternion facingLeftRotation = Quaternion.Euler(new Vector3(0.0f, -90.0f, 45.0f));
-    private static readonly Quaternion facingRightRotation = Quaternion.Euler(new Vector3(0.0f, 90.0f, -45.0f));
-    private static readonly Quaternion facingDownRotation = Quaternion.Euler(new Vector3(45.0f, 180.0f, 0.0f));
-    private static readonly Quaternion facingUpRotation = Quaternion.Euler(new Vector3(-45.0f, 0.0f, 0.0f));
-    private Quaternion[][] rotations = new Quaternion[][]
+
+    public int idx0 = 1, idx1 = 0;
+    public readonly Quaternion[][] rotations = new Quaternion[][]
     {
         new Quaternion[] // left
         {
@@ -39,12 +37,12 @@ public class JackMining : MonoBehaviour{
     void Start(){
         gameObject.transform.position = new Vector3(85.0f,25.0f,-1.0f);
         rb = GetComponent<Rigidbody2D>();
+        renderer.transform.rotation = rotations[idx0][idx1];
     }
 
 
     void Update(){
         if(!Map.activeSelf && !MenuManager.IsMenuOpen){
-            int idx0, idx1;
             if (Keyboard.current[GlobalVariables.Instance.UpKey].isPressed){
                 rb.linearVelocityY = moveSpeed;
                 idx1 = 0;

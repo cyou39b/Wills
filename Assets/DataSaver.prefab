@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -8069856805587658842}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DataSave, Assembly-CSharp
         m_MethodName: CloseConfirmPanel
         m_Mode: 1

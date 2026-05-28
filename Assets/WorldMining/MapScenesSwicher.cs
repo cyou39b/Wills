@@ -15,7 +15,14 @@ public class MapScenesSwicher : MonoBehaviour{
         if (Keyboard.current.mKey.wasPressedThisFrame && 
             MenuManager.IsMenuOpen == false && 
             !MenuInMining.IsMenuPanelOpening){
-            LoadMap();
+            if(isMapOpening)
+            {
+                CloseMap();
+            }
+            else
+            {
+                LoadMap();
+            }
         }
         if(Map.activeSelf && Keyboard.current.escapeKey.wasPressedThisFrame){
             CloseMap();

@@ -28,13 +28,31 @@ public class EffectManager : MonoBehaviour{
                 default:
                     break;
             }
+            if(TrueInstance!=null){TrueInstance.Start();}
+            SceneManager.activeSceneChanged += SceneChange;
             DontDestroyOnLoad(this.gameObject);
         }
     }
-    void Start(){
-        TrueInstance.Start();
-    }
     void Update(){
-        TrueInstance.Update();
+        if(TrueInstance!=null){TrueInstance.Update();}
+    }
+
+    void SceneChange(Scene prev, Scene curr)
+    {
+        switch(curr.name)
+        {
+            case "WorldMining":
+                TrueInstance = new EffectManagerInMining();
+                break;
+            case "MainScene":
+                TrueInstance = new EffectManagerInMainScene();
+                break;
+            case "WorldFight":
+                TrueInstance = new EffectManagerInFighting();
+                break;
+            default:
+                break;
+        }
+        if(TrueInstance!=null){TrueInstance.Start();}
     }
 }

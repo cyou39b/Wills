@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -52,7 +52,24 @@ public class GlobalVariables : MonoBehaviour
             case "LoadSceneBuffer":
                 break;
             case "MainMenu":
+                if(DataSave.DataBuffer != null)
+                {
+                    DataSave.DataBuffer.positionWasRead = false;
+                }
+                goto case "WorldMining";
             case "MainScene":
+                if(mainScenePosition != null)
+                {
+                    GameObject player = GameObject.Find("Player");
+                    if(player == null)
+                    {
+                        Debug.LogError("Current scene don't have player.");
+                    }
+
+                    player.transform.position = mainScenePosition.Value;
+                    mainScenePosition = null;
+                }
+                goto case "WorldMining";
             case "WorldMining":
                 QualitySettings.antiAliasing = 0;
                 break;
@@ -65,7 +82,7 @@ public class GlobalVariables : MonoBehaviour
         }
 
         if(DataSave.DataBuffer != null &&
-           DataSave.DataBuffer.PlayerPos != null && 
+           DataSave.DataBuffer.PlayerHavePos && 
            !DataSave.DataBuffer.positionWasRead &&
            currSceneName == DataSave.DataBuffer.CurrentSceneName
         ) {
@@ -76,7 +93,28 @@ public class GlobalVariables : MonoBehaviour
                 Debug.LogError("Current scene don't have player.");
             }
 
-            player.transform.position = DataSave.DataBuffer.PlayerPos.Value;
+            player.transform.position = DataSave.DataBuffer.PlayerPos;
+
+            if(DataSave.DataBuffer.CurrentSceneName == "MainScene")
+            {
+                JackMainScene jackMainScene = null;
+                if(player == null || !player.TryGetComponent<JackMainScene>(out jackMainScene))
+                {
+                    Debug.LogError("player == null || missing component");
+                }
+                DataSave.DataBuffer.dir_idx0 = jackMainScene.idx0;
+                DataSave.DataBuffer.dir_idx1 = jackMainScene.idx1;
+            }
+            else if(DataSave.DataBuffer.CurrentSceneName == "WorldMining")
+            {
+                JackMining jackMining = null;
+                if(player == null || !player.TryGetComponent<JackMining>(out jackMining))
+                {
+                    Debug.LogError("player == null || missing component");
+                }
+                DataSave.DataBuffer.dir_idx0 = jackMining.idx0;
+                DataSave.DataBuffer.dir_idx1 = jackMining.idx1;
+            }
         }
     }
 
@@ -134,6 +172,9 @@ public class GlobalVariables : MonoBehaviour
 
     public PossessionItems[] AllPossession => allPossessionList.List;
     public AllPossessionList allPossessionList;
+
+    [NonSerialized]
+    public Vector3? mainScenePosition = null;
 }
 
 public class DefinedLayers 

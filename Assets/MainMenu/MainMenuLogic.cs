@@ -24,6 +24,7 @@ public class MainMenuLogic : MonoBehaviour
         if(DataSave.DataBuffer == null)
         {
             // TODO: Sort of figure out what's the right thing to do to start a new game.
+            GlobalVariables.Instance.mainScenePosition = new Vector3(-17.0f, -18.0f);
             LoadSceneManager.LoadBufferAndLoadScene("MainScene");
         }
         else

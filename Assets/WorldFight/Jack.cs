@@ -138,6 +138,7 @@ public class Jack : MonoBehaviour, IHaveHP
     }
     public void EndPlayerAction()
     {
+        inEntrence = true;
         weapon.enabled = false;
         weapon.gameObject.SetActive(false);
     }

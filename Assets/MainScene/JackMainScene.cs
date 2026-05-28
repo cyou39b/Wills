@@ -19,11 +19,9 @@ public class JackMainScene : MonoBehaviour{
 
     public new GameObject renderer;
     public Animator animator;
-    private static readonly Quaternion facingLeftRotation = Quaternion.Euler(new Vector3(0.0f, -90.0f, 45.0f));
-    private static readonly Quaternion facingRightRotation = Quaternion.Euler(new Vector3(0.0f, 90.0f, -45.0f));
-    private static readonly Quaternion facingDownRotation = Quaternion.Euler(new Vector3(45.0f, 180.0f, 0.0f));
-    private static readonly Quaternion facingUpRotation = Quaternion.Euler(new Vector3(-45.0f, 0.0f, 0.0f));
-    private Quaternion[][] rotations = new Quaternion[][]
+
+    public int idx0 = 1, idx1 = 0;
+    public static Quaternion[][] rotations = new Quaternion[][]
     {
         new Quaternion[] // left
         {
@@ -45,14 +43,16 @@ public class JackMainScene : MonoBehaviour{
         },
     };
 
-    void Start(){}
+    void Start()
+    {
+        renderer.transform.rotation = rotations[idx0][idx1];
+    }
 
     void Update(){
         if( !MenuManager.IsMenuOpen && 
             !DialogueManager.IsTalking && 
             !BackpackLogic.IsBackpackOpening &&
             !MenuInSceneLogic.IsSceneMenuOpen){
-            int idx0,idx1;
             if (Keyboard.current[GlobalVariables.Instance.UpKey].isPressed){
                 rb.linearVelocityY = moveSpeed;
                 idx1 = 0;

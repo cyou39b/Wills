@@ -74,6 +74,7 @@ public class Heli : MonoBehaviour
 
         yield return new WaitForSeconds(4.0f);
 
+        GlobalVariables.Instance.mainScenePosition = new Vector3(-20.0f, 2.5f);
         LoadSceneManager.LoadBufferAndLoadScene("MainScene");
     }
 }

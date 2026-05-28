@@ -38,7 +38,7 @@ public class PossessionLogic : MonoBehaviour{
         Panel.UseButton.onClick.RemoveAllListeners();
         Panel.UseButton.onClick.AddListener(GetThisPossessionOnUseAction());
 
-        if(Possession.Name == "Mine" || (Possession.Name == "Health potion" && ThrowPotion.inThrow))
+        if(Possession.Name == "Mine" || (Possession.Name == "Health potion" && ThrowPotion.inThrow) || (SceneManager.GetActiveScene().name == "WorldFight" && Jack.inEntrence))
         {
             Panel.UseButton.interactable = false;
         }

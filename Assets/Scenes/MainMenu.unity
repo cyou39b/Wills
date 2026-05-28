@@ -1134,6 +1134,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba71d2d03612c0141b5c655161abd7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIStack
+--- !u!1 &811908191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 811908193}
+  - component: {fileID: 811908192}
+  m_Layer: 0
+  m_Name: Effect Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &811908192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811908191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f003d65977528241b55ec589bcb3b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectManager
+--- !u!4 &811908193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811908191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &893918243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,15 +1263,15 @@ MonoBehaviour:
   isQuitting: 0
   FrameRate: 60
   NumMines: 0
+  EXP: 0
   JumpKey: 1
   MoveLeftKey: 15
   MoveRightKey: 18
-  InteractKey: 33
+  InteractKey: 20
   AttackKey: 26
   UpKey: 37
   DownKey: 33
   FindMineKey: 28
-  possession: []
   allPossessionList: {fileID: 11400000, guid: 6087f53cdc6158f44983f32d855457a0, type: 2}
 --- !u!4 &920476018
 Transform:
@@ -7318,3 +7362,4 @@ SceneRoots:
   - {fileID: 1081681584}
   - {fileID: 1692768171}
   - {fileID: 1031311830}
+  - {fileID: 811908193}

@@ -257719,7 +257719,7 @@ GameObject:
   - component: {fileID: 652239466}
   - component: {fileID: 652239464}
   m_Layer: 0
-  m_Name: Jack
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258797,6 +258797,7 @@ MonoBehaviour:
   isQuitting: 0
   FrameRate: 60
   NumMines: 0
+  EXP: 0
   JumpKey: 1
   MoveLeftKey: 15
   MoveRightKey: 18
@@ -258805,7 +258806,6 @@ MonoBehaviour:
   UpKey: 37
   DownKey: 33
   FindMineKey: 28
-  possession: []
   allPossessionList: {fileID: 11400000, guid: 6087f53cdc6158f44983f32d855457a0, type: 2}
 --- !u!4 &1143096137
 Transform:
@@ -259861,11 +259861,6 @@ PrefabInstance:
 --- !u!224 &1407510039 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5923354093131405432, guid: e6ad876ad31055c42837ef3335853538, type: 3}
-  m_PrefabInstance: {fileID: 1407510038}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1407510040 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2824244934980080650, guid: e6ad876ad31055c42837ef3335853538, type: 3}
   m_PrefabInstance: {fileID: 1407510038}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1407510041 stripped
@@ -263986,9 +263981,14 @@ MonoBehaviour:
   BackpackIcon: {fileID: 1407510041}
   PossessionPrefab: {fileID: 4309275733088508750, guid: 6ed8f81e712dcfd42995164664b522c5, type: 3}
   ScrollViewContent: {fileID: 0}
+  PossessionErrorPanel: {fileID: 0}
+  PossessionErrorText: {fileID: 0}
   Panel: {fileID: 1407510043}
-  ISMsg: {fileID: 1407510040}
-  sfxClip: {fileID: 0}
+  PanelItemImage: {fileID: 0}
+  PanelItemNameText: {fileID: 0}
+  PanelItemNumText: {fileID: 0}
+  PanelInfoText: {fileID: 0}
+  PanelUseButton: {fileID: 0}
 --- !u!4 &2051369571
 Transform:
   m_ObjectHideFlags: 0

@@ -15,8 +15,8 @@ MonoBehaviour:
   index: 1
   sprite: {fileID: -2449117553472781384, guid: 78a17d2402290e640b4109e53f8536fe, type: 3}
   Name: Mine
-  information: 123456
-  Num: 1100
+  information: Pretty valuable, used as curreny in this world.
+  Num: 0
   effect:
     effectType: 0
     EffectRate: 0
