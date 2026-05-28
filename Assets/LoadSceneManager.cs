@@ -36,4 +36,11 @@ public class LoadSceneManager : MonoBehaviour{
         }
         yield return new WaitForSeconds(1.0f);
     }
+
+    public static void LoadBufferAndLoadScene(string sceneName)
+    {
+        UIStack.Instance.RemovePanel(0);
+        NextScene = sceneName;
+        SceneManager.LoadScene("LoadSceneBuffer");
+    }
 }

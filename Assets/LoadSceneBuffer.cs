@@ -6,10 +6,7 @@ public class LoadSceneBuffer : MonoBehaviour{
     void Start(){}
     void Update(){}
     void OnTriggerEnter2D(){
-        // Tag is not a random string field, I don't care you're lasy or waht, just don't use it this way!!
-        // and you had wrong spelling
-        LoadSceneManager.NextScene = Next;
         EffectManager.Instance.TrueInstance.ClearAllEffect();
-        SceneManager.LoadScene("LoadSceneBuffer");
+        LoadSceneManager.LoadBufferAndLoadScene(Next);
     }
 }

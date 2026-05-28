@@ -95,7 +95,8 @@ public class ShopInterfaceLogic : MonoBehaviour{
             current.num -= 1;
             GlobalVariables.Instance.NumMines -= current.Price;
             MinesInPossession.Num = GlobalVariables.Instance.NumMines;
-            GlobalVariables.Instance.possession.Add(GlobalVariables.Instance.AllPossession[current.indexInPosssession]);
+            // GlobalVariables.Instance.possession.Add(GlobalVariables.Instance.AllPossession[current.indexInPosssession]);
+            GlobalVariables.Instance.AllPossession[current.indexInPosssession].Num++;
         }
     }
     public void CloseShop(){

@@ -193,6 +193,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     {
         if(GlobalVariables.Instance == null || GlobalVariables.Instance.isQuitting){return;}
         if(this == null) {return;}
+        if(!gameObject.scene.isLoaded) {return;}
 
         Debug.Log("Enemy out of field");
 
@@ -255,6 +256,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     public bool AI = true;
     protected virtual void FixedUpdate()
     {
+        if(Jack.inEntrence) {return;}
         MainProcessIntent();
     }
 

@@ -36,6 +36,7 @@ public class GlobalVariables : MonoBehaviour
                 QualitySettings.antiAliasing = 0;
                 QualitySettings.vSyncCount = 0; // Disable VSync to use targetFrameRate
                 Application.targetFrameRate = GlobalVariables.Instance.FrameRate;
+                allPossessionList = Instantiate(allPossessionList);
             }
         }
 
@@ -131,7 +132,6 @@ public class GlobalVariables : MonoBehaviour
     public Key PickUpMineKey => InteractKey;
     public Key FindMineKey = Key.N;
 
-    public List<PossessionItems> possession;
     public PossessionItems[] AllPossession => allPossessionList.List;
     public AllPossessionList allPossessionList;
 }

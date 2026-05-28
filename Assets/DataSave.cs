@@ -15,7 +15,7 @@ public class PlayerData{
     public bool positionWasRead = false;
     public Vector3? PlayerPos;
 
-    public List<int> BackpackIndex = new List<int>();
+    public List<PossessionItems> AllPossessions = new List<PossessionItems>();
     public int Mine;
 
     // ------------ Player settings ---------------
@@ -81,8 +81,9 @@ public class DataSave : MonoBehaviour{
 
         DataBuffer.FrameRate = GlobalVariables.Instance.FrameRate;
 
-        foreach(PossessionItems item in GlobalVariables.Instance.possession){
-            DataBuffer.BackpackIndex.Add(item.index);
+        foreach(PossessionItems item in GlobalVariables.Instance.AllPossession)
+        {
+            DataBuffer.AllPossessions.Add(item);
         }
 
         string content = JsonUtility.ToJson(DataBuffer);
@@ -120,10 +121,7 @@ public class DataSave : MonoBehaviour{
 
         GlobalVariables.Instance.LoadKeys(DataBuffer);
 
-        foreach(int index in DataBuffer.BackpackIndex){
-            GlobalVariables.Instance.possession.Add(GlobalVariables.Instance.AllPossession[index]);
-        }
-
+        GlobalVariables.Instance.allPossessionList.List = DataBuffer.AllPossessions.ToArray();
     }
 
     public bool ExistSavedGame()

@@ -124,8 +124,7 @@ public class DialogueManager : MonoBehaviour{
                         break;
                 }
                 EndDialogue();
-                LoadSceneManager.NextScene = "WorldFight";
-                SceneManager.LoadScene("LoadSceneBuffer");
+                LoadSceneManager.LoadBufferAndLoadScene("WorldFight");
                 break;
             case DialogueCommand.JumpToLine:
                 switch (optionNumber){

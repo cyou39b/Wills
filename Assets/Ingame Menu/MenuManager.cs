@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 // 在遊戲進行中的menu
 
@@ -22,7 +21,7 @@ public class MenuManager : MonoBehaviour
         MenuScreen.SetActive(false);
         CloseMenuButton.SetActive(false);
 
-        UIStack.Instance.emptyAction += OpenMenu;
+        UIStack.emptyAction = OpenMenu;
     }
 
     private int pid;
@@ -46,7 +45,7 @@ public class MenuManager : MonoBehaviour
                     DeathManager.Activated)
                     {return;}
                 IsMenuOpen = false;
-                Time.timeScale = timeScaleBefaorePause ;
+                Time.timeScale = timeScaleBefaorePause;
                 Blur.SetActive(false);
                 MenuScreen.SetActive(false);
                 PauseButton.SetActive(true);
@@ -72,7 +71,6 @@ public class MenuManager : MonoBehaviour
 
     public void ExitScene()
     {
-        LoadSceneManager.NextScene = "MainMenu";
-        SceneManager.LoadScene("LoadSceneBuffer");
+        LoadSceneManager.LoadBufferAndLoadScene("MainMenu");
     }
 }

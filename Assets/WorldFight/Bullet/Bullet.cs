@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour, ICanKnockback
         {
             Debug.LogError("Missing component");
         }
-        soundEffectPlayer.Initialize(LaserSFX[Random.Range(0, LaserSFX.Length)], 0.9f, 1.1f, 6.0f, 0.75f, true);
+        soundEffectPlayer.Initialize(LaserSFX[Random.Range(0, LaserSFX.Length)], 0.9f, 1.1f, 12.0f, 0.75f, true);
 
         rb = GetComponent<Rigidbody2D>();
 

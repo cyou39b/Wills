@@ -64,9 +64,6 @@ public class PossessionLogic : MonoBehaviour{
 
                     Possession.effect.usedTimes++;
                     Possession.Num--;
-                    if(Possession.Num <= 0){
-                        GlobalVariables.Instance.possession.Remove(Possession);
-                    }
 
                     EffectManager.Instance.TrueInstance.GetPossessionEffectAction(Possession).Invoke();
 

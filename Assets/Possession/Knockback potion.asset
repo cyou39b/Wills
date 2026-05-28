@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac9864b38847d34baf2ad33608336e0, type: 3}
+  m_Name: Knockback potion
+  m_EditorClassIdentifier: Assembly-CSharp::PossessionItems
+  index: 3
+  sprite: {fileID: -4639609484639749614, guid: ed51e7c13c3a3094eb10212f806347e2, type: 3}
+  Name: Knockback potion
+  information: Increase the amount of knockback your weapon applies on enemies
+  Num: 98
+  effect:
+    effectType: 5
+    EffectRate: 1.05
+    scene: 1
+    stackable: 0
+    usedTimes: 0
+    duration: 5

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ac9864b38847d34baf2ad33608336e0, type: 3}
-  m_Name: 123456
+  m_Name: ATK potion
   m_EditorClassIdentifier: Assembly-CSharp::PossessionItems
-  index: 0
-  sprite: {fileID: -1128947775675819744, guid: 2cf494e907bb9224d9f1931701671238, type: 3}
-  Name: test
-  information: test
-  Num: 88
+  index: 2
+  sprite: {fileID: 3460918638392189363, guid: 7e9237d9730082946ab1844c3000650b, type: 3}
+  Name: Strength potion
+  information: Boosts your attack damage somehow, even though you're using a rifle.
+  Num: 10
   effect:
-    effectType: 3
-    EffectRate: 0.5
-    scene: 4
+    effectType: 1
+    EffectRate: 1.15
+    scene: 1
     stackable: 0
-    usedTimes: 0
-    duration: 5
+    usedTimes: 1
+    duration: 10

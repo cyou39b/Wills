@@ -46,10 +46,19 @@ public class BackpackLogic : MonoBehaviour{
     void SpawnBackpackScrollViewItems(){ //call when the backpack button onClick
         Dictionary<PossessionItems, GameObject> newbackpackObjects = new Dictionary<PossessionItems, GameObject>();
 
-        for(int i = 0; i < GlobalVariables.Instance.possession.Count ; i++){
-            if(backpackContentGameobjects.ContainsKey(GlobalVariables.Instance.possession[i]))
+        foreach(PossessionItems pItem in GlobalVariables.Instance.AllPossession){
+            if(pItem.Num <= 0) 
             {
-                newbackpackObjects.Add(GlobalVariables.Instance.possession[i], backpackContentGameobjects[GlobalVariables.Instance.possession[i]]);
+                if(backpackContentGameobjects.ContainsKey(pItem))
+                {
+                    Destroy(backpackContentGameobjects[pItem]);
+                }
+                continue;
+            }
+
+            if(backpackContentGameobjects.ContainsKey(pItem))
+            {
+                newbackpackObjects.Add(pItem, backpackContentGameobjects[pItem]);
                 continue;
             }
 
@@ -61,8 +70,8 @@ public class BackpackLogic : MonoBehaviour{
                 return;
             }
 
-            LogicScript.Initialize(GlobalVariables.Instance.possession[i], panelData, this);
-            newbackpackObjects.Add(GlobalVariables.Instance.possession[i], newObj);
+            LogicScript.Initialize(pItem, panelData, this);
+            newbackpackObjects.Add(pItem, newObj);
         }
         backpackContentGameobjects = newbackpackObjects;
     }

@@ -61,24 +61,19 @@ public class Heli : MonoBehaviour
 
         enabled = true;
         transform.position = new Vector3(jack.transform.position.x, 18.0f, transform.position.z) + Offset;
-        rb.linearVelocity = Vector2.zero;
-
-        yield return new WaitForSeconds(0.5f);
-
-        jack.rb.linearVelocity = new Vector2(0.0f, 3.5f);
-        jack.rb.gravityScale = 0.0f;
+        rb.linearVelocity = new Vector2(0.0f, -2.0f);
 
         yield return new WaitUntil(() => jack.transform.position.y + Offset.y >= transform.position.y);
         
+        jack.rb.bodyType = RigidbodyType2D.Kinematic;
         jack.transform.localScale = new Vector3(0.001f, 0.001f);
         jack.rb.linearVelocity = Vector2.zero;
         jack.transform.parent = transform;
-        rb.linearVelocity = Velocity;
+        rb.linearVelocity = new Vector2(0.0f, 4.0f);
         RbCameraMovement.UseRB = false;
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(4.0f);
 
-        LoadSceneManager.NextScene = "MainScene";
-        SceneManager.LoadScene("LoadSceneBuffer");
+        LoadSceneManager.LoadBufferAndLoadScene("MainScene");
     }
 }

@@ -120,6 +120,7 @@ public class Wills : AbstractEnemy
 
     protected override void FixedUpdate()
     {
+        if(Jack.inEntrence) {return;}
         base.FixedUpdate();
 
         if(TrySeePlayer())
@@ -425,7 +426,6 @@ public class Wills : AbstractEnemy
             return;
         }
 
-        if(Jack.inEntrence) {return;}
         RaycastHit2D info = Physics2D.Raycast(playerTrans.position, Vector2.down, 100.0f, DefinedLayers.GroundLayerMask);
         agent.SetDestination(info.point);
         RecalculateMoveSpeed();
@@ -624,7 +624,7 @@ public class Wills : AbstractEnemy
 
         if(onTopOfJack)
         {
-            // NOTE: Workaround but it  works!!
+            // NOTE: Workaround but it works!!
             float v_x = Random.Range(0, 1) == 0 ? -5.0f : 5.0f;
             jumpIntent_precalculatedVelocity = new Vector2(v_x, 7.5f);
             SetIntent(Intent.Jump, AIFacingDirection.SameAsMoving, true);

@@ -54,7 +54,7 @@ public class Fireball : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
-    {
+    { // TODO: Add Damage 
         GameObject other = collider.gameObject;
         if(
             other.layer == DefinedLayers.GroundLayer || 

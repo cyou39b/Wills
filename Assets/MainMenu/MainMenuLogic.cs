@@ -1,6 +1,5 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // 在main menu的Logic，提供canvas上的button的callback function
@@ -17,7 +16,7 @@ public class MainMenuLogic : MonoBehaviour
             ? "Load Game"
             : "Start New Game";
 
-        UIStack.Instance.emptyAction += OpenOptions;
+        UIStack.emptyAction = OpenOptions;
     }
 
     public void StartGame()
@@ -25,13 +24,11 @@ public class MainMenuLogic : MonoBehaviour
         if(DataSave.DataBuffer == null)
         {
             // TODO: Sort of figure out what's the right thing to do to start a new game.
-            LoadSceneManager.NextScene = "MainScene";
-            SceneManager.LoadScene("LoadSceneBuffer");
+            LoadSceneManager.LoadBufferAndLoadScene("MainScene");
         }
         else
         {
-            LoadSceneManager.NextScene = DataSave.DataBuffer.CurrentSceneName;
-            SceneManager.LoadScene("LoadSceneBuffer");
+            LoadSceneManager.LoadBufferAndLoadScene(DataSave.DataBuffer.CurrentSceneName);
         }
     }
 

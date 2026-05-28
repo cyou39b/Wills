@@ -6,7 +6,7 @@ public class UIStack : MonoBehaviour
 {
     public static UIStack Instance{get; private set;} = null;
 
-    [System.NonSerialized] public System.Action emptyAction = () => {};
+    [System.NonSerialized] public static System.Action emptyAction = () => {};
     private List<System.Action> stack = new List<System.Action>();
 
     /// <summary>
@@ -51,8 +51,8 @@ public class UIStack : MonoBehaviour
         }
     }
 
-    void OnDestroy()
-    {
-        RemovePanel(0);
-    }
+    // void OnDestroy()
+    // {
+    //     RemovePanel(0);
+    // }
 }
