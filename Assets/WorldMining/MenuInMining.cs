@@ -11,7 +11,7 @@ public class MenuInMining : MonoBehaviour
     void Start(){}
 
     void Update(){
-        if (MapScenesSwicher.isMapOpening){
+        if (MapScenesSwicher.isMapOpening || MenuManager.IsMenuOpen){
             MenuButton.SetActive(false);
         }
         else{
