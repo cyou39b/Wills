@@ -6,6 +6,7 @@ public class DeathManager : MonoBehaviour
 {
     public GameObject FirstGroup;
     public GameObject SecondGroup;
+    public GameObject Bkgd;
 
     public static bool Activated{get; private set;} = false;
     private static float targetTimeScale;
@@ -31,6 +32,7 @@ public class DeathManager : MonoBehaviour
     private static readonly WaitForSecondsRealtime w20thRealSecond = new WaitForSecondsRealtime(1.0f / 20.0f);
     public IEnumerator DeathScreen()
     {
+        Bkgd.SetActive(true);
         FirstGroup.SetActive(true);
         Image[] FirstGroupChildImage = FirstGroup.GetComponentsInChildren<Image>();
         Text[] FirstGroupChildText = FirstGroup.GetComponentsInChildren<Text>();
