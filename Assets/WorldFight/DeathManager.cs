@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DeathManager : MonoBehaviour
@@ -21,7 +18,7 @@ public class DeathManager : MonoBehaviour
         slowDownTime = slowTime;
     }
 
-    private static bool coroutineSpawned = false;
+    private bool coroutineSpawned = false;
     void Update()
     {
         if(Activated && !coroutineSpawned)
@@ -35,12 +32,12 @@ public class DeathManager : MonoBehaviour
     public IEnumerator DeathScreen()
     {
         FirstGroup.SetActive(true);
-        Image[] FirstGroupChildImage = GetComponentsInChildren<Image>();
-        Text[] FirstGroupChildText = GetComponentsInChildren<Text>();
+        Image[] FirstGroupChildImage = FirstGroup.GetComponentsInChildren<Image>();
+        Text[] FirstGroupChildText = FirstGroup.GetComponentsInChildren<Text>();
         
         SecondGroup.SetActive(true);
-        Image[] SecondGroupChildImage = GetComponentsInChildren<Image>();
-        Text[] SecondGroupChildText = GetComponentsInChildren<Text>();
+        Image[] SecondGroupChildImage = SecondGroup.GetComponentsInChildren<Image>();
+        Text[] SecondGroupChildText = SecondGroup.GetComponentsInChildren<Text>();
 
         int totalFrames = (int)(slowDownTime / (1.0f / 20.0f)) + 1;
         float dAlpha = 0.5f / totalFrames;
@@ -88,11 +85,16 @@ public class DeathManager : MonoBehaviour
 
     public void RestartCallBack()
     {
-     // TODO:
+        Activated = false;
+        Time.timeScale = 1.0f;
+        GlobalVariables.Instance.mainScenePosition = new Vector3(-20.0f, 2.5f);
+        LoadSceneManager.LoadBufferAndLoadScene("MainScene");
     }
 
     public void QuitCallBack()
     {
+        Activated = false;
+        Time.timeScale = 1.0f;
         LoadSceneManager.LoadBufferAndLoadScene("MainMenu");
     }
 }

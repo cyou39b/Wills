@@ -38,8 +38,11 @@ public class PossessionLogic : MonoBehaviour{
         Panel.UseButton.onClick.RemoveAllListeners();
         Panel.UseButton.onClick.AddListener(GetThisPossessionOnUseAction());
 
-        if(Possession.Name == "Mine" || (Possession.Name == "Health potion" && ThrowPotion.inThrow) || (SceneManager.GetActiveScene().name == "WorldFight" && Jack.inEntrence))
-        {
+        if(Possession.Name == "Mine" ||
+           (Possession.effect.scene != UsableScene.All && Possession.effect.scene.ToString() != SceneManager.GetActiveScene().name) ||
+           (Possession.Name == "Health potion" && ThrowPotion.inThrow) ||
+           (SceneManager.GetActiveScene().name == "WorldFight" && Jack.inEntrence)
+        ) {
             Panel.UseButton.interactable = false;
         }
         else
@@ -63,7 +66,7 @@ public class PossessionLogic : MonoBehaviour{
         }
         else if(!Possession.effect.stackable && Possession.effect.usedTimes >= 1) // if tihs effect is not stackable and it's already in use
         {
-            return () => {Backpack.OpenPossessionErrorPanel("Nonstackable!");};
+            return () => {Backpack.OpenPossessionErrorPanel("You have already use it.");};
         }
         else if(Possession.effect.scene == UsableScene.All || Possession.effect.scene.ToString() == SceneManager.GetActiveScene().name)
         {

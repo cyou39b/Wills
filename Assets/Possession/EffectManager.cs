@@ -26,6 +26,7 @@ public class EffectManager : MonoBehaviour{
                     TrueInstance = new EffectManagerInFighting();
                     break;
                 default:
+                    TrueInstance = null;
                     break;
             }
             if(TrueInstance!=null){TrueInstance.Start();}
@@ -51,6 +52,7 @@ public class EffectManager : MonoBehaviour{
                 TrueInstance = new EffectManagerInFighting();
                 break;
             default:
+                TrueInstance = null;
                 break;
         }
         if(TrueInstance!=null){TrueInstance.Start();}

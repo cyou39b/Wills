@@ -46,6 +46,8 @@ public class JackMainScene : MonoBehaviour{
     void Start()
     {
         renderer.transform.rotation = rotations[idx0][idx1];
+        Button1.gameObject.SetActive(false);
+        Button2.gameObject.SetActive(false);
     }
 
     void Update(){
