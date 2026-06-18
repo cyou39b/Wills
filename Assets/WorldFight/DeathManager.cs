@@ -88,6 +88,8 @@ public class DeathManager : MonoBehaviour
     public void RestartCallBack()
     {
         Activated = false;
+        Explode.ExplodePosition = null;
+        Explode.Activated = false;
         Time.timeScale = 1.0f;
         GlobalVariables.Instance.mainScenePosition = new Vector3(-20.0f, 2.5f);
         LoadSceneManager.LoadBufferAndLoadScene("MainScene");
@@ -96,6 +98,8 @@ public class DeathManager : MonoBehaviour
     public void QuitCallBack()
     {
         Activated = false;
+        Explode.ExplodePosition = null;
+        Explode.Activated = false;
         Time.timeScale = 1.0f;
         LoadSceneManager.LoadBufferAndLoadScene("MainMenu");
     }

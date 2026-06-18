@@ -59,6 +59,7 @@ public class Heli : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
+        jack.rb.linearVelocity = Vector2.zero;
         enabled = true;
         transform.position = new Vector3(jack.transform.position.x, 18.0f, transform.position.z) + Offset;
         rb.linearVelocity = new Vector2(0.0f, -2.0f);
@@ -74,6 +75,7 @@ public class Heli : MonoBehaviour
 
         yield return new WaitForSeconds(4.0f);
 
+        RbCameraMovement.UseRB = true;
         GlobalVariables.Instance.mainScenePosition = new Vector3(-20.0f, 2.5f);
         LoadSceneManager.LoadBufferAndLoadScene("MainScene");
     }

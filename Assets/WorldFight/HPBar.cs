@@ -67,6 +67,11 @@ public class HPBar : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        transform.rotation = Quaternion.identity;
+    }
+
     public void FixedUpdate()
     {
         // Move toward the followee
