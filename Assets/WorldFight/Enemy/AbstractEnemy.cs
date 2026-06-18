@@ -254,6 +254,11 @@ public abstract class AbstractEnemy : MonoBehaviour, IKnockbackable, ICanKnockba
     protected AIFacingDirection AIFacingDirection;
     protected virtual FacingDirection CurrentRealFacingDirection{get;set;}
 
+    public virtual void Update()
+    {
+        overlappingEnemys.RemoveWhere(obj => obj == null);
+    }
+
     public bool AI = true;
     protected virtual void FixedUpdate()
     {

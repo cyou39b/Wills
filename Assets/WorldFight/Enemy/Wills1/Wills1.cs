@@ -77,8 +77,10 @@ public class Wills : AbstractEnemy
     public override (float, float, Vector3) HpBarData 
         => (40.0f, 40.0f, new Vector3(0.0f, 2.0f, 0.0f));
 
-    public void Update()
+    public override void Update()
     {
+        base.Update();
+
         Vector3 dir = agent.enabled
             ?agent.steeringTarget-transform.position
             :rb.linearVelocity;

@@ -52,8 +52,9 @@ public class Flyer : AbstractEnemy
         mat.SetColor("_WingY_Color", WingYColors[idx]);
     }
 
-    void Update()
+    public override void Update()
     {
+        base.Update();
         Vector3 dir = agent.enabled
             ?agent.steeringTarget - transform.position
             :rb.linearVelocity;
