@@ -47,6 +47,7 @@ public class GlobalVariables : MonoBehaviour
         Debug.Log($"Scene change: {prev.name} -> {curr.name}");
 
         string currSceneName = curr.name;
+
         switch(currSceneName)
         {
             case "LoadSceneBuffer":

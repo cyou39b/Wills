@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -97,6 +98,13 @@ public class JackMainScene : MonoBehaviour{
             !DialogueManager.IsTalking &&
             !BackpackLogic.IsBackpackOpening){
             DialogueManager.Instance.StartDialogue(closestObj);
+        }
+
+        if(Button1Text.text == "Interact"){
+            Button1.gameObject.SetActive(false);
+        }
+        if(Button2Text.text == "Interact"){
+            Button2.gameObject.SetActive(false);
         }
     }
         
